@@ -163,72 +163,58 @@
     </div>
   </header>
 
-  <!-- HERO SECTION: İÇERİ ADIM ATMA HİSSİ (VİDEO ARKA PLAN) -->
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-deepPurple text-white">
-    <!-- Arka Plan Sinematik Video -->
-    <div class="absolute inset-0 z-0">
-      <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-45 scale-105 filter blur-[0.5px]">
+  <!-- HERO SECTION: SİNEMATİK LOGO ANİMASYONU VE VİDEO -->
+  <section class="relative min-h-screen flex flex-col justify-between overflow-hidden bg-[#f4eff7] text-white">
+    <!-- Arka Plan Sinematik Video (Tamamen Net, Filtresiz ve Aydınlık) -->
+    <div class="absolute inset-0 z-0 flex items-center justify-center">
+      <video autoplay muted loop playsinline class="w-full h-full object-cover md:object-contain opacity-100">
         <source src="assets/hero-cinematic.mp4" type="video/mp4">
       </video>
-      <div class="absolute inset-0 bg-gradient-to-b from-brand-darkViolet/85 via-brand-purple/40 to-brand-deepPurple/95"></div>
+      <!-- Sadece üst ve alt kenarlarda yumuşak geçiş (orta alan tamamen temiz ve videoya açık) -->
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-brand-deepPurple pointer-events-none"></div>
     </div>
 
-    <!-- Hero İçeriği -->
-    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-28 pb-16 flex flex-col items-center">
-      
-      <!-- VIP Rozet -->
-      <a href="#vip" class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-brand-gold/50 text-brand-lightGold text-xs tracking-[0.22em] uppercase mb-6 hover:bg-brand-gold/20 transition-all">
+    <!-- Üst Boşluk & VIP Rozeti (Navbar Altında) -->
+    <div class="pt-32 relative z-10 text-center px-4">
+      <a href="#vip" class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-brand-deepPurple/85 backdrop-blur-md border border-brand-gold/60 text-brand-lightGold text-xs tracking-[0.22em] uppercase shadow-xl hover:scale-105 transition-all">
         <span>💎</span>
-        <span>VIP Odamızda Aynı Anda 3 İşlem Seçeneği</span>
+        <span>Ataşehir Uphill Towers • VIP Stüdyo</span>
       </a>
+    </div>
 
-      <!-- Logo Amblem -->
-      <div class="mb-5 relative group">
-        <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-brand-gold via-brand-lightGold to-brand-gold opacity-80 blur-md group-hover:opacity-100 transition duration-500"></div>
-        <div class="relative w-28 h-28 md:w-32 md:h-32 rounded-full flex items-center justify-center p-3.5 bg-white/95 backdrop-blur-xl border-2 border-brand-gold shadow-2xl">
-          <img src="assets/logo-transparent.png" alt="LİNAİL BEAUTY" class="w-full h-full object-contain filter drop-shadow">
+    <!-- Orta Alan: TAMAMEN BOŞ! Video, Lotus Çiçeği ve Gülşah Taşan İmzası Net Şekilde Parlar -->
+    <div class="flex-1 min-h-[160px] pointer-events-none"></div>
+
+    <!-- Alt Alan: Butonlar ve Davet (Videoyu Asla Kapatmaz, En Altta Zarifçe Durur) -->
+    <div class="relative z-10 max-w-4xl mx-auto px-6 pb-10 w-full text-center">
+      
+      <!-- Zarif Cam Kapsül İçinde Butonlar -->
+      <div class="glass-card-dark rounded-3xl p-6 md:p-8 border border-brand-gold/40 shadow-2xl backdrop-blur-xl max-w-2xl mx-auto">
+        <p class="font-script text-2xl md:text-3xl text-brand-lightGold mb-1">
+          Güzellik bir anlık değil, kendinize verdiğiniz en özel sözdür.
+        </p>
+        <p class="text-[11px] md:text-xs text-stone-300 font-light tracking-[0.25em] uppercase mb-5">
+          VIP Odada Aynı Anda 3 İşlem Konforu
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#vip" class="w-full sm:w-auto px-7 py-3.5 rounded-full text-xs tracking-[0.22em] uppercase font-medium bg-gradient-to-r from-brand-gold via-brand-lightGold to-brand-gold text-brand-deepPurple shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-2">
+            <i data-lucide="gem" class="w-4 h-4"></i>
+            <span>VIP Odayı Keşfet</span>
+          </a>
+
+          <a href="https://wa.me/message/XYDDKBIHJO5UP1" 
+             target="_blank"
+             class="w-full sm:w-auto px-7 py-3.5 rounded-full text-xs tracking-[0.22em] uppercase font-medium bg-white/10 border border-brand-gold/60 text-brand-lightGold hover:bg-brand-gold/20 transition-all flex items-center justify-center gap-2">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Fiyat Bilgisi & Randevu</span>
+          </a>
         </div>
       </div>
 
-      <!-- Slogan -->
-      <p class="font-script text-3xl md:text-5xl text-brand-lightGold tracking-wide mb-2 opacity-95">
-        Güzellik bir anlık değil, kendinize verdiğiniz en özel sözdür.
-      </p>
-
-      <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl font-normal tracking-[0.15em] text-white uppercase mb-3 leading-tight">
-        LİNAİL <span class="gold-gradient-text font-light">BEAUTY</span> STUDIO
-      </h1>
-
-      <div class="w-28 h-[1px] bg-gradient-to-r from-transparent via-brand-gold to-transparent my-3"></div>
-
-      <!-- Kurucu & Lokasyon -->
-      <p class="text-xs md:text-sm tracking-[0.35em] text-stone-300 uppercase font-light max-w-lg leading-relaxed mb-6">
-        GÜLŞAH TAŞAN • ATAŞEHİR UPHILL TOWERS
-      </p>
-
-      <p class="text-sm md:text-base text-stone-300/90 font-light max-w-2xl mx-auto mb-10 leading-relaxed font-sans">
-        Merhaba, Linail Beauty’e hoş geldiniz! 💜<br class="hidden sm:inline">
-        Uphill Towers’taki özel stüdyomuzda kahvenizi yudumlarken zarafet, huzur ve kişiselleştirilmiş bakımın tadını çıkarın.
-      </p>
-
-      <!-- Butonlar -->
-      <div class="flex flex-col sm:flex-row items-center gap-4">
-        <a href="#vip" class="px-8 py-3.5 rounded-full text-xs tracking-[0.25em] uppercase font-medium bg-gradient-to-r from-brand-gold via-brand-lightGold to-brand-gold text-brand-deepPurple shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2.5">
-          <i data-lucide="gem" class="w-4 h-4"></i>
-          <span>VIP Odayı Keşfet</span>
-        </a>
-
-        <a href="https://wa.me/message/XYDDKBIHJO5UP1" 
-           target="_blank"
-           class="px-8 py-3.5 rounded-full text-xs tracking-[0.25em] uppercase font-medium bg-transparent border border-brand-gold text-brand-lightGold hover:bg-brand-gold/15 transition-all duration-300 flex items-center gap-2.5">
-          <i data-lucide="message-circle" class="w-4 h-4"></i>
-          <span>Fiyat Bilgisi & Randevu</span>
-        </a>
-      </div>
-
-      <!-- Aşağı Kaydır -->
-      <a href="#vip" class="mt-14 text-brand-gold/60 hover:text-brand-lightGold transition-colors flex flex-col items-center gap-2 animate-bounce">
-        <span class="text-[10px] tracking-[0.3em] uppercase">Aşağı Kaydırın</span>
+      <!-- Aşağı Kaydır İkonu -->
+      <a href="#vip" class="mt-6 inline-flex flex-col items-center gap-1 text-brand-gold hover:text-white transition-colors animate-bounce">
+        <span class="text-[9px] tracking-[0.3em] uppercase">Keşfetmek İçin Kaydırın</span>
         <i data-lucide="chevron-down" class="w-4 h-4"></i>
       </a>
     </div>
