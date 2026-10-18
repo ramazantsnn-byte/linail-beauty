@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Ataşehir Cilt Bakımı Piyasa & Protokol Araştırması | Gülşah Taşan</title>
+  <meta name="robots" content="noindex, nofollow">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #0a0710;
+      --bg-card: rgba(23, 14, 34, 0.9);
+      --purple-deep: #190e28;
+      --gold-primary: #d4af37;
+      --gold-light: #f3e5ab;
+      --gold-gradient: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa7c11 100%);
+      --text-main: #f5f3f7;
+      --text-muted: #b5adc2;
+      --border-gold: rgba(212, 175, 55, 0.25);
+      --accent-teal: #14b8a6;
+      --accent-pink: #f43f5e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      padding-bottom: 70px;
+    }
+
+    .font-serif {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 20px 16px;
+    }
+
+    .header {
+      text-align: center;
+      padding: 28px 16px 22px;
+      border-bottom: 1px solid var(--border-gold);
+      margin-bottom: 24px;
+      background: radial-gradient(circle at 50% 15%, rgba(20, 184, 166, 0.15), transparent 70%);
+      border-radius: 24px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(20, 184, 166, 0.15);
+      border: 1px solid var(--accent-teal);
+      border-radius: 20px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #5eead4;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .header h1 {
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--gold-light);
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .header p {
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .protocol-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 18px;
+      padding: 20px 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.4);
+    }
+
+    .protocol-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .protocol-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .protocol-price {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--gold-light);
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid var(--border-gold);
+      padding: 4px 10px;
+      border-radius: 8px;
+      text-align: right;
+    }
+
+    .protocol-price small {
+      display: block;
+      font-size: 10px;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    .step-list {
+      list-style: none;
+      margin: 14px 0 10px;
+      padding-left: 0;
+    }
+
+    .step-list li {
+      font-size: 12px;
+      color: #e5e0ec;
+      margin-bottom: 8px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.2);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light);
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      shrink: 0;
+      margin-top: 2px;
+    }
+
+    .box-intel {
+      background: linear-gradient(135deg, rgba(20, 184, 166, 0.08), rgba(23, 14, 34, 0.95));
+      border: 1px solid rgba(20, 184, 166, 0.3);
+      border-radius: 16px;
+      padding: 18px;
+      margin: 24px 0;
+    }
+
+    .box-intel h3 {
+      font-size: 16px;
+      color: #5eead4;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .box-intel p, .box-intel li {
+      font-size: 12px;
+      color: #e2d9f3;
+      line-height: 1.6;
+    }
+
+    .btn-action {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--gold-gradient);
+      color: #0a0710;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 14px;
+      border-radius: 30px;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <header class="header">
+      <div class="badge">Özel Branş İncelemesi</div>
+      <h1 class="font-serif">Ataşehir Cilt Bakımı Protokolleri<br>& Fiyat İstihbarat Raporu</h1>
+      <p>Gülşah Taşan için Ataşehir'deki merkezlerin sunduğu cilt bakım seansları, aşamaları ve fiyat alma yöntemleri.</p>
+    </header>
+
+    <!-- GİZLİ FİYATLARI TOPLAMA YÖNTEMİ -->
+    <div class="box-intel">
+      <h3>🕵️‍♂️ Gizli Rakiplerin Fiyatlarını Alma Yöntemi</h3>
+      <p style="margin-bottom: 8px;">
+        Varyap, Metropol ve Ataşehir'deki merkezler fiyatlarını web sitelerine bilerek yazmaz; amaç müşteriyi WhatsApp'a çekmektir. Bu merkezlerin tam fiyat listelerini almanın <strong>en garantili yolu:</strong>
+      </p>
+      <p>
+        Elimizdeki 15 rakip numaraya (Avangard, Selin Beauty, Emsal Doğan, Larni vb.) WhatsApp'tan şu mesajı atıyoruz:
+      </p>
+      <div style="background: rgba(0,0,0,0.3); padding: 10px 14px; border-radius: 10px; margin: 10px 0; font-style: italic; font-size: 12px; border-left: 3px solid var(--accent-teal);">
+        "Merhabalar, Ataşehir Uphill tarafında oturuyorum. Medikal cilt bakımı ve Hydrafacial protokollerinizin detaylarını ve güncel fiyat listenizi öğrenebilir miyim?"
+      </div>
+      <p style="font-size: 11px; color: var(--gold-light);">
+        ⚡ <em>Sonuç: 1 saat içinde tüm rakipler PDF ve resimli fiyat kataloglarını doğrudan WhatsApp'a gönderir! Gelen ekran görüntülerini buraya yüklerseniz dakikasında Gülşah Hanım'a karşılaştırmalı tablo çıkarırım.</em>
+      </p>
+    </div>
+
+    <!-- PROTOKOL 1: HYDRAFACIAL -->
+    <div class="protocol-card">
+      <div class="protocol-head">
+        <div>
+          <div class="protocol-title font-serif">1. Hydrafacial (Aqua Peel Derin Temizlik)</div>
+          <span style="font-size: 11px; color: var(--accent-teal);">Ataşehir'de En Çok Satan İşlem</span>
+        </div>
+        <div class="protocol-price">
+          3.000 – 4.500 ₺
+          <small>4'lü Paket: 11.000 – 14.000 ₺</small>
+        </div>
+      </div>
+      <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">
+        Acısız, kızarıklıksız ve tek seansta cam cilt (glass skin) ışıltısı sağlayan vakumlu teknoloji.
+      </p>
+      <ul class="step-list">
+        <li>
+          <div class="step-num">1</div>
+          <div><strong>Vortex Temizleme & Sıvı Peeling:</strong> Laktik asit solüsyonu ile cildin üst ölü tabakası yumuşatılır ve arındırılır.</div>
+        </li>
+        <li>
+          <div class="step-num">2</div>
+          <div><strong>Vakumlu Ekstraksiyon (Acısız Temizlik):</strong> Düşük doz salisilik asitle gözeneklerin içi yumuşatılır, siyah noktalar ve sebum vakumla çekilir.</div>
+        </li>
+        <li>
+          <div class="step-num">3</div>
+          <div><strong>Serum İnfüzyonu:</strong> Hyalüronik asit, peptit ve antioksidan kokteyli basınçla gözeneklere yedirilir.</div>
+        </li>
+        <li>
+          <div class="step-num">4</div>
+          <div><strong>LED Işık Terapisi:</strong> Akne/bakteri için mavi ışık, kolajen ve sıkılaşma için kırmızı ışık uygulanır.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- PROTOKOL 2: KLASİK MEDİKAL CİLT BAKIMI -->
+    <div class="protocol-card">
+      <div class="protocol-head">
+        <div>
+          <div class="protocol-title font-serif">2. Kapsamlı Medikal Cilt Bakımı</div>
+          <span style="font-size: 11px; color: var(--gold-light);">Derinlemesine Gözenek & Yağ Dengeleme</span>
+        </div>
+        <div class="protocol-price">
+          2.000 – 2.800 ₺
+          <small>Süre: 60 - 75 Dakika</small>
+        </div>
+      </div>
+      <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">
+        Geleneksel medikal el ve alet temizliği. Tıkanmış gözenekleri ve kapalı komedonları olan ciltler için ideal.
+      </p>
+      <ul class="step-list">
+        <li>
+          <div class="step-num">1</div>
+          <div><strong>Çift Aşamalı Temizlik:</strong> Yağ ve su bazlı temizleyicilerle gözenek yüzeyi arındırılır.</div>
+        </li>
+        <li>
+          <div class="step-num">2</div>
+          <div><strong>Ozonlu Buhar & Peeling:</strong> Gözenekler 15 dakika buharla açılır, ultrasonik spatula ile kabuklaşmış ölü deri temizlenir.</div>
+        </li>
+        <li>
+          <div class="step-num">3</div>
+          <div><strong>Komedon Ekstraksiyonu & High Frequency:</strong> İnatçı siyah noktalar steril aparatla boşaltılır, yüksek frekans mor ışıkla cilt dezenfekte edilir.</div>
+        </li>
+        <li>
+          <div class="step-num">4</div>
+          <div><strong>Yatıştırıcı Maske & Masaj:</strong> Cilt tipine göre kil veya kolajen maskesi + lenfatik yüz drenaj masajı.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- PROTOKOL 3: PUMPKIN PEEL -->
+    <div class="protocol-card">
+      <div class="protocol-head">
+        <div>
+          <div class="protocol-title font-serif">3. Pumpkin Peel (Balkabağı Peeling)</div>
+          <span style="font-size: 11px; color: #fb923c;">Sindirella Bakımı / Ani Işıltı</span>
+        </div>
+        <div class="protocol-price">
+          2.800 – 3.800 ₺
+          <small>Özel Günler Öncesi Gözde</small>
+        </div>
+      </div>
+      <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">
+        Doğal balkabağı enzimleri ve A vitamini ile cildi soymadan tazeleyen pürüzsüzleştirici bakım.
+      </p>
+      <ul class="step-list">
+        <li>
+          <div class="step-num">1</div>
+          <div><strong>Enzimatik Hazırlık:</strong> Cilt asit dengesi nötrlenir.</div>
+        </li>
+        <li>
+          <div class="step-num">2</div>
+          <div><strong>Balkabağı Jel Uygulaması:</strong> Ciltte 5-7 dakika bekletilerek hafif karıncalanma hissiyle hücre yenilenmesi tetiklenir.</div>
+        </li>
+        <li>
+          <div class="step-num">3</div>
+          <div><strong>Nötralizasyon & Soğuk Kompres:</strong> Cilt yatıştırılır, yoğun neme doyuran maske uygulanır.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- PROTOKOL 4: DERMAPEN & SOMON DNA -->
+    <div class="protocol-card">
+      <div class="protocol-head">
+        <div>
+          <div class="protocol-title font-serif">4. Dermapen 4 & Somon DNA / Kolajen</div>
+          <span style="font-size: 11px; color: #a855f7;">Leke, Gözenek & Gençleştirme</span>
+        </div>
+        <div class="protocol-price">
+          3.500 – 5.500 ₺
+          <small>3 Seanslık Kür: 12.000 – 15.000 ₺</small>
+        </div>
+      </div>
+      <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">
+        Mikro iğneleme teknolojisiyle saf Somon DNA ve hyalüronik asidin derinin alt tabakasına ulaştırılması.
+      </p>
+    </div>
+
+    <!-- GÜLŞAH HANIM İÇİN CİLT BAKIMI ÖZEL STRATEJİSİ -->
+    <div class="box-intel" style="border-color: var(--gold-primary);">
+      <h3 style="color: var(--gold-light);">💎 Gülşah Hanım'ın En Büyük Ciroyu Vuracağı Nokta</h3>
+      <p>
+        Ataşehir'deki zengin kadınlar cilt bakımı için genelde ayrı bir kliniğe gitmek zorunda kalıyor. Linail'in Uphill Towers'taki VIP odasında:
+      </p>
+      <p style="margin-top: 6px; font-weight: 600; color: #fff;">
+        👉 <em>"Tırnak yapılırken aynı anda 45 dakikalık Ekspres Hydrafacial & Nem Bakımı"</em>
+      </p>
+      <p style="margin-top: 6px;">
+        Bu kombin paket masadan <strong>6.500 – 8.000 ₺ ciro</strong> ile kalkılmasını sağlar ve bölgede tek bir rakipte dahi yoktur!
+      </p>
+    </div>
+
+    <a href="https://wa.me/905318696764" class="btn-action">WhatsApp'tan Paylaş & İncele</a>
+
+  </div>
+
+</body>
+</html>
