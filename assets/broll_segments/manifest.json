@@ -1,0 +1,96 @@
+{
+  "source_video": "salon-experience.mp4",
+  "total_segments": 10,
+  "clips": [
+    {
+      "index": 1,
+      "clip_file": "shot_01.mp4",
+      "thumbnail_file": "thumb_01.jpg",
+      "start": 0.0,
+      "end": 3.73,
+      "duration": 3.73,
+      "clip_path": "/Users/applesupport/Desktop/linail beauty/assets/broll_segments/shot_01.mp4"
+    },
+    {
+      "index": 2,
+      "clip_file": "shot_02.mp4",
+      "thumbnail_file": "thumb_02.jpg",
+      "start": 3.73,
+      "end": 11.07,
+      "duration": 7.33,
+      "clip_path": "/Users/applesupport/Desktop/linail beauty/assets/broll_segments/shot_02.mp4"
+    },
+    {
+      "index": 3,
+      "clip_file": "shot_03.mp4",
+      "thumbnail_file": "thumb_03.jpg",
+      "start": 11.07,
+      "end": 14.7,
+      "duration": 3.63,
+      "clip_path": "/Users/applesupport/Desktop/linail beauty/assets/broll_segments/shot_03.mp4"
+    },
+    {
+      "index": 4,
+      "clip_file": "shot_04.mp4",
+      "thumbnail_file": "thumb_04.jpg",
+      "start": 14.7,
+      "end": 20.07,
+      "duration": 5.37,
+      "clip_path": "/Users/applesupport/Desktop/linail beauty/assets/broll_segments/shot_04.mp4"
+    },
+    {
+      "index": 5,
+      "clip_file": "shot_05.mp4",
+      "thumbnail_file": "thumb_05.jpg",
+      "start": 20.07,
+      "end": 25.07,
+      "duration": 5.0,
+      "clip_path": "/Users/applesupport/Desktop/linail beauty/assets/broll_segments/shot_05.mp4"
+    },
+    {
+      "index": 6,
+      "clip_file": "shot_06.mp4",
+      "thumbnail_file": "thumb_06.jpg",
+      "start": 25.07,
+      "end": 28.93,
+      "duration": 3.87,
+      "clip_path": "/Users/applesupport/Desktop/linail beauty/assets/broll_segments/shot_06.mp4"
+    },
+    {
+      "index": 7,
+      "clip_file": "shot_07.mp4",
+      "thumbnail_file": "thumb_07.jpg",
+      "start": 28.93,
+      "end": 32.27,
+      "duration": 3.33,
+      "clip_path": "/Users/applesupport/Desktop/linail beauty/assets/broll_segments/shot_07.mp4"
+    },
+    {
+      "index": 8,
+      "clip_file": "shot_08.mp4",
+      "thumbnail_file": "thumb_08.jpg",
+      "start": 32.27,
+      "end": 37.93,
+      "duration": 5.67,
+      "clip_path": "/Users/applesupport/Desktop/linail beauty/assets/broll_segments/shot_08.mp4"
+    },
+    {
+      "index": 9,
+      "clip_file": "shot_09.mp4",
+      "thumbnail_file": "thumb_09.jpg",
+      "start": 37.93,
+      "end": 41.57,
+      "duration": 3.63,
+      "clip_path": "/Users/applesupport/Desktop/linail beauty/assets/broll_segments/shot_09.mp4"
+    },
+    {
+      "index": 10,
+      "clip_file": "shot_10.mp4",
+      "thumbnail_file": "thumb_10.jpg",
+      "start": 41.57,
+      "end": 54.03,
+      "duration": 12.46,
+      "clip_path": "/Users/applesupport/Desktop/linail beauty/assets/broll_segments/shot_10.mp4"
+    }
+  ]
+}

@@ -1,7 +1,8 @@
 /hizmetler /#hizmetlerimiz 302
-/menu /fiyat-listesi/ 301
-/fiyatlar /fiyat-listesi/ 301
-/fiyat /fiyat-listesi/ 301
+/menu /#hizmetlerimiz 302
+/fiyatlar /#iletisim 302
+/fiyat /#iletisim 302
+/fiyat-listesi /#iletisim 302
 /protez-tirnak /atasehir-protez-tirnak/ 301
 /vip /#vip 302
 /randevu /#iletisim 302
