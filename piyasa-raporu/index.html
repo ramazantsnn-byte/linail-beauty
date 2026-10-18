@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Ataşehir Güzellik Merkezleri Piyasa & Fiyat Analiz Raporu | Gülşah Taşan & Linail Beauty</title>
+  <meta name="robots" content="noindex, nofollow">
+  
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #0d0914;
+      --bg-card: rgba(26, 17, 38, 0.85);
+      --purple-deep: #1f122e;
+      --gold-primary: #d4af37;
+      --gold-light: #f3e5ab;
+      --gold-gradient: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa7c11 100%);
+      --text-main: #f5f3f7;
+      --text-muted: #b8afc4;
+      --border-gold: rgba(212, 175, 55, 0.25);
+      --accent-green: #10b981;
+      --accent-blue: #38bdf8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    .font-serif {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    /* Container */
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 20px 16px;
+    }
+
+    /* Hero / Header */
+    .header {
+      text-align: center;
+      padding: 30px 16px 24px;
+      border-bottom: 1px solid var(--border-gold);
+      margin-bottom: 24px;
+      background: radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.12), transparent 70%);
+      border-radius: 24px;
+    }
+
+    .badge-vip {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid var(--gold-primary);
+      border-radius: 20px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .header h1 {
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--gold-light);
+      letter-spacing: -0.5px;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .header p {
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 460px;
+      margin: 0 auto;
+    }
+
+    /* Meta Info Card */
+    .meta-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 16px;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .meta-item {
+      font-size: 12px;
+    }
+
+    .meta-item span {
+      display: block;
+      color: var(--gold-primary);
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    /* Section Headings */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 20px;
+      color: var(--gold-light);
+      margin: 32px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed rgba(212, 175, 55, 0.3);
+    }
+
+    .section-title span {
+      font-size: 22px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--border-gold);
+    }
+
+    .card.highlight {
+      border: 1.5px solid var(--gold-primary);
+      background: linear-gradient(145deg, rgba(31, 18, 46, 0.95), rgba(46, 26, 71, 0.9));
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .card-sub {
+      font-size: 11px;
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 2px;
+    }
+
+    .rating-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      padding: 3px 8px;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+
+    .card-body {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .tag-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 10px 0;
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 10px;
+      color: #e2d9f3;
+    }
+
+    .tag.gold {
+      background: rgba(212, 175, 55, 0.12);
+      border-color: rgba(212, 175, 55, 0.3);
+      color: var(--gold-light);
+    }
+
+    .card-footer {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+    }
+
+    .card-footer a {
+      color: var(--gold-primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Price Table Card */
+    .price-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .price-box-header {
+      background: linear-gradient(90deg, rgba(212, 175, 55, 0.2), transparent);
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-gold);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      font-size: 12px;
+    }
+
+    .price-row:last-child {
+      border-bottom: none;
+    }
+
+    .price-name {
+      color: #e5e0ec;
+    }
+
+    .price-name small {
+      display: block;
+      color: var(--text-muted);
+      font-size: 10px;
+    }
+
+    .price-val {
+      font-weight: 700;
+      color: var(--gold-light);
+      text-align: right;
+    }
+
+    .price-val small {
+      display: block;
+      font-weight: 400;
+      color: var(--text-muted);
+      font-size: 10px;
+    }
+
+    /* Strategic Takeaways */
+    .takeaway-card {
+      background: linear-gradient(135deg, rgba(31, 18, 46, 0.9), rgba(16, 185, 129, 0.08));
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+
+    .takeaway-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent-green);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .takeaway-desc {
+      font-size: 12px;
+      color: #e5e0ec;
+      line-height: 1.5;
+    }
+
+    /* Action Box */
+    .action-box {
+      text-align: center;
+      background: var(--bg-card);
+      border: 1.5px solid var(--gold-primary);
+      border-radius: 20px;
+      padding: 24px 16px;
+      margin-top: 30px;
+    }
+
+    .action-box h3 {
+      font-size: 18px;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+
+    .action-box p {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .btn-gold {
+      display: inline-block;
+      background: var(--gold-gradient);
+      color: #12091f;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+      letter-spacing: 0.5px;
+    }
+
+    /* Sticky Bottom Mobile Bar */
+    .mobile-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(13, 9, 20, 0.95);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--border-gold);
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .mobile-bar-text {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .mobile-bar-text strong {
+      color: var(--gold-light);
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Hero / Header -->
+    <header class="header">
+      <div class="badge-vip">Piyasa İstihbarat Dosyası</div>
+      <h1 class="font-serif">Ataşehir & Çevresi Güzellik Merkezleri<br>Fiyat & Rekabet Raporu</h1>
+      <p>Gülşah Taşan & Linail Beauty Studio için özel hazırlanmış 2026 bölge piyasa analizi ve fiyatlandırma pusulası.</p>
+    </header>
+
+    <!-- Meta Bilgi Kutusu -->
+    <div class="meta-box">
+      <div class="meta-item">
+        <span>Hedef Bölge</span>
+        Ataşehir (Uphill, Varyap, Metropol, Finans Merkezi)
+      </div>
+      <div class="meta-item">
+        <span>İncelenen Merkez</span>
+        28+ Aktif Salon & Klinik
+      </div>
+      <div class="meta-item">
+        <span>Tarih / Versiyon</span>
+        Ekim 2026 • v1.0 VIP
+      </div>
+      <div class="meta-item">
+        <span>Hazırlayan</span>
+        Linail Strateji & Büyüme Ekibi
+      </div>
+    </div>
+
+    <!-- BÖLÜM 1: PİYASA ÖZETİ VE FİYATLANDIRMA PUSULASI -->
+    <div class="section-title font-serif">
+      <span>💰</span> Ataşehir 2026 Hizmet Fiyat Ortalamaları
+    </div>
+    <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px;">
+      Bölgedeki lüks rezidans (Varyap, Metropol, Uphill) ve cadde salonlarından toplanan ortalama fiyat aralıkları:
+    </p>
+
+    <!-- Fiyat Tablosu 1: Tırnak & El-Ayak -->
+    <div class="price-box">
+      <div class="price-box-header">
+        <span>💅 1. Tırnak Grubu (Protez & Manikür)</span>
+        <span style="font-size: 10px; color: var(--gold-light);">PİYASA BANDI</span>
+      </div>
+      <div class="price-row">
+        <div class="price-name">
+          Protez Jel Tırnak (Full Set)
+          <small>Şablon / Tips & Rus Kuru Manikür</small>
+        </div>
+        <div class="price-val">
+          2.200 – 3.000 ₺
+          <small>Linail: 3.000 ₺ (Üst VIP)</small>
+        </div>
+      </div>
+      <div class="price-row">
+        <div class="price-name">
+          Protez Jel Bakımı
+          <small>3-4 Hafta Dolum & Dip Düzeltme</small>
+        </div>
+        <div class="price-val">
+          1.700 – 2.400 ₺
+          <small>Linail: 2.400 ₺</small>
+        </div>
+      </div>
+      <div class="price-row">
+        <div class="price-name">
+          Jel Güçlendirme (Doğal Tırnak)
+          <small>Kırılgan tırnaklara koruyucu katman</small>
+        </div>
+        <div class="price-val">
+          1.600 – 2.400 ₺
+          <small>Linail: 2.400 ₺</small>
+        </div>
+      </div>
+      <div class="price-row">
+        <div class="price-name">
+          El Kalıcı Oje & Manikür
+          <small>Rus kombine aparat tekniği</small>
+        </div>
+        <div class="price-val">
+          1.300 – 1.800 ₺
+          <small>Linail: 1.800 ₺</small>
+        </div>
+      </div>
+      <div class="price-row">
+        <div class="price-name">
+          Medikal & Spa Ayak Pedikür
+          <small>Banyo, peeling, masaj ve kalıcı oje</small>
+        </div>
+        <div class="price-val">
+          2.000 – 3.000 ₺
+          <small>Linail: 2.400 - 3.000 ₺</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fiyat Tablosu 2: İpek Kirpik & Kaş -->
+    <div class="price-box">
+      <div class="price-box-header">
+        <span>👁️ 2. İpek Kirpik & Kaş Grubu</span>
+        <span style="font-size: 10px; color: var(--gold-light);">PİYASA BANDI</span>
+      </div>
+      <div class="price-row">
+        <div class="price-name">
+          İpek Kirpik (Klasik / Doğal 2D)
+          <small>Hafif, ağırlıksız doğal bakışlar</small>
+        </div>
+        <div class="price-val">
+          1.800 – 2.400 ₺
+          <small>Tavsiye: 2.200 ₺</small>
+        </div>
+      </div>
+      <div class="price-row">
+        <div class="price-name">
+          Volume / Mega Volume / Wet Look
+          <small>Dolgun, belirgin trend tasarımlar</small>
+        </div>
+        <div class="price-val">
+          2.400 – 3.200 ₺
+          <small>Tavsiye: 2.800 ₺</small>
+        </div>
+      </div>
+      <div class="price-row">
+        <div class="price-name">
+          Kirpik Bakımı (2-3 Hafta Doldurma)
+          <small>Dökülen kirpiklerin yenilenmesi</small>
+        </div>
+        <div class="price-val">
+          1.400 – 1.800 ₺
+          <small>Tavsiye: 1.600 ₺</small>
+        </div>
+      </div>
+      <div class="price-row">
+        <div class="price-name">
+          Kirpik Lifting & Keratin Botoks
+          <small>Doğal kirpiği besleyen ve kıvıran bakım</small>
+        </div>
+        <div class="price-val">
+          1.500 – 2.000 ₺
+          <small>Tavsiye: 1.800 ₺</small>
+        </div>
+      </div>
+      <div class="price-row">
+        <div class="price-name">
+          Kaş Laminasyonu & Şekillendirme
+          <small>6-8 hafta kalıcı asil kaş formlama</small>
+        </div>
+        <div class="price-val">
+          1.500 – 2.000 ₺
+          <small>Tavsiye: 1.800 ₺</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fiyat Tablosu 3: Cilt Bakımı & Medikal Bakımlar -->
+    <div class="price-box">
+      <div class="price-box-header">
+        <span>🧖‍♀️ 3. Medikal Cilt Bakımı Grubu</span>
+        <span style="font-size: 10px; color: var(--gold-light);">PİYASA BANDI</span>
+      </div>
+      <div class="price-row">
+        <div class="price-name">
+          Klasik Medikal Cilt Bakımı (60 Dk)
+          <small>Buhar, derin gözenek temizliği, maske</small>
+        </div>
+        <div class="price-val">
+          2.000 – 2.800 ₺
+          <small>Tavsiye: 2.400 ₺</small>
+        </div>
+      </div>
+      <div class="price-row">
+        <div class="price-name">
+          Hydrafacial / Aqua Peel Derin Bakım
+          <small>Vakumla siyah nokta arındırma & serum yüklemesi</small>
+        </div>
+        <div class="price-val">
+          3.000 – 4.500 ₺
+          <small>Tavsiye: 3.500 ₺</small>
+        </div>
+      </div>
+      <div class="price-row">
+        <div class="price-name">
+          Anti-Aging / Glow & Leke Bakımı
+          <small>Kolajen, peptid ve C vitamini ışıltı protokolü</small>
+        </div>
+        <div class="price-val">
+          3.500 – 5.000 ₺
+          <small>Tavsiye: 4.000 ₺</small>
+        </div>
+      </div>
+      <div class="price-row">
+        <div class="price-name">
+          4 Seanslık Kür Paketleri
+          <small>Düzenli aylık cilt yenileme programı</small>
+        </div>
+        <div class="price-val">
+          10.000 – 16.000 ₺
+          <small>Tavsiye: 12.000 ₺</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fiyat Tablosu 4: Linail'in Tekeli VIP Kombin Paketler -->
+    <div class="price-box" style="border: 1.5px solid var(--gold-primary);">
+      <div class="price-box-header" style="background: var(--gold-gradient); color: #12091f;">
+        <span>💎 4. LİNAİL'İN TEKELİ: VIP 3'Ü 1 ARADA SÜİT</span>
+        <span style="font-size: 10px; font-weight: 800;">RAKİPSİZ!</span>
+      </div>
+      <div class="price-row">
+        <div class="price-name">
+          <strong>Full VIP Süit Deneyimi</strong>
+          <small>Aynı anda Protez Tırnak + İpek Kirpik + Pedikür/Bakım (4 saati 1.5 saate indiren tekel)</small>
+        </div>
+        <div class="price-val" style="color: var(--gold-light);">
+          <strong>6.500 – 8.500 ₺</strong>
+          <small>Tek Odada Zamandan %65 Tasarruf</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- BÖLÜM 2: DETAYLI RAKİP İSTİHBARATI (KİM NE YAPIYOR?) -->
+    <div class="section-title font-serif">
+      <span>📍</span> En Yakın Rakipler & Analizleri
+    </div>
+
+    <!-- Rakip 1: Avangard Estetik (Varyap Meridian) -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Avangard Estetik | Beauty & Nail Spa</div>
+          <div class="card-sub">📍 Varyap Meridian Grand Tower A Blok K:14 (Komşu)</div>
+        </div>
+        <div class="rating-badge">4.9 ⭐ (54)</div>
+      </div>
+      <div class="card-body">
+        Rezidans içi daire konsepti. Protez tırnak, cilt bakımı ve spa masajları sunuyor. Şık bir karşılama alanı var ancak tırnak ve kirpik işlemleri ayrı odalarda yapılıyor, eşzamanlı işlem konseptleri yok.
+      </div>
+      <div class="tag-group">
+        <span class="tag gold">Varyap İçi</span>
+        <span class="tag">Protez Tırnak</span>
+        <span class="tag">Cilt Bakımı</span>
+        <span class="tag">Spa Masajı</span>
+      </div>
+      <div class="card-footer">
+        <span>📞 0533 967 80 08</span>
+        <span style="color: #ef4444; font-size: 10px;">Fiyatlar: Gizli (DM ile)</span>
+      </div>
+    </div>
+
+    <!-- Rakip 2: Emsal Doğan Metropol Ataşehir -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Emsal Doğan Ataşehir Metropol</div>
+          <div class="card-sub">📍 Metropol İstanbul A2 Blok Kat:24 Daire:360</div>
+        </div>
+        <div class="rating-badge">4.9 ⭐ (56)</div>
+      </div>
+      <div class="card-body">
+        Franchise zincir marka. Microblading, tırnak, kirpik lifting ve cilt bakımı yapıyorlar. Marka bilinirliği yüksek ancak müşteriler sürekli değişen uzmanlardan ve "fabrikasyon" düzenden şikayetçi.
+      </div>
+      <div class="tag-group">
+        <span class="tag gold">Metropol Rezidans</span>
+        <span class="tag">Microblading</span>
+        <span class="tag">Tırnak</span>
+        <span class="tag">Lifting</span>
+      </div>
+      <div class="card-footer">
+        <span>📞 0546 529 79 07</span>
+        <span style="color: #f59e0b; font-size: 10px;">Fiyat Seviyesi: Yüksek Zincir</span>
+      </div>
+    </div>
+
+    <!-- Rakip 3: Larni Beauty (Metropol İstanbul) -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Larni Beauty Ataşehir</div>
+          <div class="card-sub">📍 Metropol İstanbul A3 Blok Daire:91</div>
+        </div>
+        <div class="rating-badge">4.9 ⭐ (141)</div>
+      </div>
+      <div class="card-body">
+        Lazer epilasyon, bölgesel incelme ve cilt bakımına ağırlık veriyorlar. Tırnak ve kirpik hizmetleri yan ürün olarak sunuluyor. Tırnak sanatında Gülşah Taşan seviyesinde ince ustalıkları yok.
+      </div>
+      <div class="tag-group">
+        <span class="tag">Buz Lazer</span>
+        <span class="tag">Cilt Bakımı</span>
+        <span class="tag">Bölgesel İncelme</span>
+        <span class="tag">Tırnak</span>
+      </div>
+      <div class="card-footer">
+        <span>📞 0545 766 09 28</span>
+        <span style="color: #10b981; font-size: 10px;">Kampanyalı Paketler</span>
+      </div>
+    </div>
+
+    <!-- Rakip 4: Selin Beauty Center Ataşehir -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Selin Beauty Center</div>
+          <div class="card-sub">📍 Nidakule Kuzey, Begonya Sk. No:3</div>
+        </div>
+        <div class="rating-badge">4.5 ⭐ (268)</div>
+      </div>
+      <div class="card-body">
+        Influencer kökenli zincir merkez. Yoğun sirkülasyon var. Yorumlarda randevu gecikmeleri ve personelin aceleci davranması gibi klasik zincir sorunları yoğun şekilde göze çarpıyor.
+      </div>
+      <div class="tag-group">
+        <span class="tag">Lazer</span>
+        <span class="tag">Zayıflama</span>
+        <span class="tag">Cilt</span>
+        <span class="tag">Tırnak</span>
+      </div>
+      <div class="card-footer">
+        <span>📞 0549 598 34 34</span>
+        <span style="color: #ef4444; font-size: 10px;">Puanı Düşük (4.5 ⭐)</span>
+      </div>
+    </div>
+
+    <!-- Rakip 5: Çiğdem Köroğlu Beauty (Varyap) -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Çiğdem Köroğlu Beauty</div>
+          <div class="card-sub">📍 Ak Zambak Sk. Varyap Meridian A Blok No:2 K:7</div>
+        </div>
+        <div class="rating-badge">4.3 ⭐ (127)</div>
+      </div>
+      <div class="card-body">
+        Kalıcı makyaj ve kaş tasarımı ana odakları. Fiyatları bölgeye göre orta-yüksek segmentte tutuyorlar ancak tırnak ve kirpik alanında dijitalde aktif değiller.
+      </div>
+      <div class="tag-group">
+        <span class="tag gold">Varyap Meridian</span>
+        <span class="tag">Kalıcı Makyaj</span>
+        <span class="tag">Kaş Tasarımı</span>
+      </div>
+      <div class="card-footer">
+        <span>📞 0530 015 94 97</span>
+        <span style="color: #f59e0b; font-size: 10px;">Puan: 4.3 ⭐ (Gelişime Açık)</span>
+      </div>
+    </div>
+
+    <!-- Rakip 6: Mayza Güzellik Merkezi -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Mayza Güzellik Merkezi</div>
+          <div class="card-sub">📍 Ağaoğlu My Prestige, Sarkaç Sk. No:1</div>
+        </div>
+        <div class="rating-badge">5.0 ⭐ (40)</div>
+      </div>
+      <div class="card-body">
+        Hydrafacial, Microblading ve tırnak uygulamaları sunuyor. Ulaşılabilir fiyat politikası uyguluyorlar, butik ilgileri beğeniliyor ancak VIP oda konseptleri bulunmuyor.
+      </div>
+      <div class="tag-group">
+        <span class="tag">Ağaoğlu Prestige</span>
+        <span class="tag">Hydrafacial</span>
+        <span class="tag">Microblading</span>
+      </div>
+      <div class="card-footer">
+        <span>📞 0546 180 50 50</span>
+        <span style="color: #10b981; font-size: 10px;">Müşteri İletişimi İyi</span>
+      </div>
+    </div>
+
+    <!-- BÖLÜM 3: GÜLŞAH İÇİN STRATEJİK FIRSAT ALANLARI -->
+    <div class="section-title font-serif">
+      <span>🎯</span> Gülşah İçin 4 Büyük Pazar Fırsatı
+    </div>
+
+    <div class="takeaway-card">
+      <div class="takeaway-title">
+        <span>💎</span> 1. Fırsat: "Fabrikasyon Değil, Usta İmzası"
+      </div>
+      <div class="takeaway-desc">
+        Ataşehir'deki kadınların en büyük şikayeti: Emsal Doğan, Selin Beauty ve Eylül Öztürk gibi yerlerde sürekli çırakların ve değişen personelin çalışması. Linail'in en büyük kozu: <strong>"Burada sürpriz yok; tırnağınızı, kirpiğinizi ve bakımınızı bizzat Gülşah Taşan ve onun yetiştirdiği VIP ekip yönetir."</strong>
+      </div>
+    </div>
+
+    <div class="takeaway-card">
+      <div class="takeaway-title">
+        <span>⏱️</span> 2. Fırsat: "Zaman Satma Tekeli" (VIP 3'ü 1 Arada)
+      </div>
+      <div class="takeaway-desc">
+        Finans Merkezi ve Uphill sakinleri zengin ama vakitsiz kadınlar. Tırnak için 2.5 saat, kirpik için 2 saat beklemek istemiyorlar. VIP süitte yatarak 1.5 saatte tırnak + kirpik + bakım yaptırmak Ataşehir'de <strong>8.500 ₺ sepet ortalamasıyla</strong> rakipsiz tek tekelimizdir.
+      </div>
+    </div>
+
+    <div class="takeaway-card">
+      <div class="takeaway-title">
+        <span>📋</span> 3. Fırsat: "Şeffaf VIP Menü"
+      </div>
+      <div class="takeaway-desc">
+        Varyap ve Metropol'deki salonların %85'i fiyat listesini gizliyor; DM'den kadının profiline bakıp fiyat çekiyor. Linail web sitesinde ve Google'da şeffaf, asil ve net bir VIP fiyat kataloğu sunduğunda güveni ilk saniyede kazanır.
+      </div>
+    </div>
+
+    <div class="takeaway-card">
+      <div class="takeaway-title">
+        <span>✨</span> 4. Fırsat: "Sadece Tırnakçı Değil, Baştan Aşağı Bakım"
+      </div>
+      <div class="takeaway-desc">
+        Tırnak müşterisi her 3-4 haftada bir gelir. Gelen her tırnak müşterisine Gülşah hanımın bir dokunuşuyla: <em>"Cildin mevsim geçişinde kurumuş, bir sonraki seansında tırnağın yapılırken aynı anda 45 dakikalık derin nem yüklemesi yapalım"</em> denildiği an sepet tutarı 3.000 ₺'den 6.500 ₺'ye fırlar.
+      </div>
+    </div>
+
+    <!-- BÖLÜM 4: ÖNERİLEN 2026 LİNAİL MENÜ MİMARİSİ -->
+    <div class="action-box">
+      <h3 class="font-serif">Gülşah Hanım'a Önerilen Menü Özeti</h3>
+      <p>Bu veriler ışığında Gülşah hanım kendi maliyetine ve usta dokunuşuna göre nihai fiyatları belirleyebilir. Biz web sitesini ve Google'ı bu 4 ana sütun üzerine kurmaya hazırız.</p>
+      <a href="https://wa.me/905318696764" class="btn-gold">WhatsApp'tan Paylaş / İncele</a>
+    </div>
+
+  </div>
+
+  <!-- Sabit Mobil Alt Çubuk -->
+  <div class="mobile-bar">
+    <div class="mobile-bar-text">
+      <strong>Linail Beauty Studio</strong>
+      Uphill Towers B Blok D:14 • Ataşehir
+    </div>
+    <a href="https://linailbeauty.com" target="_blank" style="color: var(--gold-light); font-size: 11px; text-decoration: none; border: 1px solid var(--gold-primary); padding: 4px 10px; border-radius: 12px;">Web Sitesi ↗</a>
+  </div>
+
+</body>
+</html>
