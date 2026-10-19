@@ -256,6 +256,11 @@
     .insta-gradient {
       background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     }
+    /* iOS Safari Video Overlay Suppression */
+    video::-webkit-media-controls { display: none !important; }
+    video::-webkit-media-controls-start-playback-button { display: none !important; -webkit-appearance: none; }
+    video::-webkit-media-controls-play-button { display: none !important; }
+    video { outline: none; }
   </style>
 </head>
 <body class="bg-brand-cream text-stone-800 font-sans antialiased selection:bg-brand-gold selection:text-white">
@@ -346,7 +351,7 @@
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-deepPurple text-white">
     <!-- Arka Plan Sinematik Video (Netleştirilmiş ve Aydınlatılmış) -->
     <div class="absolute inset-0 z-0">
-      <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-80 scale-100">
+      <video autoplay muted loop playsinline webkit-playsinline disablepictureinpicture preload="auto" class="w-full h-full object-cover opacity-80 scale-100 pointer-events-none">
         <source src="assets/hero-cinematic.mp4" type="video/mp4">
       </video>
       <!-- Yumuşak ve Şeffaf Renk Filtresi (Video çok daha net ve canlı) -->
@@ -544,7 +549,7 @@
         <div class="lg:col-span-5 flex justify-center">
           <div class="relative w-full max-w-[340px] aspect-[9/16] rounded-[36px] p-2 bg-gradient-to-b from-brand-gold/40 via-brand-purple/20 to-brand-gold/30 shadow-2xl shadow-brand-purple/50 border border-brand-gold/40">
             <div class="w-full h-full rounded-[28px] overflow-hidden relative bg-black">
-              <video id="salonVideo" autoplay muted loop playsinline class="w-full h-full object-cover">
+              <video id="salonVideo" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture preload="auto" class="w-full h-full object-cover">
                 <source src="assets/salon-experience.mp4" type="video/mp4">
               </video>
               
@@ -1147,6 +1152,13 @@
         lucide.createIcons();
       });
     }
+
+    // Safe Background Video Autoplay Trigger
+    document.querySelectorAll('video').forEach(vid => {
+      vid.muted = true;
+      const p = vid.play();
+      if (p !== undefined) p.catch(() => {});
+    });
   </script>
 </body>
 </html>
