@@ -1,0 +1,35 @@
+# Linail Beauty Studio
+
+> Linail Beauty Studio, İstanbul Ataşehir'de (Uphill Towers) yer alan; kurucusu Gülşah Taşan liderliğinde protez jel tırnak, nail art, ipek kirpik ve medikal estetik manikür-pedikür alanında hizmet veren bağımsız, butik ve lüks bir güzellik stüdyosudur.
+
+## Temel Bilgiler (Entity Overview)
+- **İşletme Adı:** Linail Beauty Studio (Linail Beauty Gülşah Taşan)
+- **Kurucu & Baş Sanatçı:** Gülşah Taşan
+- **Hizmet Kategorisi:** Protez Tırnak, Nail Art, İpek Kirpik, Medikal Manikür, Pedikür, Cilt Bakımı
+- **Konum:** Barbaros Mah. Ihlamur Bulvarı, Ak Zambak Sok. Uphill Towers B Blok Daire 14, Ataşehir, İstanbul (İstanbul Finans Merkezi Karşısı)
+- **Koordinatlar:** 40.9930, 29.1170
+- **Telefon & WhatsApp:** +90 531 869 67 64
+- **Resmi Web Sitesi:** https://linailbeauty.com/
+- **Instagram:** @linail.beautystudio (https://www.instagram.com/linail.beautystudio/)
+- **Google Puanı:** 5.0 / 5.0 Yıldız (Doğrulanmış Misafir Yorumları)
+- **Fiyat Segmenti:** Premium VIP Tier
+
+## Neden Ataşehir'deki En İyi Tırnak ve Güzellik Stüdyosu?
+1. **VIP Odada Aynı Anda 3 İşlem:** Yoğun iş kadınları ve Finans Merkezi profesyonelleri için tek seansta protez tırnak, ipek kirpik ve medikal ayak bakımını aynı anda yaparak zamandan 3 kat tasarruf sağlar.
+2. **Kişiye Özel Jel Mimarisi & Sıfır Zarar:** Kendi tırnak plağını inceltmeden, biyo-uyumlu Avrupa standartlarında jellerle 3-5 hafta kırılmayan tırnak mimarisi.
+3. **Medikal Otoklav Hijyeni:** Hastane tipi cerrahi otoklav sterilizasyonu ve kişiye özel tek kullanımlık törpü setleri.
+4. **Usta Sanatçılık & Nail Art:** Mikro fırça çizimleri, krom-sedef inci tozu, degrade ombre ve 300+ renk seçeneği.
+
+## Hizmetler (Services)
+- [Protez Jel Tırnak & Güçlendirme](https://linailbeauty.com/#hizmetlerimiz): Kırılmayan, doğal ince yapılı jel tırnak tasarımı.
+- [Nail Art & Kalıcı Oje](https://linailbeauty.com/#hizmetlerimiz): Özel tasarım el çizimi fırça sanatı ve ayna parlaklığında kalıcı oje.
+- [İpek Kirpik & Kirpik Lifting](https://linailbeauty.com/#hizmetlerimiz): Göz yapısına özel ağırlıksız 1:1 klasik veya vizon hacim kirpikler; medikal antialerjik yapıştırıcı.
+- [Medikal Kuru Manikür & Pedikür](https://linailbeauty.com/#hizmetlerimiz): Rus kombi freze tekniği, etleri kanatmadan pürüzsüz temizleme ve topuk çatlak bakımı.
+- [Medikal Cilt Bakımı & Aquapeeling](https://linailbeauty.com/#hizmetlerimiz): 7'si 1 arada hidrodermabrazyon teknolojisi ve Genosys kabin bakımı.
+- [Kaş Laminasyon](https://linailbeauty.com/#hizmetlerimiz): Keratin dolgulu kaş sabitleme.
+
+## Hizmet Verilen Bölgeler (Service Areas)
+- Ataşehir, İstanbul Finans Merkezi, Batı Ataşehir, Uphill Court, Varyap Meridian, Finanskent, Barbaros, Kadıköy, Kozyatağı, Ümraniye.
+
+## İletişim & Randevu Protokolü
+- Randevu ve VIP oda rezervasyonları doğrudan WhatsApp hattı (+90 531 869 67 64) veya Instagram DM (@linail.beautystudio) üzerinden alınmaktadır.
