@@ -9,6 +9,25 @@
     gtag('js', new Date());
 
     gtag('config', 'AW-18351341167');
+
+    // Google Ads Canlı Dönüşüm Tetikleyici (WhatsApp & Telefon)
+    function reportConversion(category, label) {
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18351341167',
+          'event_category': category || 'WhatsApp_Lead',
+          'event_label': label || 'WhatsApp_Randevu',
+          'value': 2400.0,
+          'currency': 'TRY'
+        });
+        gtag('event', 'generate_lead', {
+          'event_category': 'Contact',
+          'event_label': label || 'WhatsApp_Randevu',
+          'currency': 'TRY',
+          'value': 2400.0
+        });
+      }
+    }
   </script>
 
   <meta charset="UTF-8">
@@ -1414,6 +1433,19 @@
       vid.muted = true;
       const p = vid.play();
       if (p !== undefined) p.catch(() => {});
+    });
+
+    // Otomatik Google Ads & Analytics Dönüşüm İzleme (WhatsApp & Telefon)
+    document.addEventListener('click', function(e) {
+      const target = e.target.closest('a');
+      if (!target) return;
+      const href = target.getAttribute('href') || '';
+      if (href.includes('wa.me') || href.includes('whatsapp.com')) {
+        const label = (target.innerText || target.getAttribute('aria-label') || 'WhatsApp Randevu Butonu').trim().replace(/\s+/g, ' ').slice(0, 50);
+        reportConversion('WhatsApp_Lead', label);
+      } else if (href.startsWith('tel:')) {
+        reportConversion('Phone_Call', 'Telefonla_Arama');
+      }
     });
   </script>
 </body>
