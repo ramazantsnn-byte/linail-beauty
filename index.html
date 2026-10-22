@@ -325,6 +325,26 @@
     .insta-gradient {
       background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     }
+    /* Services Dropdown - Hem CSS Hover Hem JS Click Güvencesi */
+    .services-dropdown-menu {
+      display: none;
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      pointer-events: none;
+    }
+    .services-dropdown-container:hover .services-dropdown-menu,
+    .services-dropdown-container.is-open .services-dropdown-menu,
+    .services-dropdown-menu.is-active {
+      display: block !important;
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+      pointer-events: auto !important;
+    }
+    .services-dropdown-container:hover #services-dropdown-icon,
+    .services-dropdown-container.is-open #services-dropdown-icon {
+      transform: rotate(180deg);
+    }
     /* iOS Safari Video Overlay Suppression */
     video::-webkit-media-controls { display: none !important; }
     video::-webkit-media-controls-start-playback-button { display: none !important; -webkit-appearance: none; }
@@ -372,14 +392,14 @@
           </a>
 
           <!-- Lüks Açılır Hizmetlerimiz Dropdown Menüsü -->
-          <div class="relative group">
-            <button class="hover:text-brand-lightGold transition-colors flex items-center gap-1 uppercase tracking-[0.2em] py-2 focus:outline-none">
+          <div class="relative services-dropdown-container">
+            <button id="services-dropdown-btn" type="button" class="hover:text-brand-lightGold transition-colors flex items-center gap-1 uppercase tracking-[0.2em] py-2 focus:outline-none cursor-pointer">
               <span>Hizmetlerimiz</span>
-              <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-brand-gold transition-transform duration-300 group-hover:rotate-180"></i>
+              <i data-lucide="chevron-down" id="services-dropdown-icon" class="w-3.5 h-3.5 text-brand-gold transition-transform duration-300"></i>
             </button>
             
             <!-- Açılır Menü Paneli -->
-            <div class="absolute left-1/2 -translate-x-1/2 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 w-80 pointer-events-none group-hover:pointer-events-auto">
+            <div id="services-dropdown-menu" class="services-dropdown-menu absolute left-1/2 -translate-x-1/2 top-full pt-2 w-80 z-50">
               <div class="glass-card-dark rounded-2xl p-3 shadow-2xl border border-brand-gold/40 backdrop-blur-2xl space-y-1">
                 <a href="/atasehir-protez-tirnak/" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-white/10 transition-colors group/item">
                   <span class="w-8 h-8 rounded-lg bg-brand-gold/15 flex items-center justify-center text-brand-gold text-xs border border-brand-gold/30">💅</span>
@@ -1621,6 +1641,21 @@
   <!-- Scriptler -->
   <script>
     lucide.createIcons();
+
+    // Hizmetlerimiz Dropdown Menü Click ve Dış Tıklama Kontrolü
+    const dropdownContainer = document.querySelector('.services-dropdown-container');
+    const dropdownBtn = document.getElementById('services-dropdown-btn');
+    if (dropdownBtn && dropdownContainer) {
+      dropdownBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdownContainer.classList.toggle('is-open');
+      });
+      document.addEventListener('click', (e) => {
+        if (!dropdownContainer.contains(e.target)) {
+          dropdownContainer.classList.remove('is-open');
+        }
+      });
+    }
 
     // Mobil Menü Aç/Kapat ve Menü İçi Linke Basınca Otomatik Kapatma
     const mobileBtn = document.getElementById('mobile-menu-btn');
