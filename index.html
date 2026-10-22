@@ -370,8 +370,68 @@
           <a href="#vip" class="text-brand-lightGold font-medium hover:text-white transition-colors flex items-center gap-1.5">
             <span>💎 VIP Konsept</span>
           </a>
-          <a href="/atasehir-protez-tirnak/" class="hover:text-brand-lightGold transition-colors">Protez Tırnak</a>
-          <a href="#hizmetlerimiz" class="hover:text-brand-lightGold transition-colors">Hizmetlerimiz</a>
+
+          <!-- Lüks Açılır Hizmetlerimiz Dropdown Menüsü -->
+          <div class="relative group">
+            <button class="hover:text-brand-lightGold transition-colors flex items-center gap-1 uppercase tracking-[0.2em] py-2 focus:outline-none">
+              <span>Hizmetlerimiz</span>
+              <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-brand-gold transition-transform duration-300 group-hover:rotate-180"></i>
+            </button>
+            
+            <!-- Açılır Menü Paneli -->
+            <div class="absolute left-1/2 -translate-x-1/2 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 w-80 pointer-events-none group-hover:pointer-events-auto">
+              <div class="glass-card-dark rounded-2xl p-3 shadow-2xl border border-brand-gold/40 backdrop-blur-2xl space-y-1">
+                <a href="/atasehir-protez-tirnak/" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-white/10 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-brand-gold/15 flex items-center justify-center text-brand-gold text-xs border border-brand-gold/30">💅</span>
+                  <div class="text-left">
+                    <p class="text-[11px] font-medium tracking-wider text-white group-hover/item:text-brand-lightGold transition-colors">Protez Jel Tırnak</p>
+                    <p class="text-[9px] text-stone-400 normal-case tracking-normal">Rus kuru manikür & mimari</p>
+                  </div>
+                </a>
+
+                <a href="/atasehir-ipek-kirpik/" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-white/10 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-brand-gold/15 flex items-center justify-center text-brand-gold text-xs border border-brand-gold/30">✨</span>
+                  <div class="text-left">
+                    <p class="text-[11px] font-medium tracking-wider text-white group-hover/item:text-brand-lightGold transition-colors">İpek Kirpik & Lifting</p>
+                    <p class="text-[9px] text-stone-400 normal-case tracking-normal">Ağırlıksız medikal volüm</p>
+                  </div>
+                </a>
+
+                <a href="/atasehir-cilt-bakimi/" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-white/10 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-brand-gold/15 flex items-center justify-center text-brand-gold text-xs border border-brand-gold/30">🌸</span>
+                  <div class="text-left">
+                    <p class="text-[11px] font-medium tracking-wider text-white group-hover/item:text-brand-lightGold transition-colors">Medikal Cilt Bakımı</p>
+                    <p class="text-[9px] text-stone-400 normal-case tracking-normal">Genosys 7'si 1 arada & O2</p>
+                  </div>
+                </a>
+
+                <a href="/atasehir-kas-laminasyon/" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-white/10 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-brand-gold/15 flex items-center justify-center text-brand-gold text-xs border border-brand-gold/30">💎</span>
+                  <div class="text-left">
+                    <p class="text-[11px] font-medium tracking-wider text-white group-hover/item:text-brand-lightGold transition-colors">Kaş Laminasyon</p>
+                    <p class="text-[9px] text-stone-400 normal-case tracking-normal">Keratin dolgu & simetri</p>
+                  </div>
+                </a>
+
+                <a href="/atasehir-nail-art/" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-white/10 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-brand-gold/15 flex items-center justify-center text-brand-gold text-xs border border-brand-gold/30">🎨</span>
+                  <div class="text-left">
+                    <p class="text-[11px] font-medium tracking-wider text-white group-hover/item:text-brand-lightGold transition-colors">Nail Art & Krom Tozu</p>
+                    <p class="text-[9px] text-stone-400 normal-case tracking-normal">Özel el çizimi tasarımlar</p>
+                  </div>
+                </a>
+
+                <a href="/medikal-manikur-atasehir/" class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-white/10 transition-colors group/item">
+                  <span class="w-8 h-8 rounded-lg bg-brand-gold/15 flex items-center justify-center text-brand-gold text-xs border border-brand-gold/30">🩺</span>
+                  <div class="text-left">
+                    <p class="text-[11px] font-medium tracking-wider text-white group-hover/item:text-brand-lightGold transition-colors">Medikal Manikür & Spa</p>
+                    <p class="text-[9px] text-stone-400 normal-case tracking-normal">Otoklav sterilite & topuk</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
           <a href="#atmosfer" class="hover:text-brand-lightGold transition-colors">Atmosfer</a>
           <a href="#yorumlar" class="hover:text-brand-lightGold transition-colors">Yorumlar</a>
           <a href="#galeri" class="hover:text-brand-lightGold transition-colors">Lookbook</a>
@@ -406,10 +466,19 @@
 
     <!-- Mobil Menü Açılır Panel -->
     <div id="mobile-menu" class="hidden lg:hidden max-w-sm mx-auto mt-2 px-4">
-      <div class="glass-card-dark rounded-2xl p-6 text-center space-y-4 border border-brand-gold/30">
+      <div class="glass-card-dark rounded-2xl p-6 text-center space-y-3.5 border border-brand-gold/30">
         <a href="#vip" class="block text-xs tracking-[0.25em] uppercase text-brand-lightGold font-medium py-1">💎 VIP Oda & 3 İşlem</a>
-        <a href="/atasehir-protez-tirnak/" class="block text-xs tracking-[0.25em] uppercase text-brand-lightGold py-1 font-medium">💅 Ataşehir Protez Tırnak</a>
-        <a href="#hizmetlerimiz" class="block text-xs tracking-[0.25em] uppercase text-stone-200 hover:text-brand-lightGold py-1">Hizmetlerimiz</a>
+        
+        <div class="py-2 border-y border-brand-gold/20 space-y-2 text-left">
+          <span class="block text-[10px] tracking-[0.3em] uppercase text-brand-gold/70 text-center font-medium">Hizmet Sayfalarımız</span>
+          <a href="/atasehir-protez-tirnak/" class="block text-xs tracking-wider text-white hover:text-brand-lightGold py-1">💅 Protez Jel Tırnak</a>
+          <a href="/atasehir-ipek-kirpik/" class="block text-xs tracking-wider text-white hover:text-brand-lightGold py-1">✨ İpek Kirpik & Lifting</a>
+          <a href="/atasehir-cilt-bakimi/" class="block text-xs tracking-wider text-white hover:text-brand-lightGold py-1">🌸 Medikal Cilt Bakımı</a>
+          <a href="/atasehir-kas-laminasyon/" class="block text-xs tracking-wider text-white hover:text-brand-lightGold py-1">💎 Kaş Laminasyon</a>
+          <a href="/atasehir-nail-art/" class="block text-xs tracking-wider text-white hover:text-brand-lightGold py-1">🎨 Nail Art & Krom</a>
+          <a href="/medikal-manikur-atasehir/" class="block text-xs tracking-wider text-white hover:text-brand-lightGold py-1">🩺 Medikal Manikür & Spa</a>
+        </div>
+
         <a href="#atmosfer" class="block text-xs tracking-[0.25em] uppercase text-stone-200 hover:text-brand-lightGold py-1">Atmosfer</a>
         <a href="#yorumlar" class="block text-xs tracking-[0.25em] uppercase text-brand-gold py-1 font-medium">★ Google Yorumları</a>
         <a href="#galeri" class="block text-xs tracking-[0.25em] uppercase text-stone-200 hover:text-brand-lightGold py-1">Lookbook & Galeri</a>
