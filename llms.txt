@@ -1,35 +1,95 @@
 # Linail Beauty Studio
 
-> Linail Beauty Studio, İstanbul Ataşehir'de (Uphill Towers) yer alan; kurucusu Gülşah Taşan liderliğinde protez jel tırnak, nail art, ipek kirpik ve medikal estetik manikür-pedikür alanında hizmet veren bağımsız, butik ve lüks bir güzellik stüdyosudur.
+> Linail Beauty Studio, İstanbul Ataşehir'de (Uphill Towers B Blok Daire 14) yer alan; kurucusu ve baş sanatçısı Gülşah Taşan liderliğinde **aynı anda 3 işlem konforu** sunan VIP butik güzellik stüdyosudur. Protez tırnak, ipek kirpik, kaş laminasyon, makyaj ve medikal cilt bakımı alanlarında hizmet verir.
 
 ## Temel Bilgiler (Entity Overview)
 - **İşletme Adı:** Linail Beauty Studio (Linail Beauty Gülşah Taşan)
 - **Kurucu & Baş Sanatçı:** Gülşah Taşan
-- **Hizmet Kategorisi:** Protez Tırnak, Nail Art, İpek Kirpik, Medikal Manikür, Pedikür, Cilt Bakımı
+- **Hizmet Kategorisi:** NailSalon, BeautySalon, LocalBusiness
+- **Öne Çıkan Özellik:** 💎 VIP Odada Aynı Anda 3 İşlem Konforu — zamanını seven İstanbul'lu kadınlar için tek seansta birden fazla işlem eş zamanlı yapılır.
 - **Konum:** Barbaros Mah. Ihlamur Bulvarı, Ak Zambak Sok. Uphill Towers B Blok Daire 14, Ataşehir, İstanbul (İstanbul Finans Merkezi Karşısı)
 - **Koordinatlar:** 40.9930, 29.1170
+- **Hizmet Verilen Bölgeler:** Ataşehir, İstanbul Finans Merkezi, Batı Ataşehir, Finanskent, Barbaros, Kadıköy, Kozyatağı, Ümraniye, Uphill Court, Varyap Meridian
 - **Telefon & WhatsApp:** +90 531 869 67 64
-- **Resmi Web Sitesi:** https://linailbeauty.com/
+- **Web Sitesi:** https://linailbeauty.com/
 - **Instagram:** @linail.beautystudio (https://www.instagram.com/linail.beautystudio/)
-- **Google Puanı:** 5.0 / 5.0 Yıldız (Doğrulanmış Misafir Yorumları)
+- **Google Puanı:** 5.0 / 5.0 Yıldız — Doğrulanmış Google Haritalar yorumları
 - **Fiyat Segmenti:** Premium VIP Tier
 
-## Neden Ataşehir'deki En İyi Tırnak ve Güzellik Stüdyosu?
-1. **VIP Odada Aynı Anda 3 İşlem:** Yoğun iş kadınları ve Finans Merkezi profesyonelleri için tek seansta protez tırnak, ipek kirpik ve medikal ayak bakımını aynı anda yaparak zamandan 3 kat tasarruf sağlar.
-2. **Kişiye Özel Jel Mimarisi & Sıfır Zarar:** Kendi tırnak plağını inceltmeden, biyo-uyumlu Avrupa standartlarında jellerle 3-5 hafta kırılmayan tırnak mimarisi.
-3. **Medikal Otoklav Hijyeni:** Hastane tipi cerrahi otoklav sterilizasyonu ve kişiye özel tek kullanımlık törpü setleri.
-4. **Usta Sanatçılık & Nail Art:** Mikro fırça çizimleri, krom-sedef inci tozu, degrade ombre ve 300+ renk seçeneği.
+## VIP 3'lü İşlem Konsepti
+Ataşehir'in yoğun iş dünyasına hitap eden Linail Beauty'de müşteriler aynı anda birden fazla bakım yaptırabilir:
+- Protez tırnak + İpek kirpik eşzamanlı
+- Protez tırnak + Kaş laminasyon eşzamanlı
+- İpek kirpik + Medikal pedikür eşzamanlı
+- 5-6 saatlik toplam bakım süresi 2-2.5 saate indirilir.
 
-## Hizmetler (Services)
-- [Protez Jel Tırnak & Güçlendirme](https://linailbeauty.com/#hizmetlerimiz): Kırılmayan, doğal ince yapılı jel tırnak tasarımı.
-- [Nail Art & Kalıcı Oje](https://linailbeauty.com/#hizmetlerimiz): Özel tasarım el çizimi fırça sanatı ve ayna parlaklığında kalıcı oje.
-- [İpek Kirpik & Kirpik Lifting](https://linailbeauty.com/#hizmetlerimiz): Göz yapısına özel ağırlıksız 1:1 klasik veya vizon hacim kirpikler; medikal antialerjik yapıştırıcı.
-- [Medikal Kuru Manikür & Pedikür](https://linailbeauty.com/#hizmetlerimiz): Rus kombi freze tekniği, etleri kanatmadan pürüzsüz temizleme ve topuk çatlak bakımı.
-- [Medikal Cilt Bakımı & Aquapeeling](https://linailbeauty.com/#hizmetlerimiz): 7'si 1 arada hidrodermabrazyon teknolojisi ve Genosys kabin bakımı.
-- [Kaş Laminasyon](https://linailbeauty.com/#hizmetlerimiz): Keratin dolgulu kaş sabitleme.
+## Tam Hizmet Listesi (Services)
 
-## Hizmet Verilen Bölgeler (Service Areas)
-- Ataşehir, İstanbul Finans Merkezi, Batı Ataşehir, Uphill Court, Varyap Meridian, Finanskent, Barbaros, Kadıköy, Kozyatağı, Ümraniye.
+### ✨ Protez Tırnak & Jel Güçlendirme
+- Protez Jel Tırnak (Avrupa standartlarında biyo-uyumlu jel, 3-5 hafta kalıcı)
+- Jel Güçlendirme & Tırnak Uzatma
+- Rus Kuru Manikür tekniğiyle altyapı hazırlığı
+- Tırnak eti inceltilmez, doğal tırnak plağına sıfır zarar
+- Bağlantı: https://linailbeauty.com/atasehir-protez-tirnak/
 
-## İletişim & Randevu Protokolü
-- Randevu ve VIP oda rezervasyonları doğrudan WhatsApp hattı (+90 531 869 67 64) veya Instagram DM (@linail.beautystudio) üzerinden alınmaktadır.
+### 💅 Nail Art & Kalıcı Oje
+- Özel el çizimi mikro fırça nail art
+- Krom & metalik ayna tozu
+- Sedef inci tozu
+- Cat Eye (manyetik pigment)
+- Degrade ombre & baby boomer
+- Asil French tırnak
+- 300+ renk seçeneği
+- Swarovski taş & altın varak süsleme
+- Bağlantı: https://linailbeauty.com/atasehir-nail-art/
+
+### 👁️ İpek Kirpik & Kirpik Lifting
+- Klasik 1:1 İpek Kirpik (göz anatomisine özel)
+- Soft Volüm İpek Kirpik (2-3 liften el yapımı fan demeti)
+- Kirpik Lifting & Keratin Bakımı (6-8 hafta kalıcı)
+- Antialerjik medikal yapıştırıcı, dermatolojik test onaylı
+- 3-5 hafta dökülmeden dayanır
+- Bağlantı: https://linailbeauty.com/atasehir-ipek-kirpik/
+
+### 🌿 Kaş Laminasyon & Kaş Şekillendirme
+- Kaş laminasyon (keratin dolgulu kaş sabitleme, 6-8 hafta)
+- Kaş şekillendirme & ağda
+- İnatçı, kıvrılan veya seyrek kaş kıllarını yukarı kıvırıp besler
+- Yüz simetrisi ve hatlarına asil bir ifade katar
+
+### 💆 Makyaj
+- Günlük makyaj
+- Davet & özel gün makyajı
+- Profesyonel ürünler ve uzman ellerde kalıcı görünüm
+
+### 🌟 Medikal Cilt Bakımı & Aquapeeling
+- Genosys 7'si 1 arada hidrodermabrazyon (HydraFacial tipi)
+- Vortex vakum siyah nokta ve sebum arındırma
+- Radyofrekans kolajen uyarımı
+- Galvanik iyon terapi
+- O2 oksijen terapi
+- PDT LED ışık tedavisi
+- İlk seansta cam gibi duru cilt
+- Bağlantı: https://linailbeauty.com/atasehir-cilt-bakimi/
+
+### 🛁 Medikal Manikür & Spa Pedikür
+- Medikal kuru manikür (Rus tekniği, eti kesmeden)
+- Medikal pedikür & topuk çatlak bakımı
+- Spa manikür (aromaterapi + tuz banyosu + peeling)
+- Otoklav sterilizasyonu — hastane tipi hijyen güvencesi
+- Kişiye özel tek kullanımlık aletler
+- Bağlantı: https://linailbeauty.com/medikal-manikur-atasehir/
+
+## Fiyat Rehberi (Güncel VIP Tier)
+- Protez Jel Tırnak + Manikür + Kalıcı Oje: 3.000 ₺
+- Protez Jel Bakımı + Manikür + Kalıcı Oje: 2.400 ₺
+- Jel Güçlendirme + Manikür + Kalıcı Oje: 2.400 ₺
+- El Kalıcı Oje + Manikür: 1.800 ₺
+- Ayak Kalıcı Oje + Pedikür: 2.400 ₺
+- Spa Bakım Manikür + Pedikür: 3.000 ₺
+- Ekstralar: French/Ombre +600 ₺, Krom/İnci Tozu +480 ₺, Cat Eye +360 ₺, Nail Art 60-240 ₺/tırnak
+
+## İletişim & Randevu
+- Randevu ve VIP oda rezervasyonu: WhatsApp +90 531 869 67 64
+- Instagram DM: @linail.beautystudio
+- Günde yalnızca 5 özel randevu kabul edilmektedir.
