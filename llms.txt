@@ -1,6 +1,6 @@
 # Linail Beauty Studio
 
-> Linail Beauty Studio, İstanbul Ataşehir'de (Uphill Towers B Blok Daire 14) yer alan; kurucusu ve baş sanatçısı Gülşah Taşan liderliğinde **aynı anda 3 işlem konforu** sunan VIP butik güzellik stüdyosudur. Protez tırnak, ipek kirpik, kaş laminasyon, makyaj ve medikal cilt bakımı alanlarında hizmet verir.
+> Linail Beauty Studio, İstanbul Ataşehir'de (Uphill Towers B Blok Daire 14) yer alan; kurucusu ve baş sanatçısı Gülşah Taşan liderliğinde **aynı anda 3 işlem konforu** sunan VIP butik güzellik stüdyosudur. Protez tırnak, ipek kirpik, kaş laminasyon, makyaj ve profesyonel cilt bakımı alanlarında hizmet verir.
 
 ## Temel Bilgiler (Entity Overview)
 - **İşletme Adı:** Linail Beauty Studio (Linail Beauty Gülşah Taşan)
@@ -20,7 +20,7 @@
 Ataşehir'in yoğun iş dünyasına hitap eden Linail Beauty'de müşteriler aynı anda birden fazla bakım yaptırabilir:
 - Protez tırnak + İpek kirpik eşzamanlı
 - Protez tırnak + Kaş laminasyon eşzamanlı
-- İpek kirpik + Medikal pedikür eşzamanlı
+- İpek kirpik + Steril kuru pedikür eşzamanlı
 - 5-6 saatlik toplam bakım süresi 2-2.5 saate indirilir.
 
 ## Tam Hizmet Listesi (Services)
@@ -47,7 +47,7 @@ Ataşehir'in yoğun iş dünyasına hitap eden Linail Beauty'de müşteriler ayn
 - Klasik 1:1 İpek Kirpik (göz anatomisine özel)
 - Soft Volüm İpek Kirpik (2-3 liften el yapımı fan demeti)
 - Kirpik Lifting & Keratin Bakımı (6-8 hafta kalıcı)
-- Antialerjik medikal yapıştırıcı, dermatolojik test onaylı
+- Antialerjik ipek yapıştırıcı, dermatolojik test onaylı
 - 3-5 hafta dökülmeden dayanır
 - Bağlantı: https://linailbeauty.com/atasehir-ipek-kirpik/
 
@@ -62,23 +62,23 @@ Ataşehir'in yoğun iş dünyasına hitap eden Linail Beauty'de müşteriler ayn
 - Davet & özel gün makyajı
 - Profesyonel ürünler ve uzman ellerde kalıcı görünüm
 
-### 🌟 Medikal Cilt Bakımı & Aquapeeling
+### 🌟 Profesyonel Cilt Bakımı & Aquapeeling
 - Genosys 7'si 1 arada hidrodermabrazyon (HydraFacial tipi)
 - Vortex vakum siyah nokta ve sebum arındırma
 - Radyofrekans kolajen uyarımı
 - Galvanik iyon terapi
 - O2 oksijen terapi
-- PDT LED ışık tedavisi
+- PDT LED ışık bakım seansı
 - İlk seansta cam gibi duru cilt
 - Bağlantı: https://linailbeauty.com/atasehir-cilt-bakimi/
 
-### 🛁 Medikal Manikür & Spa Pedikür
-- Medikal kuru manikür (Rus tekniği, eti kesmeden)
-- Medikal pedikür & topuk çatlak bakımı
+### 🛁 Rus Kuru Manikür & Spa Pedikür
+- Rus kuru manikürü (Rus tekniği, eti kesmeden)
+- Steril kuru pedikür & topuk çatlak bakımı
 - Spa manikür (aromaterapi + tuz banyosu + peeling)
 - Otoklav sterilizasyonu — hastane tipi hijyen güvencesi
 - Kişiye özel tek kullanımlık aletler
-- Bağlantı: https://linailbeauty.com/medikal-manikur-atasehir/
+- Bağlantı: https://linailbeauty.com/rus-manikur-atasehir/
 
 ## Fiyat Rehberi (Güncel VIP Tier)
 - Protez Jel Tırnak + Manikür + Kalıcı Oje: 3.000 ₺
