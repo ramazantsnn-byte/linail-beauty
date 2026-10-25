@@ -1,33 +1,64 @@
 # Robots.txt for Linail Beauty Studio (https://linailbeauty.com)
+# Fully optimized for Google, Bing, Yandex, OpenAI, Perplexity, Claude & Apple Intelligence
+
 User-agent: *
 Allow: /
 
-# AI Crawlers & LLM Search Agents
-User-agent: GPTBot
+# Google Search & AI
+User-agent: Googlebot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Googlebot-Image
 Allow: /
 
+# Bing & Microsoft Copilot
+User-agent: Bingbot
+Allow: /
+User-agent: BingPreview
+Allow: /
+User-agent: msnbot
+Allow: /
+
+# Yandex Search & Alice AI
+User-agent: Yandex
+Allow: /
+User-agent: YandexBot
+Allow: /
+User-agent: YandexImages
+Allow: /
+User-agent: YandexDirect
+Allow: /
+
+# OpenAI / ChatGPT / SearchGPT
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
+# Perplexity AI
 User-agent: PerplexityBot
 Allow: /
 
+# Anthropic Claude
 User-agent: ClaudeBot
 Allow: /
-
-User-agent: Google-Extended
+User-agent: Claude-Web
 Allow: /
 
+# Apple Intelligence & Siri Suggestions
 User-agent: Applebot
 Allow: /
-
 User-agent: Applebot-Extended
 Allow: /
 
+# Meta AI
 User-agent: meta-externalagent
 Allow: /
 
+# Machine-Readable AI Knowledge Standards
 Sitemap: https://linailbeauty.com/sitemap.xml
-# LLM Knowledge Standard: https://llmstxt.org/
-# Clean machine-readable context for AI models:
+# Clean machine-readable context for LLMs:
 # https://linailbeauty.com/llms.txt
