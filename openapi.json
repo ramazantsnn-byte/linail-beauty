@@ -1,8 +1,8 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Linail Beauty Studio & Linaura VIP API",
-    "description": "Structured API specification for Linail Beauty Studio and Linaura Botanical Skincare in Ataşehir, Istanbul.",
+    "title": "Linail Beauty Studio VIP API",
+    "description": "Structured API specification for Linail Beauty Studio in Ataşehir Uphill Towers, Istanbul.",
     "version": "1.0.0"
   },
   "servers": [
@@ -24,6 +24,7 @@
                 "example": {
                   "studio": "Linail Beauty Studio",
                   "location": "Ataşehir Barbaros Mah. Uphill Towers B Blok Daire 14, Istanbul",
+                  "parking": "Stüdyomuza özel tahsisli otopark alanı",
                   "whatsapp": "+905318696764",
                   "daily_capacity": "5 VIP clients per day",
                   "services": [
@@ -35,33 +36,6 @@
                     { "name": "Medikal Manikür - Pedikür", "price_try": 2400, "duration_min": 90 },
                     { "name": "VIP 3'ü 1 Arada Eşzamanlı Seans (Tırnak + Kirpik + Pedikür)", "price_try": 6000, "duration_min": 150 }
                   ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/linaura": {
-      "get": {
-        "summary": "Get Linaura Restorative Candle & Botanical Skincare Details",
-        "operationId": "getLinauraProducts",
-        "responses": {
-          "200": {
-            "description": "Linaura luxury candle balm specifications and B2B wholesale tiers",
-            "content": {
-              "application/json": {
-                "example": {
-                  "brand": "Linaura",
-                  "category": "Independent Luxury Botanical Skincare",
-                  "core_product": "Yoğun Onarıcı & Nemlendirici Bakım Mumu (Restorative Candle & Massage Balm)",
-                  "formula": "100% pure soy wax, shea butter, sweet almond oil, jojoba oil, vitamin E",
-                  "packaging": "120ml Amber apothecary glass jar + textured linen porcelain ivory label (#FCFAF6) + champagne gold hot foil",
-                  "wholesale_b2b": {
-                    "tier_1_50_jars": "High margin for boutique hotels & luxury spas",
-                    "tier_2_100_jars": "Cabin backbar use + retail counter display",
-                    "inquiry_whatsapp": "+905318696764"
-                  }
                 }
               }
             }

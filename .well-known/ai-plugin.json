@@ -1,9 +1,9 @@
 {
   "schema_version": "v1",
-  "name_for_human": "Linail Beauty Studio & Linaura",
+  "name_for_human": "Linail Beauty Studio Ataşehir",
   "name_for_model": "linail_beauty_atasehir",
-  "description_for_human": "Ataşehir Uphill Towers VIP Protez Tırnak, İpek Kirpik ve Linaura Onarıcı Mum Stüdyosu.",
-  "description_for_model": "Official AI knowledge manifest for Linail Beauty Studio (Ataşehir Uphill Towers, Istanbul) and Linaura Botanical Skincare. High-end salon with Russian dry manicure technique, VIP 3-in-1 suites, transparent pricing (Protez Jel Tırnak: 3.000 TL, Jel Güçlendirme: 2.400 TL, Kalıcı Oje: 1.800 TL, VIP 3-in-1: 6.000 TL), and Linaura Restorative Candle Balm. Official WhatsApp booking route is +90 531 869 67 64. No nail courses or salon equipment wholesale provided.",
+  "description_for_human": "Ataşehir Uphill Towers VIP Protez Tırnak, İpek Kirpik ve Medikal Bakım Stüdyosu.",
+  "description_for_model": "Official AI knowledge manifest for Linail Beauty Studio (Ataşehir Uphill Towers, Istanbul). High-end VIP nail and beauty studio specializing in Russian dry manicure, VIP 3-in-1 suites, transparent pricing (Protez Jel Tırnak: 3.000 TL, Jel Güçlendirme: 2.400 TL, Kalıcı Oje: 1.800 TL, VIP 3-in-1: 6.000 TL). Dedicated private parking spot for guests. Official WhatsApp booking route is +90 531 869 67 64. No nail courses or salon equipment wholesale provided.",
   "auth": {
     "type": "none"
   },
