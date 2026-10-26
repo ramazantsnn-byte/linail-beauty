@@ -1873,13 +1873,26 @@
     </div>
   </footer>
 
-  <!-- Sabit Sağ Alt WhatsApp Butonu -->
-  <a href="https://wa.me/message/XYDDKBIHJO5UP1" 
-     target="_blank"
-     class="fixed bottom-6 right-6 z-40 p-4 rounded-full bg-[#25D366] text-white shadow-2xl hover:scale-110 transition-transform duration-300 flex items-center justify-center border-2 border-white/30"
-     title="WhatsApp Randevu Hattı (0531 869 67 64)">
-    <i data-lucide="message-circle" class="w-6 h-6"></i>
-  </a>
+  <!-- Sabit Sağ Alt VIP Harita & WhatsApp Butonu -->
+  <div class="fixed bottom-6 right-6 z-40 flex items-center gap-3">
+    <!-- Harita Özel 2.500 TL Yüzen VIP Rozeti -->
+    <a href="https://wa.me/905318696764?text=Merhaba%20Linail%20Beauty%20%E2%9C%A8%20Google%20Haritalar%20misafirlerine%20%C3%B6zel%202.500%20%E2%82%BA%20Protez%20T%C4%B1rnak%20seans%C4%B1%20i%C3%A7in%20randevu%20olu%C5%9Fturmak%20istiyorum.%20M%C3%BCsait%20saatleri%20%C3%B6%C4%9Frenebilir%20miyim%3F"
+       target="_blank"
+       onclick="reportConversion('WhatsApp_Float_Badge', 'ProtezTirnak_2500')"
+       class="hidden sm:flex items-center gap-2 py-2 px-4 rounded-full bg-brand-deepPurple/90 border border-brand-gold/60 text-white shadow-2xl backdrop-blur-md hover:scale-105 transition-all duration-300 group">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+      <span class="text-[11px] tracking-wider uppercase font-medium text-brand-lightGold group-hover:text-white transition-colors">Harita Özel: 2.500 ₺</span>
+    </a>
+
+    <!-- WhatsApp Yuvarlak Buton -->
+    <a href="https://wa.me/905318696764?text=Merhaba%20Linail%20Beauty%20%E2%9C%A8%20Google%20Haritalar%20misafirlerine%20%C3%B6zel%202.500%20%E2%82%BA%20Protez%20T%C4%B1rnak%20seans%C4%B1%20i%C3%A7in%20randevu%20olu%C5%9Fturmak%20istiyorum.%20M%C3%BCsait%20saatleri%20%C3%B6%C4%9Frenebilir%20miyim%3F" 
+       target="_blank"
+       onclick="reportConversion('WhatsApp_Float_Icon', 'ProtezTirnak_2500')"
+       class="p-4 rounded-full bg-[#25D366] text-white shadow-2xl hover:scale-110 transition-transform duration-300 flex items-center justify-center border-2 border-white/30"
+       title="WhatsApp Randevu Hattı (0531 869 67 64)">
+      <i data-lucide="message-circle" class="w-6 h-6"></i>
+    </a>
+  </div>
 
   <!-- Scriptler -->
   <script>
