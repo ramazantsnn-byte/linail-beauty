@@ -551,27 +551,93 @@
       </nav>
     </div>
 
-    <!-- Mobil Menü Açılır Panel -->
-    <div id="mobile-menu" class="hidden lg:hidden max-w-sm mx-auto mt-2 px-4">
-      <div class="glass-card-dark rounded-2xl p-6 text-center space-y-3.5 border border-brand-gold/30">
-        <a href="#vip" class="block text-xs tracking-[0.25em] uppercase text-brand-lightGold font-medium py-1">💎 VIP Oda & 3 İşlem</a>
+    <!-- Mobil Menü Açılır Panel (Sadece Mobilde) -->
+    <div id="mobile-menu" class="hidden lg:hidden max-w-sm mx-auto mt-2 px-3">
+      <div class="glass-card-dark rounded-3xl p-5 text-center space-y-4 border border-brand-gold/40 shadow-2xl backdrop-blur-2xl">
         
-        <div class="py-2 border-y border-brand-gold/20 space-y-2 text-left">
-          <span class="block text-[10px] tracking-[0.3em] uppercase text-brand-gold/70 text-center font-medium">Hizmet Sayfalarımız</span>
-          <a href="/atasehir-protez-tirnak/" class="block text-xs tracking-wider text-white hover:text-brand-lightGold py-1">💅 Protez Jel Tırnak</a>
-          <a href="/atasehir-ipek-kirpik/" class="block text-xs tracking-wider text-white hover:text-brand-lightGold py-1">✨ İpek Kirpik & Lifting</a>
-          <a href="/atasehir-cilt-bakimi/" class="block text-xs tracking-wider text-white hover:text-brand-lightGold py-1">🌸 Profesyonel Cilt Bakımı</a>
-          <a href="/atasehir-kas-laminasyon/" class="block text-xs tracking-wider text-white hover:text-brand-lightGold py-1">💎 Kaş Laminasyon</a>
-          <a href="/atasehir-nail-art/" class="block text-xs tracking-wider text-white hover:text-brand-lightGold py-1">🎨 Nail Art & Krom</a>
-          <a href="/rus-manikur-atasehir/" class="block text-xs tracking-wider text-white hover:text-brand-lightGold py-1">💎 Rus Kuru Manikür & Spa</a>
+        <!-- Üst Başlık & Marka İmzası -->
+        <div class="flex items-center justify-between pb-3 border-b border-brand-gold/20">
+          <div class="flex items-center gap-2">
+            <img src="/assets/linail_lotus_ladybug_pure.png" alt="Linail Lotus" class="w-6 h-6 object-contain">
+            <span class="font-serif tracking-[0.18em] text-white text-xs uppercase font-medium">LİNAİL <span class="gold-gradient-text font-light">BEAUTY</span></span>
+          </div>
+          <span class="text-[9px] tracking-[0.25em] text-brand-lightGold/80 uppercase font-light">ATAŞEHİR</span>
         </div>
 
-        <a href="#atmosfer" class="block text-xs tracking-[0.25em] uppercase text-stone-200 hover:text-brand-lightGold py-1">Atmosfer</a>
-        <a href="#yorumlar" class="block text-xs tracking-[0.25em] uppercase text-brand-gold py-1 font-medium">★ Google Yorumları</a>
-        <a href="#galeri" class="block text-xs tracking-[0.25em] uppercase text-stone-200 hover:text-brand-lightGold py-1">Lookbook & Galeri</a>
-        <a href="#sss" class="block text-xs tracking-[0.25em] uppercase text-stone-200 hover:text-brand-lightGold py-1">Sıkça Sorulan Sorular (SSS)</a>
-        <a href="#iletisim" class="block text-xs tracking-[0.25em] uppercase text-stone-200 hover:text-brand-lightGold py-1">İletişim & Konum</a>
-        <a href="https://www.instagram.com/linail.beautystudio/" target="_blank" class="block text-xs tracking-[0.25em] uppercase text-pink-300 py-1 font-medium">@linail.beautystudio Takip Et</a>
+        <!-- Hizmetlerimiz: 2'li Lüks Izgara (Grid) -->
+        <div>
+          <span class="block text-[9px] tracking-[0.28em] uppercase text-brand-gold/80 font-medium mb-2.5 text-left">Hizmetlerimiz</span>
+          <div class="grid grid-cols-2 gap-2 text-left">
+            <a href="/atasehir-protez-tirnak/" class="flex items-center gap-2 p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-brand-gold/20 hover:border-brand-gold/50 transition-all text-[11px] text-stone-200 hover:text-brand-lightGold">
+              <span class="text-xs">💅</span>
+              <span class="truncate font-medium">Protez Tırnak</span>
+            </a>
+            <a href="/atasehir-ipek-kirpik/" class="flex items-center gap-2 p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-brand-gold/20 hover:border-brand-gold/50 transition-all text-[11px] text-stone-200 hover:text-brand-lightGold">
+              <span class="text-xs">✨</span>
+              <span class="truncate font-medium">İpek Kirpik</span>
+            </a>
+            <a href="/atasehir-cilt-bakimi/" class="flex items-center gap-2 p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-brand-gold/20 hover:border-brand-gold/50 transition-all text-[11px] text-stone-200 hover:text-brand-lightGold">
+              <span class="text-xs">🌸</span>
+              <span class="truncate font-medium">Cilt Bakımı</span>
+            </a>
+            <a href="/atasehir-kas-laminasyon/" class="flex items-center gap-2 p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-brand-gold/20 hover:border-brand-gold/50 transition-all text-[11px] text-stone-200 hover:text-brand-lightGold">
+              <span class="text-xs">💎</span>
+              <span class="truncate font-medium">Kaş Tasarım</span>
+            </a>
+            <a href="/atasehir-nail-art/" class="flex items-center gap-2 p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-brand-gold/20 hover:border-brand-gold/50 transition-all text-[11px] text-stone-200 hover:text-brand-lightGold">
+              <span class="text-xs">🎨</span>
+              <span class="truncate font-medium">Nail Art & Krom</span>
+            </a>
+            <a href="/rus-manikur-atasehir/" class="flex items-center gap-2 p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-brand-gold/20 hover:border-brand-gold/50 transition-all text-[11px] text-stone-200 hover:text-brand-lightGold">
+              <span class="text-xs">🩺</span>
+              <span class="truncate font-medium">Rus Manikürü</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Stüdyo & Keşfet Linkleri (Sayfa İçi Hızlı Atlama) -->
+        <div class="py-2.5 border-t border-brand-gold/20 space-y-1.5 text-left">
+          <span class="block text-[9px] tracking-[0.28em] uppercase text-brand-gold/80 font-medium mb-1.5">Stüdyo & Keşfet</span>
+          <div class="flex flex-col space-y-1">
+            <a href="#atmosfer" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs tracking-wider text-stone-200 hover:text-brand-lightGold hover:bg-white/5 transition-colors">
+              <span>🏛️ Stüdyo Atmosferi</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-brand-gold/50"></i>
+            </a>
+            <a href="#yorumlar" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs tracking-wider text-amber-300 hover:text-amber-200 hover:bg-white/5 transition-colors font-medium">
+              <span class="flex items-center gap-1.5">⭐ Google Değerlendirmeleri <span class="text-[10px] text-stone-300 font-light">(5.0)</span></span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-brand-gold/50"></i>
+            </a>
+            <a href="#galeri" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs tracking-wider text-stone-200 hover:text-brand-lightGold hover:bg-white/5 transition-colors">
+              <span>📸 Lookbook & Vitrin</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-brand-gold/50"></i>
+            </a>
+            <a href="#sss" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs tracking-wider text-stone-200 hover:text-brand-lightGold hover:bg-white/5 transition-colors">
+              <span>❓ Sıkça Sorulan Sorular (SSS)</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-brand-gold/50"></i>
+            </a>
+            <a href="#iletisim" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs tracking-wider text-stone-200 hover:text-brand-lightGold hover:bg-white/5 transition-colors">
+              <span>📍 Uphill Towers & İletişim</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-brand-gold/50"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Alt VIP WhatsApp & Instagram Butonu -->
+        <div class="pt-2 border-t border-brand-gold/20 flex items-center gap-2">
+          <a href="https://wa.me/905318696764?text=Merhaba,%20Google'da%20inceledim.%20Ataşehir%20Uphill%20Towers%20stüdyonuzda%20VIP%20randevu%20ve%20müsaitlik%20durumu%20hakkında%20bilgi%20alabilir%20miyim?" 
+             target="_blank"
+             class="flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-brand-gold to-brand-lightGold text-brand-deepPurple text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition-transform">
+            <i data-lucide="message-circle" class="w-3.5 h-3.5 text-brand-deepPurple"></i>
+            <span>WhatsApp Randevu</span>
+          </a>
+          <a href="https://www.instagram.com/linail.beautystudio/" 
+             target="_blank"
+             title="Instagram: @linail.beautystudio"
+             class="w-10 h-10 rounded-xl border border-brand-gold/40 flex items-center justify-center text-pink-300 hover:text-white hover:border-brand-gold transition-colors shrink-0">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+          </a>
+        </div>
+
       </div>
     </div>
   </header>
@@ -2165,7 +2231,10 @@
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileBtn && mobileMenu) {
       mobileBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        if (!isHidden && window.lucide) {
+          lucide.createIcons();
+        }
       });
       mobileMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
