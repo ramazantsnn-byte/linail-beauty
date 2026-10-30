@@ -164,9 +164,12 @@
               gold: '#C5A059',
               lightGold: '#E6CA85',
               darkGold: '#9F7C38',
-              cream: '#FAF7F2',
+              cream: '#F7F2F8',
               softPink: '#F4EEF7',
-              sand: '#EFE9E2'
+              sand: '#EFE9E2',
+              lilac: '#F7F2F8',
+              softLilac: '#F0E6F3',
+              lavenderMist: '#ECE1EF'
             }
           },
           fontFamily: {
@@ -200,10 +203,10 @@
     }
   </style>
 </head>
-<body class="bg-[#FAF7F2] text-stone-800 font-sans antialiased">
+<body class="bg-[#F7F2F8] text-stone-800 font-sans antialiased">
 
   <!-- Üst Bilgi Barı -->
-  <div class="bg-[#F7F4EF] text-brand-deepPurple text-[11px] tracking-[0.2em] py-2.5 px-4 text-center uppercase border-b border-brand-gold/30 flex flex-wrap justify-center items-center gap-2.5 md:gap-4">
+  <div class="bg-[#EFE5F1] text-brand-deepPurple text-[11px] tracking-[0.2em] py-2.5 px-4 text-center uppercase border-b border-brand-gold/30 flex flex-wrap justify-center items-center gap-2.5 md:gap-4">
     <span class="flex items-center gap-1.5 text-amber-500 font-semibold">
       <span>⭐⭐⭐⭐⭐</span>
       <span class="text-brand-deepPurple font-semibold">5.0</span>
@@ -219,7 +222,7 @@
   </div>
 
   <!-- Header -->
-  <header class="sticky top-0 z-50 bg-[#FAF7F2]/95 backdrop-blur-md border-b border-brand-gold/25 py-3 px-4 sm:px-6 shadow-sm">
+  <header class="sticky top-0 z-50 bg-[#F7F2F8]/95 backdrop-blur-md border-b border-brand-gold/25 py-3 px-4 sm:px-6 shadow-sm">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <a href="../" class="flex items-center gap-2.5 sm:gap-3 group">
         <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white p-1 flex items-center justify-center border border-brand-gold/40 shadow-sm group-hover:scale-105 transition-transform duration-300">
@@ -252,9 +255,9 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="relative bg-gradient-to-b from-[#FAF7F2] via-[#F4EFE6] to-[#FAF7F2] text-stone-900 py-20 lg:py-24 px-6 overflow-hidden border-b border-brand-gold/20">
+  <section class="relative bg-gradient-to-b from-[#F7F2F8] via-[#F0E6F3] to-[#F7F2F8] text-stone-900 py-20 lg:py-24 px-6 overflow-hidden border-b border-brand-gold/20">
     <div class="absolute -right-32 -bottom-32 w-96 h-96 rounded-full bg-brand-gold/15 blur-3xl pointer-events-none"></div>
-    <div class="absolute -left-32 -top-32 w-96 h-96 rounded-full bg-brand-softPink/40 blur-3xl pointer-events-none"></div>
+    <div class="absolute -left-32 -top-32 w-96 h-96 rounded-full bg-[#E5D2E9]/40 blur-3xl pointer-events-none"></div>
     
     <div class="max-w-6xl mx-auto relative z-10 grid lg:grid-cols-12 gap-12 items-center">
       
@@ -404,7 +407,7 @@
   </section>
 
   <!-- BÖLÜM 2: FORMLAR VE EL ANATOMİSİ REHBERİ (FOTOĞRAFLI GALERİ) -->
-  <section id="modeller" class="py-24 px-6 bg-brand-softPink/60 border-y border-brand-gold/20">
+  <section id="modeller" class="py-24 px-6 bg-gradient-to-b from-[#F2E8F4] via-[#ECE0F0] to-[#F2E8F4] border-y border-brand-gold/25">
     <div class="max-w-6xl mx-auto">
       
       <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
@@ -497,7 +500,7 @@
   </section>
 
   <!-- BÖLÜM 3: KARŞILAŞTIRMA TABLOSU: GELENEKSEL SALON VS. LİNAİL VIP -->
-  <section id="karsilastirma" class="py-24 bg-[#F5F2EB] text-stone-800 relative border-b border-brand-gold/20">
+  <section id="karsilastirma" class="py-24 bg-gradient-to-b from-[#F7F2F8] via-[#EFE5F2] to-[#F7F2F8] text-stone-800 relative border-b border-brand-gold/20">
     <div class="max-w-5xl mx-auto px-6">
       
       <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
@@ -573,7 +576,7 @@
   </section>
 
   <!-- BÖLÜM 4: SEANS ÖNCESİ VE SONRASI DANIŞAN REHBERİ (PRE & POST CARE) -->
-  <section id="rehber" class="py-24 bg-brand-cream border-b border-brand-gold/20">
+  <section id="rehber" class="py-24 bg-gradient-to-b from-[#F7F2F8] via-[#F1E7F3] to-[#F7F2F8] border-b border-brand-gold/20">
     <div class="max-w-6xl mx-auto px-6">
       
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
@@ -649,95 +652,97 @@
   </section>
 
   <!-- FİYATLAR & VIP İŞLEMLER -->
-  <section id="fiyatlar" class="py-24 px-6 max-w-4xl mx-auto">
-    <div class="text-center mb-14 space-y-3">
-      <span class="text-brand-darkGold text-xs uppercase tracking-[0.3em] font-semibold">Şeffaf Menü & Standartlar</span>
-      <h2 class="font-serif text-3xl md:text-5xl text-brand-deepPurple font-medium">Ataşehir Protez Tırnak & Bakım Menüsü</h2>
-      <p class="text-stone-600 font-light text-sm max-w-lg mx-auto">Tüm işlemlerimizde B-Tipi otoklav steril Rus manikürü ve Linaura sıcak botanik mum terapisi fiyata dahildir.</p>
-      <div class="w-16 h-[1.5px] bg-brand-gold mx-auto mt-2"></div>
-    </div>
+  <section id="fiyatlar" class="py-24 px-6 bg-gradient-to-b from-[#F7F2F8] via-[#F2E8F4] to-[#F7F2F8] border-b border-brand-gold/20">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14 space-y-3">
+        <span class="text-brand-darkGold text-xs uppercase tracking-[0.3em] font-semibold">Şeffaf Menü & Standartlar</span>
+        <h2 class="font-serif text-3xl md:text-5xl text-brand-deepPurple font-medium">Ataşehir Protez Tırnak & Bakım Menüsü</h2>
+        <p class="text-stone-600 font-light text-sm max-w-lg mx-auto">Tüm işlemlerimizde B-Tipi otoklav steril Rus manikürü ve Linaura sıcak botanik mum terapisi fiyata dahildir.</p>
+        <div class="w-16 h-[1.5px] bg-brand-gold mx-auto mt-2"></div>
+      </div>
 
-    <div class="space-y-4">
-      
-      <div class="glass-card-light rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-brand-gold/30 hover:border-brand-gold transition-all shadow-sm">
-        <div>
-          <div class="flex items-center gap-2">
-            <h4 class="font-serif text-xl text-brand-deepPurple font-medium">Protez Jel Tırnak & Rus Kuru Manikür - Kalıcı Oje</h4>
-            <span class="text-[10px] uppercase tracking-wider bg-brand-gold/20 text-brand-darkGold px-2 py-0.5 rounded-full font-semibold">VIP Paket</span>
+      <div class="space-y-4">
+        
+        <div class="glass-card-light rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-brand-gold/30 hover:border-brand-gold transition-all shadow-sm">
+          <div>
+            <div class="flex items-center gap-2">
+              <h4 class="font-serif text-xl text-brand-deepPurple font-medium">Protez Jel Tırnak & Rus Kuru Manikür - Kalıcı Oje</h4>
+              <span class="text-[10px] uppercase tracking-wider bg-brand-gold/20 text-brand-darkGold px-2 py-0.5 rounded-full font-semibold">VIP Paket</span>
+            </div>
+            <p class="text-xs text-stone-500 font-light mt-1">Sıfırdan şablonla tırnak uzatma, Rus kuru manikürü, mimari jel form inşası ve kalıcı oje</p>
           </div>
-          <p class="text-xs text-stone-500 font-light mt-1">Sıfırdan şablonla tırnak uzatma, Rus kuru manikürü, mimari jel form inşası ve kalıcı oje</p>
+          <div class="sm:text-right shrink-0 flex items-center sm:flex-col justify-between sm:justify-center gap-2">
+            <a href="https://wa.me/905318696764?text=Merhaba,%20Google'da%20inceledim.%20Ataşehir%20Uphill%20Towers%20stüdyonuzda%20protez%20jel%20tırnak%20fiyat%20ve%20müsaitlik%20bilgisi%20almak%20istiyorum." target="_blank" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs font-medium bg-brand-deepPurple text-brand-lightGold hover:bg-brand-purple transition-colors">
+              <span>Fiyat & Randevu</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
         </div>
-        <div class="sm:text-right shrink-0 flex items-center sm:flex-col justify-between sm:justify-center gap-2">
-          <a href="https://wa.me/905318696764?text=Merhaba,%20Google'da%20inceledim.%20Ataşehir%20Uphill%20Towers%20stüdyonuzda%20protez%20jel%20tırnak%20fiyat%20ve%20müsaitlik%20bilgisi%20almak%20istiyorum." target="_blank" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs font-medium bg-brand-deepPurple text-brand-lightGold hover:bg-brand-purple transition-colors">
-            <span>Fiyat & Randevu</span>
-            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-          </a>
+
+        <div class="glass-card-light rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-brand-gold/30 hover:border-brand-gold transition-all shadow-sm">
+          <div>
+            <h4 class="font-serif text-xl text-brand-deepPurple font-medium">Protez Jel Bakımı & Manikür - Kalıcı Oje</h4>
+            <p class="text-xs text-stone-500 font-light mt-1">3-4 haftalık periyodik jel bakımı, boy kısaltma/form düzeltme, dip tazeleme ve yeni renk</p>
+          </div>
+          <div class="sm:text-right shrink-0 flex items-center sm:flex-col justify-between sm:justify-center gap-2">
+            <a href="https://wa.me/905318696764?text=Merhaba,%20Google'da%20inceledim.%20Ataşehir%20Uphill%20Towers%20stüdyonuzda%20protez%20jel%20bakımı%20fiyat%20ve%20müsaitlik%20bilgisi%20almak%20istiyorum." target="_blank" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs font-medium bg-brand-deepPurple text-brand-lightGold hover:bg-brand-purple transition-colors">
+              <span>Fiyat & Randevu</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
         </div>
+
+        <div class="glass-card-light rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-brand-gold/30 hover:border-brand-gold transition-all shadow-sm">
+          <div>
+            <h4 class="font-serif text-xl text-brand-deepPurple font-medium">Jel Güçlendirme & Manikür & Kalıcı Oje</h4>
+            <p class="text-xs text-stone-500 font-light mt-1">Kendi tırnağını uzatmak isteyenler için kırılmalara karşı destekleyici koruyucu jel mimarisi</p>
+          </div>
+          <div class="sm:text-right shrink-0 flex items-center sm:flex-col justify-between sm:justify-center gap-2">
+            <a href="https://wa.me/905318696764?text=Merhaba,%20Google'da%20inceledim.%20Ataşehir%20Uphill%20Towers%20stüdyonuzda%20jel%20güçlendirme%20fiyat%20ve%20müsaitlik%20bilgisi%20almak%20istiyorum." target="_blank" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs font-medium bg-brand-deepPurple text-brand-lightGold hover:bg-brand-purple transition-colors">
+              <span>Fiyat & Randevu</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="glass-card-light rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-brand-gold/30 hover:border-brand-gold transition-all shadow-sm">
+          <div>
+            <h4 class="font-serif text-xl text-brand-deepPurple font-medium">El Kalıcı Oje & Rus Kuru Manikürü</h4>
+            <p class="text-xs text-stone-500 font-light mt-1">Kullanıma bağlı olarak 3-4 haftaya varan pürüzsüz parlaklık ve temiz tırnak etleri</p>
+          </div>
+          <div class="sm:text-right shrink-0 flex items-center sm:flex-col justify-between sm:justify-center gap-2">
+            <a href="https://wa.me/905318696764?text=Merhaba,%20Google'da%20inceledim.%20Ataşehir%20Uphill%20Towers%20stüdyonuzda%20kalıcı%20oje%20ve%20manikür%20fiyat%20bilgisi%20almak%20istiyorum." target="_blank" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs font-medium bg-brand-deepPurple text-brand-lightGold hover:bg-brand-purple transition-colors">
+              <span>Fiyat & Randevu</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
       </div>
 
-      <div class="glass-card-light rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-brand-gold/30 hover:border-brand-gold transition-all shadow-sm">
+      <!-- Ek Tasarım & Sanat -->
+      <div class="mt-8 p-6 rounded-2xl bg-white border border-brand-gold/25 text-xs text-stone-600 font-light flex flex-wrap items-center justify-between gap-4 shadow-sm">
         <div>
-          <h4 class="font-serif text-xl text-brand-deepPurple font-medium">Protez Jel Bakımı & Manikür - Kalıcı Oje</h4>
-          <p class="text-xs text-stone-500 font-light mt-1">3-4 haftalık periyodik jel bakımı, boy kısaltma/form düzeltme, dip tazeleme ve yeni renk</p>
+          <strong class="text-brand-deepPurple font-medium">Özel Tasarım & Sanat Detayları:</strong>
+          <span class="ml-2">French & Babyboomer • Krom & Glazed Donut • Cat Eye • Özel Nail Art Çizimleri</span>
         </div>
-        <div class="sm:text-right shrink-0 flex items-center sm:flex-col justify-between sm:justify-center gap-2">
-          <a href="https://wa.me/905318696764?text=Merhaba,%20Google'da%20inceledim.%20Ataşehir%20Uphill%20Towers%20stüdyonuzda%20protez%20jel%20bakımı%20fiyat%20ve%20müsaitlik%20bilgisi%20almak%20istiyorum." target="_blank" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs font-medium bg-brand-deepPurple text-brand-lightGold hover:bg-brand-purple transition-colors">
-            <span>Fiyat & Randevu</span>
-            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-          </a>
-        </div>
+        <a href="https://wa.me/905318696764?text=Merhaba,%20Google'da%20inceledim.%20Ataşehir%20Uphill%20Towers%20stüdyonuzda%20özel%20nail%20art%20tasarımı%20için%20bilgi%20almak%20istiyorum." target="_blank" class="text-brand-purple font-medium hover:text-brand-darkGold transition-colors flex items-center gap-1">
+          <span>Görsel Gönderip Bilgi Alın</span>
+          <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+        </a>
       </div>
 
-      <div class="glass-card-light rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-brand-gold/30 hover:border-brand-gold transition-all shadow-sm">
-        <div>
-          <h4 class="font-serif text-xl text-brand-deepPurple font-medium">Jel Güçlendirme & Manikür & Kalıcı Oje</h4>
-          <p class="text-xs text-stone-500 font-light mt-1">Kendi tırnağını uzatmak isteyenler için kırılmalara karşı destekleyici koruyucu jel mimarisi</p>
-        </div>
-        <div class="sm:text-right shrink-0 flex items-center sm:flex-col justify-between sm:justify-center gap-2">
-          <a href="https://wa.me/905318696764?text=Merhaba,%20Google'da%20inceledim.%20Ataşehir%20Uphill%20Towers%20stüdyonuzda%20jel%20güçlendirme%20fiyat%20ve%20müsaitlik%20bilgisi%20almak%20istiyorum." target="_blank" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs font-medium bg-brand-deepPurple text-brand-lightGold hover:bg-brand-purple transition-colors">
-            <span>Fiyat & Randevu</span>
-            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-          </a>
-        </div>
+      <div class="text-center mt-10">
+        <a href="https://wa.me/905318696764?text=Merhaba,%20Google'da%20inceledim.%20Ataşehir%20Uphill%20Towers%20VIP%20stüdyo%20hizmetleri%20ve%20müsaitlik%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-xs uppercase tracking-[0.2em] font-semibold bg-brand-deepPurple text-brand-lightGold hover:bg-brand-purple shadow-lg transition-all hover:scale-105">
+          <i data-lucide="message-circle" class="w-4 h-4 text-brand-gold"></i>
+          <span>WhatsApp VIP Müsaitlik Danışma</span>
+        </a>
       </div>
-
-      <div class="glass-card-light rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-brand-gold/30 hover:border-brand-gold transition-all shadow-sm">
-        <div>
-          <h4 class="font-serif text-xl text-brand-deepPurple font-medium">El Kalıcı Oje & Rus Kuru Manikürü</h4>
-          <p class="text-xs text-stone-500 font-light mt-1">Kullanıma bağlı olarak 3-4 haftaya varan pürüzsüz parlaklık ve temiz tırnak etleri</p>
-        </div>
-        <div class="sm:text-right shrink-0 flex items-center sm:flex-col justify-between sm:justify-center gap-2">
-          <a href="https://wa.me/905318696764?text=Merhaba,%20Google'da%20inceledim.%20Ataşehir%20Uphill%20Towers%20stüdyonuzda%20kalıcı%20oje%20ve%20manikür%20fiyat%20bilgisi%20almak%20istiyorum." target="_blank" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs font-medium bg-brand-deepPurple text-brand-lightGold hover:bg-brand-purple transition-colors">
-            <span>Fiyat & Randevu</span>
-            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-          </a>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Ek Tasarım & Sanat -->
-    <div class="mt-8 p-6 rounded-2xl bg-white border border-brand-gold/25 text-xs text-stone-600 font-light flex flex-wrap items-center justify-between gap-4 shadow-sm">
-      <div>
-        <strong class="text-brand-deepPurple font-medium">Özel Tasarım & Sanat Detayları:</strong>
-        <span class="ml-2">French & Babyboomer • Krom & Glazed Donut • Cat Eye • Özel Nail Art Çizimleri</span>
-      </div>
-      <a href="https://wa.me/905318696764?text=Merhaba,%20Google'da%20inceledim.%20Ataşehir%20Uphill%20Towers%20stüdyonuzda%20özel%20nail%20art%20tasarımı%20için%20bilgi%20almak%20istiyorum." target="_blank" class="text-brand-purple font-medium hover:text-brand-darkGold transition-colors flex items-center gap-1">
-        <span>Görsel Gönderip Bilgi Alın</span>
-        <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-      </a>
-    </div>
-
-    <div class="text-center mt-10">
-      <a href="https://wa.me/905318696764?text=Merhaba,%20Google'da%20inceledim.%20Ataşehir%20Uphill%20Towers%20VIP%20stüdyo%20hizmetleri%20ve%20müsaitlik%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-xs uppercase tracking-[0.2em] font-semibold bg-brand-deepPurple text-brand-lightGold hover:bg-brand-purple shadow-lg transition-all hover:scale-105">
-        <i data-lucide="message-circle" class="w-4 h-4 text-brand-gold"></i>
-        <span>WhatsApp VIP Müsaitlik Danışma</span>
-      </a>
     </div>
   </section>
 
   <!-- GOOGLE SSS (FAQ ACCORDION) -->
-  <section id="sss" class="py-24 px-6 bg-gradient-to-b from-[#FAF7F2] via-[#F4EFE6] to-[#FAF7F2] text-stone-800 border-t border-brand-gold/20">
+  <section id="sss" class="py-24 px-6 bg-gradient-to-b from-[#F7F2F8] via-[#F0E6F3] to-[#F7F2F8] text-stone-800 border-t border-brand-gold/20">
     <div class="max-w-4xl mx-auto">
       
       <div class="text-center mb-16 space-y-3">
@@ -835,7 +840,7 @@
   </section>
 
   <!-- VIP REZERVASYON & CTA -->
-  <section class="py-24 bg-gradient-to-br from-[#FAF7F2] via-[#F3EDE3] to-[#FAF7F2] relative overflow-hidden border-t border-brand-gold/25 text-center text-stone-800">
+  <section class="py-24 bg-gradient-to-br from-[#F7F2F8] via-[#ECE0EE] to-[#F7F2F8] relative overflow-hidden border-t border-brand-gold/25 text-center text-stone-800">
     <div class="absolute inset-0 bg-[radial-gradient(#C5A059_1px,transparent_1px)] opacity-15 [background-size:24px_24px]"></div>
     <div class="max-w-4xl mx-auto px-6 relative z-10 space-y-6">
       
@@ -874,7 +879,33 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-[#F5F2EB] text-stone-500 py-10 border-t border-brand-gold/20 text-xs text-center">
+  <footer class="bg-[#ECE2EE] text-stone-500 py-10 border-t border-brand-gold/20 text-xs text-center">
+    <div class="max-w-6xl mx-auto px-6 space-y-4">
+      <div class="flex items-center justify-center gap-2">
+        <img src="/assets/logo-transparent.png" alt="Linail Beauty Studio Logo" class="w-6 h-6 object-contain opacity-80">
+        <span class="font-serif tracking-widest uppercase text-brand-deepPurple font-semibold">LİNAİL BEAUTY STUDIO</span>
+      </div>
+      <p class="font-light text-stone-600">
+        Barbaros Mah. Uphill Towers B Blok D:14, Ataşehir / İstanbul<br>
+        VIP Randevu Hattı: <a href="tel:+905318696764" class="text-brand-purple hover:underline font-medium">0531 869 67 64</a>
+      </p>
+      <div class="pt-2 flex flex-wrap justify-center gap-4 text-[10px] tracking-widest uppercase text-stone-600 font-medium">
+        <a href="../" class="hover:text-brand-purple transition-colors">Ana Sayfa</a>
+        <a href="../atasehir-cilt-bakimi/" class="hover:text-brand-purple transition-colors">Cilt Bakımı</a>
+        <a href="../atasehir-ipek-kirpik/" class="hover:text-brand-purple transition-colors">İpek Kirpik</a>
+        <a href="../atasehir-kas-laminasyon/" class="hover:text-brand-purple transition-colors">Kaş Laminasyon</a>
+        <a href="../atasehir-nail-art/" class="hover:text-brand-purple transition-colors">Nail Art</a>
+        <a href="../rus-manikur-atasehir/" class="hover:text-brand-purple transition-colors">Rus Manikürü</a>
+      </div>
+      <p class="text-[10px] text-stone-500 font-light pt-2">© 2026 Linail Beauty Studio. Tüm Hakları Saklıdır.</p>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
     <div class="max-w-6xl mx-auto px-6 space-y-4">
       <div class="flex items-center justify-center gap-2">
         <img src="/assets/logo-transparent.png" alt="Linail Beauty Studio Logo" class="w-6 h-6 object-contain opacity-80">
