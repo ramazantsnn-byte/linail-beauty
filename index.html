@@ -392,8 +392,8 @@
 </head>
 <body class="bg-brand-cream text-stone-800 font-sans antialiased selection:bg-brand-gold selection:text-white">
 
-  <!-- Üst Duyuru / Karşılama Şeridi -->
-  <div class="bg-brand-darkViolet text-brand-lightGold text-[11px] tracking-[0.2em] py-2.5 px-4 text-center uppercase border-b border-brand-gold/20 flex flex-wrap justify-center items-center gap-2.5 md:gap-4">
+  <!-- Üst Duyuru / Karşılama Şeridi (Yalnızca Masaüstünde Görünür, Mobilde Gizli) -->
+  <div class="hidden md:flex bg-brand-darkViolet text-brand-lightGold text-[11px] tracking-[0.2em] py-2.5 px-4 text-center uppercase border-b border-brand-gold/20 flex-wrap justify-center items-center gap-2.5 md:gap-4">
     <span class="flex items-center gap-1.5 text-amber-300 font-medium">
       <span>⭐⭐⭐⭐⭐</span>
       <span class="text-white font-semibold">5.0</span>
@@ -409,7 +409,7 @@
   </div>
 
   <!-- Header / Navigasyon -->
-  <header id="navbar" class="fixed top-10 left-0 w-full z-50 transition-all duration-300">
+  <header id="navbar" class="fixed top-3 md:top-10 left-0 w-full z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-3 sm:px-6">
       <nav class="relative glass-card-dark rounded-full px-3.5 sm:px-6 py-2 lg:py-3 flex items-center justify-between shadow-2xl border border-brand-gold/30">
         <!-- Masaüstü Orijinal Logo (Sadece Bilgisayar Ekranlarında) -->
@@ -2103,7 +2103,7 @@
     <a href="#" 
        title="Linail Beauty Ataşehir Uphill Towers"
        class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/95 p-1.5 shadow-xl border-2 border-brand-gold/80 hover:scale-110 transition-transform duration-300 flex items-center justify-center backdrop-blur-md group">
-      <img src="assets/linail_lotus_ladybug_pure.png" alt="Linail Beauty Lotus & Uğur Böceği Amblemi" class="w-full h-full object-contain filter drop-shadow group-hover:rotate-6 transition-transform">
+      <img src="/assets/linail_lotus_ladybug_pure.png" alt="Linail Beauty Lotus & Uğur Böceği Amblemi" class="w-full h-full object-contain filter drop-shadow group-hover:rotate-6 transition-transform">
     </a>
 
     <!-- 2. Instagram Butonu (Orijinal Instagram Logosu & Radyal Gradyanı) -->
@@ -2179,11 +2179,11 @@
     if (navbar) {
       window.addEventListener('scroll', () => {
         if (window.scrollY > 30) {
-          navbar.classList.remove('top-10');
+          navbar.classList.remove('md:top-10', 'top-3');
           navbar.classList.add('top-2');
         } else {
-          navbar.classList.add('top-10');
           navbar.classList.remove('top-2');
+          navbar.classList.add('top-3', 'md:top-10');
         }
       });
     }
