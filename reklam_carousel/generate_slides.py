@@ -1,0 +1,516 @@
+import os
+import asyncio
+from playwright.async_api import async_playwright
+
+html_template = """
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #000;
+    font-family: 'Montserrat', sans-serif;
+    color: #FAF8F5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(160deg, #1A0921 0%, #2A1136 45%, #14051B 100%);
+    display: flex;
+    flex-direction: column;
+    padding: 70px 70px 60px 70px;
+  }
+  
+  /* Background subtle luxury glow */
+  .glow-top-right {
+    position: absolute;
+    top: -150px;
+    right: -150px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(212,175,55,0.18) 0%, rgba(62,27,71,0) 70%);
+    pointer-events: none;
+  }
+  .glow-bottom-left {
+    position: absolute;
+    bottom: -150px;
+    left: -150px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(142,68,173,0.22) 0%, rgba(20,5,27,0) 70%);
+    pointer-events: none;
+  }
+  .gold-border {
+    position: absolute;
+    inset: 24px;
+    border: 1px solid rgba(212,175,55,0.3);
+    pointer-events: none;
+    border-radius: 28px;
+  }
+  .gold-border::after {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(212,175,55,0.12);
+    border-radius: 20px;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(212,175,55,0.25);
+  }
+  .logo-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .logo-img {
+    height: 48px;
+    object-fit: contain;
+  }
+  .studio-badge {
+    font-size: 14px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #D4AF37;
+    font-weight: 600;
+  }
+  .location-pill {
+    font-size: 13px;
+    padding: 8px 18px;
+    background: rgba(212,175,55,0.12);
+    border: 1px solid rgba(212,175,55,0.35);
+    border-radius: 100px;
+    color: #FAF8F5;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+  }
+
+  /* Typography */
+  .serif-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    line-height: 1.12;
+    color: #FAF8F5;
+  }
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #FFF0BE 0%, #D4AF37 50%, #AA8222 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Cards */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 24px;
+    padding: 32px 36px;
+    position: relative;
+    z-index: 5;
+  }
+
+  /* Progress Bar */
+  .progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .step-label {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #D4AF37;
+    text-transform: uppercase;
+  }
+  .step-bar {
+    flex: 1;
+    height: 4px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+  .step-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #D4AF37, #FFF0BE);
+    border-radius: 2px;
+  }
+
+  /* Swipe tag */
+  .swipe-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, rgba(212,175,55,0.2) 0%, rgba(212,175,55,0.05) 100%);
+    border: 1px solid rgba(212,175,55,0.45);
+    border-radius: 100px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFF0BE;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* Bullet item */
+  .bullet-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .bullet-item:last-child { margin-bottom: 0; }
+  .bullet-icon {
+    width: 38px;
+    height: 38px;
+    background: rgba(212,175,55,0.15);
+    border: 1px solid rgba(212,175,55,0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
+  }
+  .bullet-text h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #FFF0BE;
+    margin-bottom: 4px;
+  }
+  .bullet-text p {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.45;
+    color: #E2DFD8;
+  }
+
+  .pill-highlight {
+    background: rgba(212, 175, 55, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    padding: 16px 24px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #FAF8F5;
+  }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: KAPAK -->
+<div class="slide" id="slide1">
+  <div class="gold-border"></div>
+  <div class="glow-top-right"></div>
+  <div class="glow-bottom-left"></div>
+
+  <div class="header">
+    <div class="logo-box">
+      <img src="file:///Users/applesupport/Desktop/linail%20beauty/reklam_carousel/assets/linail_logo.png" class="logo-img">
+    </div>
+    <div class="location-pill">📍 Ataşehir Uphill Towers</div>
+  </div>
+
+  <div style="margin-top: 45px; position: relative; z-index: 10;">
+    <span style="display:inline-block; font-size: 15px; letter-spacing: 0.3em; text-transform: uppercase; color: #D4AF37; font-weight: 600; margin-bottom: 18px;">
+      Biyolojik Cilt Mimarisi
+    </span>
+    <h1 class="serif-title" style="font-size: 66px; margin-bottom: 22px;">
+      Tek Seanslık Cilt Bakımları Neden <span class="gold-gradient-text">3 Gün Sonra</span> Sönüyor?
+    </h1>
+    <p style="font-size: 22px; line-height: 1.5; color: #D5D0C7; font-weight: 300; max-width: 860px;">
+      Günü kurtaran geçici cilalama değil; cildin 28 günlük hücre döngüsünü baştan inşa eden <strong style="color: #FFF0BE; font-weight: 600;">3 Aşamalı Linail Cam Cilt Protokolü.</strong>
+    </p>
+  </div>
+
+  <!-- Fotoğraf Vitrini -->
+  <div style="flex: 1; margin: 35px 0 30px 0; border-radius: 24px; overflow: hidden; border: 1px solid rgba(212,175,55,0.4); position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.5);">
+    <img src="file:///Users/applesupport/Desktop/linail%20beauty/reklam_carousel/assets/cover_skin.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(26,9,33,0.85) 100%);"></div>
+    <div style="position: absolute; bottom: 24px; left: 30px; display: flex; gap: 12px;">
+      <span style="font-size: 13px; background: rgba(0,0,0,0.7); backdrop-filter: blur(10px); padding: 8px 16px; border-radius: 100px; border: 1px solid rgba(212,175,55,0.3); color: #FFF0BE; font-weight: 500;">✨ Kore Cam Cilt Standartı</span>
+      <span style="font-size: 13px; background: rgba(0,0,0,0.7); backdrop-filter: blur(10px); padding: 8px 16px; border-radius: 100px; border: 1px solid rgba(212,175,55,0.3); color: #FFF0BE; font-weight: 500;">🔬 3 Seansta Hücresel Dönüşüm</span>
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 10;">
+    <span style="font-size: 15px; color: #A89E90; letter-spacing: 0.1em;">Adım adım nasıl çalıştığını keşfedin</span>
+    <div class="swipe-tag">
+      <span>Yana Kaydırın</span>
+      <span style="font-size: 20px;">👉</span>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 2: 1. SEANS -->
+<div class="slide" id="slide2">
+  <div class="gold-border"></div>
+  <div class="glow-top-right"></div>
+
+  <div class="header">
+    <div class="logo-box">
+      <img src="file:///Users/applesupport/Desktop/linail%20beauty/reklam_carousel/assets/linail_logo.png" class="logo-img">
+    </div>
+    <div class="studio-badge">1. Seans Protokolü</div>
+  </div>
+
+  <div style="margin-top: 35px; position: relative; z-index: 10;">
+    <div class="progress-wrap">
+      <span class="step-label">Aşama 01 / 03</span>
+      <div class="step-bar"><div class="step-fill" style="width: 33%;"></div></div>
+    </div>
+    <h2 class="serif-title" style="font-size: 52px; margin-bottom: 14px;">
+      Temel Kazısı: <span class="gold-gradient-text">Gözenek Detoksu & Vortex</span>
+    </h2>
+    <p style="font-size: 19px; color: #D5D0C7; font-weight: 300; margin-bottom: 30px;">
+      Tıkanmış bir gözenek temizlenmeden üzerine sürülen en pahalı serum dahi cilde işlemez.
+    </p>
+  </div>
+
+  <div class="glass-card" style="margin-bottom: 30px;">
+    <div class="bullet-item">
+      <div class="bullet-icon">🫧</div>
+      <div class="bullet-text">
+        <h4>Genosys O2 & Enzimatik Peeling</h4>
+        <p>Cildi soymadan ve tahriş etmeden, ölü keratin tabakası meyve enzimleri ile sindirilip yüzeyden arındırılır.</p>
+      </div>
+    </div>
+    <div class="bullet-item">
+      <div class="bullet-icon">🌪️</div>
+      <div class="bullet-text">
+        <h4>Mormed Vortex Hidro-Vakum</h4>
+        <p>Gözenek diplerine yerleşmiş okside siyah noktalar ve sebum, spiral sıvı akışıyla ağrısızca çekilir.</p>
+      </div>
+    </div>
+    <div class="bullet-item">
+      <div class="bullet-icon">🛡️</div>
+      <div class="bullet-text">
+        <h4>Biyolojik Zemin Hazırlığı</h4>
+        <p>Epidermal pH dengelenir. Cilt artık sonraki seansların aktif bileşenlerini derinlemesine emmeye hazırdır.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pill-highlight" style="margin-bottom: auto;">
+    <span style="font-size: 26px;">🎯</span>
+    <span><strong>1. Seans Hedefi:</strong> Cildi hafifletmek, gözenekleri nefes aldırmak ve hücre kanalını açmak.</span>
+  </div>
+
+  <div style="display: flex; justify-content: flex-end; align-items: center; position: relative; z-index: 10;">
+    <div class="swipe-tag">
+      <span>2. Seansa Geç 👉</span>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3: 2. SEANS -->
+<div class="slide" id="slide3">
+  <div class="gold-border"></div>
+  <div class="glow-top-right"></div>
+
+  <div class="header">
+    <div class="logo-box">
+      <img src="file:///Users/applesupport/Desktop/linail%20beauty/reklam_carousel/assets/linail_logo.png" class="logo-img">
+    </div>
+    <div class="studio-badge">2. Seans Protokolü</div>
+  </div>
+
+  <div style="margin-top: 35px; position: relative; z-index: 10;">
+    <div class="progress-wrap">
+      <span class="step-label">Aşama 02 / 03</span>
+      <div class="step-bar"><div class="step-fill" style="width: 66%;"></div></div>
+    </div>
+    <h2 class="serif-title" style="font-size: 52px; margin-bottom: 14px;">
+      Alt Dokuyu Örme: <span class="gold-gradient-text">Bipolar RF ile Kolajen</span>
+    </h2>
+    <p style="font-size: 19px; color: #D5D0C7; font-weight: 300; margin-bottom: 25px;">
+      Gözenek arındıktan 14 gün sonra; alt katmandaki elastikiyeti ve gerginliği tetikliyoruz.
+    </p>
+  </div>
+
+  <!-- Fotoğraf Bölümü -->
+  <div style="height: 310px; border-radius: 20px; overflow: hidden; border: 1px solid rgba(212,175,55,0.4); margin-bottom: 25px; position: relative;">
+    <img src="file:///Users/applesupport/Desktop/linail%20beauty/reklam_carousel/assets/rf_lifting.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 25%;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(26,9,33,0.9) 100%);"></div>
+    <span style="position: absolute; bottom: 16px; left: 20px; font-size: 13px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); padding: 6px 14px; border-radius: 100px; border: 1px solid rgba(212,175,55,0.3); color: #FFF0BE;">⚡️ 41°C Dermal Kolajen Isısı</span>
+  </div>
+
+  <div class="glass-card" style="margin-bottom: auto; padding: 26px 30px;">
+    <div class="bullet-item" style="margin-bottom: 14px;">
+      <div class="bullet-icon">⚡️</div>
+      <div class="bullet-text">
+        <h4>Termal Kolajen Kısalması</h4>
+        <p>Bipolar RF enerjisi gevşeyen kolajen liflerini toparlar, çene hattını ve yanakları yukarı kilitler.</p>
+      </div>
+    </div>
+    <div class="bullet-item">
+      <div class="bullet-icon">🌊</div>
+      <div class="bullet-text">
+        <h4>Ultrasound 1 MHz İnfüzyon</h4>
+        <p>Akustik dalgalarla hyaluronik asit nem rezervleri cildin alt katmanına doldurulur.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: flex-end; align-items: center; position: relative; z-index: 10; margin-top: 20px;">
+    <div class="swipe-tag">
+      <span>3. Seansa Geç 👉</span>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4: 3. SEANS -->
+<div class="slide" id="slide4">
+  <div class="gold-border"></div>
+  <div class="glow-top-right"></div>
+
+  <div class="header">
+    <div class="logo-box">
+      <img src="file:///Users/applesupport/Desktop/linail%20beauty/reklam_carousel/assets/linail_logo.png" class="logo-img">
+    </div>
+    <div class="studio-badge">3. Seans Protokolü</div>
+  </div>
+
+  <div style="margin-top: 35px; position: relative; z-index: 10;">
+    <div class="progress-wrap">
+      <span class="step-label">Aşama 03 / 03</span>
+      <div class="step-bar"><div class="step-fill" style="width: 100%;"></div></div>
+    </div>
+    <h2 class="serif-title" style="font-size: 52px; margin-bottom: 14px;">
+      Final Ayna Parlaklığı: <span class="gold-gradient-text">Saf PDRN Somon DNA</span>
+    </h2>
+    <p style="font-size: 19px; color: #D5D0C7; font-weight: 300; margin-bottom: 25px;">
+      Zemin hazırlandı, doku sıkılaştırıldı. Artık cilde o meşhur kalıcı cam parlaklığı mühürleniyor.
+    </p>
+  </div>
+
+  <!-- Fotoğraf Bölümü -->
+  <div style="height: 310px; border-radius: 20px; overflow: hidden; border: 1px solid rgba(212,175,55,0.4); margin-bottom: 25px; position: relative;">
+    <img src="file:///Users/applesupport/Desktop/linail%20beauty/reklam_carousel/assets/pdrn_serum.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(26,9,33,0.9) 100%);"></div>
+    <span style="position: absolute; bottom: 16px; left: 20px; font-size: 13px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); padding: 6px 14px; border-radius: 100px; border: 1px solid rgba(212,175,55,0.3); color: #FFF0BE;">🧬 60.000 ppm PDRN Ampul</span>
+  </div>
+
+  <div class="glass-card" style="margin-bottom: auto; padding: 26px 30px;">
+    <div class="bullet-item" style="margin-bottom: 14px;">
+      <div class="bullet-icon">🧬</div>
+      <div class="bullet-text">
+        <h4>Hücresel DNA Onarımı</h4>
+        <p>PDRN molekülleri fibroblastları uyarır, cildi hücresel boyutta yeniden yapılandırır.</p>
+      </div>
+    </div>
+    <div class="bullet-item">
+      <div class="bullet-icon">❄️</div>
+      <div class="bullet-text">
+        <h4>Cryo Şoklama & Kırmızı LED</h4>
+        <p>2°C soğuk başlıkla gözenekler kilitlenir, 630 nm LED ışık kolajen üretimini zirveye taşır.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: flex-end; align-items: center; position: relative; z-index: 10; margin-top: 20px;">
+    <div class="swipe-tag">
+      <span>Sonuca Bak 👉</span>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5: KALICILIK & VIP CTA -->
+<div class="slide" id="slide5">
+  <div class="gold-border"></div>
+  <div class="glow-top-right"></div>
+  <div class="glow-bottom-left"></div>
+
+  <div class="header">
+    <div class="logo-box">
+      <img src="file:///Users/applesupport/Desktop/linail%20beauty/reklam_carousel/assets/linail_logo.png" class="logo-img">
+    </div>
+    <div class="location-pill">✨ VIP Rezervasyon</div>
+  </div>
+
+  <div style="margin-top: 45px; position: relative; z-index: 10; text-align: center;">
+    <span style="font-size: 15px; letter-spacing: 0.3em; text-transform: uppercase; color: #D4AF37; font-weight: 600;">
+      En Önemli Kural
+    </span>
+    <h2 class="serif-title" style="font-size: 56px; margin: 16px 0 20px 0;">
+      Sizi Her Hafta Salona <span class="gold-gradient-text">Bağlamıyoruz.</span>
+    </h2>
+    <p style="font-size: 21px; line-height: 1.55; color: #E2DFD8; font-weight: 300; max-width: 860px; margin: 0 auto 35px auto;">
+      3 seanslık protokol bittikten sonra cildinize yapacağınız en asil iyilik onu yormamaktır. Doğal hücre ritminize sadık kalarak, <strong style="color: #FFF0BE;">ayda bir tırnak bakımınızda</strong> tek seans almak bu ışıltıyı yıllarca korumaya yeter.
+    </p>
+  </div>
+
+  <!-- VIP Çağrı Kartı -->
+  <div class="glass-card" style="text-align: center; padding: 42px 40px; margin-bottom: auto; border: 1.5px solid rgba(212,175,55,0.45); background: linear-gradient(135deg, rgba(212,175,55,0.12) 0%, rgba(62,27,71,0.4) 100%);">
+    <div style="font-size: 15px; letter-spacing: 0.25em; text-transform: uppercase; color: #FFF0BE; font-weight: 600; margin-bottom: 12px;">
+      💎 Ekim - Kasım VIP Kontenjanı Açıldı
+    </div>
+    <h3 class="serif-title" style="font-size: 44px; margin-bottom: 18px; color: #FAF8F5;">
+      Protokol Detayları & Fiyat Bilgisi İçin:
+    </h3>
+    
+    <div style="display: inline-block; background: #D4AF37; color: #1A0921; font-size: 24px; font-weight: 700; padding: 18px 48px; border-radius: 100px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 22px; box-shadow: 0 10px 30px rgba(212,175,55,0.4);">
+      Yoruma "CİLT" Yazın 👇
+    </div>
+    
+    <p style="font-size: 18px; color: #E2DFD8; font-weight: 400;">
+      Özel protokol detaylarını ve size özel seans takvimini DM kutunuza anında ulaştıralım.
+    </p>
+  </div>
+
+  <!-- Footer İletişim -->
+  <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 25px; border-top: 1px solid rgba(212,175,55,0.25); position: relative; z-index: 10;">
+    <div>
+      <div style="font-size: 13px; color: #A89E90; letter-spacing: 0.1em; text-transform: uppercase;">Doğrudan Randevu Hattı</div>
+      <div style="font-size: 22px; font-weight: 700; color: #FFF0BE; letter-spacing: 0.05em;">0531 869 67 64</div>
+    </div>
+    <div style="text-align: right;">
+      <div style="font-size: 13px; color: #A89E90; letter-spacing: 0.1em; text-transform: uppercase;">Linail Beauty Studio</div>
+      <div style="font-size: 17px; font-weight: 500; color: #FAF8F5;">Uphill Towers B Blok D:14, Ataşehir</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+"""
+
+with open('/Users/applesupport/Desktop/linail beauty/reklam_carousel/slides.html', 'w', encoding='utf-8') as f:
+    f.write(html_template)
+
+async def render():
+    async with async_playwright() as p:
+        browser = await p.chromium.launch()
+        # High DPI for ultra crisp Retina quality
+        page = await browser.new_page(viewport={'width': 1080, 'height': 1350}, device_scale_factor=2)
+        await page.goto('file:///Users/applesupport/Desktop/linail%20beauty/reklam_carousel/slides.html', wait_until='networkidle')
+        await page.wait_for_timeout(2000)
+        
+        for i in range(1, 6):
+            slide_elem = await page.query_selector(f'#slide{i}')
+            out_path = f'/Users/applesupport/Desktop/linail beauty/reklam_carousel/slide_{i}.png'
+            await slide_elem.screenshot(path=out_path)
+            print(f'Rendered {out_path}')
+            
+        await browser.close()
+
+asyncio.run(render())

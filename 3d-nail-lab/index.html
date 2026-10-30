@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Linail 3D AI Nail Studio | 360° Anatomik Tırnak Modelleme & Apeks Simülatörü</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Three.js & OrbitControls (Global UMD 0.145.0) -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.145.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.145.0/examples/js/controls/OrbitControls.js"></script>
+
+    <style>
+        :root {
+            --bg-base: #08020A;
+            --bg-surface: #100414;
+            --bg-card: rgba(20, 6, 26, 0.85);
+            --border-gold: rgba(212, 175, 55, 0.32);
+            --border-gold-hover: rgba(212, 175, 55, 0.85);
+            --gold-primary: #D4AF37;
+            --gold-light: #F7E7BC;
+            --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #AA771C 100%);
+            --purple-deep: #250B30;
+            --purple-accent: #8E38B0;
+            --text-primary: #FAF8F5;
+            --text-secondary: #C8BED0;
+            --text-muted: #8C7E96;
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 15%, rgba(142, 56, 176, 0.20) 0%, transparent 45%),
+                radial-gradient(circle at 90% 85%, rgba(212, 175, 55, 0.15) 0%, transparent 45%);
+        }
+
+        /* HEADER */
+        header {
+            padding: 16px 36px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-gold);
+            background: rgba(8, 2, 10, 0.92);
+            backdrop-filter: blur(25px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .brand-block {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .brand-logo-img {
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.45));
+        }
+
+        .brand-title {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            letter-spacing: 2px;
+            color: var(--gold-light);
+            text-transform: uppercase;
+        }
+
+        .brand-subtitle {
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .badge-live-3d {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 30px;
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid var(--border-gold);
+            font-size: 11px;
+            letter-spacing: 1.2px;
+            color: var(--gold-primary);
+            font-weight: 700;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #22c55e;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.3); }
+        }
+
+        /* MAIN LAYOUT */
+        .app-layout {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 24px 28px 70px;
+            display: grid;
+            grid-template-columns: 1fr 450px;
+            gap: 28px;
+        }
+
+        @media (max-width: 1180px) {
+            .app-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 3D VIEWPORT CARD */
+        .stage-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-lg);
+            padding: 22px;
+            backdrop-filter: blur(25px);
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+        }
+
+        .stage-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .stage-headline {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            color: var(--text-primary);
+        }
+
+        .camera-views-row {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .btn-view {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-gold);
+            color: var(--text-primary);
+            padding: 7px 14px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-view:hover, .btn-view.active {
+            background: var(--gold-gradient);
+            color: #08020A;
+            font-weight: 700;
+            border-color: var(--gold-light);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* 3D CANVAS BOX */
+        .viewport-3d-box {
+            position: relative;
+            width: 100%;
+            height: 560px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            background: #000;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.9), 0 15px 35px rgba(0,0,0,0.6);
+            touch-action: none;
+            cursor: grab;
+        }
+
+        .viewport-3d-box:active {
+            cursor: grabbing;
+        }
+
+        #webglCanvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .overlay-badge-top {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(8, 2, 10, 0.85);
+            border: 1px solid var(--border-gold);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--gold-light);
+            backdrop-filter: blur(10px);
+            z-index: 5;
+        }
+
+        .overlay-apex-indicator {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: rgba(8, 2, 10, 0.85);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #FAF8F5;
+            backdrop-filter: blur(10px);
+            z-index: 5;
+        }
+
+        .viewport-3d-hint {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            right: 12px;
+            background: rgba(8, 2, 10, 0.82);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            padding: 8px 14px;
+            border-radius: 10px;
+            font-size: 11px;
+            color: var(--text-secondary);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 5;
+        }
+
+        /* CONTROLS SECTION */
+        .controls-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .controls-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .control-box {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(212, 175, 55, 0.18);
+            border-radius: var(--radius-md);
+            padding: 14px;
+        }
+
+        .control-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .badge-value {
+            background: var(--gold-gradient);
+            color: #08020A;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            background: rgba(255,255,255,0.12);
+            border-radius: 4px;
+            outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--gold-primary);
+            border: 2px solid #FFF;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+        }
+
+        /* SHAPES ROW */
+        .shapes-row {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
+        .shape-btn {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--text-primary);
+            padding: 9px 14px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .shape-btn:hover {
+            border-color: var(--gold-primary);
+            background: rgba(212, 175, 55, 0.12);
+        }
+
+        .shape-btn.active {
+            background: var(--gold-gradient);
+            color: #08020A;
+            font-weight: 800;
+            border-color: var(--gold-light);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+        }
+
+        /* FINISHES GRID */
+        .finishes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 10px;
+            max-height: 250px;
+            overflow-y: auto;
+            padding-right: 4px;
+        }
+
+        .finish-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: var(--radius-md);
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            align-items: center;
+            text-align: center;
+        }
+
+        .finish-card:hover {
+            border-color: var(--gold-primary);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .finish-card.active {
+            border-color: var(--gold-light);
+            background: rgba(212, 175, 55, 0.18);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .finish-swatch {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .finish-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .vip-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            backdrop-filter: blur(25px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .vip-card-title {
+            font-family: var(--font-serif);
+            font-size: 22px;
+            color: var(--gold-light);
+        }
+
+        .price-breakdown {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 12px;
+        }
+
+        .price-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-secondary);
+        }
+
+        .price-line.total {
+            border-top: 1px solid rgba(212, 175, 55, 0.25);
+            padding-top: 10px;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+        .cash-box {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.14), rgba(212, 175, 55, 0.14));
+            border: 1px dashed rgba(34, 197, 94, 0.45);
+            border-radius: var(--radius-md);
+            padding: 14px;
+            text-align: center;
+        }
+
+        .cash-amount {
+            font-family: var(--font-serif);
+            font-size: 34px;
+            font-weight: 700;
+            color: #FAF8F5;
+            margin: 4px 0;
+            text-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+        }
+
+        .btn-whatsapp-booking {
+            background: var(--gold-gradient);
+            color: #08020A;
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            padding: 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-whatsapp-booking:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.5);
+            filter: brightness(1.1);
+        }
+
+        .studio-info {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-align: center;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="brand-block">
+            <img src="../assets/linail_lotus_symbol_pure.png" alt="Linail Lotus" class="brand-logo-img">
+            <div>
+                <h1 class="brand-title">LİNAİL BEAUTY</h1>
+                <p class="brand-subtitle">3D WEBGL NAIL LAB • ANATOMICAL APEX SIMULATOR</p>
+            </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px;">
+            <a href="../virtual-mirror/index.html" style="display: inline-flex; align-items: center; gap: 8px; padding: 7px 18px; border-radius: 30px; background: linear-gradient(135deg, rgba(142, 56, 176, 0.25) 0%, rgba(212, 175, 55, 0.35) 100%); border: 1px solid var(--border-gold); color: var(--gold-light); text-decoration: none; font-size: 11px; font-weight: 700; letter-spacing: 1.2px; transition: all 0.3s ease;">
+                <span>📸 2D CANLI TIRNAK AYNASI</span>
+                <span>→</span>
+            </a>
+            <div class="badge-live-3d">
+                <span class="live-dot"></span>
+                <span>3B CANLI ANATOMİ MOTORU</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- APP LAYOUT -->
+    <div class="app-layout">
+
+        <!-- 3D STAGE CARD -->
+        <main class="stage-card">
+            
+            <div class="stage-toolbar">
+                <div>
+                    <h2 class="stage-headline">3B Anatomik Parmak & Tırnak Modellemesi</h2>
+                    <p style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">
+                        Tırnağı farenizle veya parmağınızla 360° çevirebilir, apeks tepe noktasını ve C-Eğrisi tünelini inceleyebilirsiniz.
+                    </p>
+                </div>
+                <!-- Camera Presets -->
+                <div class="camera-views-row">
+                    <button class="btn-view active" id="viewPerspective">👁️ Serbest 3B</button>
+                    <button class="btn-view" id="viewTop">🔝 Üstten Bakış</button>
+                    <button class="btn-view" id="viewSide">📐 Yan Profil (Apeks)</button>
+                    <button class="btn-view" id="viewFront">🔍 Tünel (C-Eğrisi)</button>
+                    <button class="btn-view" id="btnToggleAutoRotate">🔄 360° Döndür</button>
+                </div>
+            </div>
+
+            <!-- WEBGL VIEWPORT -->
+            <div class="viewport-3d-box" id="viewport3D">
+                <canvas id="webglCanvas"></canvas>
+                <div class="overlay-badge-top">
+                    <span>✨ Three.js PBR Işık & Fiziksel Jel Yansıması</span>
+                </div>
+                <div class="overlay-apex-indicator" id="apexVolumeBadge">
+                    <span>Apeks: Rus Mimarisi C-Curve (%42)</span>
+                </div>
+                <div class="viewport-3d-hint">
+                    <span>🖱️ Sol Tık + Sürükle: 360° Çevir | Sağ Tık: Kaydır | Tekerlek: Yakınlaş</span>
+                    <span id="txt3DStats">Mesh: 2.800 Poligon • 60 FPS</span>
+                </div>
+            </div>
+
+            <!-- CONTROLS ROW -->
+            <div class="controls-grid">
+                <!-- 1. Uzunluk Slider -->
+                <div class="control-box">
+                    <div class="control-head">
+                        <span>1. Tırnak Uzunluğu (Extension Length):</span>
+                        <span class="badge-value" id="valLength">+6.0 mm (S)</span>
+                    </div>
+                    <input type="range" id="sliderLength" min="0" max="16" value="6" step="0.5">
+                </div>
+
+                <!-- 2. Apeks & C-Eğrisi Bombesi -->
+                <div class="control-box">
+                    <div class="control-head">
+                        <span>2. 3D Apeks Kavis Yüksekliği (C-Curve Arch):</span>
+                        <span class="badge-value" id="valApex">İdeal Salon (%35)</span>
+                    </div>
+                    <input type="range" id="sliderApex" min="15" max="65" value="35" step="1">
+                </div>
+            </div>
+
+            <!-- SHAPE MORPHING -->
+            <div class="control-box" style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="font-size: 13px; font-weight: 700; color: var(--gold-light);">
+                    3. Tırnak Formunu Seçin (3D Shape Morphing):
+                </div>
+                <div class="shapes-row" id="shapesRow">
+                    <button class="shape-btn active" data-shape="almond">🌰 Badem (Almond)</button>
+                    <button class="shape-btn" data-shape="square">⏹️ Yumuşak Kare (Square)</button>
+                    <button class="shape-btn" data-shape="coffin">⚰️ Balerin / Tabut (Coffin)</button>
+                    <button class="shape-btn" data-shape="stiletto">🗡️ Keskin Stiletto</button>
+                    <button class="shape-btn" data-shape="oval">🥚 Doğal Oval</button>
+                    <button class="shape-btn" data-shape="russian">🏛️ Rus Bademi (Architectural)</button>
+                </div>
+            </div>
+
+            <!-- FINISHES & SHADERS -->
+            <div class="control-box" style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="font-size: 13px; font-weight: 700; color: var(--gold-light);">
+                    4. Haute Couture PBR Bitiş & Materyal Seçimi:
+                </div>
+                <div class="finishes-grid" id="finishesGrid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+        </main>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="vip-card">
+                <div>
+                    <div class="vip-card-title">Hesaplanan VIP Fiyat</div>
+                    <div style="font-size: 11px; color: var(--text-muted);">Uphill Towers VIP Studio</div>
+                </div>
+
+                <div class="price-breakdown">
+                    <div class="price-line">
+                        <span id="txtServiceTitle">Protez Jel Tırnak (3B Mimari)</span>
+                        <span id="txtServicePrice">3.000 ₺</span>
+                    </div>
+                    <div class="price-line">
+                        <span id="txtStyleTitle">Hailey Bieber Glazed Donut</span>
+                        <span id="txtStylePrice">+480 ₺</span>
+                    </div>
+                    <div class="price-line">
+                        <span id="txtShapeTitle">Badem Form (+6.0 mm)</span>
+                        <span style="color: #4ade80;">Dahil</span>
+                    </div>
+                    <div class="price-line">
+                        <span>Profesyonel Rus Kuru Donanım Manikürü</span>
+                        <span style="color: #4ade80;">Ücretsiz</span>
+                    </div>
+                    <div class="price-line">
+                        <span>Linaura™ Sıcak Botanik Mum Bakımı</span>
+                        <span style="color: var(--gold-light);">VIP İkram</span>
+                    </div>
+                    <div class="price-line total">
+                        <span>Liste Fiyatı (KDV Dahil):</span>
+                        <span id="txtListTotal">3.480 ₺</span>
+                    </div>
+                </div>
+
+                <div class="cash-box">
+                    <div style="font-size: 11px; color: #86efac; text-transform: uppercase; font-weight: 700;">
+                        Nakit / Havale İndirimli Masada Fiyat:
+                    </div>
+                    <div class="cash-amount" id="txtCashTotal">3.132 ₺</div>
+                    <div style="font-size: 11px; color: var(--text-muted);">
+                        %10 Nakit indirimi doğrudan masada uygulanır.
+                    </div>
+                </div>
+
+                <a href="#" id="linkWhatsApp" target="_blank" class="btn-whatsapp-booking">
+                    <span>MASADA BU MODELİ İSTİYORUM</span>
+                    <span>→</span>
+                </a>
+
+                <p class="studio-info">
+                    📍 <b>Linail Beauty:</b> Uphill Towers B Blok Daire 14, Batı Ataşehir<br>
+                    VIP Tek Kişilik Özel Masada • Randevu Hattı: 0531 869 67 64
+                </p>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- THREE.JS 3D ENGINE SCRIPT -->
+    <script>
+        const FINISHES = [
+            {
+                id: 'glazed_donut',
+                name: 'Hailey Bieber Glazed Donut',
+                extraPrice: 480,
+                color: 0xF5DDD4,
+                roughness: 0.12,
+                metalness: 0.15,
+                clearcoat: 1.0,
+                clearcoatRoughness: 0.05,
+                gradient: 'linear-gradient(135deg, #FDF4E3 0%, #F5D6CE 50%, #E8D3F3 100%)'
+            },
+            {
+                id: 'liquid_chrome',
+                name: 'Sıvı Gümüş Ayna Krom',
+                extraPrice: 480,
+                color: 0xE2E8F0,
+                roughness: 0.06,
+                metalness: 0.95,
+                clearcoat: 1.0,
+                clearcoatRoughness: 0.02,
+                gradient: 'linear-gradient(135deg, #F3F4F6 0%, #9CA3AF 50%, #FFFFFF 100%)'
+            },
+            {
+                id: 'gold_chrome',
+                name: '24K Şampanya Krom',
+                extraPrice: 480,
+                color: 0xD4AF37,
+                roughness: 0.10,
+                metalness: 0.90,
+                clearcoat: 1.0,
+                clearcoatRoughness: 0.04,
+                gradient: 'linear-gradient(135deg, #F9DF8D 0%, #B8860B 50%, #FAF0CD 100%)'
+            },
+            {
+                id: 'cat_eye_emerald',
+                name: '9D Zümrüt Manyetik Cat Eye',
+                extraPrice: 360,
+                color: 0x064E3B,
+                roughness: 0.15,
+                metalness: 0.40,
+                clearcoat: 1.0,
+                clearcoatRoughness: 0.08,
+                gradient: 'linear-gradient(135deg, #062b19 20%, #10B981 50%, #062b19 80%)'
+            },
+            {
+                id: 'vampy_cherry',
+                name: 'Vampy Deep Cherry (Bordo)',
+                extraPrice: 0,
+                color: 0x40040E,
+                roughness: 0.08,
+                metalness: 0.05,
+                clearcoat: 1.0,
+                clearcoatRoughness: 0.03,
+                gradient: 'linear-gradient(135deg, #2A030A 0%, #540616 50%, #200207 100%)'
+            },
+            {
+                id: 'milky_white',
+                name: 'Porselen Süt Beyazı',
+                extraPrice: 0,
+                color: 0xFDFBF7,
+                roughness: 0.18,
+                metalness: 0.02,
+                clearcoat: 0.9,
+                clearcoatRoughness: 0.10,
+                gradient: 'linear-gradient(135deg, #FDFBF7 0%, #ECE7DE 100%)'
+            },
+            {
+                id: 'clean_nude',
+                name: 'Clean Girl Cam Nude',
+                extraPrice: 0,
+                color: 0xE8C3B9,
+                roughness: 0.10,
+                metalness: 0.02,
+                clearcoat: 1.0,
+                clearcoatRoughness: 0.04,
+                gradient: 'linear-gradient(135deg, #EFCAC1 0%, #DEB3A7 100%)'
+            },
+            {
+                id: 'matte_burgundy',
+                name: 'Mat Kadife Gece Bordosu',
+                extraPrice: 0,
+                color: 0x30050E,
+                roughness: 0.85,
+                metalness: 0.0,
+                clearcoat: 0.0,
+                clearcoatRoughness: 1.0,
+                gradient: 'linear-gradient(135deg, #25030A 0%, #3B0611 100%)'
+            }
+        ];
+
+        // STATE
+        let currentShape = 'almond';
+        let currentFinish = FINISHES[0];
+        let currentExtensionMm = 6.0;
+        let currentApexHeight = 0.35; // %35
+        let autoRotate = false;
+
+        // THREE.JS GLOBALS
+        let scene, camera, renderer, controls;
+        let fingerMesh, nailMesh, nailMaterial, skinMaterial;
+
+        // INITIALIZE
+        window.addEventListener('load', () => {
+            initThreeJS();
+            initUI();
+            updatePricing();
+            animate();
+        });
+
+        function initThreeJS() {
+            const container = document.getElementById('viewport3D');
+            const canvas = document.getElementById('webglCanvas');
+
+            // 1. Scene
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x060208);
+
+            // 2. Camera
+            camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 0.1, 100);
+            camera.position.set(0, 5.5, 9.5);
+
+            // 3. Renderer
+            renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+            // 4. OrbitControls
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.05;
+            controls.maxDistance = 18;
+            controls.minDistance = 3.5;
+            controls.target.set(0, 0.5, 0);
+
+            // 5. Studio Lighting
+            // Ambient soft fill
+            const ambLight = new THREE.AmbientLight(0xFAF8F5, 0.7);
+            scene.add(ambLight);
+
+            // Key light (warm golden luxury)
+            const keyLight = new THREE.DirectionalLight(0xFFF0DD, 1.8);
+            keyLight.position.set(5, 10, 7);
+            keyLight.castShadow = true;
+            scene.add(keyLight);
+
+            // Rim light (edge champagne glow)
+            const rimLight = new THREE.DirectionalLight(0xD4AF37, 1.4);
+            rimLight.position.set(-7, 6, -6);
+            scene.add(rimLight);
+
+            // Fill light (under-soft light)
+            const underLight = new THREE.DirectionalLight(0x7A2E99, 0.6);
+            underLight.position.set(0, -6, 4);
+            scene.add(underLight);
+
+            // 6. Build Meshes
+            buildFingerMesh();
+            build3DNailMesh();
+
+            // Resize listener
+            window.addEventListener('resize', onWindowResize);
+        }
+
+        function onWindowResize() {
+            const container = document.getElementById('viewport3D');
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        }
+
+        // BUILD ANATOMICAL FINGER MESH
+        function buildFingerMesh() {
+            // Distal phalanx finger body
+            const fingerGeo = new THREE.CylinderGeometry(1.2, 1.4, 6.5, 32, 16);
+            // Translate so joint is down and fingertip is at (0, 0, 0)
+            fingerGeo.translate(0, -2.8, -0.4);
+
+            skinMaterial = new THREE.MeshStandardMaterial({
+                color: 0xE2BAA6,
+                roughness: 0.68,
+                metalness: 0.05
+            });
+
+            fingerMesh = new THREE.Mesh(fingerGeo, skinMaterial);
+            fingerMesh.castShadow = true;
+            fingerMesh.receiveShadow = true;
+            scene.add(fingerMesh);
+        }
+
+        // BUILD 3D VOLUMETRIC SCULPTED NAIL MESH
+        function build3DNailMesh() {
+            if (nailMesh) scene.remove(nailMesh);
+
+            // Parametric 3D Surface for Nail
+            const uSegments = 24; // across width
+            const vSegments = 32; // along length
+            const baseWidth = 1.8;
+            const baseLength = 2.4 + (currentExtensionMm * 0.16);
+            const apexHeight = currentApexHeight * 0.8;
+
+            const nailGeo = new THREE.BufferGeometry();
+            const positions = [];
+            const normals = [];
+            const uvs = [];
+            const indices = [];
+
+            for (let j = 0; j <= vSegments; j++) {
+                const v = j / vSegments; // 0 = cuticle, 1 = tip
+                // Length along finger
+                const y = -0.2 + (v * baseLength);
+
+                // Shape-dependent width multiplier along length
+                let shapeWidthMultiplier = 1.0;
+                if (currentShape === 'almond') {
+                    shapeWidthMultiplier = 1.0 - 0.7 * Math.pow(v, 2.2);
+                } else if (currentShape === 'square') {
+                    shapeWidthMultiplier = 1.0;
+                } else if (currentShape === 'coffin') {
+                    shapeWidthMultiplier = 1.0 - 0.45 * Math.pow(v, 1.4);
+                } else if (currentShape === 'stiletto') {
+                    shapeWidthMultiplier = 1.0 - 0.95 * Math.pow(v, 1.6);
+                } else if (currentShape === 'oval') {
+                    shapeWidthMultiplier = 1.0 - 0.5 * Math.pow(v, 2.0);
+                } else if (currentShape === 'russian') {
+                    shapeWidthMultiplier = 1.0 - 0.65 * Math.pow(v, 2.6);
+                }
+
+                // Apex profile along length (Peak at 35% of nail length)
+                let apexProfile = 0;
+                if (v < 0.35) {
+                    apexProfile = Math.sin((v / 0.35) * (Math.PI / 2));
+                } else {
+                    apexProfile = Math.cos(((v - 0.35) / 0.65) * (Math.PI / 2));
+                }
+
+                for (let i = 0; i <= uSegments; i++) {
+                    const u = (i / uSegments) - 0.5; // -0.5 to +0.5
+                    const x = u * baseWidth * shapeWidthMultiplier;
+
+                    // C-Curve arch across width
+                    const cCurveArch = Math.cos(u * Math.PI) * 0.5;
+                    // Total Z height combining C-Curve and Apex arch
+                    const z = 0.85 + (cCurveArch * (0.4 + apexHeight * 0.5)) + (apexProfile * apexHeight);
+
+                    positions.push(x, y, z);
+                    uvs.push(i / uSegments, v);
+                }
+            }
+
+            // Generate Grid Triangles
+            for (let j = 0; j < vSegments; j++) {
+                for (let i = 0; i < uSegments; i++) {
+                    const a = j * (uSegments + 1) + i;
+                    const b = (j + 1) * (uSegments + 1) + i;
+                    const c = (j + 1) * (uSegments + 1) + (i + 1);
+                    const d = j * (uSegments + 1) + (i + 1);
+
+                    indices.push(a, b, d);
+                    indices.push(b, c, d);
+                }
+            }
+
+            nailGeo.setIndex(indices);
+            nailGeo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+            nailGeo.setAttribute('uv', new THREE.Float32BufferAttribute(uvs, 2));
+            nailGeo.computeVertexNormals();
+
+            // PBR Material
+            nailMaterial = new THREE.MeshPhysicalMaterial({
+                color: currentFinish.color,
+                roughness: currentFinish.roughness,
+                metalness: currentFinish.metalness,
+                clearcoat: currentFinish.clearcoat,
+                clearcoatRoughness: currentFinish.clearcoatRoughness,
+                transmission: currentFinish.id === 'milky_white' ? 0.35 : 0.05,
+                ior: 1.52,
+                side: THREE.DoubleSide
+            });
+
+            nailMesh = new THREE.Mesh(nailGeo, nailMaterial);
+            nailMesh.castShadow = true;
+            nailMesh.receiveShadow = true;
+            scene.add(nailMesh);
+        }
+
+        // ANIMATION LOOP
+        function animate() {
+            requestAnimationFrame(animate);
+            if (autoRotate && controls) {
+                controls.autoRotate = true;
+                controls.autoRotateSpeed = 2.0;
+            } else if (controls) {
+                controls.autoRotate = false;
+            }
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+        // UI SETUP
+        function initUI() {
+            // Finishes grid
+            const grid = document.getElementById('finishesGrid');
+            grid.innerHTML = '';
+            FINISHES.forEach(f => {
+                const card = document.createElement('div');
+                card.className = `finish-card ${f.id === currentFinish.id ? 'active' : ''}`;
+                card.dataset.id = f.id;
+                card.innerHTML = `
+                    <div class="finish-swatch" style="background: ${f.gradient};"></div>
+                    <div class="finish-title">${f.name}</div>
+                `;
+                card.addEventListener('click', () => {
+                    document.querySelectorAll('.finish-card').forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+                    currentFinish = f;
+                    nailMaterial.color.setHex(f.color);
+                    nailMaterial.roughness = f.roughness;
+                    nailMaterial.metalness = f.metalness;
+                    nailMaterial.clearcoat = f.clearcoat;
+                    nailMaterial.clearcoatRoughness = f.clearcoatRoughness;
+                    nailMaterial.needsUpdate = true;
+                    updatePricing();
+                });
+                grid.appendChild(card);
+            });
+
+            // Shapes
+            document.querySelectorAll('.shape-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.shape-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentShape = btn.dataset.shape;
+                    build3DNailMesh();
+                    updatePricing();
+                });
+            });
+
+            // Sliders
+            const sliderLength = document.getElementById('sliderLength');
+            sliderLength.addEventListener('input', (e) => {
+                currentExtensionMm = parseFloat(e.target.value);
+                const tag = currentExtensionMm === 0 ? 'Doğal' : currentExtensionMm <= 3 ? 'XS' : currentExtensionMm <= 6 ? 'S' : currentExtensionMm <= 9 ? 'M' : currentExtensionMm <= 12 ? 'L' : 'XL';
+                document.getElementById('valLength').textContent = `+${currentExtensionMm.toFixed(1)} mm (${tag})`;
+                build3DNailMesh();
+                updatePricing();
+            });
+
+            const sliderApex = document.getElementById('sliderApex');
+            sliderApex.addEventListener('input', (e) => {
+                const val = parseInt(e.target.value);
+                currentApexHeight = val / 100.0;
+                document.getElementById('valApex').textContent = `${val < 25 ? 'Doğal Düz' : val < 40 ? 'İdeal Salon' : 'Rus Mimarisi'} (%${val})`;
+                document.getElementById('apexVolumeBadge').textContent = `Apeks: ${val < 25 ? 'Doğal Düz' : val < 40 ? 'İdeal Salon C-Curve' : 'Yüksek Rus Mimarisi'} (%${val})`;
+                build3DNailMesh();
+            });
+
+            // Camera Views
+            document.getElementById('viewPerspective').addEventListener('click', () => {
+                setActiveView('viewPerspective');
+                resetCamera(0, 5.5, 9.5);
+            });
+
+            document.getElementById('viewTop').addEventListener('click', () => {
+                setActiveView('viewTop');
+                resetCamera(0, 10, 1.2);
+            });
+
+            document.getElementById('viewSide').addEventListener('click', () => {
+                setActiveView('viewSide');
+                resetCamera(10, 1.5, 0.5);
+            });
+
+            document.getElementById('viewFront').addEventListener('click', () => {
+                setActiveView('viewFront');
+                resetCamera(0, 1.2, 10);
+            });
+
+            document.getElementById('btnToggleAutoRotate').addEventListener('click', () => {
+                autoRotate = !autoRotate;
+                document.getElementById('btnToggleAutoRotate').classList.toggle('active', autoRotate);
+            });
+        }
+
+        function setActiveView(btnId) {
+            document.querySelectorAll('.camera-views-row .btn-view').forEach(b => {
+                if (b.id !== 'btnToggleAutoRotate') b.classList.remove('active');
+            });
+            document.getElementById(btnId).classList.add('active');
+        }
+
+        function resetCamera(x, y, z) {
+            camera.position.set(x, y, z);
+            controls.target.set(0, 0.5, 0);
+            controls.update();
+        }
+
+        function updatePricing() {
+            const basePrice = 3000;
+            const extraPrice = currentFinish.extraPrice;
+            const listTotal = basePrice + extraPrice;
+            const cashTotal = Math.round(listTotal * 0.90);
+
+            document.getElementById('txtStyleTitle').textContent = currentFinish.name;
+            document.getElementById('txtStylePrice').textContent = extraPrice > 0 ? `+${extraPrice.toLocaleString('tr-TR')} ₺` : 'Dahil';
+
+            const shapeMap = {
+                almond: 'Badem Form',
+                square: 'Yumuşak Kare',
+                coffin: 'Balerin / Coffin',
+                stiletto: 'Keskin Stiletto',
+                oval: 'Doğal Oval',
+                russian: 'Rus Bademi'
+            };
+            document.getElementById('txtShapeTitle').textContent = `${shapeMap[currentShape]} (+${currentExtensionMm.toFixed(1)} mm)`;
+
+            document.getElementById('txtListTotal').textContent = `${listTotal.toLocaleString('tr-TR')} ₺`;
+            document.getElementById('txtCashTotal').textContent = `${cashTotal.toLocaleString('tr-TR')} ₺`;
+
+            // WhatsApp link (Linail Beauty 0531 869 67 64)
+            const waMsg = `Merhaba Gülşah Hanım, Linail 3D Laboratuvarında 3 boyutlu tırnak tasarımı inceledim:\n\n` +
+                          `💅 Hizmet: Protez Jel Tırnak (3B Mimari Apeks)\n` +
+                          `📐 Form: ${shapeMap[currentShape]} (+${currentExtensionMm.toFixed(1)} mm)\n` +
+                          `✨ Bitiş: ${currentFinish.name}\n` +
+                          `💰 VIP Masada Nakit Özel Fiyat: ${cashTotal.toLocaleString('tr-TR')} ₺ (Liste: ${listTotal.toLocaleString('tr-TR')} ₺)\n\n` +
+                          `Uphill Towers VIP stüdyonuzda bu model için randevu oluşturabilir miyiz?`;
+
+            document.getElementById('linkWhatsApp').href = `https://wa.me/905318696764?text=${encodeURIComponent(waMsg)}`;
+        }
+    </script>
+</body>
+</html>

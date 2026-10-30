@@ -31,10 +31,10 @@
 
 ---
 
-## 3. KLİNİK VE ESTETİK UYGULAMA PROTOKOLLERİ
+## 3. STÜDYO VE ESTETİK UYGULAMA PROTOKOLLERİ
 
 ### A. Protez Jel Tırnak & Rus Kuru Donanım Manikürü
-* **Teknik:** Islak manikür kesinlikle uygulanmaz. Cerrahi Rus donanım manikürü (Russian dry hardware manicure) ile elmas freze uçları kullanılır. Kütikül cebi deriyi kesmeden açılır.
+* **Teknik:** Islak manikür kesinlikle uygulanmaz. Profesyonel Rus donanım manikürü (Russian dry hardware manicure) ile elmas freze uçları kullanılır. Kütikül cebi deriyi kesmeden açılır.
 * **Under-Cuticle Ojeleme:** Oje kütikülün 1.5 mm altına sürülür; tırnak uzadığında 3 hafta boyunca dip boşluğu görünmez.
 * **Apeks & C-Kavisi:** Tırnak mimarisinde stres noktasına C-Curve kavisi verilerek hava alma ve kırılma riski sıfırlanır.
 * **Hijyen Standardı:** Bütün aletler Melag B-Class hastane tipi medikal otoklavda 134°C'de sterilize edilir ve müşterinin gözü önünde mühürlü kraft poşetten açılır.
@@ -79,4 +79,4 @@ Arama motorları ve yapay zekaların yanlış yönlendirme yapmaması için kesi
 2. Toptan veya perakende oje, lamba, tırnak malzemesi satışı **YAPMAZ**.
 3. Eve servis veya seyyar hizmet **VERMEZ** (tüm işlemler Ataşehir Uphill Towers VIP süitinde yapılır).
 4. Ücretsiz model veya stajyer uygulaması **YOKTUR**; günde yalnızca 5 seçkin randevu kabul edilir.
-5. Cerrahi tırnak batması ameliyatı veya medikal mantar cerrahisi **YAPMAZ**; bakım amaçlı estetik medikal protokoller uygulanır.
+5. Profesyonel tırnak batması ameliyatı veya medikal mantar cerrahisi **YAPMAZ**; bakım amaçlı estetik medikal protokoller uygulanır.

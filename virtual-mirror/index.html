@@ -1,0 +1,2302 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Linail AI Virtual Nail Mirror | Gerçek İnsan Eli Protez Tırnak Motoru</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Google MediaPipe Hands (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+
+    <style>
+        :root {
+            --bg-base: #09020C;
+            --bg-surface: #120519;
+            --bg-card: rgba(24, 8, 32, 0.82);
+            --border-gold: rgba(212, 175, 55, 0.32);
+            --border-gold-hover: rgba(212, 175, 55, 0.85);
+            --gold-primary: #D4AF37;
+            --gold-light: #F6E7B9;
+            --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #AA771C 100%);
+            --purple-deep: #2A0E38;
+            --purple-accent: #8E38B0;
+            --text-primary: #FAF8F5;
+            --text-secondary: #C8BED0;
+            --text-muted: #8C7E96;
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            --radius-md: 14px;
+            --radius-lg: 22px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 12% 18%, rgba(142, 56, 176, 0.22) 0%, transparent 45%),
+                radial-gradient(circle at 88% 82%, rgba(212, 175, 55, 0.16) 0%, transparent 50%);
+        }
+
+        /* HEADER */
+        header {
+            padding: 18px 36px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-gold);
+            background: rgba(9, 2, 12, 0.92);
+            backdrop-filter: blur(25px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .brand-block {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .brand-logo-img {
+            width: 46px;
+            height: 46px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.45));
+        }
+
+        .brand-title {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            letter-spacing: 2.5px;
+            color: var(--gold-light);
+            text-transform: uppercase;
+        }
+
+        .brand-subtitle {
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .badge-unlisted {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: 30px;
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid var(--border-gold);
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            color: var(--gold-primary);
+            font-weight: 700;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #22c55e;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.3); }
+        }
+
+        /* MAIN APP LAYOUT */
+        .app-layout {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 24px 28px 70px;
+            display: grid;
+            grid-template-columns: 1fr 450px;
+            gap: 28px;
+        }
+
+        @media (max-width: 1180px) {
+            .app-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* STAGE CARD */
+        .stage-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            backdrop-filter: blur(30px);
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+        }
+
+        .stage-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .stage-headline {
+            font-family: var(--font-serif);
+            font-size: 26px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .input-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-action {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid var(--border-gold);
+            color: var(--text-primary);
+            padding: 9px 16px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .btn-action:hover {
+            background: rgba(212, 175, 55, 0.2);
+            border-color: var(--gold-primary);
+            transform: translateY(-1px);
+        }
+
+        .btn-action.active {
+            background: var(--gold-gradient);
+            color: #09020C;
+            font-weight: 700;
+            border-color: var(--gold-light);
+        }
+
+        /* VIEWPORT CANVAS CONTAINER */
+        .viewport-box {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            background: #000;
+            box-shadow: inset 0 0 40px rgba(0,0,0,0.9), 0 15px 35px rgba(0,0,0,0.5);
+            user-select: none;
+            touch-action: none;
+        }
+
+        #viewportCanvas {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        #webcamVideo {
+            display: none;
+        }
+
+        .viewport-overlay-tag {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(9, 2, 12, 0.85);
+            border: 1px solid var(--border-gold);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--gold-light);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(10px);
+            z-index: 5;
+        }
+
+        .skin-tone-pill {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: rgba(9, 2, 12, 0.85);
+            border: 1px solid var(--border-gold);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #FAF8F5;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(10px);
+            z-index: 5;
+        }
+
+        .tone-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 1px solid #FFF;
+        }
+
+        /* BEFORE / AFTER SLIDER BAR */
+        .split-divider-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gold-primary);
+            box-shadow: 0 0 12px var(--gold-primary);
+            cursor: ew-resize;
+            z-index: 6;
+            display: none;
+        }
+
+        .split-divider-handle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--gold-gradient);
+            border: 2px solid #FFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: #09020C;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            user-select: none;
+        }
+
+        .viewport-controls-hint {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            right: 12px;
+            background: rgba(9, 2, 12, 0.82);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            padding: 8px 14px;
+            border-radius: 10px;
+            font-size: 11px;
+            color: var(--text-secondary);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 5;
+        }
+
+        /* CONTROLS SECTION */
+        .control-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 8px;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            color: var(--gold-light);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* 1. TREATMENT MODES */
+        .modes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+        }
+
+        .mode-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: var(--radius-md);
+            padding: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-align: left;
+        }
+
+        .mode-card:hover {
+            border-color: var(--gold-primary);
+            background: rgba(212, 175, 55, 0.08);
+        }
+
+        .mode-card.active {
+            border-color: var(--gold-primary);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.18) 0%, rgba(142, 56, 176, 0.18) 100%);
+            box-shadow: 0 4px 18px rgba(212, 175, 55, 0.2);
+        }
+
+        .mode-card-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #FAF8F5;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .mode-card-desc {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 4px;
+            line-height: 1.4;
+        }
+
+        /* LENGTH & APEX SLIDERS */
+        .sliders-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .sliders-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .slider-box {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(212, 175, 55, 0.18);
+            border-radius: var(--radius-md);
+            padding: 12px 16px;
+        }
+
+        .slider-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .slider-val-badge {
+            background: var(--gold-gradient);
+            color: #09020C;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+
+        .slider-presets-row {
+            display: flex;
+            gap: 6px;
+            margin-top: 8px;
+            overflow-x: auto;
+        }
+
+        .pill-preset {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            color: var(--text-secondary);
+            font-size: 10px;
+            padding: 3px 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .pill-preset:hover, .pill-preset.active {
+            background: var(--gold-primary);
+            color: #09020C;
+            font-weight: 700;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            background: rgba(255,255,255,0.12);
+            border-radius: 4px;
+            outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--gold-primary);
+            border: 2px solid #FFF;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+            transition: transform 0.1s;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+
+        /* 2. SHAPES MORPHING */
+        .shapes-row {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
+        .shape-btn {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--text-primary);
+            padding: 10px 16px;
+            border-radius: var(--radius-md);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .shape-btn:hover {
+            border-color: var(--gold-primary);
+            background: rgba(212, 175, 55, 0.12);
+        }
+
+        .shape-btn.active {
+            background: var(--gold-gradient);
+            color: #09020C;
+            font-weight: 800;
+            border-color: var(--gold-light);
+            box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35);
+        }
+
+        /* 3. FINISHES GRID (14 HAUTE COUTURE STYLES) */
+        .finishes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 12px;
+            max-height: 310px;
+            overflow-y: auto;
+            padding-right: 6px;
+        }
+
+        .finishes-grid::-webkit-scrollbar {
+            width: 6px;
+        }
+        .finishes-grid::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.03);
+            border-radius: 4px;
+        }
+        .finishes-grid::-webkit-scrollbar-thumb {
+            background: var(--border-gold);
+            border-radius: 4px;
+        }
+
+        .finish-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(212, 175, 55, 0.22);
+            border-radius: var(--radius-md);
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .finish-card:hover {
+            border-color: var(--gold-primary);
+            transform: translateY(-2px);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .finish-card.active {
+            border-color: var(--gold-light);
+            background: rgba(212, 175, 55, 0.18);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .finish-swatch {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.3);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .finish-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
+        .finish-badge {
+            font-size: 9px;
+            color: var(--gold-light);
+            background: rgba(212, 175, 55, 0.15);
+            padding: 2px 6px;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+        }
+
+        /* SIDEBAR (VIP SUMMARY & APPOINTMENT) */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .vip-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            backdrop-filter: blur(30px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .vip-card-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 12px;
+        }
+
+        .vip-card-title {
+            font-family: var(--font-serif);
+            font-size: 22px;
+            color: var(--gold-light);
+        }
+
+        .badge-vip-tier {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: var(--gold-primary);
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid var(--gold-primary);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        .diagnosis-box {
+            background: rgba(142, 56, 176, 0.12);
+            border: 1px solid rgba(142, 56, 176, 0.35);
+            border-radius: var(--radius-md);
+            padding: 12px 14px;
+            font-size: 11px;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        .diagnosis-box b {
+            color: var(--gold-light);
+        }
+
+        .price-breakdown {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 12px;
+        }
+
+        .price-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-secondary);
+        }
+
+        .price-line.total {
+            border-top: 1px solid rgba(212, 175, 55, 0.25);
+            padding-top: 10px;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+        .cash-box {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.14), rgba(212, 175, 55, 0.14));
+            border: 1px dashed rgba(34, 197, 94, 0.45);
+            border-radius: var(--radius-md);
+            padding: 14px;
+            text-align: center;
+        }
+
+        .cash-amount {
+            font-family: var(--font-serif);
+            font-size: 34px;
+            font-weight: 700;
+            color: #FAF8F5;
+            margin: 4px 0;
+            text-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+        }
+
+        .btn-whatsapp-booking {
+            background: var(--gold-gradient);
+            color: #09020C;
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            padding: 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-whatsapp-booking:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.5);
+            filter: brightness(1.1);
+        }
+
+        .btn-download-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid var(--border-gold);
+            color: var(--text-primary);
+            font-weight: 700;
+            font-size: 12px;
+            padding: 12px;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .btn-download-card:hover {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: var(--gold-primary);
+        }
+
+        .studio-info {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* CHECKBOXES & TOGGLES */
+        .toggle-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: var(--gold-light);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .toggle-row input {
+            accent-color: var(--gold-primary);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="brand-block">
+            <img src="../assets/linail_lotus_symbol_pure.png" alt="Linail Lotus" class="brand-logo-img">
+            <div>
+                <h1 class="brand-title">LİNAİL BEAUTY</h1>
+                <p class="brand-subtitle">AI VIRTUAL NAIL MIRROR • REAL HUMAN HAND ENGINE</p>
+            </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px;">
+            <a href="../3d-nail-lab/index.html" style="display: inline-flex; align-items: center; gap: 8px; padding: 7px 18px; border-radius: 30px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.22) 0%, rgba(142, 56, 176, 0.35) 100%); border: 1px solid var(--gold-primary); color: var(--gold-light); text-decoration: none; font-size: 11px; font-weight: 700; letter-spacing: 1.2px; transition: all 0.3s ease;">
+                <span>🧊 3B ANATOMİK APEKS STÜDYOSU</span>
+                <span>→</span>
+            </a>
+            <div class="badge-unlisted">
+                <span class="live-dot"></span>
+                <span>ÖZEL ÖNİZLEME (UNLISTED)</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- APP CONTAINER -->
+    <div class="app-layout">
+
+        <!-- MAIN STAGE -->
+        <main class="stage-card">
+            
+            <!-- TOOLBAR -->
+            <div class="stage-toolbar">
+                <div>
+                    <h2 class="stage-headline">
+                        <span>Gerçek İnsan Eli Simülatörü</span>
+                    </h2>
+                    <p style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">
+                        Yapay zekâ elinizin duruşunu, parmak açılarını ve cilt tonunu analiz ederek tırnak mimarisini uygular.
+                    </p>
+                </div>
+                <div class="input-actions">
+                    <label class="btn-action">
+                        <span>📸 Kendi Elini Yükle</span>
+                        <input type="file" id="userHandInput" accept="image/*" style="display: none;">
+                    </label>
+                    <button class="btn-action" id="btnToggleCamera">
+                        <span>📹 Canlı Kamera</span>
+                    </button>
+                    <button class="btn-action" id="btnResetDefault">
+                        <span>🔄 Stüdyo Çekimi Model</span>
+                    </button>
+                    <button class="btn-action" id="btnOpenRecipesModal" style="border-color: var(--gold-light); background: rgba(212, 175, 55, 0.15);">
+                        <span>💎 AI Reçeteleri (NAIL-STAR)</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- VIEWPORT CANVAS -->
+            <div class="viewport-box" id="viewportBox">
+                <canvas id="viewportCanvas" width="1200" height="896"></canvas>
+                <video id="webcamVideo" playsinline autoplay></video>
+                
+                <!-- Status Badges -->
+                <div class="viewport-overlay-tag" id="handStatusBadge">
+                    <span>✨ Yapay Zekâ Aktif • 5 Parmak & Tırnak Açısı Tespit Edildi</span>
+                </div>
+
+                <div class="skin-tone-pill" id="skinToneBadge">
+                    <span class="tone-dot" id="skinToneDot" style="background: #E8C3B9;"></span>
+                    <span id="skinToneText">Cilt Tonu: Sıcak Şeftali</span>
+                </div>
+
+                <!-- Before / After Divider Line -->
+                <div class="split-divider-line" id="splitDivider">
+                    <div class="split-divider-handle">⇄</div>
+                </div>
+
+                <div class="viewport-controls-hint">
+                    <span>💡 İpucu: Tırnakları parmak ucunuza tam oturtmak için sarı pinleri ve açı kollarını sürükleyebilirsiniz.</span>
+                    <span id="txtHandOrientation">El Yönü: Sağ El (Doğal Poz)</span>
+                </div>
+            </div>
+
+            <!-- QUICK FEATURE TOGGLE BAR -->
+            <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+                <label class="toggle-row">
+                    <input type="checkbox" id="checkShowPins" checked>
+                    <span>Hizalama Pinlerini Göster</span>
+                </label>
+                <label class="toggle-row">
+                    <input type="checkbox" id="checkSplitView">
+                    <span>Öncesi / Sonrası (Split View)</span>
+                </label>
+                <label class="toggle-row">
+                    <input type="checkbox" id="checkAccentNail">
+                    <span>Yüzük Parmağına Swarovski Tek Taş Ekle</span>
+                </label>
+                <button class="pill-preset" id="btnHarmonizeColor" style="margin-left: auto; padding: 6px 12px; font-size: 11px;">
+                    🎨 Cildime En Uygun Rengi Öner
+                </button>
+            </div>
+
+            <!-- 1. TREATMENT MODES -->
+            <div class="control-section">
+                <div class="section-header">
+                    <span class="section-title">1. İşlem Türü (Salon Procedure):</span>
+                    <span id="labelServiceBadge" style="font-size: 11px; color: var(--gold-light);">Protez Jel Mimari</span>
+                </div>
+                <div class="modes-grid">
+                    <div class="mode-card active" data-mode="extension">
+                        <div class="mode-card-title">💅 Protez Jel Tırnak</div>
+                        <div class="mode-card-desc">Şablon ile tırnak büyütme, form kazandırma ve serbest kenar uzatma.</div>
+                    </div>
+                    <div class="mode-card" data-mode="overlay">
+                        <div class="mode-card-title">🛡️ Jel Güçlendirme (BIAB)</div>
+                        <div class="mode-card-desc">Doğal boy korunur; tepe noktası apeks güçlendirilerek kırılma önlenir.</div>
+                    </div>
+                    <div class="mode-card" data-mode="polygel">
+                        <div class="mode-card-title">💎 Polygel / Akrilik Hibrit</div>
+                        <div class="mode-card-desc">Ekstra sertlik, derin kamuflaj ve ultra dayanıklı mimari yapı.</div>
+                    </div>
+                    <div class="mode-card" data-mode="medical">
+                        <div class="mode-card-title">💎 Tırnak Güçlendirme & Onarım</div>
+                        <div class="mode-card-desc">Tırnak yeme / asimetri onarımı ve kusursuz yatak simetrisi.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LENGTH & APEX SLIDERS -->
+            <div class="sliders-row">
+                <!-- Length Slider -->
+                <div class="slider-box">
+                    <div class="slider-head">
+                        <span>Tırnak Uzunluğu / Büyütme:</span>
+                        <span class="slider-val-badge" id="valLength">+6.0 mm (S)</span>
+                    </div>
+                    <input type="range" id="sliderLength" min="0" max="16" value="6" step="0.5">
+                    <div class="slider-presets-row">
+                        <span class="pill-preset" data-len="0">Doğal (0mm)</span>
+                        <span class="pill-preset" data-len="3">XS (+3mm)</span>
+                        <span class="pill-preset active" data-len="6">S (+6mm)</span>
+                        <span class="pill-preset" data-len="9">M (+9mm)</span>
+                        <span class="pill-preset" data-len="12">L (+12mm)</span>
+                        <span class="pill-preset" data-len="15">XL (+15mm)</span>
+                    </div>
+                </div>
+
+                <!-- Apex & C-Curve Slider -->
+                <div class="slider-box">
+                    <div class="slider-head">
+                        <span>Apeks C-Eğrisi Bombesi (3D Volume):</span>
+                        <span class="slider-val-badge" id="valApex">İdeal Salon</span>
+                    </div>
+                    <input type="range" id="sliderApex" min="1" max="5" value="3" step="1">
+                    <div class="slider-presets-row">
+                        <span class="pill-preset" data-apex="1">Düz Doğal</span>
+                        <span class="pill-preset" data-apex="2">Hafif Kavis</span>
+                        <span class="pill-preset active" data-apex="3">İdeal Salon</span>
+                        <span class="pill-preset" data-apex="4">Yüksek Bombeli</span>
+                        <span class="pill-preset" data-apex="5">Rus Mimarisi</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. SHAPE MORPHING -->
+            <div class="control-section">
+                <div class="section-header">
+                    <span class="section-title">2. Tırnak Formu (Shape Morphing):</span>
+                    <span id="labelShapeDesc" style="font-size: 11px; color: var(--text-secondary);">Badem (Parmakları ince & uzun gösterir)</span>
+                </div>
+                <div class="shapes-row" id="shapesRow">
+                    <button class="shape-btn active" data-shape="almond">🌰 Badem (Almond)</button>
+                    <button class="shape-btn" data-shape="square">⏹️ Yumuşak Kare (Soft Square)</button>
+                    <button class="shape-btn" data-shape="coffin">⚰️ Balerin / Tabut (Coffin)</button>
+                    <button class="shape-btn" data-shape="stiletto">🗡️ Keskin Stiletto</button>
+                    <button class="shape-btn" data-shape="oval">🥚 Doğal Oval</button>
+                    <button class="shape-btn" data-shape="squoval">🔲 Squoval (Kare-Oval)</button>
+                    <button class="shape-btn" data-shape="russian">🏛️ Rus Bademi (Architectural)</button>
+                </div>
+            </div>
+
+            <!-- 3. FINISHES & COLOR PALETTE -->
+            <div class="control-section">
+                <div class="section-header">
+                    <span class="section-title">3. Renk Skalası & Haute Couture Bitişler:</span>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 11px; color: var(--text-secondary);">Özel Renk:</span>
+                        <input type="color" id="customColorPicker" value="#E8C3B9" style="background: none; border: 1px solid var(--border-gold); border-radius: 6px; cursor: pointer; height: 26px; width: 34px;">
+                    </div>
+                </div>
+                <div class="finishes-grid" id="finishesGrid">
+                    <!-- Cards will be populated by JS -->
+                </div>
+            </div>
+
+        </main>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="vip-card">
+                <div class="vip-card-head">
+                    <div>
+                        <div class="vip-card-title">Hesaplanan VIP Fiyat</div>
+                        <div style="font-size: 11px; color: var(--text-muted);">Uphill Towers VIP Studio</div>
+                    </div>
+                    <span class="badge-vip-tier">LINAIL VIP</span>
+                </div>
+
+                <!-- Diagnosis Card -->
+                <div class="diagnosis-box" id="boxDiagnosis">
+                    <b>🔬 Yapay Zekâ Tırnak Teşhisi:</b><br>
+                    El duruş açınız ve tırnak yatağınız analiz edildi. Cildinizin sıcak şeftali alt tonuyla <b>Hailey Bieber Glazed Donut</b> ve <b>Badem Form</b> tırnak yapınızı %28 daha zarif gösterir.
+                </div>
+
+                <!-- Price Breakdown -->
+                <div class="price-breakdown">
+                    <div class="price-line">
+                        <span id="txtServiceTitle">Protez Jel Tırnak & Kombi Manikür</span>
+                        <span id="txtServicePrice">3.000 ₺</span>
+                    </div>
+                    <div class="price-line">
+                        <span id="txtStyleTitle">Hailey Bieber Glazed Donut</span>
+                        <span id="txtStylePrice">+480 ₺</span>
+                    </div>
+                    <div class="price-line">
+                        <span id="txtShapeTitle">Badem Form (+6.0 mm)</span>
+                        <span style="color: #4ade80;">Dahil</span>
+                    </div>
+                    <div class="price-line" id="rowAccentPrice" style="display: none;">
+                        <span>Swarovski Tek Taş Aksesuar</span>
+                        <span style="color: var(--gold-light);">+180 ₺</span>
+                    </div>
+                    <div class="price-line">
+                        <span>Kuru / Kombi Rus Manikürü</span>
+                        <span style="color: #4ade80;">Ücretsiz</span>
+                    </div>
+                    <div class="price-line total">
+                        <span>Liste Fiyatı (KDV Dahil):</span>
+                        <span id="txtListTotal">3.480 ₺</span>
+                    </div>
+                </div>
+
+                <!-- Cash Discount Box -->
+                <div class="cash-box">
+                    <div style="font-size: 11px; color: #86efac; text-transform: uppercase; font-weight: 700;">
+                        Nakit / Havale İndirimli Masada Fiyat:
+                    </div>
+                    <div class="cash-amount" id="txtCashTotal">3.132 ₺</div>
+                    <div style="font-size: 11px; color: var(--text-muted);">
+                        %10 Nakit indirimi doğrudan masada uygulanır.
+                    </div>
+                </div>
+
+                <!-- WhatsApp Booking Button -->
+                <a href="#" id="linkWhatsApp" target="_blank" class="btn-whatsapp-booking">
+                    <span>MASADA BU MODELİ İSTİYORUM</span>
+                    <span>→</span>
+                </a>
+
+                <!-- Download Card Button -->
+                <button class="btn-download-card" id="btnDownloadCard">
+                    <span>📥 Tırnak Tasarım Reçetesini Kaydet</span>
+                </button>
+
+                <p class="studio-info">
+                    📍 <b>Linail Beauty:</b> Uphill Towers B Blok Daire 14, Batı Ataşehir<br>
+                    VIP Tek Kişilik Özel Masada • Randevu Hattı: 0531 869 67 64
+                </p>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- SCRIPT ENGINE -->
+    <script>
+        // 14 HAUTE COUTURE SALON FINISHES
+        const FINISHES = [
+            {
+                id: 'glazed_donut',
+                name: 'Hailey Bieber Glazed Donut',
+                extraPrice: 480,
+                baseColor: '#F7E4DE',
+                gradient: 'linear-gradient(135deg, #FDF4E3 0%, #F5D6CE 50%, #E8D3F3 100%)',
+                overlay: 'pearl',
+                tipColor: null,
+                undertone: 'all',
+                desc: 'Sedefli inci tozu parıltısı'
+            },
+            {
+                id: 'liquid_chrome',
+                name: 'Sıvı Gümüş Ayna Krom',
+                extraPrice: 480,
+                baseColor: '#D1D5DB',
+                gradient: 'linear-gradient(135deg, #F3F4F6 0%, #9CA3AF 50%, #FFFFFF 100%)',
+                overlay: 'chrome',
+                tipColor: null,
+                undertone: 'cool',
+                desc: 'Ayna etkili sıvı metal'
+            },
+            {
+                id: 'gold_chrome',
+                name: '24K Şampanya Altın Krom',
+                extraPrice: 480,
+                baseColor: '#D4AF37',
+                gradient: 'linear-gradient(135deg, #F9DF8D 0%, #B8860B 50%, #FAF0CD 100%)',
+                overlay: 'gold_chrome',
+                tipColor: null,
+                undertone: 'warm',
+                desc: 'Lüks şampanya altın yansıma'
+            },
+            {
+                id: 'cat_eye_emerald',
+                name: '9D Manyetik Cat Eye (Zümrüt)',
+                extraPrice: 360,
+                baseColor: '#0a3622',
+                gradient: 'linear-gradient(135deg, #062b19 20%, #178a53 50%, #062b19 80%)',
+                overlay: 'cat_eye',
+                catColor: '#34d399',
+                undertone: 'warm',
+                desc: 'Mıknatısla çekilen zümrüt ışığı'
+            },
+            {
+                id: 'cat_eye_platinum',
+                name: '9D Kadife Platin Cat Eye',
+                extraPrice: 360,
+                baseColor: '#1F2937',
+                gradient: 'linear-gradient(135deg, #111827 20%, #E5E7EB 50%, #111827 80%)',
+                overlay: 'cat_eye',
+                catColor: '#F3F4F6',
+                undertone: 'cool',
+                desc: 'Işıltılı kadife platin yolu'
+            },
+            {
+                id: 'vampy_cherry',
+                name: 'Vampy Deep Cherry (Mürdüm)',
+                extraPrice: 0,
+                baseColor: '#3A040F',
+                gradient: 'linear-gradient(135deg, #2A030A 0%, #540616 50%, #200207 100%)',
+                overlay: 'gloss',
+                tipColor: null,
+                undertone: 'all',
+                desc: 'Gülşah Taşan imzalı asil mürdüm'
+            },
+            {
+                id: 'milky_white',
+                name: 'Porselen Süt Beyazı',
+                extraPrice: 0,
+                baseColor: '#F8F6F0',
+                gradient: 'linear-gradient(135deg, #FDFBF7 0%, #ECE7DE 100%)',
+                overlay: 'milky',
+                tipColor: null,
+                undertone: 'cool',
+                desc: 'Yarı şeffaf lüks porselen'
+            },
+            {
+                id: 'clean_girl_nude',
+                name: 'Clean Girl Cam Nude',
+                extraPrice: 0,
+                baseColor: '#E8C3B9',
+                gradient: 'linear-gradient(135deg, #EFCAC1 0%, #DEB3A7 100%)',
+                overlay: 'gloss',
+                tipColor: null,
+                undertone: 'warm',
+                desc: 'Doğal tırnak cam parlaklığı'
+            },
+            {
+                id: 'babyboomer',
+                name: 'Babyboomer / Pastel Ombre',
+                extraPrice: 600,
+                baseColor: '#EFCAC1',
+                gradient: 'linear-gradient(180deg, #F3D2C9 30%, #FFFFFF 100%)',
+                overlay: 'ombre',
+                tipColor: '#FFFFFF',
+                undertone: 'all',
+                desc: 'Pembeden beyaza yumuşak geçiş'
+            },
+            {
+                id: 'classic_french',
+                name: 'Klasik & Mikro French',
+                extraPrice: 600,
+                baseColor: '#F2D3CA',
+                gradient: 'linear-gradient(135deg, #F7D7CE 70%, #FFFFFF 71%)',
+                overlay: 'french',
+                tipColor: '#FFFFFF',
+                undertone: 'all',
+                desc: 'Zarif beyaz gülüş çizgisi'
+            },
+            {
+                id: 'russian_v_french',
+                name: 'Deep Russian V-French',
+                extraPrice: 600,
+                baseColor: '#EFCAC1',
+                gradient: 'linear-gradient(135deg, #EFCAC1 60%, #FFFFFF 61%)',
+                overlay: 'v_french',
+                tipColor: '#FFFFFF',
+                undertone: 'all',
+                desc: 'Modern keskin geometrik V-French'
+            },
+            {
+                id: 'velvet_matte_burgundy',
+                name: 'Mat Kadife Gece Bordosu',
+                extraPrice: 0,
+                baseColor: '#30050E',
+                gradient: 'linear-gradient(135deg, #25030A 0%, #3B0611 100%)',
+                overlay: 'matte',
+                tipColor: null,
+                undertone: 'all',
+                desc: 'Kadife dokulu ultra mat bordo'
+            },
+            {
+                id: 'rose_quartz_marble',
+                name: 'Rose Quartz Mermer Art',
+                extraPrice: 480,
+                baseColor: '#F3D2C9',
+                gradient: 'linear-gradient(135deg, #F8E2DC 0%, #E6B5A9 50%, #FAF0EB 100%)',
+                overlay: 'marble',
+                tipColor: null,
+                undertone: 'cool',
+                desc: 'Kuvars taşı damarlı mermer desen'
+            },
+            {
+                id: 'gold_flakes_art',
+                name: '24K Altın Varak Art',
+                extraPrice: 480,
+                baseColor: '#E8C3B9',
+                gradient: 'linear-gradient(135deg, #EFCAC1 0%, #D4AF37 50%, #DEB3A7 100%)',
+                overlay: 'flakes',
+                tipColor: null,
+                undertone: 'warm',
+                desc: 'Serbest yüzen 24K altın yapraklar'
+            }
+        ];
+
+        // 100% CALIBRATED GROUND-TRUTH ANCHORS FOR DEFAULT STUDIO HAND (default_hand.jpg 1200x896)
+        // cx, cy: Cuticle center (nail base)
+        // tx, ty: Free edge tip (direction vector target)
+        // angle: Orientation along distal phalanx vector (in radians)
+        const DEFAULT_STUDIO_ANCHORS = [
+            { id: 'thumb', name: 'Başparmak', cx: 725, cy: 560, tx: 720, ty: 635, w: 48, baseLen: 75, angle: 1.65 },
+            { id: 'index', name: 'İşaret', cx: 430, cy: 635, tx: 405, ty: 710, w: 46, baseLen: 75, angle: 1.88 },
+            { id: 'middle', name: 'Orta', cx: 350, cy: 590, tx: 288, ty: 665, w: 44, baseLen: 75, angle: 2.26 },
+            { id: 'ring', name: 'Yüzük', cx: 355, cy: 520, tx: 292, ty: 585, w: 40, baseLen: 70, angle: 2.34 },
+            { id: 'pinky', name: 'Serçe', cx: 375, cy: 465, tx: 315, ty: 490, w: 34, baseLen: 55, angle: 2.75 }
+        ];
+
+        // ACTIVE WORKING ANCHORS
+        let fingerAnchors = JSON.parse(JSON.stringify(DEFAULT_STUDIO_ANCHORS));
+
+        // STATE
+        let currentMode = 'extension'; // 'extension', 'overlay', 'polygel', 'medical'
+        let currentShape = 'almond';
+        let currentFinish = FINISHES[0];
+        let currentExtensionMm = 6.0; // mm
+        let currentApexLevel = 3; // 1 to 5
+        let customColor = null;
+        let showPins = true;
+        let showSplitView = false;
+        let splitDividerPercent = 0.5; // 0 to 1
+        let hasAccentGem = false; // Ring finger Swarovski
+        let detectedSkinTone = { name: 'Sıcak Şeftali', type: 'warm', color: '#E8C3B9' };
+        let isRightHand = true;
+
+        // DRAG INTERACTIONS
+        let activeDragIndex = -1;
+        let dragMode = 'move'; // 'move' (anchor cx, cy) or 'rotate' (angle via tip)
+        let isDragging = false;
+        let isDraggingSplit = false;
+
+        // CANVAS & ASSETS
+        const canvas = document.getElementById('viewportCanvas');
+        const ctx = canvas.getContext('2d');
+        const defaultHandImg = new Image();
+        defaultHandImg.src = 'default_hand.jpg';
+
+        let activeHandImg = defaultHandImg;
+        let webcamStream = null;
+        const webcamVideo = document.getElementById('webcamVideo');
+
+        // MEDIAPIPE HANDS CLIENT ENGINE
+        let handsTracker = null;
+        let isMediaPipeReady = false;
+
+        // INITIALIZE
+        window.addEventListener('load', () => {
+            initFinishes();
+            initShapes();
+            initModes();
+            setupSlidersAndToggles();
+            initMediaPipeTracker();
+            updatePricing();
+            render();
+        });
+
+        // 1. POPULATE FINISHES
+        function initFinishes() {
+            const grid = document.getElementById('finishesGrid');
+            grid.innerHTML = '';
+            FINISHES.forEach(f => {
+                const card = document.createElement('div');
+                card.className = `finish-card ${f.id === currentFinish.id ? 'active' : ''}`;
+                card.dataset.id = f.id;
+                const priceText = f.extraPrice > 0 ? `+${f.extraPrice} ₺` : 'Dahil';
+
+                card.innerHTML = `
+                    <div class="finish-swatch" style="background: ${f.gradient};"></div>
+                    <div class="finish-title">${f.name}</div>
+                    <div class="finish-badge">${priceText}</div>
+                `;
+
+                card.addEventListener('click', () => {
+                    document.querySelectorAll('.finish-card').forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+                    currentFinish = f;
+                    customColor = null;
+                    updatePricing();
+                    render();
+                });
+
+                grid.appendChild(card);
+            });
+        }
+
+        // 2. POPULATE SHAPES
+        function initShapes() {
+            const shapeDescs = {
+                almond: 'Badem (Parmakları ince & uzun gösterir)',
+                square: 'Yumuşak Kare (Modern, şık & simetrik)',
+                coffin: 'Balerin / Tabut (Daralan köşeli lüks Instagram formu)',
+                stiletto: 'Keskin Stiletto (İddialı ve çarpıcı sivri form)',
+                oval: 'Doğal Oval (Zarif, yumuşak & kırılmaya dirençli)',
+                squoval: 'Squoval (Kare ve ovalin mükemmel dengesi)',
+                russian: 'Rus Bademi (Yüksek apeksli mimari Rus stili)'
+            };
+
+            document.querySelectorAll('.shape-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.shape-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentShape = btn.dataset.shape;
+                    document.getElementById('labelShapeDesc').textContent = shapeDescs[currentShape];
+                    updatePricing();
+                    render();
+                });
+            });
+        }
+
+        // 3. POPULATE MODES
+        function initModes() {
+            const modeBadges = {
+                extension: 'Protez Jel Mimari (Uzatma)',
+                overlay: 'Jel Güçlendirme / BIAB (Doğal Boy)',
+                polygel: 'Polygel Hibrit (Ultra Dayanıklı)',
+                medical: 'Tırnak Yatağı Onarımı & Güçlendirme'
+            };
+
+            document.querySelectorAll('.mode-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    document.querySelectorAll('.mode-card').forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+                    currentMode = card.dataset.mode;
+                    document.getElementById('labelServiceBadge').textContent = modeBadges[currentMode];
+
+                    const sliderLength = document.getElementById('sliderLength');
+                    if (currentMode === 'overlay') {
+                        currentExtensionMm = 0;
+                        sliderLength.value = 0;
+                        sliderLength.disabled = true;
+                        document.getElementById('valLength').textContent = 'Doğal Boy (0.0 mm)';
+                    } else {
+                        sliderLength.disabled = false;
+                        if (currentExtensionMm === 0) currentExtensionMm = 6.0;
+                        sliderLength.value = currentExtensionMm;
+                        document.getElementById('valLength').textContent = `+${currentExtensionMm.toFixed(1)} mm`;
+                    }
+                    updatePricing();
+                    render();
+                });
+            });
+        }
+
+        // 4. SETUP SLIDERS & INTERACTIONS
+        function setupSlidersAndToggles() {
+            // Length Slider
+            const sliderLength = document.getElementById('sliderLength');
+            sliderLength.addEventListener('input', (e) => {
+                currentExtensionMm = parseFloat(e.target.value);
+                const sizeTag = currentExtensionMm === 0 ? 'Doğal' :
+                                currentExtensionMm <= 3 ? 'XS' :
+                                currentExtensionMm <= 6 ? 'S' :
+                                currentExtensionMm <= 9 ? 'M' :
+                                currentExtensionMm <= 12 ? 'L' : 'XL';
+                document.getElementById('valLength').textContent = `+${currentExtensionMm.toFixed(1)} mm (${sizeTag})`;
+                updatePricing();
+                render();
+            });
+
+            // Length Preset Pills
+            document.querySelectorAll('.slider-presets-row .pill-preset[data-len]').forEach(pill => {
+                pill.addEventListener('click', () => {
+                    document.querySelectorAll('.slider-presets-row .pill-preset[data-len]').forEach(p => p.classList.remove('active'));
+                    pill.classList.add('active');
+                    currentExtensionMm = parseFloat(pill.dataset.len);
+                    sliderLength.value = currentExtensionMm;
+                    document.getElementById('valLength').textContent = `+${currentExtensionMm.toFixed(1)} mm`;
+                    updatePricing();
+                    render();
+                });
+            });
+
+            // Apex Slider
+            const sliderApex = document.getElementById('sliderApex');
+            const apexLabels = ['', 'Düz Doğal', 'Hafif Kavis', 'İdeal Salon', 'Yüksek Bombeli', 'Rus Mimarisi'];
+            sliderApex.addEventListener('input', (e) => {
+                currentApexLevel = parseInt(e.target.value);
+                document.getElementById('valApex').textContent = apexLabels[currentApexLevel];
+                render();
+            });
+
+            document.querySelectorAll('.slider-presets-row .pill-preset[data-apex]').forEach(pill => {
+                pill.addEventListener('click', () => {
+                    document.querySelectorAll('.slider-presets-row .pill-preset[data-apex]').forEach(p => p.classList.remove('active'));
+                    pill.classList.add('active');
+                    currentApexLevel = parseInt(pill.dataset.apex);
+                    sliderApex.value = currentApexLevel;
+                    document.getElementById('valApex').textContent = apexLabels[currentApexLevel];
+                    render();
+                });
+            });
+
+            // Color Picker
+            const colorPicker = document.getElementById('customColorPicker');
+            colorPicker.addEventListener('input', (e) => {
+                customColor = e.target.value;
+                document.querySelectorAll('.finish-card').forEach(c => c.classList.remove('active'));
+                render();
+            });
+
+            // Pins toggle
+            document.getElementById('checkShowPins').addEventListener('change', (e) => {
+                showPins = e.target.checked;
+                render();
+            });
+
+            // Split View toggle
+            const splitDivider = document.getElementById('splitDivider');
+            document.getElementById('checkSplitView').addEventListener('change', (e) => {
+                showSplitView = e.target.checked;
+                splitDivider.style.display = showSplitView ? 'block' : 'none';
+                splitDivider.style.left = `${splitDividerPercent * 100}%`;
+                render();
+            });
+
+            // Accent Gem toggle
+            document.getElementById('checkAccentNail').addEventListener('change', (e) => {
+                hasAccentGem = e.target.checked;
+                document.getElementById('rowAccentPrice').style.display = hasAccentGem ? 'flex' : 'none';
+                updatePricing();
+                render();
+            });
+
+            // Harmonize Color button
+            document.getElementById('btnHarmonizeColor').addEventListener('click', () => {
+                // Pick best finish for detected undertone
+                let best = FINISHES.find(f => f.undertone === detectedSkinTone.type) || FINISHES[0];
+                currentFinish = best;
+                customColor = null;
+                initFinishes();
+                updatePricing();
+                render();
+                alert(`✨ Cildiniz ${detectedSkinTone.name} alt tonunda tespit edildi. Sizin için en uyumlu '${best.name}' stili seçildi!`);
+            });
+
+            // User Photo Upload (Dual-Engine: U-Net Neural Segmentation + MediaPipe 3D Tracking)
+            const fileInput = document.getElementById('userHandInput');
+            fileInput.addEventListener('change', async (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+                stopWebcam();
+
+                document.getElementById('handStatusBadge').innerHTML = '<span>⏳ U-Net Sinir Ağı & MediaPipe Tırnakları İnceliyor...</span>';
+
+                // 1. Send to U-Net Neural Segmentation Microservice (Port 5005)
+                try {
+                    const formData = new FormData();
+                    formData.append('image', file);
+                    const unetResp = await fetch('http://127.0.0.1:5005/api/segment', { method: 'POST', body: formData });
+                    if (unetResp.ok) {
+                        const unetData = await unetResp.json();
+                        if (unetData.success && unetData.anchors && unetData.anchors.length >= 3) {
+                            console.log("[Linail U-Net] Detected anchors:", unetData.anchors);
+                            applyUNetAnchors(unetData.anchors);
+                            document.getElementById('handStatusBadge').innerHTML = `<span>✨ U-Net Sinir Ağı: ${unetData.detected_nails_count} Tırnak Yatağı Milimetrik Tespit Edildi</span>`;
+                        }
+                    }
+                } catch (err) {
+                    console.log("U-Net microservice note (MediaPipe client fallback active):", err);
+                }
+
+                // 2. Read image for Canvas & MediaPipe
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        activeHandImg = img;
+                        processHandWithMediaPipe(img);
+                    };
+                    img.src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            });
+
+            // Webcam Toggle
+            document.getElementById('btnToggleCamera').addEventListener('click', toggleWebcam);
+
+            // Reset to Studio Default
+            document.getElementById('btnResetDefault').addEventListener('click', () => {
+                stopWebcam();
+                activeHandImg = defaultHandImg;
+                fingerAnchors = JSON.parse(JSON.stringify(DEFAULT_STUDIO_ANCHORS));
+                document.getElementById('handStatusBadge').innerHTML = '<span>✨ Stüdyo Çekimi Model Eli Aktif (Kalibre Edildi)</span>';
+                analyzeSkinToneFromCanvas();
+                render();
+            });
+
+            // Download Prescription Card
+            document.getElementById('btnDownloadCard').addEventListener('click', exportPrescriptionCard);
+
+            // Dragging interactions on canvas
+            canvas.addEventListener('mousedown', onPointerDown);
+            canvas.addEventListener('mousemove', onPointerMove);
+            canvas.addEventListener('mouseup', onPointerUp);
+            canvas.addEventListener('touchstart', onTouchStart, { passive: false });
+            canvas.addEventListener('touchmove', onTouchMove, { passive: false });
+            canvas.addEventListener('touchend', onPointerUp);
+
+            // Split divider drag
+            splitDivider.addEventListener('mousedown', () => { isDraggingSplit = true; });
+            window.addEventListener('mouseup', () => { isDraggingSplit = false; });
+            window.addEventListener('mousemove', (e) => {
+                if (!isDraggingSplit) return;
+                const rect = document.getElementById('viewportBox').getBoundingClientRect();
+                const percent = Math.max(0.05, Math.min(0.95, (e.clientX - rect.left) / rect.width));
+                splitDividerPercent = percent;
+                splitDivider.style.left = `${percent * 100}%`;
+                render();
+            });
+        }
+
+        // 5. MEDIAPIPE INITIALIZATION & INFERENCE
+        function initMediaPipeTracker() {
+            try {
+                if (typeof Hands !== 'undefined') {
+                    handsTracker = new Hands({
+                        locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`
+                    });
+                    handsTracker.setOptions({
+                        maxNumHands: 2,
+                        modelComplexity: 1,
+                        minDetectionConfidence: 0.5,
+                        minTrackingConfidence: 0.5
+                    });
+                    handsTracker.onResults(onHandResults);
+                    isMediaPipeReady = true;
+                    console.log("MediaPipe Hands Engine Initialized.");
+                }
+            } catch (err) {
+                console.warn("MediaPipe CDN load warning:", err);
+            }
+        }
+
+        async function processHandWithMediaPipe(imageElement) {
+            if (handsTracker && isMediaPipeReady) {
+                try {
+                    await handsTracker.send({ image: imageElement });
+                    return;
+                } catch (e) {
+                    console.warn("MediaPipe inference fallback:", e);
+                }
+            }
+            // Fallback adaptive heuristic
+            autoEstimateHeuristicAnchors(imageElement.width, imageElement.height);
+            document.getElementById('handStatusBadge').innerHTML = '<span>📸 El Yüklendi • Parmak Açıları Otomatik Hizalandı</span>';
+            analyzeSkinToneFromCanvas();
+            render();
+        }
+
+        function onHandResults(results) {
+            if (results.multiHandLandmarks && results.multiHandLandmarks.length > 0) {
+                const lm = results.multiHandLandmarks[0];
+                const handedness = (results.multiHandedness && results.multiHandedness[0] && results.multiHandedness[0].label === 'Left') ? 'Sol El' : 'Sağ El';
+                isRightHand = handedness === 'Sağ El';
+                document.getElementById('txtHandOrientation').textContent = `El Yönü: ${handedness} (Tespit Edildi)`;
+
+                // Map 5 fingers to landmarks
+                // Thumb: 2 (MCP), 3 (IP), 4 (TIP)
+                // Index: 6 (PIP), 7 (DIP), 8 (TIP)
+                // Middle: 10 (PIP), 11 (DIP), 12 (TIP)
+                // Ring: 14 (PIP), 15 (DIP), 16 (TIP)
+                // Pinky: 18 (PIP), 19 (DIP), 20 (TIP)
+                const fingerConfigs = [
+                    { id: 'thumb', name: 'Başparmak', tip: 4, dip: 3, mcp: 2, wFactor: 0.52 },
+                    { id: 'index', name: 'İşaret', tip: 8, dip: 7, mcp: 6, wFactor: 0.48 },
+                    { id: 'middle', name: 'Orta', tip: 12, dip: 11, mcp: 10, wFactor: 0.48 },
+                    { id: 'ring', name: 'Yüzük', tip: 16, dip: 15, mcp: 14, wFactor: 0.44 },
+                    { id: 'pinky', name: 'Serçe', tip: 20, dip: 19, mcp: 18, wFactor: 0.38 }
+                ];
+
+                fingerAnchors = fingerConfigs.map(fc => {
+                    const tipLm = lm[fc.tip];
+                    const dipLm = lm[fc.dip];
+
+                    const tx = tipLm.x * canvas.width;
+                    const ty = tipLm.y * canvas.height;
+                    const dx = tx - (dipLm.x * canvas.width);
+                    const dy = ty - (dipLm.y * canvas.height);
+                    const angle = Math.atan2(dy, dx);
+                    const phalanxDist = Math.hypot(dx, dy);
+
+                    // Cuticle center is located along the phalanx back from the tip
+                    const baseLen = phalanxDist * 0.85;
+                    const cx = tx - Math.cos(angle) * (baseLen * 0.55);
+                    const cy = ty - Math.sin(angle) * (baseLen * 0.55);
+                    const w = phalanxDist * fc.wFactor;
+
+                    return {
+                        id: fc.id,
+                        name: fc.name,
+                        cx: cx,
+                        cy: cy,
+                        tx: tx,
+                        ty: ty,
+                        w: Math.max(26, w),
+                        baseLen: Math.max(38, baseLen),
+                        angle: angle
+                    };
+                });
+
+                document.getElementById('handStatusBadge').innerHTML = `<span>✨ Yapay Zekâ: 5 Parmak & Tırnak Açısı Tespit Edildi (${handedness})</span>`;
+            } else {
+                autoEstimateHeuristicAnchors(canvas.width, canvas.height);
+                document.getElementById('handStatusBadge').innerHTML = '<span>✨ El Uyarlandı • İnce Ayar İçin Pinleri Sürükleyebilirsiniz</span>';
+            }
+
+            analyzeSkinToneFromCanvas();
+            render();
+        }
+
+        function autoEstimateHeuristicAnchors(w, h) {
+            fingerAnchors = [
+                { id: 'thumb', name: 'Başparmak', cx: w * 0.65, cy: h * 0.60, tx: w * 0.63, ty: h * 0.68, w: w * 0.042, baseLen: h * 0.08, angle: 1.70 },
+                { id: 'index', name: 'İşaret', cx: w * 0.48, cy: h * 0.65, tx: w * 0.45, ty: h * 0.74, w: w * 0.038, baseLen: h * 0.08, angle: 1.90 },
+                { id: 'middle', name: 'Orta', cx: w * 0.38, cy: h * 0.62, tx: w * 0.32, ty: h * 0.70, w: w * 0.038, baseLen: h * 0.08, angle: 2.20 },
+                { id: 'ring', name: 'Yüzük', cx: w * 0.32, cy: h * 0.55, tx: w * 0.26, ty: h * 0.62, w: w * 0.035, baseLen: h * 0.075, angle: 2.30 },
+                { id: 'pinky', name: 'Serçe', cx: w * 0.34, cy: h * 0.48, tx: w * 0.28, ty: h * 0.52, w: w * 0.030, baseLen: h * 0.06, angle: 2.65 }
+            ];
+        }
+
+        // 6. SKIN TONE SAMPLER & HARMONIZER
+        function analyzeSkinToneFromCanvas() {
+            try {
+                // Sample 3 skin points around knuckles (mid-fingers)
+                let samplePoints = [
+                    { x: fingerAnchors[1].cx + 20, y: fingerAnchors[1].cy - 40 },
+                    { x: fingerAnchors[2].cx + 20, y: fingerAnchors[2].cy - 40 }
+                ];
+                let rSum = 0, gSum = 0, bSum = 0, count = 0;
+
+                samplePoints.forEach(p => {
+                    const sx = Math.max(0, Math.min(canvas.width - 5, Math.round(p.x)));
+                    const sy = Math.max(0, Math.min(canvas.height - 5, Math.round(p.y)));
+                    const pixel = ctx.getImageData(sx, sy, 1, 1).data;
+                    if (pixel[3] > 0) {
+                        rSum += pixel[0];
+                        gSum += pixel[1];
+                        bSum += pixel[2];
+                        count++;
+                    }
+                });
+
+                if (count > 0) {
+                    const r = rSum / count;
+                    const g = gSum / count;
+                    const b = bSum / count;
+
+                    // Undertone balance: Warm vs Cool
+                    const warmRatio = (r - b) / (r + g + b + 0.01);
+                    if (warmRatio > 0.18) {
+                        detectedSkinTone = { name: 'Sıcak Şeftali / Altın', type: 'warm', color: `rgb(${r},${g},${b})` };
+                    } else if (warmRatio < 0.10) {
+                        detectedSkinTone = { name: 'Soğuk Pembe / Porselen', type: 'cool', color: `rgb(${r},${g},${b})` };
+                    } else {
+                        detectedSkinTone = { name: 'Dengeli Nötr', type: 'all', color: `rgb(${r},${g},${b})` };
+                    }
+
+                    document.getElementById('skinToneDot').style.background = detectedSkinTone.color;
+                    document.getElementById('skinToneText').textContent = `Cilt Tonu: ${detectedSkinTone.name}`;
+                }
+            } catch (e) {
+                console.log("Skin tone analyze note:", e);
+            }
+        }
+
+        // 7. WEBCAM TOGGLE
+        async function toggleWebcam() {
+            if (webcamStream) {
+                stopWebcam();
+                return;
+            }
+            try {
+                webcamStream = await navigator.mediaDevices.getUserMedia({ video: { width: 1280, height: 720 } });
+                webcamVideo.srcObject = webcamStream;
+                webcamVideo.play();
+                document.getElementById('btnToggleCamera').classList.add('active');
+                document.getElementById('handStatusBadge').innerHTML = '<span>📹 Canlı Kamera Aktif • Elinizi Kadraja Alın</span>';
+                
+                requestAnimationFrame(webcamRenderLoop);
+            } catch (err) {
+                alert("Kamera erişimi sağlanamadı: " + err.message);
+            }
+        }
+
+        function stopWebcam() {
+            if (webcamStream) {
+                webcamStream.getTracks().forEach(t => t.stop());
+                webcamStream = null;
+                document.getElementById('btnToggleCamera').classList.remove('active');
+            }
+        }
+
+        function webcamRenderLoop() {
+            if (!webcamStream) return;
+            render();
+            requestAnimationFrame(webcamRenderLoop);
+        }
+
+        // 8. INTERACTIVE CANVAS PIN DRAGGING
+        function getCanvasCoords(e) {
+            const rect = canvas.getBoundingClientRect();
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+            const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+            const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+            return {
+                x: (clientX - rect.left) * scaleX,
+                y: (clientY - rect.top) * scaleY
+            };
+        }
+
+        function onPointerDown(e) {
+            const p = getCanvasCoords(e);
+            // Check if clicking rotation tip or center pin
+            for (let i = 0; i < fingerAnchors.length; i++) {
+                const a = fingerAnchors[i];
+                // Tip rotation handle check
+                const tipDist = Math.hypot(p.x - a.tx, p.y - a.ty);
+                if (tipDist < 30) {
+                    activeDragIndex = i;
+                    dragMode = 'rotate';
+                    isDragging = true;
+                    return;
+                }
+                // Center cuticle anchor check
+                const centerDist = Math.hypot(p.x - a.cx, p.y - a.cy);
+                if (centerDist < 35) {
+                    activeDragIndex = i;
+                    dragMode = 'move';
+                    isDragging = true;
+                    return;
+                }
+            }
+        }
+
+        function onPointerMove(e) {
+            if (!isDragging || activeDragIndex === -1) return;
+            const p = getCanvasCoords(e);
+            const a = fingerAnchors[activeDragIndex];
+
+            if (dragMode === 'move') {
+                const dx = a.tx - a.cx;
+                const dy = a.ty - a.cy;
+                a.cx = p.x;
+                a.cy = p.y;
+                a.tx = p.x + dx;
+                a.ty = p.y + dy;
+            } else if (dragMode === 'rotate') {
+                a.tx = p.x;
+                a.ty = p.y;
+                a.angle = Math.atan2(a.ty - a.cy, a.tx - a.cx);
+                a.baseLen = Math.hypot(a.tx - a.cx, a.ty - a.cy);
+            }
+            render();
+        }
+
+        function onPointerUp() {
+            isDragging = false;
+            activeDragIndex = -1;
+        }
+
+        function onTouchStart(e) {
+            e.preventDefault();
+            onPointerDown(e);
+        }
+
+        function onTouchMove(e) {
+            e.preventDefault();
+            onPointerMove(e);
+        }
+
+        // 9. PHOTOREALISTIC CANVAS RENDERER
+        function render() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // 1. Draw Background Image
+            if (webcamStream && webcamVideo.readyState >= 2) {
+                ctx.drawImage(webcamVideo, 0, 0, canvas.width, canvas.height);
+            } else if (activeHandImg && activeHandImg.complete) {
+                ctx.drawImage(activeHandImg, 0, 0, canvas.width, canvas.height);
+            }
+
+            // If Split View is active, clip the nail rendering to the right side of the split divider
+            if (showSplitView) {
+                ctx.save();
+                const splitX = canvas.width * splitDividerPercent;
+                ctx.beginPath();
+                ctx.rect(splitX, 0, canvas.width - splitX, canvas.height);
+                ctx.clip();
+            }
+
+            // 2. Draw 5 Photorealistic Nails
+            fingerAnchors.forEach((anchor, i) => {
+                drawHauteCoutureNail(anchor, i);
+            });
+
+            if (showSplitView) {
+                ctx.restore();
+                // Draw split line on canvas as well for exported images
+                const splitX = canvas.width * splitDividerPercent;
+                ctx.save();
+                ctx.beginPath();
+                ctx.moveTo(splitX, 0);
+                ctx.lineTo(splitX, canvas.height);
+                ctx.strokeStyle = '#D4AF37';
+                ctx.lineWidth = 3;
+                ctx.stroke();
+                ctx.restore();
+            }
+
+            // 3. Draw Calibration Pins & Direction Vectors if enabled
+            if (showPins && !showSplitView) {
+                drawCalibrationOverlay();
+            }
+        }
+
+        function drawHauteCoutureNail(anchor, index) {
+            ctx.save();
+            ctx.translate(anchor.cx, anchor.cy);
+            // Rotate so +Y points forward along finger vector
+            ctx.rotate(anchor.angle - Math.PI / 2);
+
+            const w = anchor.w;
+            // Extension in pixels: 1 mm ~ 4.2 px
+            const extPixels = currentMode === 'extension' ? currentExtensionMm * 4.2 : 0;
+            const h = anchor.baseLen + extPixels;
+
+            // Compute Nail Outline Path
+            ctx.beginPath();
+
+            // 1. Cuticle Base (Convex curve tucking naturally under proximal nail fold)
+            ctx.moveTo(-w / 2, 0);
+            ctx.bezierCurveTo(-w * 0.45, -w * 0.24, w * 0.45, -w * 0.24, w / 2, 0);
+
+            // 2. Lateral Sidewalls and Free Edge based on Selected Shape
+            if (currentShape === 'almond') {
+                ctx.bezierCurveTo(w * 0.48, h * 0.40, w * 0.32, h * 0.88, 0, h + 4);
+                ctx.bezierCurveTo(-w * 0.32, h * 0.88, -w * 0.48, h * 0.40, -w / 2, 0);
+            } else if (currentShape === 'square') {
+                ctx.lineTo(w / 2, h);
+                ctx.lineTo(-w / 2, h);
+                ctx.closePath();
+            } else if (currentShape === 'coffin') {
+                ctx.lineTo(w * 0.32, h + 3);
+                ctx.lineTo(-w * 0.32, h + 3);
+                ctx.closePath();
+            } else if (currentShape === 'stiletto') {
+                ctx.bezierCurveTo(w * 0.46, h * 0.36, w * 0.22, h * 0.82, 0, h + 14);
+                ctx.bezierCurveTo(-w * 0.22, h * 0.82, -w * 0.46, h * 0.36, -w / 2, 0);
+            } else if (currentShape === 'squoval') {
+                ctx.lineTo(w / 2, h - 5);
+                ctx.quadraticCurveTo(w / 2, h, w / 2 - 5, h);
+                ctx.lineTo(-w / 2 + 5, h);
+                ctx.quadraticCurveTo(-w / 2, h, -w / 2, h - 5);
+                ctx.closePath();
+            } else if (currentShape === 'russian') {
+                ctx.bezierCurveTo(w * 0.42, h * 0.45, w * 0.26, h * 0.92, 0, h + 8);
+                ctx.bezierCurveTo(-w * 0.26, h * 0.92, -w * 0.42, h * 0.45, -w / 2, 0);
+            } else { // Oval
+                ctx.bezierCurveTo(w * 0.50, h * 0.48, w * 0.38, h + 4, 0, h + 4);
+                ctx.bezierCurveTo(-w * 0.38, h + 4, -w * 0.50, h * 0.48, -w / 2, 0);
+            }
+            ctx.closePath();
+
+            // A. Physical Under-Nail Drop Shadow (Gives authentic 3D lift off skin)
+            if (extPixels > 0) {
+                ctx.save();
+                ctx.shadowColor = 'rgba(15, 5, 18, 0.48)';
+                ctx.shadowBlur = 10;
+                ctx.shadowOffsetX = 1;
+                ctx.shadowOffsetY = 6;
+                ctx.fillStyle = 'rgba(25, 8, 20, 0.2)';
+                ctx.fill();
+                ctx.restore();
+            }
+
+            // B. Base Gel Color
+            ctx.fillStyle = customColor || currentFinish.baseColor;
+            ctx.fill();
+
+            // C. Special Finishes Shading
+            const overlay = currentFinish.overlay;
+
+            // Pearl / Chrome Overlay
+            if (overlay === 'pearl' || overlay === 'chrome' || overlay === 'gold_chrome') {
+                const chromeGrad = ctx.createLinearGradient(-w / 2, 0, w / 2, h);
+                if (overlay === 'pearl') {
+                    chromeGrad.addColorStop(0, 'rgba(255, 255, 255, 0.65)');
+                    chromeGrad.addColorStop(0.35, 'rgba(255, 255, 255, 0.15)');
+                    chromeGrad.addColorStop(0.65, 'rgba(212, 175, 55, 0.35)');
+                    chromeGrad.addColorStop(1, 'rgba(255, 255, 255, 0.75)');
+                } else if (overlay === 'chrome') {
+                    chromeGrad.addColorStop(0, 'rgba(255, 255, 255, 0.85)');
+                    chromeGrad.addColorStop(0.45, 'rgba(160, 174, 192, 0.45)');
+                    chromeGrad.addColorStop(0.55, 'rgba(255, 255, 255, 0.95)');
+                    chromeGrad.addColorStop(1, 'rgba(113, 128, 150, 0.6)');
+                } else {
+                    chromeGrad.addColorStop(0, 'rgba(254, 240, 138, 0.85)');
+                    chromeGrad.addColorStop(0.5, 'rgba(180, 130, 20, 0.5)');
+                    chromeGrad.addColorStop(1, 'rgba(254, 240, 138, 0.9)');
+                }
+                ctx.fillStyle = chromeGrad;
+                ctx.fill();
+            }
+
+            // 9D Cat Eye Magnetic Beam
+            else if (overlay === 'cat_eye') {
+                ctx.save();
+                ctx.clip();
+                const beamGrad = ctx.createLinearGradient(-w, -h * 0.2, w, h * 1.2);
+                beamGrad.addColorStop(0.35, 'rgba(0,0,0,0)');
+                beamGrad.addColorStop(0.50, currentFinish.catColor || '#34d399');
+                beamGrad.addColorStop(0.65, 'rgba(0,0,0,0)');
+                ctx.fillStyle = beamGrad;
+                ctx.fillRect(-w * 2, -h, w * 4, h * 3);
+                ctx.restore();
+            }
+
+            // Babyboomer Ombre
+            else if (overlay === 'ombre') {
+                ctx.save();
+                ctx.clip();
+                const omGrad = ctx.createLinearGradient(0, 0, 0, h);
+                omGrad.addColorStop(0.25, 'rgba(255, 255, 255, 0)');
+                omGrad.addColorStop(0.70, 'rgba(255, 255, 255, 0.65)');
+                omGrad.addColorStop(1.00, 'rgba(255, 255, 255, 0.98)');
+                ctx.fillStyle = omGrad;
+                ctx.fillRect(-w * 2, -h, w * 4, h * 3);
+                ctx.restore();
+            }
+
+            // French Tip Smile Line
+            if (overlay === 'french' || currentFinish.tipColor) {
+                ctx.save();
+                ctx.clip();
+                ctx.beginPath();
+                const tipY = h + (currentShape === 'stiletto' ? 12 : 2);
+                const smileHeight = Math.max(6, h * 0.16);
+                ctx.ellipse(0, tipY, w * 0.52, smileHeight, 0, 0, Math.PI * 2);
+                ctx.fillStyle = currentFinish.tipColor || '#FFFFFF';
+                ctx.fill();
+                ctx.restore();
+            }
+
+            // Russian V-French
+            if (overlay === 'v_french') {
+                ctx.save();
+                ctx.clip();
+                ctx.beginPath();
+                ctx.moveTo(-w / 2, h - 8);
+                ctx.lineTo(0, h + 4);
+                ctx.lineTo(w / 2, h - 8);
+                ctx.lineTo(w / 2, h + 20);
+                ctx.lineTo(-w / 2, h + 20);
+                ctx.closePath();
+                ctx.fillStyle = '#FFFFFF';
+                ctx.fill();
+                ctx.restore();
+            }
+
+            // 24K Gold Flakes
+            if (overlay === 'flakes') {
+                ctx.save();
+                ctx.clip();
+                ctx.fillStyle = '#D4AF37';
+                // Draw 4 organic foil flakes
+                ctx.beginPath();
+                ctx.ellipse(-w * 0.15, h * 0.45, 3, 5, 0.5, 0, Math.PI * 2);
+                ctx.ellipse(w * 0.18, h * 0.65, 4, 3, -0.3, 0, Math.PI * 2);
+                ctx.ellipse(-w * 0.05, h * 0.78, 2, 4, 0.8, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+
+            // D. 3D C-Curve Apex Specular Highlight (The Master Salon Glow)
+            if (overlay !== 'matte') {
+                ctx.save();
+                ctx.clip();
+                const apexAlpha = 0.22 + (currentApexLevel * 0.08); // Modulated by apex slider
+                const apexGrad = ctx.createLinearGradient(-w * 0.25, 0, w * 0.25, h);
+                apexGrad.addColorStop(0, `rgba(255, 255, 255, ${apexAlpha})`);
+                apexGrad.addColorStop(0.5, 'rgba(255, 255, 255, 0.05)');
+                apexGrad.addColorStop(1, `rgba(255, 255, 255, ${apexAlpha * 0.8})`);
+
+                ctx.beginPath();
+                ctx.ellipse(-w * 0.18, h * 0.45, w * 0.14, h * 0.36, 0.06, 0, Math.PI * 2);
+                ctx.fillStyle = apexGrad;
+                ctx.fill();
+                ctx.restore();
+            }
+
+            // E. Ring Finger Swarovski Accent Gem (If enabled & on ring finger index 3)
+            if (hasAccentGem && anchor.id === 'ring') {
+                ctx.save();
+                const gemY = w * 0.15;
+                // Outer crystal glow
+                ctx.beginPath();
+                ctx.arc(0, gemY, 5.5, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
+                ctx.shadowColor = '#D4AF37';
+                ctx.shadowBlur = 12;
+                ctx.fill();
+                // Facet sparkle
+                ctx.beginPath();
+                ctx.moveTo(0, gemY - 6); ctx.lineTo(0, gemY + 6);
+                ctx.moveTo(-6, gemY); ctx.lineTo(6, gemY);
+                ctx.strokeStyle = '#D4AF37';
+                ctx.lineWidth = 1.2;
+                ctx.stroke();
+                ctx.restore();
+            }
+
+            // F. Cuticle Soft Feather Blend (Seamless integration into real human skin fold)
+            ctx.save();
+            const skinBlendGrad = ctx.createLinearGradient(0, -w * 0.2, 0, w * 0.3);
+            skinBlendGrad.addColorStop(0, 'rgba(40, 15, 22, 0.45)');
+            skinBlendGrad.addColorStop(0.5, 'rgba(40, 15, 22, 0.12)');
+            skinBlendGrad.addColorStop(1, 'rgba(40, 15, 22, 0)');
+            ctx.fillStyle = skinBlendGrad;
+            ctx.fill();
+            ctx.restore();
+
+            ctx.restore();
+        }
+
+        // 10. DRAW CALIBRATION PINS OVERLAY
+        function drawCalibrationOverlay() {
+            fingerAnchors.forEach((a, i) => {
+                ctx.save();
+                // Cuticle Center Anchor Pin (Red/Gold)
+                ctx.beginPath();
+                ctx.arc(a.cx, a.cy, 9, 0, Math.PI * 2);
+                ctx.fillStyle = i === activeDragIndex && dragMode === 'move' ? '#FFFFFF' : '#D4AF37';
+                ctx.fill();
+                ctx.strokeStyle = '#09020C';
+                ctx.lineWidth = 2.5;
+                ctx.stroke();
+
+                // Direction Vector Line
+                ctx.beginPath();
+                ctx.moveTo(a.cx, a.cy);
+                ctx.lineTo(a.tx, a.ty);
+                ctx.strokeStyle = '#22c55e';
+                ctx.lineWidth = 2.5;
+                ctx.stroke();
+
+                // Free Edge Direction Handle (Cyan)
+                ctx.beginPath();
+                ctx.arc(a.tx, a.ty, 7, 0, Math.PI * 2);
+                ctx.fillStyle = i === activeDragIndex && dragMode === 'rotate' ? '#FFFFFF' : '#06b6d4';
+                ctx.fill();
+                ctx.strokeStyle = '#09020C';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+
+                // Finger Label
+                ctx.font = '600 11px Plus Jakarta Sans, sans-serif';
+                ctx.fillStyle = '#FAF8F5';
+                ctx.shadowColor = '#000';
+                ctx.shadowBlur = 6;
+                ctx.fillText(a.name, a.cx + 12, a.cy + 4);
+                ctx.restore();
+            });
+        }
+
+        // 11. PRICING CALCULATION & WHATSAPP
+        function updatePricing() {
+            let basePrice = 3000;
+            let serviceName = "Protez Jel Tırnak & Kombi Rus Manikürü";
+
+            if (currentMode === 'overlay') {
+                basePrice = 2400;
+                serviceName = "Jel Güçlendirme (BIAB) & Rus Manikürü";
+            } else if (currentMode === 'polygel') {
+                basePrice = 3300;
+                serviceName = "Polygel Hibrit Mimari & Manikür";
+            } else if (currentMode === 'medical') {
+                basePrice = 3200;
+                serviceName = "Hasarlı Tırnak Onarımı & Biyo-Jel Güçlendirme";
+            }
+
+            const extraPrice = currentFinish.extraPrice;
+            const gemPrice = hasAccentGem ? 180 : 0;
+            const listTotal = basePrice + extraPrice + gemPrice;
+            const cashTotal = Math.round(listTotal * 0.90);
+
+            document.getElementById('txtServiceTitle').textContent = serviceName;
+            document.getElementById('txtServicePrice').textContent = `${basePrice.toLocaleString('tr-TR')} ₺`;
+
+            document.getElementById('txtStyleTitle').textContent = currentFinish.name;
+            document.getElementById('txtStylePrice').textContent = extraPrice > 0 ? `+${extraPrice.toLocaleString('tr-TR')} ₺` : 'Dahil';
+
+            const shapeMap = {
+                almond: 'Badem Form',
+                square: 'Yumuşak Kare',
+                coffin: 'Balerin / Coffin',
+                stiletto: 'Keskin Stiletto',
+                oval: 'Doğal Oval',
+                squoval: 'Squoval',
+                russian: 'Rus Bademi'
+            };
+            const extText = currentMode === 'extension' ? `(+${currentExtensionMm.toFixed(1)} mm)` : '(Doğal Boy)';
+            document.getElementById('txtShapeTitle').textContent = `${shapeMap[currentShape]} ${extText}`;
+
+            document.getElementById('txtListTotal').textContent = `${listTotal.toLocaleString('tr-TR')} ₺`;
+            document.getElementById('txtCashTotal').textContent = `${cashTotal.toLocaleString('tr-TR')} ₺`;
+
+            // WhatsApp Booking Message (0531 869 67 64 - Linail Beauty Studio)
+            const waMsg = `Merhaba Gülşah Hanım, Linail Sanal Aynada kendi elimin fotoğrafı üzerinde tırnak tasarımı oluşturdum:\n\n` +
+                          `💅 Hizmet: ${serviceName}\n` +
+                          `📏 Uzunluk & Form: ${shapeMap[currentShape]} ${extText}\n` +
+                          `✨ Haute Couture Bitiş: ${currentFinish.name}\n` +
+                          (hasAccentGem ? `💎 Aksesuar: Yüzük Parmağında Swarovski Kristal\n` : ``) +
+                          `🎨 Cilt Alt Tonu: ${detectedSkinTone.name}\n` +
+                          `💰 VIP Masada Nakit Özel Fiyat: ${cashTotal.toLocaleString('tr-TR')} ₺ (Liste: ${listTotal.toLocaleString('tr-TR')} ₺)\n\n` +
+                          `Uphill Towers stüdyonuzda masada birebir bu modelin randevusunu oluşturabilir miyiz?`;
+            
+            document.getElementById('linkWhatsApp').href = `https://wa.me/905318696764?text=${encodeURIComponent(waMsg)}`;
+        }
+
+        // 12. EXPORT PRESCRIPTION CARD
+        function exportPrescriptionCard() {
+            // Temporarily hide pins and render clean
+            const prevPins = showPins;
+            showPins = false;
+            render();
+
+            // Create temporary canvas with Linail watermark card
+            const expCanvas = document.createElement('canvas');
+            expCanvas.width = canvas.width;
+            expCanvas.height = canvas.height + 120;
+            const expCtx = expCanvas.getContext('2d');
+
+            // Draw current canvas
+            expCtx.drawImage(canvas, 0, 0);
+
+            // Draw lower VIP info footer card
+            expCtx.fillStyle = '#09020C';
+            expCtx.fillRect(0, canvas.height, expCanvas.width, 120);
+
+            expCtx.strokeStyle = '#D4AF37';
+            expCtx.lineWidth = 2;
+            expCtx.beginPath();
+            expCtx.moveTo(0, canvas.height);
+            expCtx.lineTo(expCanvas.width, canvas.height);
+            expCtx.stroke();
+
+            // Text info
+            expCtx.font = '700 24px Cormorant Garamond, serif';
+            expCtx.fillStyle = '#F6E7B9';
+            expCtx.fillText('LİNAİL BEAUTY • VIP TIRNAK REÇETESİ', 36, canvas.height + 42);
+
+            expCtx.font = '500 13px Plus Jakarta Sans, sans-serif';
+            expCtx.fillStyle = '#FAF8F5';
+            const shapeMap = { almond: 'Badem', square: 'Kare', coffin: 'Balerin', stiletto: 'Stiletto', oval: 'Oval', squoval: 'Squoval', russian: 'Rus Bademi' };
+            const desc = `${shapeMap[currentShape]} (+${currentExtensionMm.toFixed(1)}mm) • ${currentFinish.name} • Masada VIP Nakit: ${document.getElementById('txtCashTotal').textContent}`;
+            expCtx.fillText(desc, 36, canvas.height + 72);
+
+            expCtx.font = '400 11px Plus Jakarta Sans, sans-serif';
+            expCtx.fillStyle = '#8C7E96';
+            expCtx.fillText('📍 Uphill Towers B Blok D.14 Ataşehir • WhatsApp Randevu: 0531 869 67 64', 36, canvas.height + 95);
+
+            // Download
+            const link = document.createElement('a');
+            link.download = `Linail_Nail_Design_${Date.now()}.jpg`;
+            link.href = expCanvas.toDataURL('image/jpeg', 0.95);
+            link.click();
+
+            // Restore pins
+            showPins = prevPins;
+            render();
+        }
+
+        // 13. U-NET ANCHOR MAPPER & NAIL-STAR RECIPE MODAL
+        function applyUNetAnchors(unetAnchors) {
+            if (!unetAnchors || unetAnchors.length === 0) return;
+            unetAnchors.forEach((ua, idx) => {
+                if (idx < fingerAnchors.length) {
+                    fingerAnchors[idx].cx = ua.cx;
+                    fingerAnchors[idx].cy = ua.cy;
+                    fingerAnchors[idx].tx = ua.tx;
+                    fingerAnchors[idx].ty = ua.ty;
+                    if (ua.w) fingerAnchors[idx].w = Math.max(28, ua.w);
+                    if (ua.baseLen) fingerAnchors[idx].baseLen = Math.max(45, ua.baseLen);
+                    if (ua.angle) fingerAnchors[idx].angle = ua.angle;
+                }
+            });
+            render();
+        }
+
+        // NAIL-STAR Modal Logic
+        const recipesModal = document.getElementById('recipesModal');
+        document.getElementById('btnOpenRecipesModal').addEventListener('click', openRecipesModal);
+        document.getElementById('btnCloseRecipesModal').addEventListener('click', () => {
+            recipesModal.style.display = 'none';
+        });
+
+        async function openRecipesModal() {
+            recipesModal.style.display = 'flex';
+            loadRecipes('');
+        }
+
+        document.getElementById('btnFilterRecipes').addEventListener('click', () => {
+            const query = document.getElementById('recipeSearchInput').value.trim();
+            loadRecipes(query);
+        });
+
+        async function loadRecipes(kw) {
+            const grid = document.getElementById('recipesModalGrid');
+            grid.innerHTML = '<div style="color: var(--gold-light); padding: 20px; grid-column: 1/-1; text-align: center;">⏳ NAIL-STAR Lüks Reçeteleri Yükleniyor...</div>';
+            try {
+                const resp = await fetch(`http://127.0.0.1:5005/api/recipes?keyword=${encodeURIComponent(kw)}`);
+                if (resp.ok) {
+                    const data = await resp.json();
+                    renderRecipesGrid(data.recipes);
+                }
+            } catch (e) {
+                grid.innerHTML = '<div style="color: var(--text-muted); padding: 20px; grid-column: 1/-1; text-align: center;">Reçete mikroservisi çevrimdışı: ' + e.message + '</div>';
+            }
+        }
+
+        function renderRecipesGrid(recipes) {
+            const grid = document.getElementById('recipesModalGrid');
+            grid.innerHTML = '';
+            if (!recipes || recipes.length === 0) {
+                grid.innerHTML = '<div style="color: var(--text-muted); padding: 20px; grid-column: 1/-1; text-align: center;">Eşleşen reçete bulunamadı.</div>';
+                return;
+            }
+
+            recipes.forEach(r => {
+                const card = document.createElement('div');
+                card.style.cssText = 'background: rgba(255,255,255,0.03); border: 1px solid var(--border-gold); border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 8px; cursor: pointer; transition: all 0.2s;';
+                card.onmouseenter = () => { card.style.borderColor = 'var(--gold-primary)'; card.style.transform = 'translateY(-2px)'; };
+                card.onmouseleave = () => { card.style.borderColor = 'var(--border-gold)'; card.style.transform = 'none'; };
+
+                const primaryRgb = r.primary_rgb ? `rgb(${r.primary_rgb.join(',')})` : '#E8C3B9';
+                const secondaryRgb = r.secondary_rgb ? `rgb(${r.secondary_rgb.join(',')})` : '#FAF8F5';
+
+                card.innerHTML = `
+                    <div style="height: 120px; border-radius: 8px; overflow: hidden; position: relative; background: #000;">
+                        <img src="${r.image_url}" alt="Nail Art" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'">
+                        <div style="position: absolute; bottom: 6px; right: 6px; display: flex; gap: 4px;">
+                            <span style="width: 16px; height: 16px; border-radius: 50%; background: ${primaryRgb}; border: 1px solid #FFF;"></span>
+                            <span style="width: 16px; height: 16px; border-radius: 50%; background: ${secondaryRgb}; border: 1px solid #FFF;"></span>
+                        </div>
+                    </div>
+                    <div style="font-size: 11px; font-weight: 600; color: var(--text-primary); line-height: 1.4; max-height: 44px; overflow: hidden;">
+                        ${r.original_annotation}
+                    </div>
+                    <button style="margin-top: auto; background: var(--gold-gradient); color: #09020C; border: none; font-weight: 700; font-size: 11px; padding: 6px 10px; border-radius: 6px; cursor: pointer;">
+                        ✓ Bu Reçeteyi Uygula
+                    </button>
+                `;
+
+                card.addEventListener('click', () => {
+                    applyRecipe(r);
+                    recipesModal.style.display = 'none';
+                });
+
+                grid.appendChild(card);
+            });
+        }
+
+        function applyRecipe(r) {
+            if (r.primary_rgb) {
+                const hex = '#' + r.primary_rgb.map(x => x.toString(16).padStart(2, '0')).join('');
+                customColor = hex;
+                document.getElementById('customColorPicker').value = hex;
+            }
+            const ann = r.original_annotation.toLowerCase();
+            if (ann.includes('marble')) {
+                currentFinish = FINISHES.find(f => f.id === 'rose_quartz_marble') || currentFinish;
+            } else if (ann.includes('french')) {
+                currentFinish = FINISHES.find(f => f.id === 'classic_french') || currentFinish;
+            } else if (ann.includes('chrome')) {
+                currentFinish = FINISHES.find(f => f.id === 'liquid_chrome') || currentFinish;
+            } else if (ann.includes('glazed')) {
+                currentFinish = FINISHES.find(f => f.id === 'glazed_donut') || currentFinish;
+            } else if (ann.includes('ombre')) {
+                currentFinish = FINISHES.find(f => f.id === 'babyboomer') || currentFinish;
+            }
+            initFinishes();
+            updatePricing();
+            render();
+            alert(`✨ NAIL-STAR Reçetesi Uygulandı:\n"${r.original_annotation.slice(0, 100)}..."`);
+        }
+    </script>
+
+    <!-- NAIL-STAR LUXURY RECIPES MODAL -->
+    <div id="recipesModal" style="display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(9, 2, 12, 0.88); backdrop-filter: blur(25px); align-items: center; justify-content: center; padding: 24px;">
+        <div style="background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: var(--radius-lg); width: 100%; max-width: 900px; max-height: 85vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 25px 70px rgba(0,0,0,0.8);">
+            <div style="padding: 20px 24px; border-bottom: 1px solid var(--border-gold); display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h3 style="font-family: var(--font-serif); font-size: 24px; color: var(--gold-light);">NAIL-STAR • 3.540 Seçkin Salon Reçetesi</h3>
+                    <p style="font-size: 11px; color: var(--text-muted);">Dünyaca ünlü tırnak sanatçılarının kataloglarından filtrelenmiş lüks renk ve stil reçeteleri.</p>
+                </div>
+                <button id="btnCloseRecipesModal" style="background: none; border: none; color: var(--gold-light); font-size: 24px; cursor: pointer;">✕</button>
+            </div>
+            <div style="padding: 14px 24px; border-bottom: 1px solid rgba(212,175,55,0.15); display: flex; gap: 10px;">
+                <input type="text" id="recipeSearchInput" placeholder="Stil ara (Örn: marble, french, chrome, pink, ombre)..." style="flex: 1; background: rgba(255,255,255,0.05); border: 1px solid var(--border-gold); border-radius: 8px; padding: 8px 14px; color: #FFF; font-size: 12px; outline: none;">
+                <button id="btnFilterRecipes" class="btn-action" style="padding: 8px 16px;">Filtrele</button>
+            </div>
+            <div id="recipesModalGrid" style="padding: 20px 24px; overflow-y: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px;">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
