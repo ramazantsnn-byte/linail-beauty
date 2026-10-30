@@ -209,20 +209,53 @@
         </p>
       </div>
 
-      <!-- Sağ Kolon: Görsel ve Canlı Kabin Kanıtı -->
-      <div class="lg:col-span-5 relative">
-        <div class="relative mx-auto max-w-md lg:max-w-none rounded-3xl overflow-hidden border border-brand-gold/40 shadow-2xl p-2 bg-gradient-to-b from-brand-gold/30 to-transparent">
-          <img src="../assets/cilt_bakimi_luxury.jpg" alt="Linail Beauty Ataşehir Medikal Cilt Bakımı Seansı" class="w-full h-[420px] object-cover rounded-2xl shadow-inner">
-          <div class="absolute inset-0 bg-gradient-to-t from-brand-deepPurple via-transparent to-transparent rounded-2xl"></div>
+      <!-- Sağ Kolon: Orijinal Reels Video & Canlı Kabin Deneyimi -->
+      <div class="lg:col-span-5 relative flex justify-center">
+        <!-- Telefon / Reels Çerçevesi (9:16 Dikey Lüks Gold Border) -->
+        <div class="relative w-full max-w-[320px] sm:max-w-[340px] rounded-[38px] p-2.5 bg-gradient-to-b from-brand-gold/60 via-brand-gold/20 to-brand-gold/50 shadow-[0_20px_50px_rgba(0,0,0,0.6)] border border-brand-gold/30">
           
-          <!-- Görsel Üstü VIP Rozeti -->
-          <div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-brand-deepPurple/85 backdrop-blur-md border border-brand-gold/30 text-white">
-            <div class="flex items-center justify-between mb-1">
-              <span class="text-xs uppercase tracking-widest text-brand-lightGold font-semibold">Cam Cilt Protokolü</span>
-              <span class="text-[10px] bg-brand-gold/20 text-brand-lightGold px-2 py-0.5 rounded-full border border-brand-gold/30">1. Seans Sonucu</span>
+          <div class="relative w-full aspect-[9/16] rounded-[30px] overflow-hidden bg-black shadow-inner">
+            <video 
+              id="ciltReelVideo"
+              src="../assets/cilt_bakimi_reel_opt.mp4" 
+              poster="../assets/cilt_bakimi_poster.jpg"
+              playsinline 
+              autoplay 
+              loop 
+              muted 
+              class="w-full h-full object-cover">
+            </video>
+
+            <!-- Video Karartma Degrade -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 pointer-events-none"></div>
+
+            <!-- Canlı Reels Rozetleri -->
+            <div class="absolute top-4 left-4 right-4 flex items-center justify-between z-10 pointer-events-none">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-deepPurple/90 border border-brand-gold/40 text-[10px] uppercase tracking-wider text-brand-lightGold font-medium backdrop-blur-md">
+                <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
+                <span>Canlı Seans</span>
+              </span>
+              <button 
+                onclick="var v=document.getElementById('ciltReelVideo'); v.muted=!v.muted; this.querySelector('i').setAttribute('data-lucide', v.muted ? 'volume-x' : 'volume-2'); lucide.createIcons();"
+                class="w-8 h-8 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:text-brand-gold hover:border-brand-gold transition-colors pointer-events-auto"
+                title="Sesi Aç/Kapat">
+                <i data-lucide="volume-x" class="w-4 h-4"></i>
+              </button>
             </div>
-            <p class="text-xs text-stone-300 font-light leading-snug">Vortex vakum temizliği + Karboksi CO2 terapi ile ilk çıkışta anında ayna parlaklığı.</p>
+
+            <!-- Video Üstü VIP Metin -->
+            <div class="absolute bottom-4 left-4 right-4 p-3.5 rounded-2xl bg-brand-deepPurple/90 backdrop-blur-md border border-brand-gold/30 text-white z-10 pointer-events-none">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-[11px] uppercase tracking-widest text-brand-lightGold font-semibold">Uphill Towers Kabini</span>
+                <span class="text-[9px] bg-brand-gold/20 text-brand-lightGold px-2 py-0.5 rounded-full border border-brand-gold/30">Adım Adım Bakım</span>
+              </div>
+              <p class="text-[11px] text-stone-300 font-light leading-snug">
+                Kahve sohbetiyle başlayan derin cilt analizi ve Cam Cilt Protokolü seans ritüeli.
+              </p>
+            </div>
+
           </div>
+
         </div>
       </div>
 
