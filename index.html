@@ -411,20 +411,26 @@
   <!-- Header / Navigasyon -->
   <header id="navbar" class="fixed top-10 left-0 w-full z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-3 sm:px-6">
-      <nav class="relative glass-card-dark rounded-full px-3.5 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between shadow-2xl border border-brand-gold/30">
-        <!-- Saf Tipografik Lüks Marka İmzası (Wordmark) -->
-        <a href="#" class="flex items-center gap-2.5 group py-0.5 shrink-0 z-10">
-          <div class="hidden lg:flex w-9 h-9 xl:w-10 xl:h-10 items-center justify-center shrink-0 hover:scale-105 transition-transform duration-300 drop-shadow-[0_2px_8px_rgba(212,175,55,0.35)]">
-            <img src="assets/linail_lotus_ladybug_pure.png" alt="Linail Lotus & Uğur Böceği" class="w-full h-full object-contain">
+      <nav class="relative glass-card-dark rounded-full px-3.5 sm:px-6 py-2 lg:py-3 flex items-center justify-between shadow-2xl border border-brand-gold/30">
+        <!-- Masaüstü Orijinal Logo (Sadece Bilgisayar Ekranlarında) -->
+        <a href="#" class="hidden lg:flex items-center gap-3.5 group">
+          <div class="w-12 h-12 rounded-full bg-white p-1.5 flex items-center justify-center border-2 border-brand-gold/70 shadow-lg group-hover:scale-105 group-hover:border-brand-gold transition-all duration-300">
+            <img src="/assets/logo-centered.png" alt="LİNAİL BEAUTY - Ataşehir Protez Tırnak & İpek Kirpik Studio" class="w-full h-full object-contain">
           </div>
           <div class="flex flex-col">
-            <span class="font-serif text-[15px] sm:text-base md:text-xl tracking-[0.16em] sm:tracking-[0.2em] text-white font-normal group-hover:text-brand-lightGold transition-colors leading-tight">
-              LİNAİL <span class="gold-gradient-text font-light">BEAUTY</span>
-            </span>
-            <span class="text-[7.5px] sm:text-[8px] md:text-[9px] tracking-[0.32em] sm:tracking-[0.38em] text-brand-lightGold/90 uppercase font-light">
-              ATAŞEHİR
-            </span>
+            <span class="font-serif text-lg tracking-[0.18em] text-white font-medium leading-none">LİNAİL</span>
+            <span class="text-[9px] tracking-[0.35em] text-brand-lightGold uppercase font-light mt-0.5">BEAUTY STUDIO</span>
           </div>
+        </a>
+
+        <!-- Mobil Marka Yazısı (Sadece Mobilde) -->
+        <a href="#" class="flex lg:hidden flex-col group py-0.5 shrink-0 z-10">
+          <span class="font-serif text-[15px] sm:text-base tracking-[0.16em] text-white font-normal group-hover:text-brand-lightGold transition-colors leading-tight">
+            LİNAİL <span class="gold-gradient-text font-light">BEAUTY</span>
+          </span>
+          <span class="text-[7.5px] sm:text-[8px] tracking-[0.32em] text-brand-lightGold/90 uppercase font-light">
+            ATAŞEHİR
+          </span>
         </a>
 
         <!-- Orta: Linail Lotus & Uğur Böceği Mührü (Mobilde Tam Ortada & Büyütülmüş) -->
@@ -511,17 +517,34 @@
           <a href="#iletisim" class="hover:text-brand-lightGold transition-colors">İletişim</a>
         </div>
 
-        <!-- Sağ: Randevu Butonu & Mobil Menü -->
-        <div class="flex items-center gap-2 sm:gap-2.5 z-10 shrink-0">
+        <!-- Masaüstü Sağ Butonlar (Orijinal Hali) -->
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="https://www.instagram.com/linail.beautystudio/" 
+             target="_blank"
+             title="Instagram: @linail.beautystudio"
+             class="w-8 h-8 rounded-full border border-brand-gold/40 flex items-center justify-center text-brand-lightGold hover:text-white hover:border-brand-gold transition-colors">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+          </a>
+
           <a href="https://wa.me/905318696764?text=Merhaba,%20Google'da%20inceledim.%20Ataşehir%20Uphill%20Towers%20stüdyonuzda%20VIP%20randevu%20ve%20müsaitlik%20durumu%20hakkında%20bilgi%20alabilir%20miyim?" 
              target="_blank"
-             class="relative group overflow-hidden rounded-full px-3 py-1.5 sm:px-3.5 sm:py-2 text-[9.5px] sm:text-[10px] md:text-[11px] tracking-[0.14em] sm:tracking-[0.16em] uppercase font-medium bg-gradient-to-r from-brand-gold to-brand-lightGold text-brand-deepPurple shadow-md hover:shadow-brand-gold/30 transition-all duration-300 hover:scale-105 flex items-center gap-1.5 shrink-0">
+             class="relative group overflow-hidden rounded-full px-5 py-2 text-xs tracking-[0.2em] uppercase font-medium bg-gradient-to-r from-brand-gold to-brand-lightGold text-brand-deepPurple shadow-lg hover:shadow-brand-gold/30 transition-all duration-300 hover:scale-105 flex items-center gap-2">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            <span>Randevu Al</span>
+          </a>
+        </div>
+
+        <!-- Mobil Sağ Butonlar (Sadece Mobilde) -->
+        <div class="flex lg:hidden items-center gap-2 sm:gap-2.5 z-10 shrink-0">
+          <a href="https://wa.me/905318696764?text=Merhaba,%20Google'da%20inceledim.%20Ataşehir%20Uphill%20Towers%20stüdyonuzda%20VIP%20randevu%20ve%20müsaitlik%20durumu%20hakkında%20bilgi%20alabilir%20miyim?" 
+             target="_blank"
+             class="relative group overflow-hidden rounded-full px-3 py-1.5 sm:px-3.5 sm:py-2 text-[9.5px] sm:text-[10px] tracking-[0.14em] uppercase font-medium bg-gradient-to-r from-brand-gold to-brand-lightGold text-brand-deepPurple shadow-md hover:shadow-brand-gold/30 transition-all duration-300 hover:scale-105 flex items-center gap-1.5 shrink-0">
             <i data-lucide="sparkles" class="w-3 h-3 text-brand-deepPurple"></i>
             <span>Randevu Al</span>
           </a>
 
           <!-- Mobil Menü Butonu -->
-          <button id="mobile-menu-btn" class="lg:hidden text-brand-lightGold p-1 focus:outline-none">
+          <button id="mobile-menu-btn" class="text-brand-lightGold p-1 focus:outline-none">
             <i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>
           </button>
         </div>
