@@ -78,8 +78,10 @@
   </div>
 
   <!-- Header -->
-  <header class="sticky top-0 z-50 bg-brand-deepPurple/95 backdrop-blur-md border-b border-brand-gold/25 py-3 px-6 shadow-xl">
-    <div class="max-w-6xl mx-auto flex items-center justify-between">
+  <header class="sticky top-0 z-50 bg-brand-deepPurple border-b border-brand-gold/30 py-3 px-4 sm:px-6 shadow-2xl" style="background-color: #1F0327;">
+    
+    <!-- Masaüstü Header (Sadece md ve Üzeri Ekranlarda - Orijinal Haliyle Korunur) -->
+    <div class="max-w-6xl mx-auto hidden md:flex items-center justify-between">
       <a href="/" class="flex items-center gap-3 group">
         <div class="w-10 h-10 rounded-full bg-white p-1 flex items-center justify-center border border-brand-gold/70 shadow-md group-hover:scale-105 transition-transform duration-300">
           <img src="/assets/logo-centered.png" alt="Linail Beauty Studio Logo" class="w-full h-full object-contain">
@@ -90,7 +92,7 @@
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-6 text-[11px] tracking-[0.2em] uppercase text-stone-200">
+      <nav class="flex items-center gap-6 text-[11px] tracking-[0.2em] uppercase text-stone-200">
         <a href="/" class="hover:text-brand-lightGold transition-colors">Ana Sayfa</a>
         <a href="/atasehir-protez-tirnak/" class="hover:text-brand-lightGold transition-colors">Protez Tırnak</a>
         <a href="/atasehir-cilt-bakimi/" class="hover:text-brand-lightGold transition-colors">Cilt Bakımı</a>
@@ -104,6 +106,120 @@
           <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
           <span>WhatsApp Hattı</span>
         </a>
+      </div>
+    </div>
+
+    <!-- Mobil Bar (Sadece Mobilde: Sol Marka, Ortada Lotus, Sağda Randevu & Menü) -->
+    <div class="max-w-6xl mx-auto flex md:hidden items-center justify-between relative px-1">
+      <!-- Sol: Marka Yazısı -->
+      <a href="/" class="flex flex-col group py-0.5 shrink-0 z-10">
+        <span class="font-serif text-[15px] sm:text-base tracking-[0.16em] text-white font-normal group-hover:text-brand-lightGold transition-colors leading-tight">
+          LİNAİL <span class="gold-gradient-text font-light">BEAUTY</span>
+        </span>
+        <span class="text-[7.5px] sm:text-[8px] tracking-[0.32em] text-brand-lightGold/90 uppercase font-light">
+          ATAŞEHİR
+        </span>
+      </a>
+
+      <!-- Orta: Linail Lotus & Uğur Böceği Mührü (Tam Ortada) -->
+      <div class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center pointer-events-auto">
+        <a href="/" 
+           title="Linail Beauty Lotus & Uğur Böceği"
+           class="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center hover:scale-110 active:scale-95 transition-transform duration-300 drop-shadow-[0_2px_14px_rgba(212,175,55,0.5)]">
+          <img src="/assets/linail_lotus_ladybug_pure.png" alt="Linail Beauty Lotus & Uğur Böceği" class="w-full h-full object-contain">
+        </a>
+      </div>
+
+      <!-- Sağ: Kibar Randevu Butonu + Menü İkonu -->
+      <div class="flex items-center gap-1.5 z-10 shrink-0">
+        <a href="https://wa.me/905318696764?text=Merhaba,%20Google'da%20inceledim.%20Ataşehir%20Uphill%20Towers%20stüdyonuzda%20VIP%20randevu%20hakkında%20bilgi%20alabilir%20miyim?" 
+           target="_blank"
+           class="relative group overflow-hidden rounded-full px-2 py-1 text-[8.5px] tracking-[0.12em] uppercase font-medium bg-gradient-to-r from-brand-gold to-brand-lightGold text-brand-deepPurple shadow-sm hover:shadow-brand-gold/30 transition-all duration-300 hover:scale-105 flex items-center gap-1 shrink-0">
+          <i data-lucide="sparkles" class="w-2.5 h-2.5 text-brand-deepPurple"></i>
+          <span>Randevu Al</span>
+        </a>
+
+        <button id="mobile-menu-btn" type="button" aria-label="Menüyü Aç" class="text-brand-lightGold p-0.5 focus:outline-none">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobil Menü Açılır Panel (Sadece Mobilde) -->
+    <div id="mobile-menu" class="hidden md:hidden max-w-sm mx-auto mt-2 px-3">
+      <div class="rounded-3xl p-5 text-center space-y-4 border border-brand-gold/40 shadow-2xl backdrop-blur-2xl" style="background-color: rgba(31, 3, 39, 0.98);">
+        
+        <!-- Üst Başlık & Marka İmzası -->
+        <div class="flex items-center justify-between pb-3 border-b border-brand-gold/20">
+          <div class="flex items-center gap-2">
+            <img src="/assets/linail_lotus_ladybug_pure.png" alt="Linail Lotus" class="w-6 h-6 object-contain">
+            <span class="font-serif tracking-[0.18em] text-white text-xs uppercase font-medium">LİNAİL <span class="gold-gradient-text font-light">BEAUTY</span></span>
+          </div>
+          <span class="text-[9px] tracking-[0.25em] text-brand-lightGold/80 uppercase font-light">ATAŞEHİR</span>
+        </div>
+
+        <!-- Hizmetlerimiz: 2'li Lüks Izgara (Grid) -->
+        <div>
+          <span class="block text-[9px] tracking-[0.28em] uppercase text-brand-gold/80 font-medium mb-2.5 text-left">Hizmetlerimiz</span>
+          <div class="grid grid-cols-2 gap-2 text-left">
+            <a href="/atasehir-protez-tirnak/" class="flex items-center gap-2 p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-brand-gold/20 hover:border-brand-gold/50 transition-all text-[11px] text-stone-200 hover:text-brand-lightGold">
+              <span class="text-xs">💅</span>
+              <span class="truncate font-medium">Protez Tırnak</span>
+            </a>
+            <a href="/atasehir-ipek-kirpik/" class="flex items-center gap-2 p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-brand-gold/20 hover:border-brand-gold/50 transition-all text-[11px] text-stone-200 hover:text-brand-lightGold">
+              <span class="text-xs">✨</span>
+              <span class="truncate font-medium">İpek Kirpik</span>
+            </a>
+            <a href="/atasehir-cilt-bakimi/" class="flex items-center gap-2 p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-brand-gold/20 hover:border-brand-gold/50 transition-all text-[11px] text-stone-200 hover:text-brand-lightGold">
+              <span class="text-xs">🌸</span>
+              <span class="truncate font-medium">Cilt Bakımı</span>
+            </a>
+            <a href="/atasehir-kas-laminasyon/" class="flex items-center gap-2 p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-brand-gold/20 hover:border-brand-gold/50 transition-all text-[11px] text-stone-200 hover:text-brand-lightGold">
+              <span class="text-xs">💎</span>
+              <span class="truncate font-medium">Kaş Tasarım</span>
+            </a>
+            <a href="/atasehir-nail-art/" class="flex items-center gap-2 p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-brand-gold/20 hover:border-brand-gold/50 transition-all text-[11px] text-stone-200 hover:text-brand-lightGold">
+              <span class="text-xs">🎨</span>
+              <span class="truncate font-medium">Nail Art & Krom</span>
+            </a>
+            <a href="/rus-manikur-atasehir/" class="flex items-center gap-2 p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-brand-gold/20 hover:border-brand-gold/50 transition-all text-[11px] text-stone-200 hover:text-brand-lightGold">
+              <span class="text-xs">🩺</span>
+              <span class="truncate font-medium">Rus Manikürü</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hızlı Atlama / Keşfet Linkleri -->
+        <div class="py-2.5 border-t border-brand-gold/20 space-y-1 text-left">
+          <a href="/" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs tracking-wider text-stone-200 hover:text-brand-lightGold hover:bg-white/5 transition-colors">
+            <span>🏠 Ana Sayfaya Dön</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-brand-gold/50"></i>
+          </a>
+          <a href="/#yorumlar" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs tracking-wider text-amber-300 hover:text-amber-200 hover:bg-white/5 transition-colors font-medium">
+            <span class="flex items-center gap-1.5">⭐ Google Değerlendirmeleri <span class="text-[10px] text-stone-300 font-light">(5.0)</span></span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-brand-gold/50"></i>
+          </a>
+          <a href="/#iletisim" class="flex items-center justify-between py-1.5 px-2 rounded-lg text-xs tracking-wider text-stone-200 hover:text-brand-lightGold hover:bg-white/5 transition-colors">
+            <span>📍 Uphill Towers & İletişim</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-brand-gold/50"></i>
+          </a>
+        </div>
+
+        <!-- Alt VIP WhatsApp & Instagram Butonu -->
+        <div class="pt-2 border-t border-brand-gold/20 flex items-center gap-2">
+          <a href="https://wa.me/905318696764?text=Merhaba,%20Google'da%20inceledim.%20Ataşehir%20Uphill%20Towers%20stüdyonuzda%20VIP%20randevu%20hakkında%20bilgi%20alabilir%20miyim?" 
+             target="_blank"
+             class="flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-brand-gold to-brand-lightGold text-brand-deepPurple text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition-transform">
+            <i data-lucide="message-circle" class="w-3.5 h-3.5 text-brand-deepPurple"></i>
+            <span>WhatsApp Randevu</span>
+          </a>
+          <a href="https://www.instagram.com/linail.beautystudio/" 
+             target="_blank"
+             title="Instagram: @linail.beautystudio"
+             class="w-10 h-10 rounded-xl border border-brand-gold/40 flex items-center justify-center text-pink-300 hover:text-white hover:border-brand-gold transition-colors shrink-0">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+          </a>
+        </div>
       </div>
     </div>
   </header>
@@ -412,6 +528,16 @@
 
   <script>
     lucide.createIcons();
+
+    // Mobil Menü Aç/Kapa
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
   </script>
 </body>
 </html>
