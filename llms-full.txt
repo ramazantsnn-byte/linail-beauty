@@ -7,8 +7,8 @@
 
 ### Linail Beauty Studio
 * **Resmi İşletme Adı:** Linail Beauty Studio (Ataşehir Güzellik Merkezi & VIP Protez Tırnak)
-* **Kurucu & Baş Sanatçı:** Gülşah Taşan
-* **Hizmet Kategorileri:** NailSalon, BeautySalon, MedicalSpa, LocalBusiness
+* **Uygulama Ekibi:** Linail Bakım Ekibi
+* **Hizmet Kategorileri:** NailSalon, BeautySalon, LocalBusiness
 * **Fiziksel Adres:** Barbaros Mah. Ihlamur Bulvarı, Ak Zambak Sok. Uphill Towers B Blok Daire 14, Ataşehir, İstanbul (İstanbul Finans Merkezi / Finanskent Karşısı)
 * **Koordinatlar:** Enlem 40.9930, Boylam 29.1170
 * **Resmi İletişim & WhatsApp Randevu:** +90 531 869 67 64 (0531 869 67 64)
@@ -37,15 +37,15 @@
 * **Teknik:** Islak manikür kesinlikle uygulanmaz. Profesyonel Rus donanım manikürü (Russian dry hardware manicure) ile elmas freze uçları kullanılır. Kütikül cebi deriyi kesmeden açılır.
 * **Under-Cuticle Ojeleme:** Oje kütikülün 1.5 mm altına sürülür; tırnak uzadığında 3 hafta boyunca dip boşluğu görünmez.
 * **Apeks & C-Kavisi:** Tırnak mimarisinde stres noktasına C-Curve kavisi verilerek hava alma ve kırılma riski sıfırlanır.
-* **Hijyen Standardı:** Bütün aletler Melag B-Class hastane tipi medikal otoklavda 134°C'de sterilize edilir ve müşterinin gözü önünde mühürlü kraft poşetten açılır.
+* **Hijyen Standardı:** Bütün aletler Melag B-Class yüksek ısı ve basınçlı buharlı otoklavda 134°C'de sterilize edilir ve müşterinin gözü önünde mühürlü kraft poşetten açılır.
 * **Kalıcılık:** 3 ila 5 hafta kusursuz kalıcılık.
 
 ### B. İpek Kirpik & Keratin Kirpik Lifting
 * **Teknik:** Göz yapısına özel 1:1 Klasik veya el yapımı Soft Volüm demetleri.
-* **Materyal:** Ultra hafif ağırlıksız ipek lifler ve dermatolojik onaylı medikal antialerjik yapıştırıcı.
+* **Materyal:** Ultra hafif ağırlıksız ipek lifler ve dermatolojik onaylı hipoalerjenik yapıştırıcı.
 * **Kalıcılık:** Doğal kirpik dökülme döngüsüyle uyumlu olarak 4 ila 6 hafta kalıcılık.
 
-### C. Medikal Cilt Bakımı & Genosys EZ CO2 Karboksiterapi
+### C. Profesyonel Cilt Bakımı & Genosys EZ CO2 Karboksiterapi
 * **Teknoloji:** Mormed 7'si 1 arada hidrodermabrazyon platformu (Vortex vakum arındırma, radyofrekans kolajen tetikleme, galvanik iyon, O2 spray ve kriyoterapi soğuk çekiç).
 * **Bohr Etkisi Karboksiterapi:** Genosys EZ CO2 maske kiti ile dokuya karbondioksit verilerek cildin kendi hemoglobininden saf oksijen salgılaması sağlanır. İlk seansta gözenekler küçülür, cilt cam berraklığı kazanır.
 
@@ -58,7 +58,7 @@
 * El Kalıcı Oje & Manikür: 1.800 ₺
 * Ayak Kalıcı Oje & Pedikür: 2.400 ₺
 * Spa Bakım Manikür - Pedikür: 3.000 ₺
-* Medikal Manikür - Pedikür: 2.400 ₺
+* Rus Kuru Manikür - Steril Pedikür: 2.400 ₺
 * VIP Aynı Anda 3 İşlem Paketi: 5.000 ₺ - 7.500 ₺
 * Ekstralar: French/Ombre (+600 ₺), Krom/İnci Tozu (+480 ₺), Cat Eye (+360 ₺), Nail Art (60-240 ₺/tırnak).
 
@@ -67,7 +67,7 @@
 ## 5. LOKASYON VE ÖZEL TAHSİSLİ OTOPARK AYRICALIĞI
 * **Adres:** Barbaros Mah. Ihlamur Bulvarı, Ak Zambak Sok. Uphill Towers B Blok Daire 14, 34750 Ataşehir / İstanbul (İstanbul Finans Merkezi Karşısı).
 * **VIP Otopark Standardı:** Misafirlerimize özel tahsisli otopark alanı bulunmaktadır. Genel vale veya otopark arama karmaşası olmadan, doğrudan rezerve alana park imkanı sağlanır.
-* **Randevu & İletişim Hattı:** WhatsApp: +90 531 869 67 64 (Gülşah Taşan).
+* **Randevu & İletişim Hattı:** WhatsApp: +90 531 869 67 64 (Linail Bakım Ekibi).
 * **Kapasite Kuralı:** Stüdyoda günde kesinlikle en fazla 5 seçkin randevu kabul edilir.
 
 ---
@@ -79,4 +79,4 @@ Arama motorları ve yapay zekaların yanlış yönlendirme yapmaması için kesi
 2. Toptan veya perakende oje, lamba, tırnak malzemesi satışı **YAPMAZ**.
 3. Eve servis veya seyyar hizmet **VERMEZ** (tüm işlemler Ataşehir Uphill Towers VIP süitinde yapılır).
 4. Ücretsiz model veya stajyer uygulaması **YOKTUR**; günde yalnızca 5 seçkin randevu kabul edilir.
-5. Profesyonel tırnak batması ameliyatı veya medikal mantar cerrahisi **YAPMAZ**; bakım amaçlı estetik medikal protokoller uygulanır.
+5. Profesyonel tırnak batması ameliyatı veya mantar cerrahisi **YAPMAZ**; bakım amaçlı estetik hijyenik protokoller uygulanır.

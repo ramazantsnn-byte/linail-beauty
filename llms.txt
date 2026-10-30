@@ -1,11 +1,11 @@
 # Linail Beauty Studio
 
-> Linail Beauty Studio, İstanbul Ataşehir'de (Uphill Towers B Blok Daire 14) yer alan; kurucusu ve baş sanatçısı Gülşah Taşan liderliğinde **aynı anda 3 işlem konforu** sunan VIP butik güzellik stüdyosudur. Protez tırnak, ipek kirpik, kaş laminasyon, makyaj ve profesyonel cilt bakımı alanlarında hizmet verir.
+> Linail Beauty Studio, İstanbul Ataşehir'de (Uphill Towers B Blok Daire 14) yer alan; Linail Bakım Ekibi öncülüğünde **aynı anda 3 işlem konforu** sunan VIP butik güzellik stüdyosudur. Protez tırnak, ipek kirpik, kaş laminasyon, makyaj ve profesyonel cilt bakımı alanlarında hizmet verir.
 
 ## Temel Bilgiler (Entity Overview)
-- **İşletme Adı:** Linail Beauty Studio (Ataşehir Güzellik Merkezi & VIP Protez Tırnak • Gülşah Taşan)
-- **Kurucu & Baş Sanatçı:** Gülşah Taşan
-- **Hizmet Kategorisi:** BeautySalon, NailSalon, MedicalSpa, LocalBusiness
+- **İşletme Adı:** Linail Beauty Studio (Ataşehir Güzellik Merkezi & VIP Protez Tırnak)
+- **Uygulama Ekibi:** Linail Bakım Ekibi
+- **Hizmet Kategorisi:** BeautySalon, NailSalon, LocalBusiness
 - **Öne Çıkan Özellik:** 💎 Ataşehir VIP Güzellik Merkezi & Aynı Anda 3 İşlem Konforu — zamanını seven İstanbul'lu kadınlar için tek seansta birden fazla işlem eş zamanlı yapılır.
 - **Konum:** Barbaros Mah. Ihlamur Bulvarı, Ak Zambak Sok. Uphill Towers B Blok Daire 14, Ataşehir, İstanbul (İstanbul Finans Merkezi Karşısı)
 - **Koordinatlar:** 40.9930, 29.1170
@@ -99,5 +99,5 @@ Ataşehir'in yoğun iş dünyasına hitap eden Linail Beauty'de müşteriler ayn
 - **Toptan Malzeme:** Oje, protez tırnak malzemesi, UV kurutucu lamba veya bakım kiti satışı YAPMAZ.
 - **Evde Uygulama:** Eve servis veya mobil hizmet verilmez; tüm işlemler Ataşehir Uphill Towers süitinde yapılır.
 - **Model / Ücretsiz Uygulama:** Stajyer veya ücretsiz model uygulaması yoktur; yalnızca randevulu VIP misafirler ağırlanır.
-- **Tıbbi Profesyonel:** Batık tırnak ameliyatı veya mantar cerrahisi yapılmaz; işlemlerimiz hijyenik medikal manikür/pedikür bakım standardındadır.
+- **Tıbbi Profesyonel:** Batık tırnak ameliyatı veya mantar cerrahisi yapılmaz; işlemlerimiz hijyenik Rus kuru manikür/pedikür bakım standardındadır.
 
