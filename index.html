@@ -363,6 +363,15 @@
     .insta-gradient {
       background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     }
+    /* Scroll & GPU Performans İyileştirmeleri */
+    #navbar {
+      will-change: top, transform;
+      transform: translateZ(0);
+    }
+    video {
+      transform: translateZ(0);
+      backface-visibility: hidden;
+    }
     /* Services Dropdown - Hem CSS Hover Hem JS Click Güvencesi */
     .services-dropdown-menu {
       display: none;
@@ -535,7 +544,7 @@
              target="_blank"
              title="Instagram: @linail.beautystudio"
              class="w-8 h-8 rounded-full border border-brand-gold/40 flex items-center justify-center text-brand-lightGold hover:text-white hover:border-brand-gold transition-colors">
-            <i data-lucide="instagram" class="w-4 h-4"></i>
+            <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
           </a>
 
           <a href="https://wa.me/905318696764?text=Merhaba,%20Google'da%20inceledim.%20Ataşehir%20Uphill%20Towers%20stüdyonuzda%20VIP%20randevu%20ve%20müsaitlik%20durumu%20hakkında%20bilgi%20alabilir%20miyim?" 
@@ -646,7 +655,7 @@
              target="_blank"
              title="Instagram: @linail.beautystudio"
              class="w-10 h-10 rounded-xl border border-brand-gold/40 flex items-center justify-center text-pink-300 hover:text-white hover:border-brand-gold transition-colors shrink-0">
-            <i data-lucide="instagram" class="w-4 h-4"></i>
+            <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
           </a>
         </div>
 
@@ -792,7 +801,7 @@
 
   <!-- BÖLÜM: 💎 VIP ODAMIZDA AYNI ANDA 3 İŞLEM KONFORU -->
   <section id="vip" class="py-24 bg-gradient-to-b from-brand-deepPurple via-brand-darkViolet to-brand-deepPurple text-white relative overflow-hidden">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-brand-gold/10 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(197,160,89,0.12) 0%, rgba(197,160,89,0) 70%);"></div>
 
     <div class="max-w-7xl mx-auto px-6 relative z-10">
       
@@ -917,7 +926,7 @@
                    target="_blank" 
                    rel="noopener"
                    class="inline-flex items-center justify-center gap-1.5 w-full py-2 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md border border-brand-gold/30 text-[11px] font-medium text-brand-lightGold transition-all">
-                  <i data-lucide="instagram" class="w-3.5 h-3.5 text-pink-400"></i>
+                  <svg class="w-3.5 h-3.5 text-pink-400 fill-none stroke-current stroke-2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                   <span>Instagram'da İncele</span>
                   <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
                 </a>
@@ -1220,7 +1229,7 @@
   <!-- BÖLÜM: GOOGLE MÜŞTERİ YORUMLARI -->
   <section id="yorumlar" class="py-24 bg-gradient-to-b from-brand-cream via-white to-brand-cream relative overflow-hidden">
     <!-- Dekoratif arka plan -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-brand-gold/5 filter blur-[120px] pointer-events-none"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(197,160,89,0.08) 0%, rgba(197,160,89,0) 70%);"></div>
 
     <div class="max-w-6xl mx-auto px-6 relative">
 
@@ -1537,8 +1546,8 @@
 
   <!-- BÖLÜM: EDİTORYAL FELSEFE -->
   <section id="felsefe" class="py-24 bg-brand-deepPurple text-white relative overflow-hidden">
-    <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-brand-purple/50 filter blur-[100px] pointer-events-none"></div>
-    <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-brand-gold/20 filter blur-[100px] pointer-events-none"></div>
+    <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(62,27,71,0.5) 0%, transparent 70%);"></div>
+    <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(197,160,89,0.2) 0%, transparent 70%);"></div>
 
     <div class="max-w-4xl mx-auto px-6 text-center relative z-10 space-y-8">
       <div class="w-16 h-16 mx-auto rounded-full border-2 border-brand-gold/60 p-1 bg-white/95 shadow-xl flex items-center justify-center">
@@ -1591,7 +1600,7 @@
         <a href="https://www.instagram.com/linail.beautystudio/" 
            target="_blank" 
            class="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full text-xs tracking-wider uppercase font-semibold text-white insta-gradient shadow-md hover:opacity-95 hover:scale-105 transition-all">
-          <i data-lucide="instagram" class="w-4 h-4"></i>
+          <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
           <span>Instagram'da Takip Et</span>
         </a>
       </div>
@@ -1602,7 +1611,7 @@
         <!-- Post 1: Anime Lash İpek Kirpik (8 Ekim Gönderisi - DeOiui3itPo) -->
         <a href="https://www.instagram.com/p/DeOiui3itPo/" target="_blank" rel="noopener" class="group relative aspect-square rounded-2xl overflow-hidden bg-stone-900 border border-brand-gold/25 shadow-md block">
           <img src="/assets/instagram/ig_anime_lash.jpg" alt="Ataşehir Anime Lash İpek Kirpik - Linail Beauty" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async">
-          <div class="absolute inset-0 bg-brand-deepPurple/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center text-white backdrop-blur-[2px]">
+          <div class="absolute inset-0 bg-brand-deepPurple/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center text-white">
             <i data-lucide="eye" class="w-6 h-6 text-brand-lightGold mb-1.5"></i>
             <span class="font-serif text-sm md:text-base font-semibold text-brand-lightGold">Anime Lash ✨🌸</span>
             <span class="text-[10px] text-stone-200 mt-1 font-light leading-snug">Kişiselleştirilmiş İpek Kirpik Tasarımı</span>
@@ -1616,7 +1625,7 @@
         <!-- Post 2: Cat Eye Lashes (24 Ağustos Gönderisi - DcasjWdK_Cw) -->
         <a href="https://www.instagram.com/p/DcasjWdK_Cw/" target="_blank" rel="noopener" class="group relative aspect-square rounded-2xl overflow-hidden bg-stone-900 border border-brand-gold/25 shadow-md block">
           <img src="/assets/instagram/ig_cat_eye_lashes.jpg" alt="Cat Eye Lashes Ataşehir - Linail Beauty" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async">
-          <div class="absolute inset-0 bg-brand-deepPurple/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center text-white backdrop-blur-[2px]">
+          <div class="absolute inset-0 bg-brand-deepPurple/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center text-white">
             <i data-lucide="sparkles" class="w-6 h-6 text-brand-lightGold mb-1.5"></i>
             <span class="font-serif text-sm md:text-base font-semibold text-brand-lightGold">CAT EYE LASHES ✨</span>
             <span class="text-[10px] text-stone-200 mt-1 font-light leading-snug">Göz Yapısına Özel Çekici Bakışlar</span>
@@ -1630,7 +1639,7 @@
         <!-- Post 3: Energy Jel Güçlendirme (19 Ağustos Gönderisi - DcOdDQuijoo) -->
         <a href="https://www.instagram.com/p/DcOdDQuijoo/" target="_blank" rel="noopener" class="group relative aspect-square rounded-2xl overflow-hidden bg-stone-900 border border-brand-gold/25 shadow-md block">
           <img src="/assets/instagram/ig_energy_jel_guclendirme.jpg" alt="Energy Jel Güçlendirme - Linail Beauty" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async">
-          <div class="absolute inset-0 bg-brand-deepPurple/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center text-white backdrop-blur-[2px]">
+          <div class="absolute inset-0 bg-brand-deepPurple/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center text-white">
             <i data-lucide="gem" class="w-6 h-6 text-brand-lightGold mb-1.5"></i>
             <span class="font-serif text-sm md:text-base font-semibold text-brand-lightGold">ENERGY ✨🧡</span>
             <span class="text-[10px] text-stone-200 mt-1 font-light leading-snug">Kırılan Tırnaklara Dayanıklı Jel Güçlendirme</span>
@@ -1644,7 +1653,7 @@
         <!-- Post 4: Sonbahar Bordo Protez Tırnak (3 Ekim Gönderisi - DeBjBDTqpZm) -->
         <a href="https://www.instagram.com/p/DeBjBDTqpZm/" target="_blank" rel="noopener" class="group relative aspect-square rounded-2xl overflow-hidden bg-stone-900 border border-brand-gold/25 shadow-md block">
           <img src="/assets/instagram/ig_sonbahar_bordo.jpg" alt="Sonbahar Protez Tırnak Ataşehir - Linail Beauty" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async">
-          <div class="absolute inset-0 bg-brand-deepPurple/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center text-white backdrop-blur-[2px]">
+          <div class="absolute inset-0 bg-brand-deepPurple/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center text-white">
             <i data-lucide="palette" class="w-6 h-6 text-brand-lightGold mb-1.5"></i>
             <span class="font-serif text-sm md:text-base font-semibold text-brand-lightGold">Sonbahar 🍂✨</span>
             <span class="text-[10px] text-stone-200 mt-1 font-light leading-snug">Asil Mürdüm & Bordo Nail Art Tasarımı</span>
@@ -1658,7 +1667,7 @@
         <!-- Post 5: Cam Cilt Protokolü (28 Ekim Gönderisi) -->
         <a href="https://www.instagram.com/linail.beautystudio/" target="_blank" rel="noopener" class="group relative aspect-square rounded-2xl overflow-hidden bg-stone-900 border border-brand-gold/25 shadow-md block">
           <img src="/assets/instagram/ig_cam_cilt.jpg" alt="Ataşehir Cam Cilt Protokolü - Linail Beauty" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async">
-          <div class="absolute inset-0 bg-brand-deepPurple/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center text-white backdrop-blur-[2px]">
+          <div class="absolute inset-0 bg-brand-deepPurple/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center text-white">
             <i data-lucide="sparkles" class="w-6 h-6 text-brand-lightGold mb-1.5"></i>
             <span class="font-serif text-sm md:text-base font-semibold text-brand-lightGold">Cam Cilt Protokolü</span>
             <span class="text-[10px] text-stone-200 mt-1 font-light leading-snug">Hydrafacial & Karboksi CO₂ ile 3 Adımda Glass Skin</span>
@@ -1672,7 +1681,7 @@
         <!-- Post 6: VIP Odamız (12 Ekim Gönderisi) -->
         <a href="https://www.instagram.com/linail.beautystudio/" target="_blank" rel="noopener" class="group relative aspect-square rounded-2xl overflow-hidden bg-stone-900 border border-brand-gold/25 shadow-md block">
           <img src="/assets/instagram/ig_vip_oda.jpg" alt="Linail VIP Oda Ritüeli - Linail Beauty" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async">
-          <div class="absolute inset-0 bg-brand-deepPurple/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center text-white backdrop-blur-[2px]">
+          <div class="absolute inset-0 bg-brand-deepPurple/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center text-white">
             <i data-lucide="crown" class="w-6 h-6 text-brand-lightGold mb-1.5"></i>
             <span class="font-serif text-sm md:text-base font-semibold text-brand-lightGold">VIP Odamızın Kapıları ✨</span>
             <span class="text-[10px] text-stone-200 mt-1 font-light leading-snug">Aynı Anda 3 İşlem: Tırnak, Pedikür & Kirpik</span>
@@ -1686,7 +1695,7 @@
         <!-- Post 7: Autumn Nails Leopar (27 Ekim Gönderisi) -->
         <a href="https://www.instagram.com/linail.beautystudio/" target="_blank" rel="noopener" class="group relative aspect-square rounded-2xl overflow-hidden bg-stone-900 border border-brand-gold/25 shadow-md block">
           <img src="/assets/instagram/ig_autumn_nails.jpg" alt="Autumn Nails Ataşehir Protez Tırnak - Linail Beauty" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async">
-          <div class="absolute inset-0 bg-brand-deepPurple/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center text-white backdrop-blur-[2px]">
+          <div class="absolute inset-0 bg-brand-deepPurple/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center text-white">
             <i data-lucide="palette" class="w-6 h-6 text-brand-lightGold mb-1.5"></i>
             <span class="font-serif text-sm md:text-base font-semibold text-brand-lightGold">Autumn Nails VIP ✨🍂</span>
             <span class="text-[10px] text-stone-200 mt-1 font-light leading-snug">Leopar Detaylı Sonbahar Tırnak Tasarımı</span>
@@ -1700,7 +1709,7 @@
         <!-- Post 8: Kaş Laminasyonu & Lifting (21 Ekim Gönderisi) -->
         <a href="https://www.instagram.com/linail.beautystudio/" target="_blank" rel="noopener" class="group relative aspect-square rounded-2xl overflow-hidden bg-stone-900 border border-brand-gold/25 shadow-md block">
           <img src="/assets/instagram/ig_kas_laminasyon.jpg" alt="Kaş Laminasyonu Ataşehir - Linail Beauty" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async">
-          <div class="absolute inset-0 bg-brand-deepPurple/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center text-white backdrop-blur-[2px]">
+          <div class="absolute inset-0 bg-brand-deepPurple/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center text-white">
             <i data-lucide="eye" class="w-6 h-6 text-brand-lightGold mb-1.5"></i>
             <span class="font-serif text-sm md:text-base font-semibold text-brand-lightGold">Kaş Laminasyonu & Lifting</span>
             <span class="text-[10px] text-stone-200 mt-1 font-light leading-snug">Tek Seansla Doğal Dolgunluk ve Şekillendirme</span>
@@ -1714,7 +1723,7 @@
         <!-- Post 9: Jel Güçlendirme + French (17 Ekim Gönderisi - Mobilde 8'li Simetrik Izgara için Yalnızca Masaüstünde) -->
         <a href="https://www.instagram.com/linail.beautystudio/" target="_blank" rel="noopener" class="group relative aspect-square rounded-2xl overflow-hidden bg-stone-900 border border-brand-gold/25 shadow-md hidden md:block">
           <img src="/assets/instagram/ig_jel_french.jpg" alt="Jel Güçlendirme French Ataşehir - Linail Beauty" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async">
-          <div class="absolute inset-0 bg-brand-deepPurple/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center text-white backdrop-blur-[2px]">
+          <div class="absolute inset-0 bg-brand-deepPurple/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center text-white">
             <i data-lucide="gem" class="w-6 h-6 text-brand-lightGold mb-1.5"></i>
             <span class="font-serif text-sm md:text-base font-semibold text-brand-lightGold">Jel Güçlendirme + French</span>
             <span class="text-[10px] text-stone-200 mt-1 font-light leading-snug">Kırılmayan Doğal Tırnak Üzeri Fransız Manikürü</span>
@@ -1729,7 +1738,7 @@
 
       <div class="mt-8 text-center">
         <a href="https://www.instagram.com/linail.beautystudio/" target="_blank" class="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-brand-purple hover:text-brand-gold font-medium transition-colors">
-          <i data-lucide="instagram" class="w-4 h-4"></i>
+          <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
           <span>Tüm Paylaşımları ve Reels Videolarını Instagram'da İnceleyin</span>
         </a>
       </div>
@@ -1750,7 +1759,7 @@
 
       <div class="space-y-4">
         <!-- Soru 1 -->
-        <details class="group bg-white/80 backdrop-blur-md rounded-2xl border border-brand-gold/30 p-6 shadow-sm transition-all duration-300 open:shadow-md open:border-brand-gold">
+        <details class="group bg-white/95 rounded-2xl border border-brand-gold/30 p-6 shadow-sm transition-all duration-300 open:shadow-md open:border-brand-gold">
           <summary class="flex justify-between items-center cursor-pointer font-serif text-lg md:text-xl text-brand-deepPurple font-medium list-none">
             <span>Ataşehir'de protez tırnak ne kadar dayanır ve tırnağa zarar verir mi?</span>
             <span class="text-brand-purple transition-transform duration-300 group-open:rotate-180">
@@ -1763,7 +1772,7 @@
         </details>
 
         <!-- Soru 2 -->
-        <details class="group bg-white/80 backdrop-blur-md rounded-2xl border border-brand-gold/30 p-6 shadow-sm transition-all duration-300 open:shadow-md open:border-brand-gold">
+        <details class="group bg-white/95 rounded-2xl border border-brand-gold/30 p-6 shadow-sm transition-all duration-300 open:shadow-md open:border-brand-gold">
           <summary class="flex justify-between items-center cursor-pointer font-serif text-lg md:text-xl text-brand-deepPurple font-medium list-none">
             <span>İpek kirpik uygulaması ne kadar kalıcıdır? Kendi kirpiğime dökülme yapar mı?</span>
             <span class="text-brand-purple transition-transform duration-300 group-open:rotate-180">
@@ -1776,7 +1785,7 @@
         </details>
 
         <!-- Soru 3 -->
-        <details class="group bg-white/80 backdrop-blur-md rounded-2xl border border-brand-gold/30 p-6 shadow-sm transition-all duration-300 open:shadow-md open:border-brand-gold">
+        <details class="group bg-white/95 rounded-2xl border border-brand-gold/30 p-6 shadow-sm transition-all duration-300 open:shadow-md open:border-brand-gold">
           <summary class="flex justify-between items-center cursor-pointer font-serif text-lg md:text-xl text-brand-deepPurple font-medium list-none">
             <span>VIP odada "Aynı Anda 3 İşlem" konforu nasıl çalışır?</span>
             <span class="text-brand-purple transition-transform duration-300 group-open:rotate-180">
@@ -1789,7 +1798,7 @@
         </details>
 
         <!-- Soru 4 -->
-        <details class="group bg-white/80 backdrop-blur-md rounded-2xl border border-brand-gold/30 p-6 shadow-sm transition-all duration-300 open:shadow-md open:border-brand-gold">
+        <details class="group bg-white/95 rounded-2xl border border-brand-gold/30 p-6 shadow-sm transition-all duration-300 open:shadow-md open:border-brand-gold">
           <summary class="flex justify-between items-center cursor-pointer font-serif text-lg md:text-xl text-brand-deepPurple font-medium list-none">
             <span>Ataşehir Uphill Towers stüdyonuza nasıl ulaşabilirim ve otopark var mı?</span>
             <span class="text-brand-purple transition-transform duration-300 group-open:rotate-180">
@@ -1802,7 +1811,7 @@
         </details>
 
         <!-- Soru 5 -->
-        <details class="group bg-white/80 backdrop-blur-md rounded-2xl border border-brand-gold/30 p-6 shadow-sm transition-all duration-300 open:shadow-md open:border-brand-gold">
+        <details class="group bg-white/95 rounded-2xl border border-brand-gold/30 p-6 shadow-sm transition-all duration-300 open:shadow-md open:border-brand-gold">
           <summary class="flex justify-between items-center cursor-pointer font-serif text-lg md:text-xl text-brand-deepPurple font-medium list-none">
             <span>Randevu nasıl oluşturabilirim ve güncel fiyat listenize nereden ulaşabilirim?</span>
             <span class="text-brand-purple transition-transform duration-300 group-open:rotate-180">
@@ -1815,7 +1824,7 @@
         </details>
 
         <!-- Soru 6 (Negatif Arama / Kurs & Eğitim Filtreleme) -->
-        <details class="group bg-white/80 backdrop-blur-md rounded-2xl border border-brand-gold/30 p-6 shadow-sm transition-all duration-300 open:shadow-md open:border-brand-gold">
+        <details class="group bg-white/95 rounded-2xl border border-brand-gold/30 p-6 shadow-sm transition-all duration-300 open:shadow-md open:border-brand-gold">
           <summary class="flex justify-between items-center cursor-pointer font-serif text-lg md:text-xl text-brand-deepPurple font-medium list-none">
             <span>Protez tırnak kursu, eğitimi veya sertifika programı veriyor musunuz?</span>
             <span class="text-brand-purple transition-transform duration-300 group-open:rotate-180">
@@ -1828,7 +1837,7 @@
         </details>
 
         <!-- Soru 7 (Negatif Arama / Malzeme & Evde Hizmet Filtreleme) -->
-        <details class="group bg-white/80 backdrop-blur-md rounded-2xl border border-brand-gold/30 p-6 shadow-sm transition-all duration-300 open:shadow-md open:border-brand-gold">
+        <details class="group bg-white/95 rounded-2xl border border-brand-gold/30 p-6 shadow-sm transition-all duration-300 open:shadow-md open:border-brand-gold">
           <summary class="flex justify-between items-center cursor-pointer font-serif text-lg md:text-xl text-brand-deepPurple font-medium list-none">
             <span>Evde hizmet veya toptan tırnak malzemesi satışı yapıyor musunuz?</span>
             <span class="text-brand-purple transition-transform duration-300 group-open:rotate-180">
@@ -1855,7 +1864,7 @@
   <!-- ========================================================= -->
   <section id="randevu" class="scroll-mt-24 py-20 bg-gradient-to-b from-[#2d0f36] via-[#1a0720] to-brand-deepPurple text-white relative overflow-hidden border-y border-brand-gold/40">
     <!-- Ambient Lüks Altın & Mor Parıltı -->
-    <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-brand-gold/15 rounded-full blur-[130px] pointer-events-none"></div>
+    <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[350px] rounded-full pointer-events-none" style="background: radial-gradient(ellipse, rgba(197,160,89,0.15) 0%, transparent 70%);"></div>
 
     <div class="max-w-6xl mx-auto px-6 relative z-10">
       
@@ -2019,7 +2028,7 @@
               <!-- Instagram -->
               <div class="flex items-center gap-3">
                 <div class="w-8 h-8 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-lightGold shrink-0">
-                  <i data-lucide="instagram" class="w-4 h-4"></i>
+                  <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                 </div>
                 <div>
                   <span class="block text-white font-medium mb-0.5">Resmi Instagram Hesabı:</span>
@@ -2073,7 +2082,7 @@
             </p>
 
             <a href="https://www.instagram.com/linail.beautystudio/" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] tracking-wider text-brand-lightGold uppercase border border-brand-gold/30 rounded-full px-4 py-1.5 hover:bg-brand-gold/20 transition-all">
-              <i data-lucide="instagram" class="w-3.5 h-3.5 text-pink-400"></i>
+              <svg class="w-3.5 h-3.5 text-pink-400 fill-none stroke-current stroke-2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
               <span>@linail.beautystudio</span>
             </a>
           </div>
@@ -2140,7 +2149,7 @@
             </li>
             <li>
               <a href="https://www.instagram.com/linail.beautystudio/" target="_blank" class="hover:text-pink-400 transition-colors inline-flex items-center gap-1.5">
-                <i data-lucide="instagram" class="w-3.5 h-3.5 text-pink-400"></i>
+                <svg class="w-3.5 h-3.5 text-pink-400 fill-none stroke-current stroke-2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                 <span>@linail.beautystudio</span>
               </a>
             </li>
@@ -2249,26 +2258,51 @@
       });
     }
 
-    // Navbar Scroll Efekti (Sayfa kaydırılınca tavana yapışır, boşluk bırakmaz)
+    // Navbar Scroll Efekti (State Guard & Passive Scroll - Sıfır Kasma)
     const navbar = document.getElementById('navbar');
     if (navbar) {
+      let isScrolled = false;
       window.addEventListener('scroll', () => {
-        if (window.scrollY > 30) {
-          navbar.classList.remove('md:top-10', 'top-3');
-          navbar.classList.add('top-2');
-        } else {
-          navbar.classList.remove('top-2');
-          navbar.classList.add('top-3', 'md:top-10');
+        const scrolled = window.scrollY > 30;
+        if (scrolled !== isScrolled) {
+          isScrolled = scrolled;
+          if (scrolled) {
+            navbar.classList.remove('md:top-10', 'top-3');
+            navbar.classList.add('top-2');
+          } else {
+            navbar.classList.remove('top-2');
+            navbar.classList.add('top-3', 'md:top-10');
+          }
         }
-      });
+      }, { passive: true });
     }
 
-    // Safe Background Video Autoplay Trigger
-    document.querySelectorAll('video').forEach(vid => {
-      vid.muted = true;
-      const p = vid.play();
-      if (p !== undefined) p.catch(() => {});
-    });
+    // Video Performans & Akıllı Oynatma Motoru (IntersectionObserver)
+    // Sadece ekranda görünürken oynatır, ekran dışına çıkınca durdurup cihazı ve GPU'yu rahatlatır
+    if ('IntersectionObserver' in window) {
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const vid = entry.target;
+          if (entry.isIntersecting) {
+            const p = vid.play();
+            if (p !== undefined) p.catch(() => {});
+          } else {
+            vid.pause();
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('video').forEach(vid => {
+        vid.muted = true;
+        videoObserver.observe(vid);
+      });
+    } else {
+      document.querySelectorAll('video').forEach(vid => {
+        vid.muted = true;
+        const p = vid.play();
+        if (p !== undefined) p.catch(() => {});
+      });
+    }
 
     // Otomatik Google Ads & Analytics Dönüşüm İzleme (WhatsApp & Telefon)
     document.addEventListener('click', function(e) {
