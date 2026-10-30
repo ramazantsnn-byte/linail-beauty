@@ -10,10 +10,10 @@
 /gizlilik /gizlilik-politikasi/ 301
 /kvkk /gizlilik-politikasi/ 301
 /aydinlatma-metni /gizlilik-politikasi/ 301
-/medikal-manikur-atasehir /rus-manikur-atasehir/ 301
-/medikal-manikur-atasehir/ /rus-manikur-atasehir/ 301
-/medikal-manikur-atasehir/* /rus-manikur-atasehir/:splat 301
-/medikal-manikur /rus-manikur-atasehir/ 301
+/medikal-manikur /medikal-manikur-atasehir/ 301
+/medikal-pedikur /medikal-manikur-atasehir/ 301
+/batik-tirnak /medikal-manikur-atasehir/ 301
+/topuk-catlagi /medikal-manikur-atasehir/ 301
 /rus-manikur /rus-manikur-atasehir/ 301
 /kuru-manikur /rus-manikur-atasehir/ 301
 
