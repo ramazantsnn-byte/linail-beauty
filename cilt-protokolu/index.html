@@ -1008,6 +1008,40 @@
       }
     }
 
+    /* Ultra Responsive Mobile Optimization for Cam Cilt & Cabin SOP */
+    @media (max-width: 768px) {
+      #tab-cam-cilt .card {
+        padding: 14px 12px !important;
+        margin-bottom: 14px !important;
+      }
+      #tab-cam-cilt h2 {
+        font-size: 18px !important;
+        line-height: 1.3 !important;
+      }
+      #tab-cam-cilt h3 {
+        font-size: 15px !important;
+        line-height: 1.35 !important;
+      }
+      #tab-cam-cilt div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+      }
+      #tab-cam-cilt div[style*="padding:14px"] {
+        padding: 12px 10px !important;
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+      }
+      .tab-bar {
+        padding: 6px 8px !important;
+        gap: 6px !important;
+      }
+      .tab-btn {
+        padding: 8px 12px !important;
+        font-size: 11.5px !important;
+        white-space: nowrap !important;
+      }
+    }
+
 </style>
 </head>
 <body>
@@ -1032,22 +1066,171 @@
 
   <!-- Navigation Bar -->
   <nav class="tab-bar">
-    <button class="tab-btn active" onclick="switchTab('tab-catalog')">📚 Ansiklopedik Ürün & Cihaz Atlası</button>
-    <button class="tab-btn" onclick="switchTab('tab-motion-guide')">📐 Başlık Kullanımı & Port Haritası</button>
-    <button class="tab-btn" onclick="switchTab('tab-protocols')">💎 Ataşehir Trend Protokolleri</button>
+    <button class="tab-btn active" onclick="switchTab('tab-cam-cilt')" style="background:rgba(6,182,212,0.22); color:#38ef7d; border:1px solid #38ef7d; font-weight:800; box-shadow:0 0 15px rgba(56,239,125,0.3);">✨ KORE CAM CİLT (3 SEANS)</button>
+    <button class="tab-btn" onclick="switchTab('tab-catalog')">📚 Ansiklopedik Ürün & Cihaz Atlası</button>
+    <button class="tab-btn" onclick="switchTab('tab-protocols')">💎 Trend Protokoller</button>
+    <button class="tab-btn" onclick="switchTab('tab-motion-guide')">📐 Başlık & Port Haritası</button>
     <button class="tab-btn" onclick="switchTab('tab-visual-macro')">🔬 Görsel Cilt Teşhisi</button>
-    <button class="tab-btn" onclick="switchTab('tab-facemap')">🎯 İnteraktif Yüz Haritası</button>
+    <button class="tab-btn" onclick="switchTab('tab-facemap')">🎯 Yüz Haritası</button>
     <button class="tab-btn" onclick="switchTab('tab-carboxy')">👑 VIP Karboksiterapi</button>
-    <button class="tab-btn" onclick="switchTab('tab-github-ai')">⚡ Gelecek: AI & Otomasyon</button>
+    <button class="tab-btn" onclick="switchTab('tab-github-ai')">⚡ Gelecek: AI</button>
   </nav>
 
   <main>
 
-    <!-- TAB 1: VISUAL MACRO DIAGNOSTIC -->
-    
-    
+    <!-- TAB: ÖZEL CAM CİLT PROTOKOLÜ (3 SEANSLIK TAM KÜR) -->
+    <section id="tab-cam-cilt" class="tab-content active">
+      <div class="card highlight" style="border: 2px solid var(--accent-cyan); box-shadow: 0 0 30px rgba(56,239,125,0.2); background: linear-gradient(180deg, rgba(6,182,212,0.12) 0%, rgba(15,17,23,0.95) 100%);">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+          <div>
+            <div class="card-badge" style="background:#38ef7d; color:#000; font-weight:900;">👑 KABİN AMİRAL GEMİSİ • RESMİ KÜR PROTOKOLÜ</div>
+            <h2 style="font-family:'Cinzel', serif; font-size:24px; color:#fff; margin-top:6px; letter-spacing:1px;">
+              Kore "Cam Cilt" (Glass Skin) 3 Seanslık Kristal Kür SOP
+            </h2>
+          </div>
+          <div style="display:flex; gap:10px;">
+            <span style="background:rgba(56,239,125,0.2); color:#38ef7d; font-weight:800; font-size:14px; padding:6px 14px; border-radius:20px; border:1px solid #38ef7d;">⏱️ Toplam: 3 Seans (14-21 Gün Aralık)</span>
+            <span style="background:rgba(212,175,55,0.2); color:var(--gold-primary); font-weight:800; font-size:14px; padding:6px 14px; border-radius:20px; border:1px solid var(--gold-primary);">💰 Seans: 3.500 ₺ • Paket: 9.000 ₺</span>
+          </div>
+        </div>
+        <p style="color:#cbd5e1; font-size:14px; margin-top:12px; line-height:1.6;">
+          Danışana vaat edilen; gözeneksiz porselen zemin, hücresel su dolgunluğu ve fondötensiz ayna ışıltısıdır. Elimizdeki <strong>Mormed 7'si 1 Arada</strong>, <strong>Genosys</strong>, <strong>Eclado</strong> ve <strong>Raha Med</strong> kabin cihaz/ürünleriyle dakika dakika eksiksiz uygulama planı:
+        </p>
+      </div>
+
+      <!-- SEANS 1 KARTI -->
+      <div class="card" style="border-top:4px solid var(--accent-cyan); margin-bottom:20px; background:#0f131d;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
+          <div>
+            <span style="background:rgba(6,182,212,0.15); color:var(--accent-cyan); font-weight:800; font-size:12px; padding:4px 10px; border-radius:12px;">ADIM 01 / BAŞLANGIÇ</span>
+            <h3 style="font-family:'Cinzel',serif; font-size:19px; color:#fff; margin-top:4px;">
+              ✨ 1. SEANS: ARINDIRMA, ENZİM DETOKSU & DERİN VORTEX TEMİZLİK
+            </h3>
+          </div>
+          <div style="text-align:right;">
+            <span style="color:#38ef7d; font-weight:700; font-size:14px;">⏱️ Süre: 75 Dakika</span>
+            <div style="color:#94a3b8; font-size:11px;">Hedef: Zemin Temizliği & Tıkanıklık Boşaltma</div>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:14px; font-size:13px;">
+          <div style="background:rgba(0,0,0,0.4); padding:14px; border-radius:8px; border-left:3px solid var(--accent-cyan);">
+            <strong style="color:var(--accent-cyan); font-size:13.5px;">Adım 1-2: Oksijenli Arındırma & Enzim Peeling (10 Dk)</strong><br><br>
+            • <strong>Genosys Snow O2 Köpük:</strong> Yüze uygulanır, 3 dk oksijen baloncuklarının ölü deriyi kaldırması beklenir, dairesel friksiyonla silinir.<br>
+            • <strong>Eclado Enzim Pudra:</strong> Ilık buhar altında 7 dk bekletilerek keratin bağlar eritilir.
+          </div>
+          <div style="background:rgba(0,0,0,0.4); padding:14px; border-radius:8px; border-left:3px solid var(--accent-cyan);">
+            <strong style="color:var(--accent-cyan); font-size:13.5px;">Adım 3-4: Scrubber & Mormed Aqua Vortex (14 Dk)</strong><br><br>
+            • <strong>Mormed Kavitasyon Spatulası (Scrubber):</strong> 45° açıyla ıslak ciltte siyah noktalar ve yağ filamentleri taranır (6 dk).<br>
+            • <strong>Aqua Peeling Vakum (Chamber A - Laktik Asit):</strong> T-bölgesi, burun kanatları ve çenedeki tıkanık gözenekler vakumlanır (8 dk).
+          </div>
+          <div style="background:rgba(0,0,0,0.4); padding:14px; border-radius:8px; border-left:3px solid var(--accent-cyan);">
+            <strong style="color:var(--accent-cyan); font-size:13.5px;">Adım 5-6: Oksijen Sisleme & Kriyoterapi Şoku (12 Dk)</strong><br><br>
+            • <strong>Airbrush Basınçlı Oksijen:</strong> 10 cm'den Genosys Snow Booster + Hyaluronik serum mikronize edilerek püskürtülür (6 dk).<br>
+            • <strong>Kriyoterapi Soğuk Çekiç (-5°C):</strong> Boşalan gözenekler şoklanarak sıkılaştırılır, kızarıklık yatıştırılır (6 dk).
+          </div>
+          <div style="background:rgba(0,0,0,0.4); padding:14px; border-radius:8px; border-left:3px solid var(--accent-cyan);">
+            <strong style="color:var(--accent-cyan); font-size:13.5px;">Adım 7-8: Jelly Maske, LED & Mühürleme (25 Dk)</strong><br><br>
+            • <strong>Dr-Meinaier Hyaluronik Jelly Maske:</strong> Tüm yüze kalın tabaka sürülür.<br>
+            • <strong>Yeşil LED Fototerapi (525 nm):</strong> 15 dk leke baskılama ve sakinleştirme.<br>
+            • <strong>Final:</strong> Genosys HSC Nemlendirici Krem + Multi Sun SPF 40 ile koruma.
+          </div>
+        </div>
+      </div>
+
+      <!-- SEANS 2 KARTI -->
+      <div class="card" style="border-top:4px solid var(--gold-primary); margin-bottom:20px; background:#0f131d;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
+          <div>
+            <span style="background:rgba(212,175,55,0.15); color:var(--gold-primary); font-weight:800; font-size:12px; padding:4px 10px; border-radius:12px;">ADIM 02 / DERİN BESLEME</span>
+            <h3 style="font-family:'Cinzel',serif; font-size:19px; color:#fff; margin-top:4px;">
+              🌟 2. SEANS: DERİN HÜCRESEL BESLEME, PEPTİT & MEZOTERAPİ ENFÜZYONU
+            </h3>
+          </div>
+          <div style="text-align:right;">
+            <span style="color:var(--gold-primary); font-weight:700; font-size:14px;">⏱️ Süre: 75 Dakika</span>
+            <div style="color:#94a3b8; font-size:11px;">1. Seanstan 14-21 Gün Sonra • Sert Vakum Kesinlikle Yok!</div>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:14px; font-size:13px;">
+          <div style="background:rgba(0,0,0,0.4); padding:14px; border-radius:8px; border-left:3px solid var(--gold-primary);">
+            <strong style="color:var(--gold-primary); font-size:13.5px;">Adım 1-2: Nazik Arındırma & Mikro Pürüz Alma (10 Dk)</strong><br><br>
+            • <strong>Genosys Snow O2 Köpük:</strong> Cildi tahriş etmeden 3 dk nazik oksijenli arındırma.<br>
+            • <strong>Eclado Enzim Pudra:</strong> Buharsız 5 dk bekletilir, Mormed Scrubber düz açıyla hafif nemli modda cildin mikron pürüzlerini sıfırlar.
+          </div>
+          <div style="background:rgba(0,0,0,0.4); padding:14px; border-radius:8px; border-left:3px solid var(--gold-primary);">
+            <strong style="color:var(--gold-primary); font-size:13.5px;">Adım 3-4: İyontoforez / Ultrasonik Derin Serum (18 Dk)</strong><br><br>
+            • <strong>Genosys Peptit & Hyaluronik Serum:</strong> Yüze bolca sürülür.<br>
+            • <strong>Mormed Ultrasonik / İyontoforez Başlığı:</strong> 1 MHz mikro titreşimle serum dermise pompalanır. Hücre zarları açılarak emilim %80 artırılır.
+          </div>
+          <div style="background:rgba(0,0,0,0.4); padding:14px; border-radius:8px; border-left:3px solid var(--gold-primary);">
+            <strong style="color:var(--gold-primary); font-size:13.5px;">Adım 5-6: Airbrush Mesojet & Soğuk Kilit (15 Dk)</strong><br><br>
+            • <strong>Oksijen Tabancasıyla Sisleme:</strong> Yüksek basınçla Snow Booster ve nem kokteyli gözeneklerin en derinine enjekte edilir (8 dk).<br>
+            • <strong>Kriyoterapi Soğuk Çekiç (-5°C):</strong> 7 dk boyunca dairesel hareketlerle tüm serum gözenek içine kilitlenir.
+          </div>
+          <div style="background:rgba(0,0,0,0.4); padding:14px; border-radius:8px; border-left:3px solid var(--gold-primary);">
+            <strong style="color:var(--gold-primary); font-size:13.5px;">Adım 7-8: Peptit Jel Maske + Kırmızı LED (25 Dk)</strong><br><br>
+            • <strong>Eclado / Dr-Meinaier Peptit Jel Maske:</strong> Cilde yerleştirilir.<br>
+            • <strong>Kırmızı LED Fototerapi (630 nm):</strong> 20 dk kolajen ve fibroblast üretimi tetiklenir.<br>
+            • <strong>Final Mühürleme:</strong> Genosys HSC Krem masajı + SPF 40.
+          </div>
+        </div>
+      </div>
+
+      <!-- SEANS 3 KARTI -->
+      <div class="card" style="border-top:4px solid #a855f7; margin-bottom:20px; background:#0f131d;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
+          <div>
+            <span style="background:rgba(168,85,247,0.15); color:#c084fc; font-weight:800; font-size:12px; padding:4px 10px; border-radius:12px;">ADIM 03 / FİNAL CAM IŞILTISI</span>
+            <h3 style="font-family:'Cinzel',serif; font-size:19px; color:#fff; margin-top:4px;">
+              👑 3. SEANS: KRİSTAL CAM PARLAKLIĞI, RF LİFTİNG & PORSELEN MÜHÜRLEME
+            </h3>
+          </div>
+          <div style="text-align:right;">
+            <span style="color:#c084fc; font-weight:700; font-size:14px;">⏱️ Süre: 80 Dakika</span>
+            <div style="color:#94a3b8; font-size:11px;">2. Seanstan 14-21 Gün Sonra • Porselen Cilt Sonucu</div>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:14px; font-size:13px;">
+          <div style="background:rgba(0,0,0,0.4); padding:14px; border-radius:8px; border-left:3px solid #a855f7;">
+            <strong style="color:#c084fc; font-size:13.5px;">Adım 1-2: VIP Arındırma & Aqua Cam Cilası (12 Dk)</strong><br><br>
+            • <strong>Genosys Snow O2:</strong> Hassas köpükle 3 dk temizleme.<br>
+            • <strong>Aqua Peeling Chamber C (C Vitamini / Besleyici Mod):</strong> En düşük vakumla T-bölgesi cam gibi parlatılır, pürüzler süpürülür (8 dk).
+          </div>
+          <div style="background:rgba(0,0,0,0.4); padding:14px; border-radius:8px; border-left:3px solid #a855f7;">
+            <strong style="color:#c084fc; font-size:13.5px;">Adım 3-4: Bipolar RF Lifting & Kontür Sıkılaştırma (18 Dk)</strong><br><br>
+            • <strong>İletken Jel & Mormed Bipolar RF Başlığı:</strong> 40-42°C kontrollü ısıyla yanaklar, çene ovali ve nazolabial bölge yukarı doğru taranır.<br>
+            • Kolajen lifleri toparlanır, gözenekler görünmez düzlüğe ulaşır.
+          </div>
+          <div style="background:rgba(0,0,0,0.4); padding:14px; border-radius:8px; border-left:3px solid #a855f7;">
+            <strong style="color:#c084fc; font-size:13.5px;">Adım 5-6: Altın C Vitamini Sisleme & Buz Şoku (15 Dk)</strong><br><br>
+            • <strong>Raha Med / Genosys Aydınlatıcı Kokteyl:</strong> Airbrush tabancasıyla basınçlı mikron damlacıklar halinde cilde verilir (8 dk).<br>
+            • <strong>Kriyoterapi Soğuk Çekiç (-5°C):</strong> RF ısısı dengelenir, gözenekler mikron düzeyinde mühürlenir (7 dk).
+          </div>
+          <div style="background:rgba(0,0,0,0.4); padding:14px; border-radius:8px; border-left:3px solid #a855f7;">
+            <strong style="color:#c084fc; font-size:13.5px;">Adım 7-8: 24K Altın/Kristal Maske + Sarı LED (25 Dk)</strong><br><br>
+            • <strong>Eclado 24K Gold / Dr-Meinaier Kristal Maske:</strong> Yüze uygulanır.<br>
+            • <strong>Sarı LED Fototerapi (590 nm):</strong> 20 dk boyunca leke açıcı ve ışık yansıtıcı cam etkisi verilir.<br>
+            • <strong>Final Cam Cilt Cilası:</strong> Genosys Moisture Calming Cream + Cam Koruma Bariyeri + SPF 40.
+          </div>
+        </div>
+      </div>
+
+      <!-- KABİNDE MÜŞTERİYE SÖYLENECEK CÜMLELER KUTUSU -->
+      <div class="card" style="border:1px solid rgba(212,175,55,0.4); background:rgba(212,175,55,0.05); padding:16px;">
+        <h4 style="color:var(--gold-primary); font-size:15px; margin-bottom:8px; display:flex; align-items:center; gap:8px;">
+          💬 Gülşah'ın Danışana Kabinde Söyleyeceği Profesyonel İletişim Notu:
+        </h4>
+        <p style="color:#e2e8f0; font-size:13.5px; line-height:1.6; margin:0;">
+          <em>"1. seansımızda cildinizin gözeneklerini ve ölü tabakasını tamamen arındırıp tertemiz bir zemin hazırladık. Bugün uyguladığımız 2. seansımızda cildinizin alt katmanlarına hyaluronik asit ve peptitleri ultrasonik dalgalarla depoluyoruz. 3. seansımızda ise radyofrekans lifting ile gözenekleri kitleyip cildinize o meşhur pürüzsüz Kore cam yansımasını mühürleyeceğiz."</em>
+        </p>
+      </div>
+    </section>
+
     <!-- TAB: ANSİKLOPEDİK ÜRÜN & CİHAZ ATLASI -->
-    <section id="tab-catalog" class="tab-content active">
+    <section id="tab-catalog" class="tab-content">
       <div class="card highlight">
         <div class="card-badge">Eksiksiz Kabin Ansiklopedisi</div>
         <div class="card-title">Gülşah Taşan Kabin Envanter Kataloğu & Başlık Kullanım Atlası</div>
@@ -2417,42 +2600,117 @@ Dubai Mumya Maske: Somon DNA sürüldükten sonra gazlı bez üstünden çeneden
         </p>
       </div>
 
-      <!-- PROTOCOL 1: GLASS SKIN -->
-      <div class="card" style="border-top:3px solid var(--accent-cyan);">
+      <!-- PROTOCOL 1: GLASS SKIN (3 SEANSLIK TAM KÜR) -->
+      <div class="card" style="border-top:3px solid var(--accent-cyan); margin-bottom:24px;">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
-          <h3 style="font-family:'Cinzel',serif; font-size:18px; color:#fff; margin:0;">
-            1. Kore "Cam Cilt" (Glass Skin) Kristal Işıltı & Derin Nem Protokolü
+          <h3 style="font-family:'Cinzel',serif; font-size:20px; color:#fff; margin:0;">
+            1. Kore "Cam Cilt" (Glass Skin) Kristal Işıltı & Derin Nem Protokolü (3 Seanslık Kür Standardı)
           </h3>
           <div style="display:flex; gap:8px;">
-            <span style="background:rgba(6,182,212,0.15); color:var(--accent-cyan); font-weight:700; font-size:12px; padding:4px 10px; border-radius:15px;">⏱️ 75 Dakika</span>
-            <span style="background:rgba(212,175,55,0.15); color:var(--gold-primary); font-weight:700; font-size:12px; padding:4px 10px; border-radius:15px;">💰 Seans: 3.500 ₺</span>
+            <span style="background:rgba(6,182,212,0.15); color:var(--accent-cyan); font-weight:700; font-size:12px; padding:4px 10px; border-radius:15px;">⏱️ Seans Başı: 75-80 Dk</span>
+            <span style="background:rgba(212,175,55,0.15); color:var(--gold-primary); font-weight:700; font-size:12px; padding:4px 10px; border-radius:15px;">💰 Seans: 3.500 ₺ / 3'lü Kür: 9.000 ₺</span>
           </div>
         </div>
-        <p style="color:#94a3b8; font-size:13px; margin-bottom:15px;">
-          <strong>Hedef Kitle:</strong> Nemsiz, donuk, gözenekleri belirgin, pürüzlü ve fondötensiz ayna gibi parlamak isteyen danışanlar. (Önerilen Kür: 3 Seans, 21 günde bir).
+        <p style="color:#94a3b8; font-size:13px; margin-bottom:20px;">
+          <strong>Hedef Kitle:</strong> Nemsiz, donuk, gözenekleri belirgin, pürüzlü ve fondötensiz ayna gibi parlamak isteyen danışanlar. Kür aralığı 14-21 gündür. Vaat edilen sonuç: Cilt bariyerinin sıfırlanması, hücresel su doygunluğu ve kalıcı cam pürüzsüzlüğü.
         </p>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:12px; font-size:13px;">
-          <div style="background:rgba(0,0,0,0.3); padding:12px; border-radius:8px;">
-            <strong style="color:var(--accent-cyan);">Adım 1-2: Oksijenli Arındırma & Enzim</strong><br>
-            • Genosys Snow O2 köpükle 3 dk dairesel temizleme.<br>
-            • Eclado Enzim Pudra Peeling buhar altında 7 dk bekletilerek ölü keratin bağları eritilir.
+
+        <!-- SEANS 1 -->
+        <div style="margin-bottom:20px; border-left:3px solid var(--accent-cyan); padding-left:14px; background:rgba(6,182,212,0.03); border-radius:0 8px 8px 0; padding-top:10px; padding-bottom:10px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <h4 style="color:var(--accent-cyan); font-size:15px; margin:0; font-weight:700;">
+              ✨ 1. SEANS: ARINDIRMA, ENZİM DETOKSU & DERİN VORTEX TEMİZLİK (75 Dk)
+            </h4>
+            <span style="font-size:11px; color:#94a3b8; background:rgba(0,0,0,0.4); padding:2px 8px; border-radius:10px;">Hedef: Zemin Hazırlığı & Gözenek Boşaltma</span>
           </div>
-          <div style="background:rgba(0,0,0,0.3); padding:12px; border-radius:8px;">
-            <strong style="color:var(--accent-cyan);">Adım 3-4: Scrubber & Aqua Vortex</strong><br>
-            • Mormed Scrubber (45° açı) ile ıslak ciltte 6 dk komedon süpürme.<br>
-            • Mormed Aqua Peeling Vakum (Chamber A Laktik Asit) ile T-bölgesi derin vakum (8 dk).
-          </div>
-          <div style="background:rgba(0,0,0,0.3); padding:12px; border-radius:8px;">
-            <strong style="color:var(--accent-cyan);">Adım 5-6: Oksijen Sisleme & Soğuk Çekiç</strong><br>
-            • Airbrush Oksijen Tabancasıyla 10 cm'den Snow Booster + Hyaluronik serum püskürtme (5 dk).<br>
-            • Kriyoterapi Soğuk Çekiç (-5°C) ile gözenekleri şoklayarak kilitleme (5 dk).
-          </div>
-          <div style="background:rgba(0,0,0,0.3); padding:12px; border-radius:8px;">
-            <strong style="color:var(--accent-cyan);">Adım 7-8: Jelly Maske & Mühürleme</strong><br>
-            • Dr-Meinaier HA Whiten Jelly Maske üzerine Yeşil LED Fototerapi (525 nm, 15 dk).<br>
-            • Genosys HSC Nemlendirici Jel + Multi Sun SPF 40 ile tam koruma.
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:10px; font-size:12.5px;">
+            <div style="background:rgba(0,0,0,0.3); padding:10px; border-radius:6px;">
+              <strong style="color:#fff;">Adım 1-2: Oksijenli Arındırma & Enzim</strong><br>
+              • Genosys Snow O2 köpükle 3 dk dairesel temizleme.<br>
+              • Eclado Enzim Pudra Peeling buhar altında 7 dk bekletilerek ölü keratin bağları eritilir.
+            </div>
+            <div style="background:rgba(0,0,0,0.3); padding:10px; border-radius:6px;">
+              <strong style="color:#fff;">Adım 3-4: Scrubber & Aqua Vortex</strong><br>
+              • Mormed Scrubber (45° açı) ile ıslak ciltte 6 dk komedon süpürme.<br>
+              • Mormed Aqua Peeling Vakum (Chamber A Laktik Asit) ile T-bölgesi derin vakum (8 dk).
+            </div>
+            <div style="background:rgba(0,0,0,0.3); padding:10px; border-radius:6px;">
+              <strong style="color:#fff;">Adım 5-6: Oksijen Sisleme & Soğuk Çekiç</strong><br>
+              • Airbrush Oksijen Tabancasıyla 10 cm'den Snow Booster + Hyaluronik serum püskürtme (5 dk).<br>
+              • Kriyoterapi Soğuk Çekiç (-5°C) ile gözenekleri şoklayarak kilitleme (5 dk).
+            </div>
+            <div style="background:rgba(0,0,0,0.3); padding:10px; border-radius:6px;">
+              <strong style="color:#fff;">Adım 7-8: Jelly Maske & Mühürleme</strong><br>
+              • Dr-Meinaier HA Whiten Jelly Maske üzerine Yeşil LED Fototerapi (525 nm, 15 dk).<br>
+              • Genosys HSC Nemlendirici Jel + Multi Sun SPF 40 ile tam koruma.
+            </div>
           </div>
         </div>
+
+        <!-- SEANS 2 -->
+        <div style="margin-bottom:20px; border-left:3px solid var(--gold-primary); padding-left:14px; background:rgba(212,175,55,0.03); border-radius:0 8px 8px 0; padding-top:10px; padding-bottom:10px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <h4 style="color:var(--gold-primary); font-size:15px; margin:0; font-weight:700;">
+              🌟 2. SEANS: DERİN HÜCRESEL BESLEME, PEPTİT & MEZOTERAPİ ENFÜZYONU (75 Dk)
+            </h4>
+            <span style="font-size:11px; color:#94a3b8; background:rgba(0,0,0,0.4); padding:2px 8px; border-radius:10px;">1. Seanstan 14-21 Gün Sonra | Sert Vakum Yok</span>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:10px; font-size:12.5px;">
+            <div style="background:rgba(0,0,0,0.3); padding:10px; border-radius:6px;">
+              <strong style="color:#fff;">Adım 1-2: Nazik Arındırma & Mikro Peeling</strong><br>
+              • Genosys Snow O2 köpükle 3 dk nazik oksijenli temizlik + Snow Booster pH dengeleme.<br>
+              • Eclado Enzim Pudra buharsız 5 dk bekletilir, Mormed Scrubber düz açıyla yüzeyi ipekleştirir.
+            </div>
+            <div style="background:rgba(0,0,0,0.3); padding:10px; border-radius:6px;">
+              <strong style="color:#fff;">Adım 3-4: İyontoforez / Ultrasonik Derin Serum</strong><br>
+              • Genosys Anti-Aging Hyaluronik & Peptit Kompleks cilde bolca sürülür.<br>
+              • Mormed Ultrasonik / İyontoforez başlığı ile 15 dk dairesel yedirilerek dermise zerk edilir.
+            </div>
+            <div style="background:rgba(0,0,0,0.3); padding:10px; border-radius:6px;">
+              <strong style="color:#fff;">Adım 5-6: Airbrush Mesojet & Kriyoterapi Kilidi</strong><br>
+              • Oksijen tabancası ile hyaluronik sisleme (8 dk) yapılarak hücreler neme doyurulur.<br>
+              • Mormed Soğuk Çekiç (-5°C) ile 7 dk şoklama yapılarak serumlar hücre içine hapsedilir.
+            </div>
+            <div style="background:rgba(0,0,0,0.3); padding:10px; border-radius:6px;">
+              <strong style="color:#fff;">Adım 7-8: Peptit Maske + Kırmızı LED</strong><br>
+              • Eclado / Dr-Meinaier Peptit Jel Maske uygulanır.<br>
+              • Kolajen tetikleyici Kırmızı LED (630 nm, 20 dk) + Genosys HSC Krem ve SPF 40 mühürleme.
+            </div>
+          </div>
+        </div>
+
+        <!-- SEANS 3 -->
+        <div style="border-left:3px solid #a855f7; padding-left:14px; background:rgba(168,85,247,0.03); border-radius:0 8px 8px 0; padding-top:10px; padding-bottom:10px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <h4 style="color:#c084fc; font-size:15px; margin:0; font-weight:700;">
+              👑 3. SEANS: KRİSTAL CAM PARLAKLIĞI, RF LİFTİNG & PORSELEN MÜHÜRLEME (80 Dk)
+            </h4>
+            <span style="font-size:11px; color:#94a3b8; background:rgba(0,0,0,0.4); padding:2px 8px; border-radius:10px;">2. Seanstan 14-21 Gün Sonra | Final Cam Işıltısı</span>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:10px; font-size:12.5px;">
+            <div style="background:rgba(0,0,0,0.3); padding:10px; border-radius:6px;">
+              <strong style="color:#fff;">Adım 1-2: VIP Arındırma & Aqua Polish</strong><br>
+              • Genosys Snow O2 köpük temizlik.<br>
+              • Mormed Aqua Peeling Chamber C (C Vitamini / Besleyici mod) ile T-bölgesi cam cilalama (8 dk).
+            </div>
+            <div style="background:rgba(0,0,0,0.3); padding:10px; border-radius:6px;">
+              <strong style="color:#fff;">Adım 3-4: Bipolar RF Lifting & Sıkılaşma</strong><br>
+              • İletken jel eşliğinde Mormed Bipolar Radyofrekans (40-42°C, 15 dk) ile çene kontürü ve yanaklar toparlanır.<br>
+              • Kolajen lifleri gerilerek porselen zemin oluşturulur.
+            </div>
+            <div style="background:rgba(0,0,0,0.3); padding:10px; border-radius:6px;">
+              <strong style="color:#fff;">Adım 5-6: Altın Sisleme & Buz Şoku</strong><br>
+              • Raha Med / Genosys Aydınlatıcı C Vitamini kokteyli airbrush tabancasıyla basınçlı verilir (10 dk).<br>
+              • Kriyoterapi Soğuk Çekiç (-5°C, 7 dk) ile gözenekler görünmez mikron seviyesine büzülür.
+            </div>
+            <div style="background:rgba(0,0,0,0.3); padding:10px; border-radius:6px;">
+              <strong style="color:#fff;">Adım 7-8: 24K Altın/HA Maske + Karışık LED</strong><br>
+              • Eclado 24K Gold / Dr-Meinaier Kristal Maske + Sarı LED (590 nm Leke/Işıltı, 20 dk).<br>
+              • Genosys Moisture Calming + Cam Parlaklık Kilidi + SPF 40 ile final.
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <!-- PROTOCOL 2: RED CARPET GLOW -->
