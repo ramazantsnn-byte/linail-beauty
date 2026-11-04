@@ -843,6 +843,42 @@
             </div>
           </div>
 
+          <!-- Spoken Script / Voiceover --><!-- Spoken Script / Voiceover -->
+          <div class="content-section">
+            <div class="section-head-bar">
+              <span class="section-heading">🎙️ Gülşah'ın Söyleyeceği Sözler (Seslendirme / Audio)</span>
+              <button class="copy-btn" onclick="copyToClipboard('${escapeJs(day.script)}', 'Seslendirme Metni Kopyalandı ✨')">📋 Kopyala</button>
+            </div>
+            <div class="script-text">${day.script}</div>
+          </div>
+
+          <!-- Story Complement -->
+          <div class="content-section" style="border-left: 3px solid #ec4899;">
+            <div class="section-head-bar">
+              <span class="section-heading">📱 Günün Hikayesi (Story Şablonu & Anket)</span>
+              <button class="copy-btn" onclick="copyToClipboard('${escapeJs(day.story)}', 'Hikaye Kurgusu Kopyalandı ✨')">📋 Kopyala</button>
+            </div>
+            <div style="font-size: 13px; color: var(--text-muted); line-height: 1.5;">${day.story}</div>
+          </div>
+
+          <!-- Instagram Caption -->
+          <div class="content-section">
+            <div class="section-head-bar">
+              <span class="section-heading">📝 Instagram Açıklaması (Caption)</span>
+              <button class="copy-btn" onclick="copyToClipboard('${escapeJs(day.caption)}', 'Caption Kopyalandı ✨')">📋 Caption Kopyala</button>
+            </div>
+            <div style="font-size: 13px; color: #e2e8f0; line-height: 1.5; white-space: pre-line;">${day.caption}</div>
+          </div>
+
+          <!-- Hashtags -->
+          <div class="content-section">
+            <div class="section-head-bar">
+              <span class="section-heading">🏷️ Hedefli SEO Hashtagleri</span>
+              <button class="copy-btn" onclick="copyToClipboard('${escapeJs(day.hashtags)}', 'Hashtagler Kopyalandı ✨')">📋 Hashtag Kopyala</button>
+            </div>
+            <div style="font-size: 12.5px; color: var(--gold-light); font-weight: 600;">${day.hashtags}</div>
+          </div>
+
           <!-- ⚡ Zamanım Yok Modu / Edit Ramazan da -->
           <div class="ramazan-mode-box">
             <div class="ramazan-mode-header">
@@ -878,42 +914,6 @@
               <span>📲</span>
               <span>Ham Videoları WhatsApp'tan Ramazan'a İlet (GÜN ${day.day})</span>
             </a>
-          </div>
-
-          <!-- Spoken Script / Voiceover -->
-          <div class="content-section">
-            <div class="section-head-bar">
-              <span class="section-heading">🎙️ Gülşah'ın Söyleyeceği Sözler (Seslendirme / Audio)</span>
-              <button class="copy-btn" onclick="copyToClipboard('${escapeJs(day.script)}', 'Seslendirme Metni Kopyalandı ✨')">📋 Kopyala</button>
-            </div>
-            <div class="script-text">${day.script}</div>
-          </div>
-
-          <!-- Story Complement -->
-          <div class="content-section" style="border-left: 3px solid #ec4899;">
-            <div class="section-head-bar">
-              <span class="section-heading">📱 Günün Hikayesi (Story Şablonu & Anket)</span>
-              <button class="copy-btn" onclick="copyToClipboard('${escapeJs(day.story)}', 'Hikaye Kurgusu Kopyalandı ✨')">📋 Kopyala</button>
-            </div>
-            <div style="font-size: 13px; color: var(--text-muted); line-height: 1.5;">${day.story}</div>
-          </div>
-
-          <!-- Instagram Caption -->
-          <div class="content-section">
-            <div class="section-head-bar">
-              <span class="section-heading">📝 Instagram Açıklaması (Caption)</span>
-              <button class="copy-btn" onclick="copyToClipboard('${escapeJs(day.caption)}', 'Caption Kopyalandı ✨')">📋 Caption Kopyala</button>
-            </div>
-            <div style="font-size: 13px; color: #e2e8f0; line-height: 1.5; white-space: pre-line;">${day.caption}</div>
-          </div>
-
-          <!-- Hashtags -->
-          <div class="content-section">
-            <div class="section-head-bar">
-              <span class="section-heading">🏷️ Hedefli SEO Hashtagleri</span>
-              <button class="copy-btn" onclick="copyToClipboard('${escapeJs(day.hashtags)}', 'Hashtagler Kopyalandı ✨')">📋 Hashtag Kopyala</button>
-            </div>
-            <div style="font-size: 12.5px; color: var(--gold-light); font-weight: 600;">${day.hashtags}</div>
           </div>
         </div>
       `;
