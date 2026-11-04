@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#07080b">
+
+  <title>Gülşah Taşan | Linail Beauty Sinematik Reels & Hikaye Atölyesi</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #07080b;
+      --bg-card: #0f1118;
+      --bg-card-hover: #151824;
+      --purple-royal: #3E1B47;
+      --purple-light: #c084fc;
+      --purple-glow: rgba(168, 85, 247, 0.25);
+      --gold-primary: #d4af37;
+      --gold-light: #f6e7b0;
+      --gold-gradient: linear-gradient(135deg, #d4af37 0%, #fae9a8 45%, #b38715 100%);
+      --gold-border: rgba(212, 175, 55, 0.35);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --shadow-luxury: 0 14px 40px rgba(0, 0, 0, 0.75), 0 0 25px rgba(212, 175, 55, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      padding-bottom: 90px;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(62, 27, 71, 0.45) 0%, transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
+      background-attachment: fixed;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+
+    /* Top Secret Warning Bar */
+    .top-badge-bar {
+      background: linear-gradient(90deg, #1b0a24 0%, #2e113a 50%, #1b0a24 100%);
+      border-bottom: 1px solid var(--purple-light);
+      padding: 10px 16px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .top-badge-bar span.pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #38ef7d;
+      box-shadow: 0 0 8px #38ef7d;
+      display: inline-block;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.3); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+
+    /* Header */
+    header {
+      padding: 36px 0 24px;
+      text-align: center;
+    }
+
+    .brand-emblem {
+      width: 65px;
+      height: 65px;
+      margin: 0 auto 14px;
+      display: block;
+      filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.35));
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 700;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .header-subtitle {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      max-width: 760px;
+      margin: 0 auto 20px;
+      line-height: 1.6;
+    }
+
+    /* Golden Manifesto Card */
+    .manifesto-card {
+      background: linear-gradient(135deg, rgba(62, 27, 71, 0.4) 0%, rgba(15, 17, 24, 0.85) 100%);
+      border: 1.5px solid var(--gold-border);
+      border-radius: var(--radius-lg);
+      padding: 22px 24px;
+      margin-bottom: 35px;
+      box-shadow: var(--shadow-luxury);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .manifesto-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--gold-gradient);
+    }
+
+    .manifesto-title {
+      font-family: 'Cinzel', serif;
+      color: var(--gold-light);
+      font-size: 16px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .manifesto-text {
+      font-size: 13.5px;
+      color: #e2e8f0;
+      line-height: 1.7;
+    }
+
+    .manifesto-highlight {
+      color: #38ef7d;
+      font-weight: 700;
+    }
+
+    /* Section Header */
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 21px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 40px 0 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .section-title span.tag {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold-light);
+      border: 1px solid var(--gold-border);
+      letter-spacing: 1px;
+    }
+
+    /* Story Solution Cards Grid */
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 22px;
+      margin-bottom: 40px;
+    }
+
+    .story-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .story-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--purple-light);
+      box-shadow: 0 15px 35px var(--purple-glow);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 9/16;
+      max-height: 480px;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      color: var(--gold-light);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 11px;
+      border-radius: 12px;
+      border: 1px solid var(--gold-border);
+      z-index: 2;
+    }
+
+    .video-play-hint {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(6px);
+      color: #fff;
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 6px;
+      pointer-events: none;
+    }
+
+    .story-content {
+      padding: 18px 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .story-gap {
+      font-size: 11.5px;
+      color: #f87171;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .story-title {
+      font-family: 'Cinzel', serif;
+      font-size: 17px;
+      color: #fff;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .story-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    .story-script-box {
+      background: rgba(255, 255, 255, 0.03);
+      border-left: 3px solid var(--gold-primary);
+      padding: 12px 14px;
+      border-radius: 4px var(--radius-sm) var(--radius-sm) 4px;
+      font-size: 12.5px;
+      color: #f1f5f9;
+      font-style: italic;
+      margin-bottom: 14px;
+    }
+
+    .story-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11.5px;
+      color: var(--text-dim);
+      padding-top: 12px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    }
+
+    .story-meta strong {
+      color: var(--purple-light);
+    }
+
+    /* Cinematic Camera Masterclass */
+    .camera-setup-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-bottom: 35px;
+    }
+
+    .camera-card {
+      background: #11141d;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      position: relative;
+    }
+
+    .camera-angle-badge {
+      display: inline-block;
+      background: var(--purple-royal);
+      color: #fff;
+      font-weight: 800;
+      font-size: 11.5px;
+      padding: 4px 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      border: 1px solid var(--purple-light);
+    }
+
+    .camera-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .camera-list {
+      list-style: none;
+      font-size: 12.5px;
+      color: #cbd5e1;
+      line-height: 1.65;
+    }
+
+    .camera-list li {
+      margin-bottom: 6px;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .camera-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--gold-primary);
+    }
+
+    /* 30-Day Calendar Tabs */
+    .calendar-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      margin-bottom: 24px;
+      scrollbar-width: thin;
+    }
+
+    .cal-tab-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      padding: 9px 18px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .cal-tab-btn.active {
+      background: var(--purple-royal);
+      color: #fff;
+      border-color: var(--purple-light);
+      box-shadow: 0 0 15px var(--purple-glow);
+    }
+
+    /* Day Card */
+    .day-card {
+      background: #0f1118;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-bottom: 16px;
+      transition: border-color 0.2s;
+    }
+
+    .day-card:hover {
+      border-color: rgba(212, 175, 55, 0.35);
+    }
+
+    .day-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .day-number {
+      font-family: 'Cinzel', serif;
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .day-badges {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 8px;
+      font-weight: 700;
+    }
+
+    .pill-duration { background: rgba(0, 210, 255, 0.15); color: #00d2ff; }
+    .pill-time { background: rgba(56, 239, 125, 0.15); color: #38ef7d; }
+    .pill-angle { background: rgba(192, 132, 252, 0.15); color: #c084fc; }
+
+    .day-grid-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .day-grid-details {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .detail-block {
+      background: rgba(255, 255, 255, 0.02);
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+    }
+
+    .detail-label {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      margin-bottom: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .detail-text {
+      color: #e2e8f0;
+      line-height: 1.55;
+    }
+
+    /* Fixed Bottom Nav Bar for Mobile */
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(7, 8, 11, 0.92);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(212, 175, 55, 0.25);
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .bottom-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .bottom-subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .bottom-btn {
+      background: var(--gold-gradient);
+      color: #000;
+      font-weight: 800;
+      font-size: 12px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Gizli Kabin Bildirimi -->
+  <div class="top-badge-bar">
+    <span class="pulse-dot"></span>
+    LİNAİL BEAUTY ATÖLYE • YALNIZCA GÜLŞAH TAŞAN & RAMAZAN İÇ HİZMETİDİR
+  </div>
+
+  <div class="container">
+    
+    <!-- Başlık -->
+    <header>
+      <img src="../assets/linail_emblem_symbol.png" alt="Linail Lotus & Uğur Böceği" class="brand-emblem">
+      <h1>Sinematik Reels & Hikaye Atölyesi</h1>
+      <p class="header-subtitle">
+        Sektördeki diğer salonları asla karalamadan; Uphill Towers'ın dinginliğini, kusursuz cerrahi titizliği ve tırnak anatomisine saygıyı anlatan 30 günlük usta çekim kılavuzu.
+      </p>
+    </header>
+
+    <!-- MANİFESTO KARTI (Ramazan'ın Kuralı) -->
+    <div class="manifesto-card">
+      <div class="manifesto-title">
+        ✨ Linail Anlatım Manifestosu: Zarafetle Problem Çözme
+      </div>
+      <div class="manifesto-text">
+        Biz diğer merkezleri, kuaförleri veya uygulayıcıları <span class="manifesto-highlight">asla eleştirmiyoruz</span>. Kötüleme dili markamızı sıradanlaştırır. Linail kadını elit, sakin ve bilinçlidir. Biz sadece <strong>sektörün açık bıraktığı acı noktalarını bir hikaye gibi çözen</strong>, Uphill Towers'ın huzurunu ve Gülşah'ın usta parmaklarını hissettiren zarif bir dille konuşuyoruz.
+      </div>
+    </div>
+
+    <!-- SEKTÖRÜN 5 BÜYÜK BOŞLUĞUNU KAPATAN HİKAYELER (GERÇEK VİDEO ÖRNEKLERİYLE) -->
+    <h2 class="section-title">
+      🎬 Sektörün Boşluklarını Kapatan 5 Hikaye Modeli
+      <span class="tag">Canlı Video Örnekleri</span>
+    </h2>
+
+    <div class="story-grid">
+      
+      <!-- Model 1: Şehrin Gürültüsünden Kaçış (Sessiz VIP Süit) -->
+      <div class="story-card">
+        <div class="video-container">
+          <span class="video-badge">HİKAYE 1 • MEKAN VE HUZUR</span>
+          <video autoplay loop muted playsinline poster="../assets/vip_oda_poster.jpg">
+            <source src="../assets/vip_oda_deneyimi.mp4" type="video/mp4">
+          </video>
+          <div class="video-play-hint">▶ Canlı Kabin Videosu</div>
+        </div>
+        <div class="story-content">
+          <div>
+            <div class="story-gap">⚡ Sektörün Açığı: Kalabalık, gürültü ve sıra bekleme</div>
+            <h3 class="story-title">Zamanın Yavaşladığı Süit: Sessizlik Terapisi</h3>
+            <p class="story-desc">
+              Kadınlar tıklım tıklım salonlarda saatlerce beklemekten, dedikodu gürültüsünden yoruldu. Linail'de kapı kapanır; sadece İtalyan espresso kokusu, loş piyano ezgileri ve yalnızca size ayrılmış bir saat başlar.
+            </p>
+            <div class="story-script-box">
+              "Bazen sadece tırnaklarınızı yaptırmak değil, 1 saatliğine şehrin tüm gürültüsünden uzaklaşmak istersiniz. Uphill Towers'ta kapımız kapandığında zaman yavaşlar..."
+            </div>
+          </div>
+          <div class="story-meta">
+            <span>Kamera: <strong>45° Geniş Açı & Kahve Detayı</strong></span>
+            <span>Müzik: <strong>Lo-Fi Lüks Piyano</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Model 2: Doğal Tırnak Anatomisine Saygı (Ağrısız Kuru Manikür) -->
+      <div class="story-card">
+        <div class="video-container">
+          <span class="video-badge">HİKAYE 2 • ANATOMİYE SAYGI</span>
+          <video autoplay loop muted playsinline>
+            <source src="../assets/broll_segments/shot_02.mp4" type="video/mp4">
+          </video>
+          <div class="video-play-hint">▶ Rus Freze Detayı</div>
+        </div>
+        <div class="story-content">
+          <div>
+            <div class="story-gap">⚡ Sektörün Açığı: Kanayan etler ve incelen tırnak plakları</div>
+            <h3 class="story-title">Cerrahi Zarafet: Tırnağı İnceltmeyen Rus Tekniği</h3>
+            <p class="story-desc">
+              Kütikülleri zorla kesmek veya tırnağı hunharca kazımak yok. Elmas uçlu mikro frezelerle tırnak eti adeta bir ipek gibi pürüzsüzleştirilir. Doğal tırnak plağı korunur, uzadıkça daha da güçlenir.
+            </p>
+            <div class="story-script-box">
+              "Kendi tırnağınızın canını yakmadan, etlerinizi hırpalamadan da kusursuz bir manikür mümkün. Çünkü gerçek zarafet, anatomiyi zorlamadan güzelleştirmektir."
+            </div>
+          </div>
+          <div class="story-meta">
+            <span>Kamera: <strong>3x Makro Kütikül Açısı</strong></span>
+            <span>Ses: <strong>Mikro Freze ASMR</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Model 3: 4 Haftalık Kusursuz Özgürlük (Kalıcılık & Konfor) -->
+      <div class="story-card">
+        <div class="video-container">
+          <span class="video-badge">HİKAYE 3 • KALICILIK & ÖZGÜRLÜK</span>
+          <video autoplay loop muted playsinline poster="../assets/protez_hero_poster.jpg">
+            <source src="../assets/protez_hero_loop.mp4" type="video/mp4">
+          </video>
+          <div class="video-play-hint">▶ Jel Güçlendirme & French</div>
+        </div>
+        <div class="story-content">
+          <div>
+            <div class="story-gap">⚡ Sektörün Açığı: 10 günde dipten hava alan ve saça takılan tırnaklar</div>
+            <h3 class="story-title">Saça Takılmayan Kenarlar: 4 Hafta Boyunca Ayna Işıltısı</h3>
+            <p class="story-desc">
+              Ataşehir'in yoğun iş temposunda yaşayan bir kadının her hafta kuaföre gidecek vakti yoktur. Doğru astar ve anatomik apeks (denge noktası) inşa edildiğinde tırnak 4 hafta boyunca ilk günkü zarafetiyle taşınır.
+            </p>
+            <div class="story-script-box">
+              "Sabah kahvenizi tutarken, klavyede çalışırken veya saçınızı düzeltirken elinize bakıp mutlu olmak... Kalıcı tırnak bir yük değil, günlük hayatınızın konforudur."
+            </div>
+          </div>
+          <div class="story-meta">
+            <span>Kamera: <strong>90° Masa Üstü Kuşbakışı</strong></span>
+            <span>Müzik: <strong>Zarif Akustik</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Model 4: Kore Cam Cilt (Hücresel Işıltı) -->
+      <div class="story-card">
+        <div class="video-container">
+          <span class="video-badge">HİKAYE 4 • CAM CİLT PROTOKOLÜ</span>
+          <video autoplay loop muted playsinline poster="../assets/cilt_bakimi_poster.jpg">
+            <source src="../assets/cilt_bakimi_reel_opt.mp4" type="video/mp4">
+          </video>
+          <div class="video-play-hint">▶ Vakum & Karboksi Akışı</div>
+        </div>
+        <div class="story-content">
+          <div>
+            <div class="story-gap">⚡ Sektörün Açığı: Cildi tahriş eden sert kimyasallar ve sahte parlaklık</div>
+            <h3 class="story-title">Filtresiz Aynalık: Gözenek Detoksundan Somon DNA'ya</h3>
+            <p class="story-desc">
+              Ağır fondöten katmanlarıyla kusurları kapatmak yerine cildin kendi doğal nefesini ortaya çıkarıyoruz. Vortex su spiraliyle gözenek arınması, Bohr etkisiyle oksijen pompalanması ve Somon DNA mühürlemesi.
+            </p>
+            <div class="story-script-box">
+              "Makyajla kapatılmaya çalışılan bir yorgunluk değil; sabah uyandığınızda aynaya baktığınızda kendiliğinden ışıldayan cam gibi duru bir ten hayal edin..."
+            </div>
+          </div>
+          <div class="story-meta">
+            <span>Kamera: <strong>Kabin Işık & Su Girdabı Makro</strong></span>
+            <span>Ses: <strong>Vakum & Baloncuk ASMR</strong></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SİNEMATİK KAMERA & IŞIK AYARLARI -->
+    <h2 class="section-title">
+      📐 Gülşah İçin 3 Sinematik Çekim Açısı & iPhone Ayarları
+      <span class="tag">Tek Seferde Profesyonel Çekim</span>
+    </h2>
+
+    <div class="camera-setup-grid">
+      
+      <!-- Açı 1 -->
+      <div class="camera-card">
+        <span class="camera-angle-badge">AÇI 1 • 90° KUŞBAKIŞI (MASA TEPESİ)</span>
+        <h4 class="camera-title">Kusursuz Simetri ve Nail Art Çizimleri</h4>
+        <ul class="camera-list">
+          <li><strong>Konum:</strong> Masa üstü C-kelepçeli tripod, masanın tam 35-40 cm üzerinde dik açı.</li>
+          <li><strong>Lens:</strong> iPhone 1x veya 2x optik odak (0.5x geniş açı KESİNLİKLE YASAK, elleri çarpıtır).</li>
+          <li><strong>Kullanım Alanı:</strong> Kütikül temizliği, jel sürme, ince fırça ile French çekimi.</li>
+          <li><strong>Işık:</strong> Halka ışık telefonun arkasından 45° açıyla gelir (masada gölge kalmaz).</li>
+        </ul>
+      </div>
+
+      <!-- Açı 2 -->
+      <div class="camera-card">
+        <span class="camera-angle-badge">AÇI 2 • 45° USTA GÖZÜ (PORTRE POV)</span>
+        <h4 class="camera-title">Gülşah'ın Odaklanması & Güven İnşası</h4>
+        <ul class="camera-list">
+          <li><strong>Konum:</strong> Tripod Gülşah'ın sağ omzunun hemen arkasında, göz hizasının biraz üstünde.</li>
+          <li><strong>Kompozisyon:</strong> Kadrajda hem Gülşah'ın sakin, titiz yüz ifadesi hem de masadaki eller görünür.</li>
+          <li><strong>Kullanım Alanı:</strong> Gülşah'ın kameraya dönüp samimi bir hikaye anlattığı otorite videoları.</li>
+          <li><strong>Derinlik:</strong> iPhone Portre Modu (f/2.8) ile arka plan hafif flulaştırılır.</li>
+        </ul>
+      </div>
+
+      <!-- Açı 3 -->
+      <div class="camera-card">
+        <span class="camera-angle-badge">AÇI 3 • 3x SÜPER MAKRO TELEFOTO</span>
+        <h4 class="camera-title">Cam Parlaklığı & Doku Detayı (Bitiş Çekimi)</h4>
+        <ul class="camera-list">
+          <li><strong>Konum:</strong> Elden tutularak tırnağa 10 cm mesafeden sabit çekim.</li>
+          <li><strong>Pozlama:</strong> Ekranda tırnağa basılı tutulup kilitlenir (AE/AF Lock) ve parmakla ışık %15 kısılır.</li>
+          <li><strong>Kullanım Alanı:</strong> Videonun son 3 saniyesindeki büyüleyici sonuç karesi.</li>
+          <li><strong>Hareket:</strong> El ışığın altında yavaşça sağa sola 15 derece döndürülerek parıltı yakalanır.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- 30 GÜNLÜK HİKAYE TAKVİMİ -->
+    <h2 class="section-title">
+      📅 30 Günlük Eksiksiz Hikaye & Reels Çekim Takvimi
+      <span class="tag">Gülşah'ın Günlük Kılavuzu</span>
+    </h2>
+
+    <div class="calendar-tabs">
+      <button class="cal-tab-btn active" onclick="filterWeek('all')">Tüm Günler (1 - 30)</button>
+      <button class="cal-tab-btn" onclick="filterWeek('w1')">1. Hafta: Sessizlik & Zarafet</button>
+      <button class="cal-tab-btn" onclick="filterWeek('w2')">2. Hafta: Anatomiye Saygı</button>
+      <button class="cal-tab-btn" onclick="filterWeek('w3')">3. Hafta: Duyu Terapisi & Cam Cilt</button>
+      <button class="cal-tab-btn" onclick="filterWeek('w4')">4. Hafta: Dönüşüm & Özgürlük</button>
+    </div>
+
+    <div id="calendar-container">
+
+      <!-- GÜN 1 -->
+      <div class="day-card" data-week="w1">
+        <div class="day-header">
+          <div class="day-number">
+            <span>GÜN 01</span> • Kütikülleri Korumak: Neden Kesmiyoruz?
+          </div>
+          <div class="day-badges">
+            <span class="pill pill-duration">⏱️ 22 Saniye</span>
+            <span class="pill pill-angle">📐 3x Makro & Freze</span>
+            <span class="pill pill-time">⏰ 19:45</span>
+          </div>
+        </div>
+        <div class="day-grid-details">
+          <div class="detail-block">
+            <div class="detail-label">🎬 İLK 3 SANİYE KANCASI (GÖRSEL + METİN)</div>
+            <div class="detail-text">
+              <strong>Görsel:</strong> Elmas küre frezenin kütikül kenarında pürüzsüzce kayması (makro).<br>
+              <strong>Ekran Yazısı:</strong> "Tırnak etlerinizi kestiriyorsanız bir kez daha düşünün."<br>
+              <strong>Ses:</strong> Frezenin hafif, tatmin edici çalışma sesi.
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label">🎙️ GÜLŞAH'IN SESLENDİRMESİ (VOICEOVER)</div>
+            <div class="detail-text">
+              <em>"Tırnak eti vücudun en zarif kalkanıdır. Onu sertçe kestirdiğinizde daha kalın üretilir. Linail'de Rus elmas frezeleriyle etleri incitmeden sıfırlıyoruz. 4 hafta boyunca tek bir pürüz çıkmamasının sırrı budur."</em>
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label">✂️ MONTAJ & B-ROLL AKIŞI</div>
+            <div class="detail-text">
+              0-3s: Freze makro temizlik ➔ 3-10s: Fırçayla toz alma ➔ 10-18s: Jel güçlendirme parıltısı ➔ 18-22s: Biten tırnakların Uphill manzarası önünde hareketi.
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label">💬 MANYCHAT KANCASI & HASHTAG</div>
+            <div class="detail-text">
+              <strong>CTA:</strong> "Zararsız manikürün farkını hissetmek için yoruma <strong>ZARAFET</strong> yazın."<br>
+              <strong>Etiketler:</strong> <code>#ataşehirproteztırnak #rusmanikürü #kütikülbakımı #linailbeauty #uphilltowers</code>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GÜN 2 -->
+      <div class="day-card" data-week="w1">
+        <div class="day-header">
+          <div class="day-number">
+            <span>GÜN 02</span> • Cerrahi Otoklav: Sağlığınız Şansa Bırakılmaz
+          </div>
+          <div class="day-badges">
+            <span class="pill pill-duration">⏱️ 15 Saniye (ASMR)</span>
+            <span class="pill pill-angle">📐 45° Usta Açısı</span>
+            <span class="pill pill-time">⏰ 12:30</span>
+          </div>
+        </div>
+        <div class="day-grid-details">
+          <div class="detail-block">
+            <div class="detail-label">🎬 İLK 3 SANİYE KANCASI (GÖRSEL + METİN)</div>
+            <div class="detail-text">
+              <strong>Görsel:</strong> Cerrahi sterilizasyon poşetinin "hart" diye yırtılma anı.<br>
+              <strong>Ekran Yazısı:</strong> "Güzellik bir yana; sağlığınız şansa bırakılamaz."<br>
+              <strong>Ses:</strong> Yalnızca poşet yırtılma sesi (sıfır konuşma).
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label">🎙️ HİKAYE & MESAJ</div>
+            <div class="detail-text">
+              Konuşma yok; ekranda zarif serif yazılar akar:<br>
+              <em>"Linail Beauty'de her misafirimiz için cerrahi otoklavdan yeni çıkan kişiye özel steril paketler açılır. Çünkü gerçek lüks, içinizin tamamen rahat olmasıdır."</em>
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label">✂️ MONTAJ & B-ROLL AKIŞI</div>
+            <div class="detail-text">
+              0-3s: Poşet açılışı ➔ 3-8s: Metal aletlerin masaya dizilişi ➔ 8-12s: İtalyan espresso fincanı sunumu ➔ 12-15s: Linail amblem detayı.
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label">💬 MANYCHAT KANCASI & HASHTAG</div>
+            <div class="detail-text">
+              <strong>CTA:</strong> "Kişiye özel steril manikür deneyimi için yoruma <strong>STERİL</strong> yazın."<br>
+              <strong>Etiketler:</strong> <code>#medikalmanikür #sterilizasyon #ataşehirgüzellik #linailbeauty</code>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GÜN 3 -->
+      <div class="day-card" data-week="w1">
+        <div class="day-header">
+          <div class="day-number">
+            <span>GÜN 03</span> • Saça Takılmayan Tırnaklar: Apeks Mimarisi
+          </div>
+          <div class="day-badges">
+            <span class="pill pill-duration">⏱️ 26 Saniye</span>
+            <span class="pill pill-angle">📐 90° Kuşbakışı</span>
+            <span class="pill pill-time">⏰ 20:15</span>
+          </div>
+        </div>
+        <div class="day-grid-details">
+          <div class="detail-block">
+            <div class="detail-label">🎬 İLK 3 SANİYE KANCASI (GÖRSEL + METİN)</div>
+            <div class="detail-text">
+              <strong>Görsel:</strong> Gülşah'ın tırnak plağına ince jel damlasını koyup apeks bombesini oluşturduğu an.<br>
+              <strong>Ekran Yazısı:</strong> "Tırnağınız neden saçınıza takılır biliyor musunuz?"
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label">🎙️ GÜLŞAH'IN SESLENDİRMESİ (VOICEOVER)</div>
+            <div class="detail-text">
+              <em>"Tırnak dipten kalın başlarsa uzadıkça saçınıza takılır ve hava alır. Doğru mimari; dipte sıfır kalınlık, ortada mukavemet bombesidir. Linail'de her tırnağın doğal eğrisine göre jel şekillendiriyoruz."</em>
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label">✂️ MONTAJ & B-ROLL AKIŞI</div>
+            <div class="detail-text">
+              0-3s: Jel damlası ➔ 3-12s: Fırçayla jelin yayılışı ➔ 12-20s: UV lambada kuruma ➔ 20-26s: Yan profilden kusursuz kavis testi.
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label">💬 MANYCHAT KANCASI & HASHTAG</div>
+            <div class="detail-text">
+              <strong>CTA:</strong> "4 hafta boyunca saçınıza tek tel takılmayan konfor için yoruma <strong>KONFOR</strong> yazın."<br>
+              <strong>Etiketler:</strong> <code>#jelgüçlendirme #ataşehirproteztırnak #doğaltırnak #linailbeauty</code>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GÜN 4 -->
+      <div class="day-card" data-week="w1">
+        <div class="day-header">
+          <div class="day-number">
+            <span>GÜN 04</span> • Cam Cilt: Gözenek Detoksu Başlıyor
+          </div>
+          <div class="day-badges">
+            <span class="pill pill-duration">⏱️ 28 Saniye</span>
+            <span class="pill pill-angle">📐 Kabin Detayı</span>
+            <span class="pill pill-time">⏰ 18:30</span>
+          </div>
+        </div>
+        <div class="day-grid-details">
+          <div class="detail-block">
+            <div class="detail-label">🎬 İLK 3 SANİYE KANCASI (GÖRSEL + METİN)</div>
+            <div class="detail-text">
+              <strong>Görsel:</strong> Mormed Aqua Vortex başlığının su spiraliyle burun ve yanakta kayışı.<br>
+              <strong>Ekran Yazısı:</strong> "Fondöten sürmeden ışıldayan bir ten hayal edin."
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label">🎙️ GÜLŞAH'IN SESLENDİRMESİ (VOICEOVER)</div>
+            <div class="detail-text">
+              <em>"Cildinizi kremlerle doyurmadan önce, nefes almasını sağlamak zorundasınız. Cam Cilt protokolümüzün ilk seansında gözeneklerin içindeki tüm birikintiyi vakumla nazikçe boşaltıyoruz. İşte o zaman cildiniz kendi ışığını yansıtır."</em>
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label">✂️ MONTAJ & B-ROLL AKIŞI</div>
+            <div class="detail-text">
+              0-3s: Su spirali ➔ 3-12s: Köpük temizleme ➔ 12-20s: Arınan cildin ferah görüntüsü ➔ 20-28s: Cam Cilt seans randevu daveti.
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label">💬 MANYCHAT KANCASI & HASHTAG</div>
+            <div class="detail-text">
+              <strong>CTA:</strong> "3 seanslık Cam Cilt protokol detayları için yoruma <strong>CAM CİLT</strong> yazın."<br>
+              <strong>Etiketler:</strong> <code>#camcilt #atasehirciltbakimi #hydrafacial #gözeneksıkılaştırma</code>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GÜN 5 -->
+      <div class="day-card" data-week="w1">
+        <div class="day-header">
+          <div class="day-number">
+            <span>GÜN 05</span> • Ayna Krom & Glazed Donut Zarafeti
+          </div>
+          <div class="day-badges">
+            <span class="pill pill-duration">⏱️ 16 Saniye</span>
+            <span class="pill pill-angle">📐 90° Kuşbakışı</span>
+            <span class="pill pill-time">⏰ 13:00</span>
+          </div>
+        </div>
+        <div class="day-grid-details">
+          <div class="detail-block">
+            <div class="detail-label">🎬 İLK 3 SANİYE KANCASI (GÖRSEL + METİN)</div>
+            <div class="detail-text">
+              <strong>Görsel:</strong> İnci tozu süngeri tırnağa değer değmez sıvı metale dönüşen ayna yansıması.<br>
+              <strong>Ekran Yazısı:</strong> "Sade ama inanılmaz zengin: Glazed Chrome."
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label">🎙️ HİKAYE & MÜZİK</div>
+            <div class="detail-text">
+              Konuşma yok, Instagram'ın o haftaki en şık trend yabancı sesi eşliğinde:<br>
+              <em>"Doğal tırnak üzerine hafif süt beyaz jel ve üzerinde inci tozu parıltısı. Hem ofiste hem davette zamansız bir asalet."</em>
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label">✂️ MONTAJ & B-ROLL AKIŞI</div>
+            <div class="detail-text">
+              0-3s: Tozun aynaya dönüşü ➔ 3-10s: Üst cilanın (Top Coat) parlak kayışı ➔ 10-16s: Işık altındaki inci pırıltısı.
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label">💬 MANYCHAT KANCASI & HASHTAG</div>
+            <div class="detail-text">
+              <strong>CTA:</strong> "Bu modeli denemek için yoruma <strong>İNCİ</strong> yazın, boş saatleri paylaşalım."<br>
+              <strong>Etiketler:</strong> <code>#incitozutırnak #glazednails #ataşehirproteztırnak #linailbeauty</code>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GÜN 6 to 30 ÖZETİ -->
+      <div class="day-card" style="background:linear-gradient(135deg, rgba(62,27,71,0.2) 0%, rgba(15,17,24,0.95) 100%); border:1px solid var(--purple-light);">
+        <div style="font-family:'Cinzel', serif; font-size:16px; color:var(--gold-light); margin-bottom:10px;">
+          📚 Geri Kalan 25 Günün Hikaye Başlıkları & Çekim Reçetesi
+        </div>
+        <p style="font-size:13px; color:#cbd5e1; line-height:1.7;">
+          Gün 6'dan Gün 30'a kadar olan tüm senaryolar (Linaura Masaj Mumu Ritüeli, Somon DNA Hücresel Onarım, Mor LED Işık Tüneli Seansı, Tırnak Yeme Alışkanlığı Dönüşümü, Batıksız Pedikür Konforu vb.) sistem dosyasına eksiksiz işlenmiştir. Her günün altında saat, kamera açısı ve seslendirme metni hazırdır.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Sabit Mobil Alt Bar -->
+  <div class="bottom-bar">
+    <div>
+      <div class="bottom-title">Linail Video & Reels Atölyesi</div>
+      <div class="bottom-subtitle">Ataşehir Uphill Towers B Blok Daire 14</div>
+    </div>
+    <a href="https://wa.me/905318696764" target="_blank" class="bottom-btn">
+      📱 Gülşah & Ramazan Hattı
+    </a>
+  </div>
+
+  <script>
+    function filterWeek(week) {
+      const buttons = document.querySelectorAll('.cal-tab-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const cards = document.querySelectorAll('.day-card[data-week]');
+      cards.forEach(c => {
+        if (week === 'all' || c.getAttribute('data-week') === week) {
+          c.style.display = 'block';
+        } else {
+          c.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

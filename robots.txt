@@ -3,6 +3,8 @@
 
 User-agent: *
 Allow: /
+Disallow: /gulsah-reels/
+Disallow: /kabin-akisi/
 
 # Google Search & AI
 User-agent: Googlebot
