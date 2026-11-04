@@ -12,7 +12,7 @@ Globalde (Rusya, Güney Kore, ABD) ve Türkiye'de (Nişantaşı, Bebek, Bağdat 
    * *Neden Tutar:* İnsan beyni tırnak eti temizliği, freze sesi, otoklav poşetinin yırtılma sesi ve cam cilt maskesinin soyulma anında dopamin salgılar.
    * *İzlenme Potansiyeli:* 250K – 2.5M.
 2. **Mit Çürütme & Sektör İtirafı (Kontroversi / Korku / Otorite - %30 Pay):**
-   * *Neden Tutar:* "Bunu size kuaförler söylemez", "Tırnağınızın 3 günde hava almasının gerçek sebebi..." gibi kancalar izleyicide 'kandırılıyor muyum?' hissi uyandırır ve videoyu sonuna kadar izletir.
+   * *Neden Tutar:* "Doğal tırnak anatomisinde en çok gözden kaçan detay", "Tırnağınızın 3 günde hava almasının gerçek sebebi..." gibi kancalar izleyicide 'kandırılıyor muyum?' hissi uyandırır ve videoyu sonuna kadar izletir.
    * *İzlenme Potansiyeli:* 100K – 800K (Yüksek Yorum ve Kaydetme).
 3. **VIP Dönüşüm & Müşteri Hikayesi (Before / After Hissi - %20 Pay):**
    * *Neden Tutar:* "Düğününe 2 gün kala başka yerde tırnakları mahvolan gelin kapımıza geldi..." Dramatik hikaye + Gülşah'ın sakin ustalığı = Yüksek empati ve güven.
@@ -76,7 +76,7 @@ Instagram artık bir yapay zeka arama motorudur. 30 adet çöp hashtag yerine **
 * **Format & Süre:** 22 Saniye Reels.
 * **Kamera Açısı:** 90° Kuşbakışı Masa Açısı + 3x Makro Kütikül Yakın Plan.
 * **İlk 3 Saniye Kancası:**
-  * *Görsel:* Klasik kuaför pensiyle et kesilirken üzerine kırmızı kocaman çarpı işareti.
+  * *Görsel:* Klasik etleri kesmeden freze ile pürüzsüzleştirme anı.
   * *Ekran Yazısı:* "Kütiküllerinizi kestiriyorsanız bu videoyu hemen izleyin."
   * *Ses:* Otoklav poşetinden çıkan elmas freze ucunun tiz çalışma sesi.
 * **Gülşah'ın Konuşması / Seslendirme:**
@@ -186,7 +186,7 @@ Instagram artık bir yapay zeka arama motorudur. 30 adet çöp hashtag yerine **
 
 ### GÜN 10: DOĞRU BİLİNEN YANLIŞLAR: "PROTEZ TIRNAK TIRNAĞI İNCELTİR Mİ?"
 * **Konu:** Mit Çürütme.
-* **Gülşah'ın Açıklaması:** "Tırnağı incelten protez jel değildir; jeli sökerken tırnak plağını frezeyle hunharca oyan acemi teknisyenlerdir! Doğru sökümde doğal tırnağınız ilk günkü gibi sapasağlam çıkar."
+* **Gülşah'ın Açıklaması:** "Tırnağı incelten protez jel değildir; jeli sökerken tırnak plağını frezeyle incelten tırnak plağına baskı uygulayan yanlış söküm yöntemleridir! Doğru sökümde doğal tırnağınız ilk günkü gibi sapasağlam çıkar."
 * **Görsel:** Frezeyle jelin doğal tırnağa hiç değmeden sıfırlanma anı.
 * **Atılma Saati:** 19:45
 
