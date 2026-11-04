@@ -1581,7 +1581,7 @@
             </div>
           </div>
 
-          <!-- Spoken Script / Voiceover --><!-- Spoken Script / Voiceover -->
+          <!-- Spoken Script / Voiceover -->
           <div class="content-section">
             <div class="section-head-bar">
               <span class="section-heading">🎙️ Gülşah'ın Söyleyeceği Sözler (Seslendirme / Audio)</span>
@@ -1692,30 +1692,65 @@
       window.scrollTo({ top: 300, behavior: 'smooth' });
     });
 
-    // Search Filter
+    // Global Smart Search Across ALL 150 Days
     searchInput.addEventListener('input', (e) => {
       const q = e.target.value.toLowerCase().trim();
       if (!q) {
         renderCard();
         return;
       }
-      const prog = programsData[currentProgramIndex];
-      const matchIdx = prog.days.findIndex(d => 
-        d.title.toLowerCase().includes(q) || 
-        d.script.toLowerCase().includes(q) || 
-        d.caption.toLowerCase().includes(q) ||
-        d.hook_text.toLowerCase().includes(q)
+
+      // 1. Önce aktif programda ara
+      let targetProgIdx = currentProgramIndex;
+      let matchIdx = programsData[currentProgramIndex].days.findIndex(d => 
+        (d.title || '').toLowerCase().includes(q) || 
+        (d.script || '').toLowerCase().includes(q) || 
+        (d.caption || '').toLowerCase().includes(q) ||
+        (d.hook_text || '').toLowerCase().includes(q)
       );
+
+      // 2. Bulamazsa 150 günün tamamında ara ve o programa otomatik geç!
+      if (matchIdx === -1) {
+        for (let pIdx = 0; pIdx < programsData.length; pIdx++) {
+          const m = programsData[pIdx].days.findIndex(d => 
+            (d.title || '').toLowerCase().includes(q) || 
+            (d.script || '').toLowerCase().includes(q) || 
+            (d.caption || '').toLowerCase().includes(q) ||
+            (d.hook_text || '').toLowerCase().includes(q)
+          );
+          if (m !== -1) {
+            targetProgIdx = pIdx;
+            matchIdx = m;
+            break;
+          }
+        }
+      }
+
       if (matchIdx !== -1) {
+        currentProgramIndex = targetProgIdx;
         currentDayIndex = matchIdx;
-        renderCard();
-        updatePillsActiveState();
+        renderAll();
       }
     });
 
 
     // --- PIN GATE 5462 AUTHENTICATION ---
     const CORRECT_PIN = '5462';
+
+    function lockScreen() {
+      localStorage.removeItem('linail_auth_pin');
+      const overlay = document.getElementById('pinGateOverlay');
+      if (overlay) {
+        overlay.style.display = 'flex';
+        overlay.style.opacity = '1';
+        const input = document.getElementById('pinInput');
+        if (input) {
+          input.value = '';
+          input.focus();
+        }
+      }
+      showToast('Oturum kilitlendi 🔒');
+    }
 
     function checkAuth() {
       const savedPin = localStorage.getItem('linail_auth_pin');
@@ -2052,6 +2087,16 @@
         closeBlueprintModal();
       }
     });
+
+    // Auto submit PIN on 4th digit
+    const pinInputElement = document.getElementById('pinInput');
+    if (pinInputElement) {
+      pinInputElement.addEventListener('input', (e) => {
+        if (e.target.value.length === 4) {
+          handlePinSubmit();
+        }
+      });
+    }
 
     // Check auth on startup
     checkAuth();
