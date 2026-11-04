@@ -395,6 +395,100 @@
       margin-top: 6px;
     }
 
+
+    /* RAMAZAN HIZLI ÇEKİM MODU */
+    .ramazan-mode-box {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.14) 0%, rgba(62, 27, 71, 0.45) 100%);
+      border: 1.5px dashed var(--gold-primary);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+      position: relative;
+    }
+    .ramazan-mode-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .ramazan-mode-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .ramazan-badge {
+      background: var(--gold-primary);
+      color: #000;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .ramazan-mode-desc {
+      font-size: 13px;
+      color: #f1f5f9;
+      line-height: 1.55;
+      margin-bottom: 14px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 11px 13px;
+      border-radius: 8px;
+      border-left: 3px solid var(--gold-primary);
+    }
+    .raw-req-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .raw-req-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 12.8px;
+      color: #e2e8f0;
+      line-height: 1.5;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .raw-req-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .wa-ramazan-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px 18px;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      color: #ffffff !important;
+      font-weight: 700;
+      font-size: 13.5px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+      text-align: center;
+    }
+    .wa-ramazan-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+    }
+
     /* SCRIPT / VOICEOVER SECTION */
     .content-section {
       background: var(--bg-card-inner);
@@ -679,10 +773,42 @@
       currentDayIndicatorEl.textContent = `Gün ${currentDayIndex + 1} / 30 Seçili`;
     }
 
+
+    // Helper: Ramazan Edit Modu için Ham Çekim Gereksinimleri
+    function getRawFootageInfo(day, prog) {
+      let v1 = "";
+      let v2 = "";
+      const pid = prog.id || "";
+      const hookVis = day.hook_visual || "";
+      const title = day.title || "";
+
+      if (pid === "asmr") {
+        v1 = "Telefonu 2x/3x makroya alın, masaya sabitleyin. <strong>" + (hookVis || "İşlem anını") + "</strong> hiç konuşmadan ve kamerayı kıpırdatmadan 6-8 saniye boyunca ortamın doğal sesiyle (freze/fırça sesi) çekin.";
+        v2 = "İşlem bittiğinde tırnakları ışık altında hafifçe sağa sola çevirirken 5 saniyelik video + 1 adet dik, net makro sonuç fotoğrafı çekin.";
+      } else if (pid === "donusum") {
+        v1 = "<strong>İŞLEME BAŞLAMADAN ÖNCE:</strong> Tırnakların veya cildin işlem görmemiş ilk [ÖNCESİ] halini gösteren 1 adet net dik fotoğraf + 4 saniyelik yakından ham video.";
+        v2 = "<strong>İŞLEM BİTTİKTEN SONRA:</strong> Yenilenmiş, nemlendirilmiş ve ışıldayan [SONRASI] halini 5-6 saniye boyunca gün ışığında parmakları hareket ettirerek çekilmiş video + 1 adet dik sonuç fotoğrafı.";
+      } else if (pid === "otorite") {
+        v1 = "Kullanılan profesyonel ürünü veya cihazı (" + title + ") kabinde uygularken 6-8 saniyelik yakın çekim ham video (Konuşmaya gerek yok, sadece işlemi yakından gösterin).";
+        v2 = "Danışanın bakım sonrasındaki ferahlamış görüntüsünden veya uygulanan bölgenin net pürüzsüz halinden 1 adet dikey fotoğraf veya 5 saniyelik sakin video.";
+      } else if (pid === "hikaye") {
+        v1 = "Çalışırken masanın veya kabinin doğal atmosferini, danışanla ellerin işlem anını veya masadaki kahve fincanı detayını gösteren 6-8 saniyelik samimi, doğal ham video.";
+        v2 = "Günün tamamlanan tasarımını veya stüdyodan sıcak bir detayı gösteren 1 adet dikey estetik fotoğraf + 4 saniyelik kısa video.";
+      } else {
+        v1 = "Uphill Towers stüdyomuzun sakin atmosferinden, mermer detaylardan, yakılan Linaura mumundan veya ikram kahvesinden 5-7 saniyelik yavaş kayan (sinematik) ham video.";
+        v2 = "VIP odadaki dinlenme koltuğunun, ışığın vurduğu tırnakların veya ferah salonun 1 adet dikey lüks fotoğrafı.";
+      }
+      return { v1: v1, v2: v2 };
+    }
+
     // Render Main Machine Card
     function renderCard() {
       const prog = programsData[currentProgramIndex];
       const day = prog.days[currentDayIndex];
+
+      const rawInfo = getRawFootageInfo(day, prog);
+      const waText = encodeURIComponent("Selam Ramazan, " + prog.name + " GÜN " + day.day + " (" + day.title + ") için ham videoları çektim, edit için gönderiyorum ✨");
+      const waUrl = "https://wa.me/905370602050?text=" + waText;
 
       machineCardContainerEl.innerHTML = `
         <div class="machine-card">
@@ -715,6 +841,43 @@
               <span style="font-size: 11px; color: var(--gold-light); text-transform: uppercase;">Ekranda Yazacak Metin:</span><br>
               <span class="hook-badge-text">"${day.hook_text}"</span>
             </div>
+          </div>
+
+          <!-- ⚡ Zamanım Yok Modu / Edit Ramazan da -->
+          <div class="ramazan-mode-box">
+            <div class="ramazan-mode-header">
+              <div class="ramazan-mode-title">
+                <span>⚡ ZAMAN BULAMAZSANIZ: HIZLI ÇEKİM PLANI</span>
+              </div>
+              <span class="ramazan-badge">Edit & Paylaşım Ramazan'da</span>
+            </div>
+            
+            <div class="ramazan-mode-desc">
+              💡 <strong>Gülşah'a Kolaylık Notu:</strong> Eğer randevu yoğunluğundan konuşmaya, ses kaydı almaya veya CapCut kurgusuna zaman bulamazsanız <u>hiç dert etmeyin</u>! Yalnızca aşağıdaki 2 parça ham görüntüyü çekip WhatsApp'tan Ramazan'a iletin. Kurguyu, müziği, seslendirmeyi/altyazıyı ve Instagram paylaşımını <strong>Ramazan yapacaktır</strong>.
+            </div>
+
+            <div class="raw-req-list">
+              <div class="raw-req-item">
+                <span class="raw-req-icon">📹</span>
+                <div>
+                  <strong style="color: var(--gold-light);">Gerekli Ham Video 1 (Kanca / İşlem Anı):</strong><br>
+                  <span>${rawInfo.v1}</span>
+                </div>
+              </div>
+
+              <div class="raw-req-item">
+                <span class="raw-req-icon">📸</span>
+                <div>
+                  <strong style="color: var(--gold-light);">Gerekli Ham Video 2 veya Fotoğraf (Sonuç / Işıltı):</strong><br>
+                  <span>${rawInfo.v2}</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="${waUrl}" target="_blank" class="wa-ramazan-btn">
+              <span>📲</span>
+              <span>Ham Videoları WhatsApp'tan Ramazan'a İlet (GÜN ${day.day})</span>
+            </a>
           </div>
 
           <!-- Spoken Script / Voiceover -->
