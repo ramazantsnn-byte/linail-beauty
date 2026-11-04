@@ -595,6 +595,119 @@
       opacity: 1;
     }
 
+
+    /* ACTION STATS BAR & SHUFFLE */
+    .action-stats-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 680px) {
+      .action-stats-bar {
+        grid-template-columns: 1fr;
+      }
+    }
+    .shuffle-btn {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.22) 0%, rgba(62, 27, 71, 0.8) 100%);
+      border: 1.5px solid var(--gold-primary);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+      text-align: left;
+      font-family: inherit;
+    }
+    .shuffle-btn:hover, .shuffle-btn:active {
+      transform: translateY(-2px);
+      border-color: #fff0be;
+      box-shadow: 0 6px 24px rgba(212, 175, 55, 0.4);
+    }
+    .shuffle-dice {
+      font-size: 26px;
+      display: inline-block;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .shuffle-btn:active .shuffle-dice {
+      transform: rotate(360deg) scale(1.25);
+    }
+    .progress-widget {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+    }
+    .progress-widget-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .progress-bar-track {
+      width: 100%;
+      height: 7px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #22c55e 0%, #d4af37 100%);
+      border-radius: 99px;
+      transition: width 0.4s ease;
+    }
+
+    /* DONE TOGGLE BUTTON & PILL CHECKS */
+    .card-head-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .done-toggle-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: var(--text-muted);
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .done-toggle-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+    .done-toggle-btn.completed {
+      background: rgba(34, 197, 94, 0.22);
+      border: 1.5px solid #22c55e;
+      color: #4ade80;
+      box-shadow: 0 0 14px rgba(34, 197, 94, 0.35);
+    }
+    .pill-check {
+      color: #22c55e;
+      font-size: 10px;
+      font-weight: 900;
+      margin-left: 3px;
+    }
+    .day-pill.done {
+      border-color: rgba(34, 197, 94, 0.6) !important;
+      background: rgba(34, 197, 94, 0.08);
+    }
+
     /* SEARCH FILTER BOX */
     .search-box-bar {
       margin-bottom: 14px;
@@ -650,6 +763,33 @@
     <!-- ACTIVE PROGRAM HERO BANNER -->
     <div class="program-hero" id="programHero">
       <!-- Injected via JS -->
+    </div>
+
+    <!-- ACTION & STATS BAR: ŞANSIMI DENE / RASTGELE KARIŞTIR + İLERLEME -->
+    <div class="action-stats-bar">
+      <!-- Random Shuffle Button -->
+      <button class="shuffle-btn" id="shuffleBtn" onclick="pickRandomDay()">
+        <span class="shuffle-dice">🎲</span>
+        <div>
+          <div style="font-weight: 800; font-size: 13.5px; color: #fff;">Bugün Ne Çeksem? (Karıştır)</div>
+          <div style="font-size: 11px; color: var(--gold-light);">150 içerikten henüz çekmediğin birini seç ✨</div>
+        </div>
+      </button>
+
+      <!-- Overall Progress Widget -->
+      <div class="progress-widget" id="progressWidget">
+        <div class="progress-widget-top">
+          <span style="font-size: 12px; font-weight: 700; color: var(--gold-light);">🏆 Toplam Çekim İlerlemesi</span>
+          <span style="font-size: 12px; font-weight: 800; color: #22c55e;" id="progressStatsText">0 / 150 Çekildi (%0)</span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="progressBarFill" style="width: 0%;"></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 10.5px; color: var(--text-dim); margin-top: 2px;">
+          <span id="categoryProgressText">Bu Kategoride: 0 / 30 Çekildi</span>
+          <button onclick="reportProgressToRamazan()" style="background: none; border: none; color: var(--gold-light); text-decoration: underline; cursor: pointer; font-size: 10.5px; font-family: inherit;">📲 Ramazan'a İlet</button>
+        </div>
+      </div>
     </div>
 
     <!-- SEARCH FILTER -->
@@ -746,10 +886,12 @@
     function renderDayPills() {
       daysPillsEl.innerHTML = '';
       const prog = programsData[currentProgramIndex];
+      const map = getCompletedMap();
       prog.days.forEach((dayObj, idx) => {
+        const isDone = !!map[prog.id + '_' + dayObj.day];
         const pill = document.createElement('div');
-        pill.className = `day-pill ${idx === currentDayIndex ? 'active' : ''}`;
-        pill.textContent = dayObj.day;
+        pill.className = `day-pill ${idx === currentDayIndex ? 'active' : ''} ${isDone ? 'done' : ''}`;
+        pill.innerHTML = `<span>${dayObj.day}</span>${isDone ? '<span class="pill-check">✓</span>' : ''}`;
         pill.addEventListener('click', () => {
           currentDayIndex = idx;
           renderCard();
@@ -773,6 +915,135 @@
       currentDayIndicatorEl.textContent = `Gün ${currentDayIndex + 1} / 30 Seçili`;
     }
 
+
+
+    // --- LOCAL STORAGE STATE: YAPILDI (COMPLETED) DAYS ---
+    function getCompletedMap() {
+      try {
+        return JSON.parse(localStorage.getItem('linail_reels_completed') || '{}');
+      } catch (e) {
+        return {};
+      }
+    }
+
+    function saveCompletedMap(map) {
+      try {
+        localStorage.setItem('linail_reels_completed', JSON.stringify(map));
+      } catch (e) {}
+    }
+
+    function toggleDone(progId, dayNum) {
+      const key = progId + '_' + dayNum;
+      const map = getCompletedMap();
+      if (map[key]) {
+        delete map[key];
+        saveCompletedMap(map);
+        showToast('Gün ' + dayNum + ' işareti kaldırıldı.');
+      } else {
+        map[key] = true;
+        saveCompletedMap(map);
+        showToast('🎉 Harika! Gün ' + dayNum + ' çekildi olarak kaydedildi!');
+      }
+      renderCard();
+      renderDayPills();
+      updateProgressWidget();
+    }
+
+    function updateProgressWidget() {
+      const map = getCompletedMap();
+      const keys = Object.keys(map);
+      const totalCount = 150;
+      const completedCount = keys.length;
+      const pct = Math.round((completedCount / totalCount) * 100);
+
+      const prog = programsData[currentProgramIndex];
+      let catCount = 0;
+      if (prog && prog.days) {
+        prog.days.forEach(d => {
+          if (map[prog.id + '_' + d.day]) catCount++;
+        });
+      }
+
+      const statsEl = document.getElementById('progressStatsText');
+      const fillEl = document.getElementById('progressBarFill');
+      const catEl = document.getElementById('categoryProgressText');
+
+      if (statsEl) statsEl.textContent = completedCount + ' / 150 Çekildi (%' + pct + ')';
+      if (fillEl) fillEl.style.width = pct + '%';
+      if (catEl) catEl.textContent = 'Bu Kategoride: ' + catCount + ' / 30 Çekildi';
+    }
+
+    function reportProgressToRamazan() {
+      const map = getCompletedMap();
+      const count = Object.keys(map).length;
+      const pct = Math.round((count / 150) * 100);
+      const text = encodeURIComponent('Selam Ramazan, Linail Reels planında şu an 150 içerikten ' + count + ' tanesini tamamladık (%' + pct + ')! ✨ Canlı takip: https://linailbeauty.com/gulsah-reels/');
+      window.open('https://wa.me/905370602050?text=' + text, '_blank');
+    }
+
+    // --- AKILLI RASTGELE KARIŞTIRICI (ŞANSIMI DENE) ---
+    let shuffleHistory = [];
+    function pickRandomDay() {
+      const map = getCompletedMap();
+      const allPool = [];
+
+      programsData.forEach((p, pIdx) => {
+        p.days.forEach((d, dIdx) => {
+          const key = p.id + '_' + d.day;
+          allPool.push({
+            key: key,
+            pIdx: pIdx,
+            dIdx: dIdx,
+            title: d.title,
+            pName: p.name,
+            dayNum: d.day,
+            isDone: !!map[key]
+          });
+        });
+      });
+
+      // 1. Sadece henüz çekilmemiş olanları filtrele
+      let pool = allPool.filter(item => !item.isDone);
+      if (pool.length === 0) pool = allPool; // Tümü bittiyse havuzu aç
+
+      // 2. Şu anki ekranda açık olan günü hariç tut
+      const curProg = programsData[currentProgramIndex];
+      const curKey = curProg.id + '_' + curProg.days[currentDayIndex].day;
+      pool = pool.filter(item => item.key !== curKey);
+
+      // 3. Son 20 önerilen geçmiştekileri hariç tut (Asla arka arkaya aynı hikayeyi vermez!)
+      let freshPool = pool.filter(item => !shuffleHistory.includes(item.key));
+      if (freshPool.length === 0) {
+        shuffleHistory = [];
+        freshPool = pool;
+      }
+
+      if (freshPool.length === 0) {
+        showToast('Tüm öneriler tamamlandı!');
+        return;
+      }
+
+      // Rastgele bir tane seç
+      const randomIdx = Math.floor(Math.random() * freshPool.length);
+      const chosen = freshPool[randomIdx];
+
+      // Hafızaya ekle
+      shuffleHistory.push(chosen.key);
+      if (shuffleHistory.length > 25) shuffleHistory.shift();
+
+      // UI güncelle
+      currentProgramIndex = chosen.pIdx;
+      currentDayIndex = chosen.dIdx;
+      renderAll();
+
+      // Karta kaydır
+      const card = document.getElementById('machineCardContainer');
+      if (card) {
+        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      showToast('🎲 Sürpriz Öneri: ' + chosen.pName + ' - Gün ' + chosen.dayNum + ' ✨');
+    }
 
     // Helper: Ramazan Edit Modu için Ham Çekim Gereksinimleri
     function getRawFootageInfo(day, prog) {
@@ -809,6 +1080,8 @@
       const rawInfo = getRawFootageInfo(day, prog);
       const waText = encodeURIComponent("Selam Ramazan, " + prog.name + " GÜN " + day.day + " (" + day.title + ") için ham videoları çektim, edit için gönderiyorum ✨");
       const waUrl = "https://wa.me/905370602050?text=" + waText;
+      const completedMap = getCompletedMap();
+      const isDone = !!completedMap[prog.id + '_' + day.day];
 
       machineCardContainerEl.innerHTML = `
         <div class="machine-card">
@@ -818,7 +1091,12 @@
               <span>📅 GÜN ${day.day}</span>
               <span class="day-sub-title">• ${day.title}</span>
             </div>
-            <span class="format-pill">🎬 ${day.format}</span>
+            <div class="card-head-actions">
+              <span class="format-pill">🎬 ${day.format}</span>
+              <button class="done-toggle-btn ${isDone ? 'completed' : ''}" onclick="toggleDone('${prog.id}', ${day.day})">
+                ${isDone ? '✅ ÇEKİLDİ & PAYLAŞILDI' : '⚪ Çekildi Olarak İşaretle'}
+              </button>
+            </div>
           </div>
 
           <!-- 4-Box Spec Grid -->
@@ -928,6 +1206,7 @@
       renderHero();
       renderDayPills();
       renderCard();
+      updateProgressWidget();
     }
 
     // Prev / Next Navigation
