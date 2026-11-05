@@ -358,23 +358,23 @@
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(197, 160, 89, 0.35);
     }
-    /* Ultra Lüks Nötr Füme Kristal Cam & Şampanya Altın (Smoked Obsidian & Pure Champagne) */
+    /* Ultra-Şeffaf Lüks Sıvı Cam (Ultra-Sheer Crystal Glass & Gold Rim) */
     .luxury-nav-glass {
-      background: linear-gradient(135deg, rgba(18, 16, 22, 0.62) 0%, rgba(10, 8, 14, 0.68) 100%);
-      backdrop-filter: blur(28px) saturate(160%);
-      -webkit-backdrop-filter: blur(28px) saturate(160%);
-      border: 1px solid rgba(212, 175, 55, 0.38);
-      box-shadow: 0 14px 40px -10px rgba(0, 0, 0, 0.6), 
+      background: rgba(32, 10, 40, 0.38);
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.45), 
                   inset 0 1px 1px 0 rgba(255, 255, 255, 0.22),
-                  0 0 18px -2px rgba(212, 175, 55, 0.18);
+                  0 0 18px -2px rgba(212, 175, 55, 0.15);
     }
     .luxury-drawer-glass {
-      background: linear-gradient(165deg, rgba(22, 18, 26, 0.92) 0%, rgba(12, 10, 16, 0.96) 100%);
-      backdrop-filter: blur(32px) saturate(170%);
-      -webkit-backdrop-filter: blur(32px) saturate(170%);
-      border: 1px solid rgba(212, 175, 55, 0.42);
-      box-shadow: 0 28px 75px -15px rgba(0, 0, 0, 0.85), 
-                  0 0 30px -5px rgba(212, 175, 55, 0.2), 
+      background: rgba(26, 7, 33, 0.45);
+      backdrop-filter: blur(28px) saturate(170%);
+      -webkit-backdrop-filter: blur(28px) saturate(170%);
+      border: 1px solid rgba(212, 175, 55, 0.38);
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.65), 
+                  0 0 30px -5px rgba(212, 175, 55, 0.18), 
                   inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
     }
     /* Mobil Menü Açılış Spring Animasyonu */
@@ -638,13 +638,12 @@
             <span>Randevu</span>
           </a>
 
-          <!-- Mobil Menü Butonu (Zarif Apple Butonu & İkon Değişimi) -->
+          <!-- Mobil Menü Butonu (Zarif Minimal Buton) -->
           <button id="mobile-menu-btn" 
                   type="button" 
                   aria-label="Menüyü Aç/Kapat" 
                   class="relative w-8 h-8 rounded-full border border-brand-gold/40 bg-white/10 hover:bg-white/20 active:scale-95 flex items-center justify-center text-brand-lightGold focus:outline-none transition-all duration-300 shadow-sm cursor-pointer">
-            <i data-lucide="menu" id="menu-icon-bars" class="w-4 h-4 transition-transform duration-300"></i>
-            <i data-lucide="x" id="menu-icon-close" class="w-4 h-4 hidden transition-transform duration-300"></i>
+            <i data-lucide="menu" class="w-4 h-4"></i>
           </button>
         </div>
       </nav>
@@ -770,8 +769,8 @@
     </div>
   </header>
 
-  <!-- HERO SECTION: ÇİFT MODLU (MASAÜSTÜNDE KLASİK ZENGİN / MOBİLDE SİNEMATİK BOŞ MERKEZ) -->
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-deepPurple text-white">
+  <!-- HERO SECTION: ÇİFT MODLU (MASAÜSTÜNDE SİNEMATİK ÇERÇEVE / MOBİLDE SİNEMATİK BOŞ MERKEZ) -->
+  <section class="relative min-h-screen flex flex-col justify-between overflow-hidden bg-brand-deepPurple text-white">
     <!-- Arka Plan Sinematik Video (Masaüstü için 16:9 / Mobil ve Tablet için 9:16 Dikey) -->
     <div class="absolute inset-0 z-0">
       <!-- Masaüstü & Geniş Ekranlar (md ve üzeri) -->
@@ -787,62 +786,66 @@
     </div>
 
     <!-- ========================================== -->
-    <!-- 1. MASAÜSTÜ HERO (md:flex) - ORİJİNAL ZENGİN DÜZEN -->
+    <!-- 1. MASAÜSTÜ HERO (md:flex) - SİNEMATİK ÇERÇEVE & AÇIK MERKEZ -->
     <!-- ========================================== -->
-    <div class="hidden md:flex relative z-10 max-w-5xl mx-auto px-6 text-center pt-28 pb-16 flex-col items-center">
+    <div class="hidden md:flex relative z-10 w-full min-h-screen flex-col justify-between pt-32 pb-10 px-8 lg:px-14">
       
-      <!-- VIP Rozet -->
-      <a href="#vip" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-brand-gold/40 text-brand-lightGold text-xs tracking-[0.22em] uppercase mb-6 hover:bg-white/15 transition-all">
-        <span>💎</span>
-        <span>VIP Odamızda Aynı Anda 3 İşlem Seçeneği</span>
-      </a>
-
-      <!-- Slogan -->
-      <p class="font-script text-3xl md:text-5xl text-brand-lightGold tracking-wide mb-3 opacity-95">
-        Güzellik bir anlık değil, kendinize verdiğiniz en özel sözdür.
-      </p>
-
-      <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl font-normal tracking-[0.15em] text-white uppercase mb-3 leading-tight">
-        LİNAİL <span class="gold-gradient-text font-light">BEAUTY</span> STUDIO
-        <span class="sr-only"> - Ataşehir Güzellik Merkezi & VIP Protez Tırnak, İpek Kirpik Stüdyosu Uphill Towers</span>
-      </h1>
-
-      <p class="text-xs md:text-sm font-sans tracking-[0.25em] text-brand-lightGold/95 uppercase font-medium mb-3">
-        Ataşehir Güzellik Merkezi • VIP Protez Tırnak • İpek Kirpik • Cilt Bakımı
-      </p>
-
-      <div class="w-28 h-[1px] bg-gradient-to-r from-transparent via-brand-gold to-transparent my-3"></div>
-
-      <!-- Kurucu & Lokasyon -->
-      <p class="text-xs md:text-sm tracking-[0.35em] text-stone-300 uppercase font-light max-w-xl leading-relaxed mb-6">
-        LİNAİL BEAUTY STUDIO • ATAŞEHİR UPHILL TOWERS • İSTANBUL FİNANS MERKEZİ
-      </p>
-
-      <p class="text-sm md:text-base text-stone-300/90 font-light max-w-2xl mx-auto mb-8 leading-relaxed font-sans">
-        Merhaba, Linail Beauty’e hoş geldiniz!<br class="hidden sm:inline">
-        Uphill Towers’taki özel süitimizde, Finans Merkezi ve Ataşehir'in yoğun temposundan uzaklaşıp kahvenizi yudumlarken zarafet, huzur ve VIP bakımın tadını çıkarın.
-      </p>
-
-      <!-- Butonlar -->
-      <div class="flex flex-row items-center gap-3.5">
-        <a href="#vip" class="px-7 py-3 rounded-full text-xs tracking-[0.2em] uppercase font-semibold bg-gradient-to-r from-brand-gold via-brand-lightGold to-brand-gold text-brand-deepPurple hover:shadow-lg hover:shadow-brand-gold/40 transition-all duration-300 flex items-center gap-2">
-          <i data-lucide="gem" class="w-4 h-4"></i>
-          <span>VIP Odayı Keşfet</span>
+      <!-- Üst: Zarif VIP Rozet & Kaligrafi Slogan (Merkezi Açık Tutar) -->
+      <div class="flex items-center justify-between w-full max-w-7xl mx-auto">
+        <a href="#vip" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-brand-gold/40 text-brand-lightGold text-xs tracking-[0.22em] uppercase hover:bg-white/15 transition-all shadow-lg">
+          <span>💎</span>
+          <span>VIP Odamızda Aynı Anda 3 İşlem</span>
         </a>
 
-        <a href="https://wa.me/905318696764?text=Merhaba,%20Google'da%20inceledim.%20Ataşehir%20Uphill%20Towers%20stüdyonuzda%20VIP%20randevu%20oluşturmak%20istiyorum.%20Müsait%20saatleri%20öğrenebilir%20miyim?" 
-           target="_blank" 
-           class="px-7 py-3 rounded-full text-xs tracking-[0.2em] uppercase font-medium bg-brand-deepPurple/60 hover:bg-brand-purple/80 text-brand-lightGold border border-brand-gold/40 backdrop-blur-md transition-all duration-300 shadow-md hover:border-brand-gold flex items-center gap-2">
-          <i data-lucide="message-circle" class="w-4 h-4 text-brand-lightGold"></i>
-          <span>WhatsApp'tan Randevu Al</span>
-        </a>
+        <p class="font-script text-2xl lg:text-3xl text-brand-lightGold/95 tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+          Güzellik bir anlık değil, kendinize verdiğiniz en özel sözdür.
+        </p>
       </div>
 
-      <!-- Aşağı Kaydır -->
-      <a href="#vip" class="mt-12 text-brand-gold/60 hover:text-brand-lightGold transition-colors flex flex-col items-center gap-2 animate-bounce">
-        <span class="text-[10px] tracking-[0.3em] uppercase">Aşağı Kaydırın</span>
-        <i data-lucide="chevron-down" class="w-4 h-4"></i>
-      </a>
+      <!-- Orta Alan: TAMAMEN AÇIK & BOMBOŞ! (Arkadaki Lotus ve Video %100 Engelle Karşılaşmadan Oynar) -->
+      <div class="flex-1 min-h-[300px] pointer-events-none"></div>
+
+      <!-- Alt Kısım: Çift Köşe Lüks Düzen (Sol: Marka / Sağ: VIP Aksiyon) -->
+      <div class="w-full max-w-7xl mx-auto flex items-end justify-between gap-8">
+        
+        <!-- Sol Alt: Marka & Lokasyon (Hafif Ambient Cam Efektiyle %100 Okunur) -->
+        <div class="max-w-xl text-left bg-black/40 backdrop-blur-md p-6 rounded-3xl border border-brand-gold/25 shadow-2xl">
+          <h1 class="font-serif text-3xl lg:text-4xl font-normal tracking-[0.16em] text-white uppercase leading-tight mb-2">
+            LİNAİL <span class="gold-gradient-text font-light">BEAUTY</span> STUDIO
+            <span class="sr-only"> - Ataşehir Güzellik Merkezi & VIP Protez Tırnak, İpek Kirpik Stüdyosu Uphill Towers</span>
+          </h1>
+          <p class="text-xs font-sans tracking-[0.22em] text-brand-lightGold uppercase font-medium mb-2">
+            Ataşehir VIP Protez Tırnak • İpek Kirpik • Medikal Cilt Bakımı
+          </p>
+          <p class="text-xs text-stone-300 font-light leading-relaxed">
+            Uphill Towers’taki özel süitimizde, Finans Merkezi ve Ataşehir'in temposundan uzaklaşıp huzur ve VIP bakımın tadını çıkarın.
+          </p>
+        </div>
+
+        <!-- Sağ Alt: Aksiyon & Butonlar -->
+        <div class="flex flex-col items-end gap-3 shrink-0">
+          <div class="flex items-center gap-3">
+            <a href="https://wa.me/905318696764?text=Merhaba,%20Google'da%20inceledim.%20Ataşehir%20Uphill%20Towers%20stüdyonuzda%20VIP%20randevu%20oluşturmak%20istiyorum.%20Müsait%20saatleri%20öğrenebilir%20miyim?" 
+               target="_blank" 
+               class="px-7 py-3 rounded-full text-xs tracking-[0.18em] uppercase font-semibold bg-gradient-to-r from-amber-300 via-brand-gold to-amber-400 text-stone-950 shadow-xl shadow-brand-gold/25 hover:shadow-brand-gold/40 hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2">
+              <i data-lucide="message-circle" class="w-4 h-4 text-stone-950"></i>
+              <span>WhatsApp Randevu</span>
+            </a>
+
+            <a href="#vip" class="px-6 py-3 rounded-full text-xs tracking-[0.18em] uppercase font-medium bg-brand-deepPurple/70 hover:bg-brand-purple/90 text-brand-lightGold border border-brand-gold/40 backdrop-blur-md transition-all shadow-lg hover:border-brand-gold flex items-center gap-2">
+              <i data-lucide="gem" class="w-4 h-4 text-brand-gold"></i>
+              <span>VIP Odayı Keşfet</span>
+            </a>
+          </div>
+
+          <a href="#vip" class="text-brand-gold/70 hover:text-brand-lightGold transition-colors inline-flex items-center gap-1.5 text-[10px] tracking-[0.25em] uppercase mt-2">
+            <span>Aşağı Kaydırın</span>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 animate-bounce"></i>
+          </a>
+        </div>
+
+      </div>
+
     </div>
 
     <!-- ========================================== -->
@@ -2414,12 +2417,10 @@
       });
     }
 
-    // Mobil Menü Aç/Kapat, Morphing Buton ve Dışarı Tıklama / Backdrop Kapatma
+    // Mobil Menü Aç/Kapat ve Dışarı Tıklama / Backdrop Kapatma
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileBackdrop = document.getElementById('mobile-menu-backdrop');
-    const iconBars = document.getElementById('menu-icon-bars');
-    const iconClose = document.getElementById('menu-icon-close');
 
     if (mobileBtn && mobileMenu) {
       let isMenuOpen = false;
@@ -2431,10 +2432,6 @@
         if (mobileBackdrop) {
           mobileBackdrop.classList.remove('backdrop-closed');
           mobileBackdrop.classList.add('backdrop-open');
-        }
-        if (iconBars && iconClose) {
-          iconBars.classList.add('hidden');
-          iconClose.classList.remove('hidden');
         }
         if (window.lucide) {
           lucide.createIcons();
@@ -2448,10 +2445,6 @@
         if (mobileBackdrop) {
           mobileBackdrop.classList.remove('backdrop-open');
           mobileBackdrop.classList.add('backdrop-closed');
-        }
-        if (iconBars && iconClose) {
-          iconBars.classList.remove('hidden');
-          iconClose.classList.add('hidden');
         }
       }
 
