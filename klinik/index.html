@@ -4427,7 +4427,724 @@ Dubai Mumya Maske: Somon DNA sürüldükten sonra gazlı bez üstünden çeneden
 </div>
       </div>
     
-    </section>
+    
+
+      <!-- ================================================================= -->
+      <!-- GÜLŞAH HIZLI ÜRÜN ARAMA & CİLT TİPİ UYGUNLUK REHBERİ (25 ÜRÜN) -->
+      <!-- ================================================================= -->
+      <div id="quick-product-finder" class="card highlight" style="margin-top: 36px; margin-bottom: 30px; border-left: 4px solid #38ef7d; background: linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(20, 26, 42, 0.98));">
+        
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
+          <div>
+            <div class="card-badge" style="background: linear-gradient(135deg, #38ef7d, #11998e); color:#000; font-weight:800;">
+              ⚡ GÜLŞAH İÇİN CANLI ÜRÜN ARAMA MOTORU
+            </div>
+            <h3 style="font-family:'Cinzel', serif; font-size:22px; color:#fff; margin:4px 0 2px 0;">
+              Kabin Ürün Sözlüğü: Ne İşe Yarar & Hangi Ciltte Kullanılmaz?
+            </h3>
+            <p style="font-size:12.5px; color:#cbd5e1; margin:0;">
+              Makineler hariç, kabindeki <strong>25 ürünün tamamı</strong>. İsmini veya cilt tipini yazın, saniyesinde bulun:
+            </p>
+          </div>
+          <div id="finder-count" style="background:rgba(56,239,125,0.15); color:#38ef7d; font-size:12px; font-weight:800; padding:6px 12px; border-radius:20px; border:1px solid rgba(56,239,125,0.3);">
+            25 Ürün Listelendi
+          </div>
+        </div>
+
+        <!-- STICKY SEARCH BAR & FILTER PILLS -->
+        <div style="background:rgba(0,0,0,0.4); padding:12px; border-radius:12px; border:1px solid rgba(255,255,255,0.1); margin-bottom:18px;">
+          <div style="position:relative; margin-bottom:10px;">
+            <input 
+              type="text" 
+              id="gulsah-product-input" 
+              oninput="filterGulsahProducts()" 
+              placeholder="🔍 Ürün adı, cilt tipi veya etki yazın (örn: Melaser, Yağlı, Alçı, Tonik, Leke)..." 
+              style="width:100%; box-sizing:border-box; background:#0b0f19; border:1.5px solid rgba(56,239,125,0.5); color:#fff; font-size:14px; padding:12px 42px 12px 16px; border-radius:10px; outline:none; box-shadow:0 0 15px rgba(56,239,125,0.15);"
+            >
+            <button 
+              onclick="clearGulsahProductSearch()" 
+              id="finder-clear-btn"
+              style="position:absolute; right:12px; top:50%; transform:translateY(-50%); background:none; border:none; color:#94a3b8; font-size:16px; cursor:pointer; display:none;"
+            >✕</button>
+          </div>
+
+          <!-- QUICK CATEGORY CHIPS -->
+          <div style="display:flex; gap:6px; flex-wrap:wrap;">
+            <button class="finder-chip active" onclick="setFinderCategory('ALL', this)">Tümü (25)</button>
+            <button class="finder-chip" onclick="setFinderCategory('temizleyici', this)">🧼 Temizleyici (3)</button>
+            <button class="finder-chip" onclick="setFinderCategory('tonik', this)">💧 Tonik (3)</button>
+            <button class="finder-chip" onclick="setFinderCategory('peeling', this)">🪒 Peeling (1)</button>
+            <button class="finder-chip" onclick="setFinderCategory('serum', this)">🧬 Serum & Ampul (2)</button>
+            <button class="finder-chip" onclick="setFinderCategory('krem', this)">🧴 Masaj & Krem (6)</button>
+            <button class="finder-chip" onclick="setFinderCategory('maske', this)">🎭 Maskeler (9)</button>
+            <button class="finder-chip" onclick="setFinderCategory('jel', this)">⚡ İletken Jel (1)</button>
+          </div>
+        </div>
+
+        <!-- 25 CONCISE PRODUCT CARDS CONTAINER -->
+        <div id="gulsah-products-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 14px;">
+
+          <!-- 1. GENOSYS DMR -->
+          <div class="product-finder-card" data-category="temizleyici" data-keywords="genosys dmr lip eye makeup remover göz dudak makyaj temizleyici">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#38ef7d; background:rgba(56,239,125,0.12);">1. TEMİZLEYİCİ</span>
+              <span class="p-card-code">Genosys DMR (Çift Fazlı)</span>
+            </div>
+            <h4 class="p-card-name">Genosys Skin Defender Lip & Eye Remover</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">Suya dayanıklı göz ve dudak makyajını tahriş etmeden çözer; kirpik köklerini besler.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">Tüm cilt tipleri, hassas göz kapakları ve dudak çevresi.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">Göz içi açık enfeksiyonu veya arpacık dışında kontrendikasyonu yoktur.</div>
+            </div>
+          </div>
+
+          <!-- 2. GENOSYS SNOW O2 -->
+          <div class="product-finder-card" data-category="temizleyici" data-keywords="genosys snow o2 soc oksijen köpük baloncuk temizleme jeli gözenek siyah nokta">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#38ef7d; background:rgba(56,239,125,0.12);">2. TEMİZLEYİCİ</span>
+              <span class="p-card-code">Genosys SOC (500 ml)</span>
+            </div>
+            <h4 class="p-card-name">Genosys Snow O2 Cleanser</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">Mikro oksijen baloncuklarıyla köpürerek gözenek dibindeki kirleri ve toksinleri yukarı fırlatır.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">Yağlı, komedonlu, mat, solgun ve sigara içen toksik ciltler.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">Ağır aktif egzamalı, açık yaralı veya yanık ciltlere sürülmez.</div>
+            </div>
+          </div>
+
+          <!-- 3. ECLADO CELAVI FOAM -->
+          <div class="product-finder-card" data-category="temizleyici" data-keywords="eclado celavi cleansing face foam prebiyotik köpük nazik hassas kuru">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#38ef7d; background:rgba(56,239,125,0.12);">3. TEMİZLEYİCİ</span>
+              <span class="p-card-code">Eclado Célavi (250 ml)</span>
+            </div>
+            <h4 class="p-card-name">Eclado Célavi Cleansing Face Foam</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">Cilt florasını bozmadan günlük kiri ve hafif makyajı nazikçe arındıran prebiyotik köpüktür.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">Tüm ciltler; özellikle kuru, nemsiz, bariyeri zayıf ve hassas ciltler.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">Kontrendikasyonu yoktur, en güvenli başlangıç temizleyicisidir.</div>
+            </div>
+          </div>
+
+          <!-- 4. ECLADO ENZYME POWDER -->
+          <div class="product-finder-card" data-category="peeling" data-keywords="eclado enzyme deep cleanser pure powder enzim toz peeling buhar komedon ölü deri">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#f0932b; background:rgba(240,147,43,0.12);">4. ENZİMATİK PEELİNG</span>
+              <span class="p-card-code">Eclado Enzyme (50g)</span>
+            </div>
+            <h4 class="p-card-name">Eclado Enzyme Deep Cleanser Pure Powder</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">Papaya ve ananas meyve enzimleri buhar altında ölü keratin bağlarını çizmeden eritir, gözenekleri yumuşatır.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">Yağlı, akneli, kalınlaşmış, pullanmış ve pürüzlü tüm ciltler.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">⛔ <strong>Kılcal damarlı (kuperozlu/rozasealı) ciltte BUHARLA UYGULANMAZ!</strong> (Buharsız bekletilir).</div>
+            </div>
+          </div>
+
+          <!-- 5. GENOSYS SNOW BOOSTER -->
+          <div class="product-finder-card" data-category="tonik" data-keywords="genosys snow booster sbt tonik 1000ml nem botanik yatıştırıcı ph denge">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#00d2ff; background:rgba(0,210,255,0.12);">5. TONİK</span>
+              <span class="p-card-code">Genosys SBT (1000 ml)</span>
+            </div>
+            <h4 class="p-card-name">Genosys Snow Booster Kabin Toniği</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">Temizlik sonrası cildi neme doyuran, botanik özlerle kızarıklığı yatıştıran pH düzenleyici toniktir.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">Kuru, nemsiz, gergin, hassas ve tüm standart cilt bakımı seanslarında.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">Kontrendikasyonu yoktur.</div>
+            </div>
+          </div>
+
+          <!-- 6. ECLADO A.C OIL FREE TONER -->
+          <div class="product-finder-card" data-category="tonik" data-keywords="eclado ac oil free toner tonik yağsız akne sebum parlama gözenek">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#00d2ff; background:rgba(0,210,255,0.12);">6. TONİK</span>
+              <span class="p-card-code">Eclado A.C Toner</span>
+            </div>
+            <h4 class="p-card-name">Eclado A.C Oil Free Toner</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">Yağsız formülüyle aşırı sebumu kontrol eder, gün içinde parlamayı sıfırlar, gözenekleri sıkılaştırır.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">Yağlı, akneli, siyah noktalı ve T bölgesi parlayan karma ciltler.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">⛔ <strong>Aşırı kuru, pullanmış yanaklara tüm yüzde sürülmez</strong> (Sadece yağlı bölgelere tamponlanır).</div>
+            </div>
+          </div>
+
+          <!-- 7. CLEAN & ACTIVE TONIK -->
+          <div class="product-finder-card" data-category="tonik" data-keywords="clean active tonik t-cosmetics klapp 500ml ph 5.5 dengeleyici arındırıcı">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#00d2ff; background:rgba(0,210,255,0.12);">7. TONİK</span>
+              <span class="p-card-code">Clean & Active (500 ml)</span>
+            </div>
+            <h4 class="p-card-name">Clean & Active Tonik (T-Cosmetics / Klapp)</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">Peeling, Dezan ve vakum sonrası cildin bozulan asit mantosunu hızla ideal pH 5.5 seviyesine çeker.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">Derin arındırma ve soyma işlemi görmüş tüm cilt tipleri.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">Alkol içermez, kontrendikasyonu yoktur.</div>
+            </div>
+          </div>
+
+          <!-- 8. GENOSYS PDRN EXPERT AMPOULE -->
+          <div class="product-finder-card" data-category="serum" data-keywords="genosys bio-meso pdrn expert ampoule somon dna 60000 ppm şırınga kolajen leke hücresel">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#c084fc; background:rgba(192,132,252,0.12);">8. TEDAVİ AMPULÜ</span>
+              <span class="p-card-code">PDRN 60,000 ppm Şırınga</span>
+            </div>
+            <h4 class="p-card-name">Genosys Bio-Meso PDRN Somon DNA Ampul</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">Somon DNA hücre yapı taşlarıyla hasarlı dokuyu onarır, kolajeni zirveye taşır, leke rengini açar.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">Yaşlanma karşıtı, sarkmış, nemsiz, lekeli ve elastikiyetini kaybetmiş ciltler.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">⛔ <strong>Aktif iltihaplı kistik akneli bölgelere sürülmez.</strong> Balık/somon alerjisi olanlar.</div>
+            </div>
+          </div>
+
+          <!-- 9. GENOSYS EZ CO2 MASK -->
+          <div class="product-finder-card" data-category="maske" data-keywords="genosys ez co2 mask carboxy karboksiterapi bohr etkisi oksijen aydınlatma">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#f472b6; background:rgba(244,114,182,0.12);">9. KARBOKSİTERAPİ</span>
+              <span class="p-card-code">Genosys EZ CO2 Kit</span>
+            </div>
+            <h4 class="p-card-name">Genosys EZ CO2 Carboxytherapy Mask Kit</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">Bohr etkisiyle cilde CO2 verip kandan ani oksijen patlaması yaratır; gözenekleri daraltır ve parlatır.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">Mat, solgun, tıkalı gözenekli, lekeye meyilli kalın ciltler.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">⛔ <strong>Aşırı ince, kılcal damarlı (kuperoz/rozasea) ve bariyeri parçalanmış ciltlere ASLA sürülmez!</strong></div>
+            </div>
+          </div>
+
+          <!-- 10. ECLADO MELASER TURN OVER CREAM -->
+          <div class="product-finder-card" data-category="krem" data-keywords="eclado melaser turn over cream alpha arbutin aha leke açıcı aydınlatıcı pigmentasyon">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#fbbf24; background:rgba(251,191,36,0.12);">10. LEKE KREMİ</span>
+              <span class="p-card-code">Eclado Melaser (50 ml)</span>
+            </div>
+            <h4 class="p-card-name">Eclado Melaser Turn Over Cream</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">Alpha-Arbutin ve AHA ile hücre yenilenmesini (turn-over) tetikleyerek güneş ve sivilce lekelerini açar.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">Güneş lekeli, melazmalı, sivilce izli (PIH) ve ton eşitsizliği olan ciltler.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">⛔ <strong>Seans sonu tatile/solaryuma gidecek kişiye sürülmez!</strong> Hassas/kılcal damarlı ciltleri yakar.</div>
+            </div>
+          </div>
+
+          <!-- 11. ECLADO A.C CENTELLA MASK -->
+          <div class="product-finder-card" data-category="maske" data-keywords="eclado ac centella mask cica kil çay ağacı yatıştırıcı sivilce kızarıklık">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#f472b6; background:rgba(244,114,182,0.12);">11. KİL MASKESİ</span>
+              <span class="p-card-code">Eclado Centella (150 ml)</span>
+            </div>
+            <h4 class="p-card-name">Eclado A.C Centella Mask (Cica Kil)</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">Centella Asiatica ve çay ağacı ile sivilce yangısını söndürür, fazla sebumu emer, kızarıklığı dindirir.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">Yağlı, akneli, iltihaplı ve ekstraksiyon/vakum sonrası kızarmış ciltler.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">⛔ <strong>Aşırı kuru ve pul pul dökülen yanaklara sürülmez</strong> (daha fazla gerer). Çay ağacı alerjisi.</div>
+            </div>
+          </div>
+
+          <!-- 12. ECLADO SHINING MOISTURE MASSAGE CREAM -->
+          <div class="product-finder-card" data-category="krem" data-keywords="eclado shining moisture massage cream su damlacığı masaj nem cam ışıltı k-glow">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#fbbf24; background:rgba(251,191,36,0.12);">12. MASAJ KREMİ</span>
+              <span class="p-card-code">Eclado Shining (300 ml)</span>
+            </div>
+            <h4 class="p-card-name">Eclado Shining Moisture Massage Cream</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">Masaj yapıldıkça su damlacıklarına dönüşerek kuru cildi neme doyurur ve ayna gibi cam cilt ışıltısı verir.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">Kuru, nemsiz, solgun, yorgun ve masajla canlandırılacak ciltler.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">⛔ <strong>İltihaplı kistik akneli bölgelerde sürtünmeli masaj yapılmaz</strong> (bakteriyi yayar).</div>
+            </div>
+          </div>
+
+          <!-- 13. ERFLAND MASSAGE CREAM -->
+          <div class="product-finder-card" data-category="krem" data-keywords="erfland massage cream masaj kremi vitamin a b c d kolajen anti-aging lifting">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#fbbf24; background:rgba(251,191,36,0.12);">13. MASAJ KREMİ</span>
+              <span class="p-card-code">Erfland Vitamin A-B-C-D</span>
+            </div>
+            <h4 class="p-card-name">Erfland Vitaminli Cilt Masaj Kremi</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">A, B, C ve D vitamin kompleksleriyle cildin elastikiyetini artırır, kolajeni uyarır, kırışıklıkları açar.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">Olgun, elastikiyetini yitirmiş, sarkmış ve nemsiz kuru ciltler.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">Komedonlu ve yağlı ciltlerde seans sonrası silinmeden bırakılmaz (gözenek tıkar).</div>
+            </div>
+          </div>
+
+          <!-- 14. ECLADO SOOTHING MASK -->
+          <div class="product-finder-card" data-category="maske" data-keywords="eclado laboratory soothing mask derin nem bariyer onarıcı 500g büyük boy">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#f472b6; background:rgba(244,114,182,0.12);">14. NEM MASKESİ</span>
+              <span class="p-card-code">Eclado Deep Hydration (500g)</span>
+            </div>
+            <h4 class="p-card-name">Eclado Laboratory Soothing Mask</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">Aşırı kurumuş, işlem görmüş veya bariyeri zayıflamış cildi derinlemesine nemlendirir ve toparlar.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">Kuru, nemsiz, lazer/vakum sonrası hassaslaşmış tüm ciltler.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">Kontrendikasyonu yoktur, bariyer onarıcıdır.</div>
+            </div>
+          </div>
+
+          <!-- 15. DR LIFT ALÇI MASKESİ -->
+          <div class="product-finder-card" data-category="maske" data-keywords="dr lift powder gypsum mask alçı maskesi v-line lifting termal çene sıkılaştırma">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#f472b6; background:rgba(244,114,182,0.12);">15. ALÇI MASKESİ</span>
+              <span class="p-card-code">Dr. Lift Termal Alçı</span>
+            </div>
+            <h4 class="p-card-name">Dr. Lift Powder Gypsum Mask (Alçı Maske)</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">Kururken hafifçe ısınarak altındaki serumun emilimini katlar; donarken yüzü ve çeneyi yukarı kilitler.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">Sarkmış çene hattı (V-Line), gıdı ve elastikiyet kaybı olan olgun ciltler.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">⛔ <strong>Gazlı bez olmadan doğrudan çıplak tene ASLA sürülmez!</strong> Klostrofobisi olanlara göz açık tutulur.</div>
+            </div>
+          </div>
+
+          <!-- 16. DUBAI MUMMY MASK -->
+          <div class="product-finder-card" data-category="maske" data-keywords="dubai v-line mumya maskesi mummy mask alçı bandaj askı oklüzyon ödem somon dna">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#f472b6; background:rgba(244,114,182,0.12);">16. MUMYA MASKESİ</span>
+              <span class="p-card-code">Dubai V-Line Bandajı</span>
+            </div>
+            <h4 class="p-card-name">Dubai V-Line Alçılı Mumya Maskesi</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">Alçı emdirilmiş şeritlerle çeneyi yukarı askılar; %100 oklüzyonla Somon DNA emilimini 8 katına çıkarır.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">Gıdı, sarkmış yanak, ödemli şiş yüzler ve acil lifting isteyen danışanlar.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">⛔ <strong>Gazlı bezsiz çıplak tene uygulanmaz.</strong> Burun delikleri asla kapatılmaz.</div>
+            </div>
+          </div>
+
+          <!-- 17. GENOSYS PDRN MASK PACK -->
+          <div class="product-finder-card" data-category="maske" data-keywords="genosys skin reboot pdrn mask pack kağıt maske somon dna biyoselüloz onarıcı">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#f472b6; background:rgba(244,114,182,0.12);">17. KAĞIT MASKE</span>
+              <span class="p-card-code">Genosys Skin Reboot</span>
+            </div>
+            <h4 class="p-card-name">Genosys Skin Reboot PDRN Mask Pack</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">Somon DNA'lı biyoselüloz dokusuyla yıpranmış cildi derinlemesine besler ve hızla onarır.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">İşlem sonrası kızarmış, yorgun, nemsiz ve parlaklık isteyen tüm ciltler.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">Kontrendikasyonu yoktur.</div>
+            </div>
+          </div>
+
+          <!-- 18. BIOAQUA BAN BANG -->
+          <div class="product-finder-card" data-category="maske" data-keywords="bioaqua ban bang double color mask ikili kil maskesi yeşil sarı bölgesel karma t-bölgesi">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#f472b6; background:rgba(244,114,182,0.12);">18. BÖLGESEL KİL</span>
+              <span class="p-card-code">Bioaqua Çift Renk</span>
+            </div>
+            <h4 class="p-card-name">Bioaqua Ban Bang Double Color Mask</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">Yeşil kil T bölgesindeki yağı arındırırken, sarı kil kuru yanakları nemlendirip besler.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">Karma ciltler (alın/burun yağlı, yanakları kuru olanlar).</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">⛔ <strong>Yeşil kil kısmı ASLA kuru yanaklara sürülmez!</strong> (Yanakları aşırı kurutur).</div>
+            </div>
+          </div>
+
+          <!-- 19. GENOSYS SRP ONARICI -->
+          <div class="product-finder-card" data-category="krem" data-keywords="genosys soothing repair postcream srp onarıcı bariyer krem kızarıklık lazer soyma">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#fbbf24; background:rgba(251,191,36,0.12);">19. ONARICI KREM</span>
+              <span class="p-card-code">Genosys SRP Postcream</span>
+            </div>
+            <h4 class="p-card-name">Genosys Soothing Repair Postcream (SRP)</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">Soyma, vakum veya cihaz sonrası hasar gören epidermal bariyeri sıfırdan kurar ve yangıyı bitirir.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">Hassaslaşmış, kızarık, tahriş olmuş veya işlem görmüş tüm ciltler.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">Kontrendikasyonu yoktur, medikal onarıcıdır.</div>
+            </div>
+          </div>
+
+          <!-- 20. GENOSYS MULTI SUN SPF 40 / BBC -->
+          <div class="product-finder-card" data-category="krem" data-keywords="genosys multi sun cream spf 40 bbc blemish balm bb krem güneş koruyucu porselen">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#fbbf24; background:rgba(251,191,36,0.12);">20. GÜNEŞ & BB KREM</span>
+              <span class="p-card-code">Genosys SPF 40 & BB</span>
+            </div>
+            <h4 class="p-card-name">Genosys Multi Sun Cream SPF 40 & BB Krem</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">Cildi UV ışınlarından korur, işlem sonrası kızarıklığı doğal tonda kapatarak porselen filtre etkisi verir.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">Her seansın mutlak final adımıdır, tüm cilt tiplerine uygundur.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">Gece yapılan seanslarda BB krem uygulanmaz (sadece SRP onarıcı sürülür).</div>
+            </div>
+          </div>
+
+          <!-- 21. BIOAQUA AKTİF KARBON -->
+          <div class="product-finder-card" data-category="maske" data-keywords="bioaqua aktif karbon siyah maske soyulabilir burun siyah nokta">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#f472b6; background:rgba(244,114,182,0.12);">21. SOYULABİLİR MASKE</span>
+              <span class="p-card-code">Bioaqua Aktif Karbon</span>
+            </div>
+            <h4 class="p-card-name">Bioaqua Aktif Karbon Burun Maskesi</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">Kuruyunca tek parça soyularak burun üzerindeki sert siyah noktaları kökünden çeker.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">SADECE burun üzeri ve çenedeki inatçı siyah noktalarda.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">⛔ <strong>TÜM YÜZE VE YANAKLARA KESİNLİKLE SÜRÜLMEZ!</strong> İnce tüyleri koparıp cildi kanatır ve tahriş eder.</div>
+            </div>
+          </div>
+
+          <!-- 22. TEEGRACE BIO-MAGNETIC -->
+          <div class="product-finder-card" data-category="maske" data-keywords="teegrace bio-magnetic aqua light mask mıknatıs nem cam cilt aydınlatıcı">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#f472b6; background:rgba(244,114,182,0.12);">22. MANYETİK MASKE</span>
+              <span class="p-card-code">Teegrace Bio-Magnetic</span>
+            </div>
+            <h4 class="p-card-name">Teegrace Bio-Magnetic Aqua Light Mask</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">Mıknatıs teknolojili mikro partikülleriyle cilde derin nem basar ve Kore cam cilt aydınlığı verir.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">Mat, ışıltısız, kuru ve özel gün öncesi anında parlamak isteyen ciltler.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">Ağır kistik iltihaplı akne olan ciltler.</div>
+            </div>
+          </div>
+
+          <!-- 23. BK HYDRO JELLY -->
+          <div class="product-finder-card" data-category="maske" data-keywords="bk hydro jelly mask goji lavender hyaluronic aljinat jöle maske soğutucu">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#f472b6; background:rgba(244,114,182,0.12);">23. JÖLE MASKE</span>
+              <span class="p-card-code">BK Hydro Jelly (500g)</span>
+            </div>
+            <h4 class="p-card-name">BK Hydro Jelly Aljinat Maskeler (Goji/Lavanta)</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">Suyla karıştırılıp kalın sürülen, donunca soyulan soğuk jöle maske; cildi hızla serinletir ve neme boğar.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">Ateş basan, kızarmış, vakum veya soyma görmüş tüm ciltler.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">Kontrendikasyonu yoktur, en yatıştırıcı maskelerdendir.</div>
+            </div>
+          </div>
+
+          <!-- 24. FIRST DATING SAŞELER -->
+          <div class="product-finder-card" data-category="maske" data-keywords="first dating toz maske saşe gold kiwi cherry lavender tek kullanımlık">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#f472b6; background:rgba(244,114,182,0.12);">24. TOZ SAŞELER</span>
+              <span class="p-card-code">First Dating 15g Saşeler</span>
+            </div>
+            <h4 class="p-card-name">First Dating Tek Kullanımlık Toz Saşeler</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">Gold (Kırışıklık), Kivi (Yağ kontrol), Kiraz (Leke aydınlatma), Lavanta (Yatıştırma) hedefli bakım tozlarıdır.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">Danışanın ihtiyacına göre ilgili meyve/altın tozu seçilerek uygulanır.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">İlgili meyve özüne alerjisi olanlar haricinde güvenlidir.</div>
+            </div>
+          </div>
+
+          <!-- 25. HIGH LIFE HYDRO GEL -->
+          <div class="product-finder-card" data-category="jel" data-keywords="high life hydro gel iletken jel radyofrekans rf ultrasound ultrason lazer galvanik">
+            <div class="p-card-header">
+              <span class="p-card-cat" style="color:#00d2ff; background:rgba(0,210,255,0.12);">25. İLETKEN HİDROJEL</span>
+              <span class="p-card-code">High Life Mavi Tüp (250 ml)</span>
+            </div>
+            <h4 class="p-card-name">High Life Hydro Gel (Cihaz İletkenlik Jeli)</h4>
+            <div class="p-card-block">
+              <div class="p-label">✨ Ne İşe Yarar:</div>
+              <div class="p-val">RF, Ultrasound ve Galvanik uygulamalarında ses dalgası ve ısının cilde güvenle iletilmesini sağlar.</div>
+            </div>
+            <div class="p-card-block">
+              <div class="p-label" style="color:#00d2ff;">✅ Hangi Ciltte Kullanılır:</div>
+              <div class="p-val">Cihazlı dalga ve ısı uygulaması yapılan tüm cilt tipleri.</div>
+            </div>
+            <div class="p-card-block warning">
+              <div class="p-label" style="color:#ff7979;">⛔ Hangi Ciltte KULLANILMAZ:</div>
+              <div class="p-val">⛔ <strong>Jelsiz RF ve Ultrasound ASLA uygulanmaz (cildi yakar ve cihaz başlığını bozar).</strong></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <style>
+        .product-finder-card {
+          background: rgba(255, 255, 255, 0.025);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 12px;
+          padding: 14px;
+          transition: all 0.25s ease;
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+        }
+        .product-finder-card:hover {
+          border-color: rgba(56, 239, 125, 0.4);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+        .p-card-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 2px;
+        }
+        .p-card-cat {
+          font-size: 10px;
+          font-weight: 800;
+          letter-spacing: 0.5px;
+          padding: 2px 7px;
+          border-radius: 4px;
+        }
+        .p-card-code {
+          font-size: 11px;
+          color: #94a3b8;
+          font-weight: 600;
+        }
+        .p-card-name {
+          font-size: 14.5px;
+          color: #ffffff;
+          font-family: 'Cinzel', serif;
+          margin: 0 0 4px 0;
+          line-height: 1.35;
+        }
+        .p-card-block {
+          font-size: 12px;
+          line-height: 1.5;
+        }
+        .p-card-block.warning {
+          background: rgba(255, 71, 87, 0.06);
+          border-left: 2px solid #ff4757;
+          padding: 6px 8px;
+          border-radius: 0 6px 6px 0;
+          margin-top: 4px;
+        }
+        .p-label {
+          font-weight: 700;
+          color: #e2e8f0;
+          font-size: 11px;
+          text-transform: uppercase;
+          margin-bottom: 2px;
+        }
+        .p-val {
+          color: #cbd5e1;
+        }
+        .finder-chip {
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          color: #cbd5e1;
+          font-size: 11px;
+          font-weight: 700;
+          padding: 5px 10px;
+          border-radius: 16px;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+        .finder-chip:hover {
+          background: rgba(56, 239, 125, 0.15);
+          color: #38ef7d;
+          border-color: rgba(56, 239, 125, 0.3);
+        }
+        .finder-chip.active {
+          background: #38ef7d !important;
+          color: #000 !important;
+          border-color: #38ef7d !important;
+        }
+      </style>
+
+      <script>
+        let currentFinderCategory = 'ALL';
+
+        function setFinderCategory(cat, btn) {
+          currentFinderCategory = cat;
+          document.querySelectorAll('.finder-chip').forEach(c => c.classList.remove('active'));
+          if (btn) btn.classList.add('active');
+          filterGulsahProducts();
+        }
+
+        function filterGulsahProducts() {
+          const query = (document.getElementById('gulsah-product-input').value || '').trim().toLowerCase();
+          const clearBtn = document.getElementById('finder-clear-btn');
+          if (clearBtn) clearBtn.style.display = query.length > 0 ? 'block' : 'none';
+
+          const cards = document.querySelectorAll('.product-finder-card');
+          let visibleCount = 0;
+
+          cards.forEach(card => {
+            const cat = card.getAttribute('data-category');
+            const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
+            const text = card.textContent.toLowerCase();
+
+            const matchesCategory = (currentFinderCategory === 'ALL' || cat === currentFinderCategory);
+            const matchesQuery = query === '' || keywords.includes(query) || text.includes(query);
+
+            if (matchesCategory && matchesQuery) {
+              card.style.display = 'flex';
+              visibleCount++;
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          const countBadge = document.getElementById('finder-count');
+          if (countBadge) {
+            countBadge.textContent = visibleCount + ' Ürün Bulundu';
+          }
+        }
+
+        function clearGulsahProductSearch() {
+          const input = document.getElementById('gulsah-product-input');
+          if (input) input.value = '';
+          filterGulsahProducts();
+        }
+      </script>
+
+</section>
 
     <section id="tab-visual-macro" class="tab-content">
       
