@@ -1459,9 +1459,6 @@
     <div class="mobile-app-title">
       <span>👑</span> LİNAİL KABİN ASİSTANI
     </div>
-    <button class="mobile-panic-btn" onclick="openEmergencyHelp()" style="background:rgba(255,71,87,0.2); border:1px solid #ff4757; color:#ff6b81;">
-      <span>🚨</span> ACİL MÜDAHALE
-    </button>
   </header>
 
   <!-- MOBILE STICKY 5 SKIN SELECTOR (MOBILE ONLY) -->
@@ -1501,9 +1498,9 @@
       <span class="icon">🔬</span>
       <span>Lezyon Atlası</span>
     </button>
-    <button class="m-nav-item" onclick="openEmergencyHelp()" style="color:#ff6b81;">
-      <span class="icon">🚨</span>
-      <span>Acil Müdahale</span>
+    <button class="m-nav-item" onclick="mobileNavTab('tab-products', this)" style="color:#38ef7d;">
+      <span class="icon">🧴</span>
+      <span>Ürünler</span>
     </button>
   </nav>
 
@@ -1531,8 +1528,8 @@
     <nav class="tab-bar">
     <button class="tab-btn active" onclick="switchTab('tab-gulsah-desk')" style="background:var(--gold-gradient); color:#000; font-weight:800; box-shadow:0 0 15px rgba(212,175,55,0.4);">⚡ GÜLŞAH HIZLI KABİN MASASI (5 CİLT)</button>
     <button class="tab-btn" onclick="switchTab('tab-cam-cilt')" style="background:rgba(56,239,125,0.18); color:#38ef7d; border:1px solid #38ef7d; font-weight:800;">💎 KORE CAM CİLT (3 SEANSLIK REKLAM KÜRÜ)</button>
-    <button class="tab-btn" onclick="openEmergencyHelp()" style="background:rgba(255,71,87,0.18); color:#ff6b81; border:1px solid #ff4757; font-weight:800;">🚨 ACİL DURUM (6 ŞİKAYET PROTOKOLÜ)</button>
     <button class="tab-btn" onclick="switchTab('tab-catalog')">📚 25 Ürün & Hydraderm Cihaz Masterclass (V3)</button>
+    <button class="tab-btn" onclick="switchTab('tab-products')" style="background:rgba(56,239,125,0.18); color:#38ef7d; border:1px solid #38ef7d; font-weight:800;">🧴 Ürünler</button>
     <button class="tab-btn" onclick="switchTab('tab-lesion-atlas')">🔬 Teşhis & Lezyon Atlası (Kore)</button>
     <button class="tab-btn" onclick="switchTab('tab-protocols')">💎 Trend Protokoller</button>
     <button class="tab-btn" onclick="switchTab('tab-motion-guide')">📐 Başlık & Port Haritası</button>
@@ -2037,145 +2034,6 @@
            ============================================================ -->
       <div id="sheet-sensitive" class="gulsah-sheet hidden-sheet">
 
-                <!-- OLASI KABİN RİSKLERİ & DANIŞAN ŞİKAYETLERİ ACİL MÜDAHALE PROTOKOLÜ -->
-      <div class="trauma-alert-card" id="emergency-protocol-card" style="background: linear-gradient(135deg, rgba(255, 71, 87, 0.12) 0%, rgba(15, 8, 12, 0.98) 100%); border: 2px solid #ff4757; border-radius: 16px; padding: 20px; margin: 18px 0; box-shadow: 0 10px 35px rgba(255, 71, 87, 0.25);">
-        
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; border-bottom:1px solid rgba(255,71,87,0.3); padding-bottom:12px; margin-bottom:14px;">
-          <div>
-            <span style="background:#ff4757; color:#fff; font-size:11px; font-weight:900; padding:4px 10px; border-radius:10px; text-transform:uppercase;">KLİNİK STANDART</span>
-            <h3 style="font-family:'Cinzel', serif; font-size:19px; color:#fff; margin-top:6px;">🚨 Kabin Acil Durum & Danışan Şikayetleri Yönetimi</h3>
-          </div>
-          <span style="background:rgba(255,71,87,0.2); border:1px solid #ff4757; color:#ff6b81; font-size:11.5px; font-weight:800; padding:4px 10px; border-radius:8px;">⏱️ Anında Müdahale Rehberi</span>
-        </div>
-
-        <p style="color:#cbd5e1; font-size:13px; line-height:1.6; margin-bottom:16px;">
-          Kabin işlemlerinde danışanın anlık fizyolojik reaksiyonlarında saniyeler içinde doğru adımı atarak güveni pekiştirmek için 6 temel klinik senaryo ve anlık müdahale adımları:
-        </p>
-
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(290px, 1fr)); gap:14px;">
-          
-          <!-- 1. Senaryo: Ani Yanma -->
-          <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(255,71,87,0.35); border-left:4px solid #ff4757; border-radius:8px; padding:12px;">
-            <div style="font-size:13px; font-weight:800; color:#ff6b81; margin-bottom:6px; display:flex; align-items:center; gap:6px;">
-              <span>🔥</span> 1. Ani Yanma & Alev Alma Hissi
-            </div>
-            <div style="font-size:11.5px; color:#f87171; font-weight:700; margin-bottom:4px;">💬 Danışan: "Yüzüm alev aldı, çok fena yanıyor!"</div>
-            <div style="font-size:12px; color:#cbd5e1; margin-bottom:8px; line-height:1.45;">
-              <strong>🔬 Klinik Neden:</strong> Danışanın cilt bariyeri (Stratum Corneum) önceden hasar görmüş/çatlamış ve TEWL tavan yapmıştır. Asit veya aktif ajan açık sinir uçlarına temas etmiştir.
-            </div>
-            <div style="background:rgba(255,71,87,0.1); border-radius:6px; padding:8px; font-size:11.5px; color:#fecaca; margin-bottom:8px;">
-              <strong>⚡ Anlık Müdahale:</strong><br>
-              1. Ürünü bol soğuk distile su / fizyolojik serumla anında temizle.<br>
-              2. Asla sıcak havlu sürme! Mormed Cryo Soğuk Çekiç (2°C) başlığını steril gazlı bez üzerinden 3-5 dk dairesel tamponla.<br>
-              3. Üzerine sadece <strong>Eclado A.C. Centella Mask</strong> kapat, bitişte <strong>Genosys SRP</strong> sür.
-            </div>
-            <div style="font-size:11px; font-style:italic; color:#94a3b8;">
-              🗣️ <strong>Danışana Cümle:</strong> "Cildinizin susuz kalmış bariyerini anında rahatlatmak için soğuk mühürleme terapisine geçtim; 1-2 dakika içinde ferahlayacaksınız."
-            </div>
-          </div>
-
-          <!-- 2. Senaryo: İğne Batması -->
-          <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(212,175,55,0.35); border-left:4px solid var(--gold-primary); border-radius:8px; padding:12px;">
-            <div style="font-size:13px; font-weight:800; color:var(--gold-light); margin-bottom:6px; display:flex; align-items:center; gap:6px;">
-              <span>🪡</span> 2. İçeriden İğne Batması & Karıncalanma
-            </div>
-            <div style="font-size:11.5px; color:var(--gold-light); font-weight:700; margin-bottom:4px;">💬 Danışan: "İçeride binlerce iğne batıyor gibi hissediyorum!"</div>
-            <div style="font-size:12px; color:#cbd5e1; margin-bottom:8px; line-height:1.45;">
-              <strong>🔬 Klinik Neden:</strong> Genosys Bio-Meso PDRN biyo-spikülleri (mikroskopik deniz süngeri kristalleri) veya EZ CO2 Bohr etkisiyle dokuda yoğun oksijen açığa çıkması.
-            </div>
-            <div style="background:rgba(212,175,55,0.1); border-radius:6px; padding:8px; font-size:11.5px; color:#fef08a; margin-bottom:8px;">
-              <strong>⚡ Anlık Müdahale:</strong><br>
-              1. Spikül uygulandıysa: Silmeye çalışma, mikroiğnecikler deriye girmiştir. Masajı durdur, Eclado Soothing Jel ile oklüzyon yap.<br>
-              2. Karboksi ise: 15-20 dk dolunca gazlı bezle al, soğuk çekiçle ferahlat.
-            </div>
-            <div style="font-size:11px; font-style:italic; color:#94a3b8;">
-              🗣️ <strong>Danışana Cümle:</strong> "Bu his kolajen liflerinin uyanmasıdır; biyo-iğnecikler hücre yenilenmesini tetikliyor. 24-48 saat dokundukça tatlı bir karıncalanma olması işlemin derin çalıştığını gösterir."
-            </div>
-          </div>
-
-          <!-- 3. Senaryo: Aşırı Kızarıklık & Ateş -->
-          <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(56,239,125,0.35); border-left:4px solid #38ef7d; border-radius:8px; padding:12px;">
-            <div style="font-size:13px; font-weight:800; color:#38ef7d; margin-bottom:6px; display:flex; align-items:center; gap:6px;">
-              <span>🔴</span> 3. Ani Kızarıklık (Eritem) & Ateş Basması
-            </div>
-            <div style="font-size:11.5px; color:#86efac; font-weight:700; margin-bottom:4px;">💬 Danışan: "Yüzüm kıpkırmızı oldu, yanıyor, geçecek mi?"</div>
-            <div style="font-size:12px; color:#cbd5e1; margin-bottom:8px; line-height:1.45;">
-              <strong>🔬 Klinik Neden:</strong> Kılcal damarların (vazodilatasyon) genişlemesi, kuperozlu veya rozasealı ciltte sıcaklık ve buhar etkisiyle kan hücumu.
-            </div>
-            <div style="background:rgba(56,239,125,0.1); border-radius:6px; padding:8px; font-size:11.5px; color:#bbf7d0; margin-bottom:8px;">
-              <strong>⚡ Anlık Müdahale:</strong><br>
-              1. Sıcak buhar ve RF gibi ısı yayan cihazları derhal kapat.<br>
-              2. Buzdolabından soğuk Genosys Snow Booster sislemesi yap.<br>
-              3. <strong>525nm Yeşil</strong> veya <strong>590nm Sarı LED</strong> ışık tüneline al (15 dk), ardından Cryo Soğuk Çekiçle yatıştır.
-            </div>
-            <div style="font-size:11px; font-style:italic; color:#94a3b8;">
-              🗣️ <strong>Danışana Cümle:</strong> "Kan dolaşımınız hızlandı ve dokulara yoğun oksijen ulaştı. Şimdi yeşil ışık ve soğuk mühürleme ile kızarıklığı dakikalar içinde dengeliyoruz."
-            </div>
-          </div>
-
-          <!-- 4. Senaryo: Kaşıntı & Kabarma -->
-          <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(250,204,21,0.35); border-left:4px solid #facc15; border-radius:8px; padding:12px;">
-            <div style="font-size:13px; font-weight:800; color:#facc15; margin-bottom:6px; display:flex; align-items:center; gap:6px;">
-              <span>⚡</span> 4. Yoğun Kaşıntı & Kabarma (Lokal Histamin)
-            </div>
-            <div style="font-size:11.5px; color:#fef08a; font-weight:700; margin-bottom:4px;">💬 Danışan: "Yüzüm çok kaşınıyor, kabardı gibi!"</div>
-            <div style="font-size:12px; color:#cbd5e1; margin-bottom:8px; line-height:1.45;">
-              <strong>🔬 Klinik Neden:</strong> Cildin yabancı bir esansa, parfüme veya aşırı sürtünmeye karşı lokal histamin salgılaması.
-            </div>
-            <div style="background:rgba(250,204,21,0.1); border-radius:6px; padding:8px; font-size:11.5px; color:#fef08a; margin-bottom:8px;">
-              <strong>⚡ Anlık Müdahale:</strong><br>
-              1. Maskeyi ve solüsyonu anında kaldır, soğuk serum fizyolojikle durula.<br>
-              2. Asla asit, granüllü peeling veya kazıma yapma.<br>
-              3. Yalnızca saf centella/papatya özlü jel sür, 415nm Mavi LED altında 10 dk yatıştır.
-            </div>
-            <div style="font-size:11px; font-style:italic; color:#94a3b8;">
-              🗣️ <strong>Danışana Cümle:</strong> "Cildiniz hassas bir tepki verdi; işlemi derhal antialerjik yatıştırma protokolüne çeviriyorum, birkaç dakika içinde kabarma sönecek."
-            </div>
-          </div>
-
-          <!-- 5. Senaryo: Vakum Morarma Riski -->
-          <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(168,85,247,0.35); border-left:4px solid #a855f7; border-radius:8px; padding:12px;">
-            <div style="font-size:13px; font-weight:800; color:#c084fc; margin-bottom:6px; display:flex; align-items:center; gap:6px;">
-              <span>🟣</span> 5. Vakum Sonrası Morarma & Kılcal Damar Riski
-            </div>
-            <div style="font-size:11.5px; color:#e9d5ff; font-weight:700; margin-bottom:4px;">💬 Danışan: "Yanaklarımda iz veya morarma kalır mı?"</div>
-            <div style="font-size:12px; color:#cbd5e1; margin-bottom:8px; line-height:1.45;">
-              <strong>🔬 Klinik Neden:</strong> İnce kuperozlu yanaklarda vakum gücünün fazla açılması veya başlığın tek noktada 1 saniyeden fazla bekletilmesi.
-            </div>
-            <div style="background:rgba(168,85,247,0.1); border-radius:6px; padding:8px; font-size:11.5px; color:#f3e8ff; margin-bottom:8px;">
-              <strong>⚡ Anlık Müdahale:</strong><br>
-              1. Vakumu derhal kapat veya Seviye 2-3'e düşür.<br>
-              2. K Vitamini ve cica içerikli Genosys SRP Soothing Repair kremi kalın tabaka sür.<br>
-              3. Mormed Cryo Soğuk Çekiçle kılcal damar büzülmesi (vazokonstriksiyon) sağla.
-            </div>
-            <div style="font-size:11px; font-style:italic; color:#94a3b8;">
-              🗣️ <strong>Danışana Cümle:</strong> "Vakum seviyesini cildinizin kılcal damar yapısına göre en nazik seviyeye aldım, soğuk mühürleme ile dokuyu koruyoruz."
-            </div>
-          </div>
-
-          <!-- 6. Senaryo: Göz Çevresi Yanması -->
-          <div style="background:rgba(0,0,0,0.5); border:1px solid rgba(56,189,248,0.35); border-left:4px solid #38bdf8; border-radius:8px; padding:12px;">
-            <div style="font-size:13px; font-weight:800; color:#38bdf8; margin-bottom:6px; display:flex; align-items:center; gap:6px;">
-              <span>💧</span> 6. Göz Çevresi Sızlaması & Göz Yaşarması
-            </div>
-            <div style="font-size:11.5px; color:#bae6fd; font-weight:700; margin-bottom:4px;">💬 Danışan: "Gözlerim yandı, açamıyorum, sulanıyor!"</div>
-            <div style="font-size:12px; color:#cbd5e1; margin-bottom:8px; line-height:1.45;">
-              <strong>🔬 Klinik Neden:</strong> Sıcak buhar buğusu, uçucu asit partikülleri veya temizleme jeli köpüğünün göz mukozasına kaçması.
-            </div>
-            <div style="background:rgba(56,189,248,0.1); border-radius:6px; padding:8px; font-size:11.5px; color:#e0f2fe; margin-bottom:8px;">
-              <strong>⚡ Anlık Müdahale:</strong><br>
-              1. Göz kapaklarına derhal soğuk distile suyla ıslatılmış pamuk ped kapat.<br>
-              2. Buhar başlığının yönünü göğüs/çene hizasına çevir.<br>
-              3. Genosys Skin Defender DMR ile göz çevresi kalıntılarını nazikçe uzaklaştır.
-            </div>
-            <div style="font-size:11px; font-style:italic; color:#94a3b8;">
-              🗣️ <strong>Danışana Cümle:</strong> "Gözlerinize soğuk dinlendirici pamuk pedler yerleştirdim, hemen ferahlayacaksınız; buhar açısını ayarladım."
-            </div>
-          </div>
-
-        </div>
-      </div>
-
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px; border-bottom:1px solid rgba(255,71,87,0.4); padding-bottom:10px;">
           <div>
             <span class="time-pill red" style="font-size:12px;">🔴 5. ACİL KORUMA MASASI</span>
@@ -2259,218 +2117,7 @@
         </div>
       </div>
 
-      <!-- ============================================================
-           ELİMİZDEKİ TÜM ÜRÜNLERİN HAP ENVANTERİ (20+ ÜRÜN KARTI)
-           ============================================================ -->
-      <div class="card" style="margin-top:28px;">
-        <div class="card-badge">Stüdyo Rafı & Envanter</div>
-        <div class="card-title">Masamızdaki Tüm Ürünler Tek Cümleyle Ne İşe Yarar? (Kaç Dk & Cilt Tipi)</div>
-        <p class="card-subtitle">Masandaki şişelerin üzerine baktığında tereddüt etme; hepsi aşağıda tek tek sınıflandırıldı:</p>
-
-        <div class="inventory-grid">
-          
-          <!-- 1. Snow O2 -->
-          <div class="inventory-item-card">
-            <div class="inventory-brand">GENOSYS (KORE)</div>
-            <div class="inventory-name">Snow O2 Cleanser (SOC)</div>
-            <div class="inventory-desc">Oksijen köpüklü derin temizleyici. Gözenek kirlerini kendiliğinden kabarcıklanarak yukarı iter, tahriş etmez.</div>
-            <div class="inventory-meta">
-              <span>⏱️ 1-2 Dakika</span>
-              <span style="color:#38ef7d;">Tüm Cilt Tipleri</span>
-            </div>
-          </div>
-
-          <!-- 2. Snow Booster -->
-          <div class="inventory-item-card">
-            <div class="inventory-brand">GENOSYS (KORE)</div>
-            <div class="inventory-name">Snow Booster Toner (SBT)</div>
-            <div class="inventory-desc">Botanik özlü yatıştırıcı tonik. Temizlik sonrası cildi pH 5.5 seviyesine getirir, neme hazırlar. Oksijen tabancasıyla sıkılır.</div>
-            <div class="inventory-meta">
-              <span>⏱️ Anında</span>
-              <span style="color:#38ef7d;">Tüm Cilt Tipleri</span>
-            </div>
-          </div>
-
-          <!-- 3. EZ CO2 Mask -->
-          <div class="inventory-item-card">
-            <div class="inventory-brand">GENOSYS (KORE)</div>
-            <div class="inventory-name">EZ CO2 Karboksi Maske (ECM)</div>
-            <div class="inventory-desc">Bohr etkisiyle dokuya oksijen patlaması yapar. Yüzü inceltir, sıkılaştırır ve parlatır. İlk 30 sn yanma/batma hissi normaldir!</div>
-            <div class="inventory-meta">
-              <span>⏱️ 15 - 20 Dakika</span>
-              <span style="color:var(--gold-primary);">Olgun, Sarkmış, Mat</span>
-            </div>
-          </div>
-
-          <!-- 4. Bio-Meso PDRN -->
-          <div class="inventory-item-card">
-            <div class="inventory-brand">GENOSYS (KORE)</div>
-            <div class="inventory-name">Bio-Meso PDRN Somon DNA</div>
-            <div class="inventory-desc">Saf Somon DNA hücresel yenileyici ampul. Kolajen üretimini tetikler, derin kırışıklıkları doldurur, elastikiyeti artırır.</div>
-            <div class="inventory-meta">
-              <span>⏱️ Cihazla 5 Dk</span>
-              <span style="color:#00d2ff;">Kuru, Olgun, Yıpranmış</span>
-            </div>
-          </div>
-
-          <!-- 5. Skin Reboot PDRN -->
-          <div class="inventory-item-card">
-            <div class="inventory-brand">GENOSYS (KORE)</div>
-            <div class="inventory-name">Skin Reboot PDRN Mask Pack (RPM)</div>
-            <div class="inventory-desc">Ultra ince tabaka PDRN maskesi. Zayıflamış bariyeri şarj eder, ikinci bir ten gibi yapışıp derin nem ve ışıltı verir.</div>
-            <div class="inventory-meta">
-              <span>⏱️ 15 - 20 Dakika</span>
-              <span style="color:#00d2ff;">Nemsiz, Yorgun Cilt</span>
-            </div>
-          </div>
-
-          <!-- 6. Bio-Ferment Age Defying -->
-          <div class="inventory-item-card">
-            <div class="inventory-brand">GENOSYS (KORE)</div>
-            <div class="inventory-name">Bio-Ferment Age Defying Mask (BPM)</div>
-            <div class="inventory-desc">Fermente aktifler ve 6 peptit içeren toz maske. Stresli ve yaşlanan cilde yoğun sıkılaşma ve lifting sağlar.</div>
-            <div class="inventory-meta">
-              <span>⏱️ 15 - 20 Dakika</span>
-              <span style="color:var(--gold-primary);">Olgun, Çizgili Cilt</span>
-            </div>
-          </div>
-
-          <!-- 7. SRP Postcream -->
-          <div class="inventory-item-card">
-            <div class="inventory-brand">GENOSYS (KORE)</div>
-            <div class="inventory-name">Soothing Repair Postcream (SRP)</div>
-            <div class="inventory-desc">Kabin kurtarıcısı! Centella (Cica) ve polipeptit içeren yoğun yatıştırıcı bariyer kremi. Kızaran, yanan cildi anında onarır.</div>
-            <div class="inventory-meta">
-              <span>⏱️ Bitiş Kremi</span>
-              <span style="color:#ff6b81;">Hassas, Yanan, İşlem Gören</span>
-            </div>
-          </div>
-
-          <!-- 8. BBC Cream -->
-          <div class="inventory-item-card">
-            <div class="inventory-brand">GENOSYS (KORE)</div>
-            <div class="inventory-name">Intensive Blemish Balm (BBC)</div>
-            <div class="inventory-desc">Medikal BB krem. İşlem sonrası kızarıklıkları doğal ten tonuyla kapatır, gözenekleri tıkamaz, cildi dış etkilerden korur.</div>
-            <div class="inventory-meta">
-              <span>⏱️ Bitiş / Gündüz</span>
-              <span style="color:#38ef7d;">Tüm Cilt Tipleri</span>
-            </div>
-          </div>
-
-          <!-- 9. Eclado Centella Mask -->
-          <div class="inventory-item-card">
-            <div class="inventory-brand">ECLADO (KORE)</div>
-            <div class="inventory-name">A.C. Centella Mask</div>
-            <div class="inventory-desc">Yoğun Centella Asiatica maskesi. Yağlı, akneli, tahriş olmuş veya kılcal damarları coşmuş cildi söndürür.</div>
-            <div class="inventory-meta">
-              <span>⏱️ 15 Dakika</span>
-              <span style="color:#ff6b81;">Yağlı, Akneli, Kızarık</span>
-            </div>
-          </div>
-
-          <!-- 10. Eclado A.C. Oil Free Toner -->
-          <div class="inventory-item-card">
-            <div class="inventory-brand">ECLADO (KORE)</div>
-            <div class="inventory-name">A.C. Oil Free Toner</div>
-            <div class="inventory-desc">Yağsız sebum dengeleyici tonik. Gözenekleri küçültür, parlamayı matlaştırır, akne oluşumunu engeller.</div>
-            <div class="inventory-meta">
-              <span>⏱️ Anında</span>
-              <span style="color:#38ef7d;">Yağlı, Karma Cilt</span>
-            </div>
-          </div>
-
-          <!-- 11. Eclado Melaser -->
-          <div class="inventory-item-card">
-            <div class="inventory-brand">ECLADO (KORE)</div>
-            <div class="inventory-name">Melaser Leke Açıcı Krem/Serum</div>
-            <div class="inventory-desc">Leke açıcı profesyonel aktif. Melanin sentezini baskılar, güneş ve sivilce lekelerinin rengini kırar. Pozitif İyontoforezle yedirilir.</div>
-            <div class="inventory-meta">
-              <span>⏱️ Cihazla 5 Dk</span>
-              <span style="color:var(--gold-primary);">Lekeli, Güneş Hasarlı</span>
-            </div>
-          </div>
-
-          <!-- 12. Eclado Shining Moisture -->
-          <div class="inventory-item-card">
-            <div class="inventory-brand">ECLADO (KORE)</div>
-            <div class="inventory-name">Shining Moisture Massage Cream</div>
-            <div class="inventory-desc">Vitamin A, B ve C içeren lüks masaj kremi. Kuru cilde ipeksi bir kayganlık verir, donuk cilde parlaklık katar.</div>
-            <div class="inventory-meta">
-              <span>⏱️ 7-10 Dk Masaj</span>
-              <span style="color:#00d2ff;">Kuru, Donuk, Yorgun</span>
-            </div>
-          </div>
-
-          <!-- 13. Dr-Meinaier Hyaluronic Jelly Mask -->
-          <div class="inventory-item-card">
-            <div class="inventory-brand">DR-MEINAIER</div>
-            <div class="inventory-name">Hyaluronic Acid Jelly Mask (650g)</div>
-            <div class="inventory-desc">Hyaluronik Asit, Niasinamid, Arbutin, Kojik Asit ve Glutatyon içerir. Nem bombasıdır; cildi aydınlatır, soyularak çıkar.</div>
-            <div class="inventory-meta">
-              <span>⏱️ 15 - 20 Dakika</span>
-              <span style="color:#00d2ff;">Kuru, Nemsiz, Lekeli</span>
-            </div>
-          </div>
-
-          <!-- 14. Dr-Meinaier Lavender Jelly Mask -->
-          <div class="inventory-item-card">
-            <div class="inventory-brand">DR-MEINAIER</div>
-            <div class="inventory-name">Provence Lavender Calm Jelly Mask</div>
-            <div class="inventory-desc">Gerçek lavanta özlü sakinleştirici hidrojel maske. Gözenekleri yatıştırır, yağ salgısını dengeler, kızarıklığı alır.</div>
-            <div class="inventory-meta">
-              <span>⏱️ 15 - 20 Dakika</span>
-              <span style="color:#a18cd1;">Karma, Hassas, Akneye Meyilli</span>
-            </div>
-          </div>
-
-          <!-- 15. Firstdating Kiwifruit -->
-          <div class="inventory-item-card">
-            <div class="inventory-brand">FIRSTDATING</div>
-            <div class="inventory-name">Kiwifruit Oil-Control Mask</div>
-            <div class="inventory-desc">Kivi meyve özlü yağ kontrol maskesi. Fazla sebumu çeker, gözenekleri sıkılaştırır, mat ve pürüzsüz doku sağlar.</div>
-            <div class="inventory-meta">
-              <span>⏱️ 15 Dakika</span>
-              <span style="color:#38ef7d;">Yağlı, Parlayan T-Bölgesi</span>
-            </div>
-          </div>
-
-          <!-- 16. Firstdating Cherry Whitening -->
-          <div class="inventory-item-card">
-            <div class="inventory-brand">FIRSTDATING</div>
-            <div class="inventory-name">Cherry Whitening Mask</div>
-            <div class="inventory-desc">Kiraz özlü beyazlatıcı hidrojel toz maske. Cilt tonunu açar, matlığı giderir, cilde pembe-beyaz canlı bir ışıltı verir.</div>
-            <div class="inventory-meta">
-              <span>⏱️ 15 Dakika</span>
-              <span style="color:var(--gold-primary);">Lekeli, Solgun Cilt</span>
-            </div>
-          </div>
-
-          <!-- 17. Bioaqua Aktif Karbon -->
-          <div class="inventory-item-card">
-            <div class="inventory-brand">BIOAQUA</div>
-            <div class="inventory-name">Activated Carbon (Aktif Karbon)</div>
-            <div class="inventory-desc">Bambu aktif karbon detoks maskesi. Gözeneklerin içindeki ağır metalleri, hava kirliliğini ve siyah noktaları mıknatıs gibi çeker.</div>
-            <div class="inventory-meta">
-              <span>⏱️ 15 - 20 Dakika</span>
-              <span style="color:#94a3b8;">Tıkalı Gözenek, Şehir Cildi</span>
-            </div>
-          </div>
-
-          <!-- 18. Dr Lift Alçı Maske -->
-          <div class="inventory-item-card">
-            <div class="inventory-brand">DR LIFT</div>
-            <div class="inventory-name">Powder Gypsum Mask (Termal Alçı Maske)</div>
-            <div class="inventory-desc">Isınarak sertleşen termal alçı maske. Altına sürülen ampulü sıcağın etkisiyle derin dermise iter, yüz ovalini toparlar (lifting).</div>
-            <div class="inventory-meta">
-              <span>⏱️ 20 Dakika</span>
-              <span style="color:var(--gold-primary);">Sarkmış, Çene Hattı Gevşek</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </section>
+</section>
 
 
     <!-- ============================================================
@@ -4263,10 +3910,30 @@ Dubai Mumya Maske: Somon DNA sürüldükten sonra gazlı bez üstünden çeneden
         </div>
 </div>
       </div>
-    
-    
 
-      <!-- ================================================================= -->
+</section>
+
+    <!-- ================================================================= -->
+    <!-- YENİ SEKME: ÜRÜNLER (GÜLŞAH HIZLI ANLATIM & CANLI ARAMA REHBERİ) -->
+    <!-- ================================================================= -->
+    <section id="tab-products" class="tab-content">
+      <div style="background: linear-gradient(135deg, rgba(20,24,38,0.98), rgba(15,23,42,0.98)); border: 1px solid rgba(56,239,125,0.3); border-radius: 14px; padding: 22px; margin-bottom: 24px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+          <div>
+            <div style="display:inline-block; background:rgba(56,239,125,0.18); color:#38ef7d; font-size:11px; font-weight:800; padding:4px 10px; border-radius:6px; text-transform:uppercase; letter-spacing:0.5px; border:1px solid rgba(56,239,125,0.35); margin-bottom:6px;">
+              ⚡ GÜLŞAH HIZLI KABİN REHBERİ (25 ÜRÜN)
+            </div>
+            <h2 style="font-family:'Cinzel', serif; font-size:24px; color:#fff; margin:0 0 6px 0;">
+              Kabin Ürünleri: Kısa Anlatım & Cilt Uygunluğu
+            </h2>
+            <p style="font-size:13px; color:#cbd5e1; margin:0; line-height:1.55;">
+              Kabin içi hızlı arama sekmesi: Aşağıdaki arama kutusuna ürünün adını yazarak veya kategori butonlarına basarak ürünün ne işe yaradığını, hangi cilt tipinde kullanılıp hangisinde <strong>kesinlikle kullanılmayacağını</strong> saniyeler içinde görebilirsiniz.
+            </p>
+          </div>
+        </div>
+      </div>
+
+<!-- ================================================================= -->
       <!-- GÜLŞAH HIZLI ÜRÜN ARAMA & CİLT TİPİ UYGUNLUK REHBERİ (25 ÜRÜN) -->
       <!-- ================================================================= -->
       <div id="quick-product-finder" class="card highlight" style="margin-top: 36px; margin-bottom: 30px; border-left: 4px solid #38ef7d; background: linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(20, 26, 42, 0.98));">
@@ -4981,7 +4648,8 @@ Dubai Mumya Maske: Somon DNA sürüldükten sonra gazlı bez üstünden çeneden
         }
       </script>
 
-</section>
+    </section>
+
 
     <section id="tab-visual-macro" class="tab-content">
       
