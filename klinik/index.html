@@ -802,7 +802,56 @@
       color: #fff;
       box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
     }
-  </style>
+  
+/* Explicit styles for Gulsah Desk Steps */
+.desk-step-row {
+  display: flex !important;
+  gap: 16px !important;
+  align-items: flex-start !important;
+  padding: 14px 0 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+.desk-step-row:last-child {
+  border-bottom: none !important;
+}
+.desk-step-num {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background: rgba(212, 175, 55, 0.15) !important;
+  border: 1px solid var(--gold-primary) !important;
+  color: var(--gold-light) !important;
+  font-family: 'Cinzel', serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+.desk-step-body {
+  display: block !important;
+  flex: 1 !important;
+}
+.desk-step-title {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  margin-bottom: 4px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+}
+.desk-step-desc {
+  font-size: 13.5px !important;
+  color: #cbd5e1 !important;
+  line-height: 1.55 !important;
+  margin-bottom: 6px !important;
+  display: block !important;
+}
+
+</style>
 </head>
 <body>
 
@@ -821,7 +870,9 @@
 
   <!-- Navigation Bar -->
   <nav class="tab-bar">
-    <button class="tab-btn active" onclick="switchTab('tab-catalog')">📚 Ansiklopedik Ürün & Cihaz Atlası</button>
+    <button class="tab-btn active" onclick="switchTab('tab-gulsah-desk')">⭐ Gülşah'ın Hızlı Kabin Masası</button>
+    <button class="tab-btn" onclick="switchTab('tab-lesion-atlas')">🔬 Teşhis & Lezyon Atlası (Kore)</button>
+    <button class="tab-btn" onclick="switchTab('tab-catalog')">📚 Ansiklopedik Ürün & Cihaz Atlası</button>
     <button class="tab-btn" onclick="switchTab('tab-visual-macro')">🔬 Görsel Cilt Teşhisi</button>
     <button class="tab-btn" onclick="switchTab('tab-facemap')">🎯 İnteraktif Yüz Haritası</button>
     <button class="tab-btn" onclick="switchTab('tab-motion-guide')">📐 Başlık Açıları & Hareketleri</button>
@@ -835,6 +886,994 @@
     <!-- TAB 1: VISUAL MACRO DIAGNOSTIC -->
     
     <!-- TAB: ANSİKLOPEDİK ÜRÜN & CİHAZ ATLASI -->
+    
+    <!-- ============================================================
+         TAB 0: GÜLŞAH'IN HIZLI KABİN MASASI (ELİMİZDEKİ ÜRÜNLER)
+         ============================================================ -->
+    <section id="tab-gulsah-desk" class="tab-content active">
+      
+      <!-- HERO BANNER -->
+      <div class="gulsah-hero-card">
+        <div class="card-badge" style="background:var(--gold-gradient); color:#000; font-weight:800;">⚡ KABİN MASASI HIZLI REHBERİ</div>
+        <h2 style="font-family:'Cinzel', serif; font-size:24px; color:#fff; margin:10px 0 6px 0;">
+          Gülşah Taşan için Özel: Elimizdeki Ürünlerle 5 Temel Cilt Masası
+        </h2>
+        <p style="color:var(--text-muted); font-size:14.5px; line-height:1.6; margin-bottom:14px;">
+          Artık karmaşık protokoller yok! Danışanın koltuğa oturduğunda cildini seç; masandaki hangi ürünleri sırayla alacağını, buharı kaç dakika tutacağını ve hangi cihaz başlığını açacağını <strong>tek bir ekranda, net ve alt alta</strong> gör.
+        </p>
+
+        <!-- QUICK SKIN BUTTONS (5 BÜYÜK DOKUNMATİK TUŞ) -->
+        <div class="skin-pill-container">
+          <button class="skin-pill-btn active" onclick="showGulsahSheet('sheet-oily', this)">
+            <span style="font-size:18px;">🟢</span>
+            <div>
+              <div style="font-size:13.5px; font-weight:800; color:#fff;">1. YAĞLI & GÖZENEK</div>
+              <div style="font-size:11px; color:var(--text-muted); font-weight:400;">Siyah Nokta • Sebum • Akne</div>
+            </div>
+          </button>
+
+          <button class="skin-pill-btn" onclick="showGulsahSheet('sheet-dry', this)">
+            <span style="font-size:18px;">🔵</span>
+            <div>
+              <div style="font-size:13.5px; font-weight:800; color:#fff;">2. KURU & NEMSİZ</div>
+              <div style="font-size:11px; color:var(--text-muted); font-weight:400;">Pul Pul Dökülme • Matlık • Gerginlik</div>
+            </div>
+          </button>
+
+          <button class="skin-pill-btn" onclick="showGulsahSheet('sheet-combo', this)">
+            <span style="font-size:18px;">🟣</span>
+            <div>
+              <div style="font-size:13.5px; font-weight:800; color:#fff;">3. KARMA CİLT</div>
+              <div style="font-size:11px; color:var(--text-muted); font-weight:400;">T-Bölgesi Yağlı • Yanak Kuru</div>
+            </div>
+          </button>
+
+          <button class="skin-pill-btn" onclick="showGulsahSheet('sheet-pigment', this)">
+            <span style="font-size:18px;">🟡</span>
+            <div>
+              <div style="font-size:13.5px; font-weight:800; color:#fff;">4. LEKELİ & MELAZMA</div>
+              <div style="font-size:11px; color:var(--text-muted); font-weight:400;">Güneş Lekesi • Ton Eşitsizliği</div>
+            </div>
+          </button>
+
+          <button class="skin-pill-btn" onclick="showGulsahSheet('sheet-sensitive', this)">
+            <span style="font-size:18px;">🔴</span>
+            <div>
+              <div style="font-size:13.5px; font-weight:800; color:#fff;">5. HASSAS & KIZARIK</div>
+              <div style="font-size:11px; color:#ff6b81; font-weight:400;">Kılcal Damar • Rozasea • Yanma</div>
+            </div>
+          </button>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center; font-size:12px; color:var(--text-dim); background:rgba(0,0,0,0.3); padding:8px 14px; border-radius:var(--radius-sm);">
+          <span>💡 <strong>Gülşah İpucu:</strong> Danışanın cildine dokunduğunda tırnak izi kızarıyorsa hemen <strong>5. Hassas Masa</strong>'ya tıkla, asla sıcak buhar tutma.</span>
+        </div>
+      </div>
+
+      <!-- TRAUMA RECOVERY BOX: "MÜŞTERİNİN YÜZÜ NEDEN YANDI & İĞNE GİBİ BATTI?" -->
+      <div class="trauma-alert-card">
+        <div class="trauma-title">
+          <span>⚠️</span> GÜLŞAH'IN KABİN TECRÜBESİ: "Danışanın Yüzü Neden Yandı ve İçeride İğne Batıyor Dedi?"
+        </div>
+        <p style="color:#e2e8f0; font-size:13.5px; line-height:1.6; margin-bottom:12px;">
+          Ses kaydında anlattığın o zor anın klinik ve bilimsel sebebi şudur: Danışanının <strong>cilt bariyeri (stratum corneum) çatlamıştı ve TEWL (su kaybı) tavan yapmıştı.</strong> Bariyeri yırtık bir cilde asit, karboksiterapi (EZ CO2) veya biyo-spikül değdiğinde cildin altındaki açık sinir uçları elektrik çarpmış gibi uyarılır; danışan <em>"dokunduğun an alev alıyor, içeriden iğneler batıyor"</em> der.
+        </p>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px; margin-top:10px;">
+          <div style="background:rgba(0,0,0,0.4); border-left:3px solid #ff4757; padding:10px 12px; border-radius:4px;">
+            <strong style="color:#ff6b81; font-size:13px;">1. O Anda Ne Yapılmalıydı? (Yangın Söndürme)</strong>
+            <p style="font-size:12px; color:#cbd5e1; margin-top:4px; line-height:1.5;">
+              Asla başka krem sürme! Yüzü hemen soğuk suyla sil. Mormed <strong>Cryo Soğuk Çekiç (2°C)</strong> başlığını açıp 5 dk hafif tamponla. Üzerine sadece <strong>Eclado A.C. Centella Maske</strong> kapat. Bitişte yalnızca <strong>Genosys SRP Soothing Repair Postcream</strong> sür.
+            </p>
+          </div>
+          <div style="background:rgba(0,0,0,0.4); border-left:3px solid var(--gold-primary); padding:10px 12px; border-radius:4px;">
+            <strong style="color:var(--gold-light); font-size:13px;">2. Spikül / Biyo-Mikroiğneleme Batması mıydı?</strong>
+            <p style="font-size:12px; color:#cbd5e1; margin-top:4px; line-height:1.5;">
+              Genosys Bio-Meso PDRN veya spiküllü ürün uygulandıysa, deniz süngeri iğnecikleri cilde girmiştir. Bu mikroskopik iğneler dokundukça 72 saat batma yapar. Müşteriye baştan <em>"Biyo-iğnecikler kolajeni uyarıyor, 48 saat dokununca tatlı bir batma hissedeceksiniz, korkmayın"</em> denmelidir.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           SHEET 1: YAĞLI & GÖZENEKLİ CİLT MASASI
+           ============================================================ -->
+      <div id="sheet-oily" class="gulsah-sheet active-sheet">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px; border-bottom:1px solid rgba(56,239,125,0.25); padding-bottom:10px;">
+          <div>
+            <span class="time-pill green" style="font-size:12px;">🟢 1. CİLT MASASI</span>
+            <h3 style="font-family:'Cinzel', serif; font-size:18px; color:#fff; margin:4px 0 0 0;">Yağlı, Parlayan, Tıkalı Gözenekli & Siyah Noktalı Cilt</h3>
+          </div>
+          <div>
+            <span class="time-pill gold">BUHAR SÜRESİ: 7 - 8 DAKİKA</span>
+          </div>
+        </div>
+
+        <p style="color:var(--text-muted); font-size:13px; margin-bottom:16px;">
+          <strong>Kabin Amacı:</strong> Sebumu sabunlaştırmak, gözenek tıkacını yumuşatıp acısızca boşaltmak ve parlamayı matlaştırmak.
+        </p>
+
+        <!-- STEP BY STEP FLOW -->
+        <div class="desk-step-row">
+          <div class="desk-step-num">1</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title">
+              <span>Temizleme & Oksijen Detoksu</span>
+              <span class="time-pill gold">1 - 2 Dk</span>
+            </div>
+            <div class="desk-step-desc">
+              Kuru cilde <strong>Genosys Snow O2 Cleanser</strong> sür. 30 saniye içinde kendiliğinden bol oksijen köpüğüne dönüşmesini bekle. Köpük gözenek kirlerini yukarı iter. Ilık ıslak süngerle temizle.
+            </div>
+            <span class="item-badge">Ürün: <strong>Genosys Snow O2 (SOC)</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">2</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title">
+              <span>Enzim Peeling & Buhar Seansı</span>
+              <span class="time-pill red">BUHAR: 7 - 8 DAKİKA</span>
+            </div>
+            <div class="desk-step-desc">
+              Tüm yüze ince tabaka <strong>Eclado Enzim Peeling</strong> sür. Buhar cihazını 30 cm mesafeden çalıştır. Yağlı ciltte sebum tıkacı serttir; 7-8 dakikadan az buhar verilirse gözenek açılmaz, zorla sıkılırsa kılcal damar çatlar!
+            </div>
+            <span class="item-badge">Ürün: <strong>Eclado Enzyme Peeling</strong></span>
+            <span class="item-badge">Cihaz: <strong>Buhar Makinesi (Ozonlu)</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">3</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title">
+              <span>Dezan Sabunlaştırma & Scrubber Spatula Boşaltımı</span>
+              <span class="time-pill green">Cihaz: 4 - 5 Dk</span>
+            </div>
+            <div class="desk-step-desc">
+              <strong>Raha Med Galvanik Dezan (- Negatif Kutup)</strong> probunu tak. Negatif akım sebumu alkali reaksiyonla sabunlaştırıp sıvılaştırır. Hemen ardından <strong>Mormed Scrubber Ultrasonik Spatulayı 45° açıyla</strong> cilde dayayıp burun ve çenede it. Siyah noktalar kıl gibi pürüzsüzce dışarı fırlar!
+            </div>
+            <span class="item-badge">Cihaz: <strong>Raha Med Galvanic (- Dezan)</strong></span>
+            <span class="item-badge">Cihaz: <strong>Mormed Scrubber Spatula (45°)</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">4</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title">
+              <span>BHA Vakum Girdabı (Aqua Peeling)</span>
+              <span class="time-pill gold">Vakum Seviyesi: 5 - 6</span>
+            </div>
+            <div class="desk-step-desc">
+              Mormed Chamber B (Salisilik Asit / BHA) solüsyonunu aç. Vakum seviyesini 5-6'ya ayarla. Burun kanatlarında ve alında dairesel vakum yaparak gözenek içindeki son kalıntıları temizle.
+            </div>
+            <span class="item-badge">Cihaz: <strong>Mormed Aqua Peeling Vortex</strong></span>
+            <span class="item-badge">Solüsyon: <strong>Chamber B (BHA Salisilik)</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">5</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title">
+              <span>Tonik & Yüksek Frekans Bakteri Kurutma</span>
+              <span class="time-pill blue">2 - 3 Dk</span>
+            </div>
+            <div class="desk-step-desc">
+              Pamukla <strong>Eclado A.C. Oil Free Toner</strong> uygula (gözenekleri sıkılaştırır). Ardından <strong>Raha Med Hi-Frequency (Yüksek Frekans)</strong> mor/turuncu ozon cam başlığını akneli bölgelerde 2 dakika pıt pıt gezdir (akne bakterilerini yok eder, lezyonu kurutur).
+            </div>
+            <span class="item-badge">Ürün: <strong>Eclado A.C. Oil Free Toner</strong></span>
+            <span class="item-badge">Cihaz: <strong>Hi-Frequency Ozon Cam Prob</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">6</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title">
+              <span>Arındırıcı & Sebum Dengeleyici Maske</span>
+              <span class="time-pill red">BEKLEME: 15 - 20 DAKİKA</span>
+            </div>
+            <div class="desk-step-desc">
+              <strong>Seçenek A:</strong> Yoğun iltihap varsa <strong>Eclado A.C. Centella Mask</strong> sür.<br>
+              <strong>Seçenek B:</strong> Aşırı yağ ve parlama varsa <strong>Firstdating Kiwifruit Oil-Control Mask</strong> veya <strong>Bioaqua Aktif Karbon Maske</strong> uygula. 15-20 dk sonra soyarak/yıkayarak çıkar.
+            </div>
+            <span class="item-badge">Maske: <strong>Eclado Centella</strong> VEYA <strong>Kiwifruit Oil-Control</strong> VEYA <strong>Aktif Karbon</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">7</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title">
+              <span>Bitiş & Koruma</span>
+              <span class="time-pill green">Tamamlama</span>
+            </div>
+            <div class="desk-step-desc">
+              Fındık tanesi kadar <strong>Genosys SRP Soothing Repair Postcream</strong> sür. Ciltte kızarıklık kaldıysa veya gündüz seansıysa üzerine <strong>Genosys BBC Blemish Balm Cream</strong> sürerek danışanı pürüzsüz mat bir tenle uğurla.
+            </div>
+            <span class="item-badge">Bitiş: <strong>Genosys SRP Postcream</strong> + <strong>Genosys BBC</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           SHEET 2: KURU & NEMSİZ CİLT MASASI
+           ============================================================ -->
+      <div id="sheet-dry" class="gulsah-sheet hidden-sheet">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px; border-bottom:1px solid rgba(0,210,255,0.25); padding-bottom:10px;">
+          <div>
+            <span class="time-pill blue" style="font-size:12px;">🔵 2. CİLT MASASI</span>
+            <h3 style="font-family:'Cinzel', serif; font-size:18px; color:#fff; margin:4px 0 0 0;">Kuru, Nemsiz, Pul Pul Dökülen & Mat Cilt</h3>
+          </div>
+          <div>
+            <span class="time-pill red">BUHAR SÜRESİ: MAKSİMUM 3 - 4 DAKİKA!</span>
+          </div>
+        </div>
+
+        <p style="color:var(--text-muted); font-size:13px; margin-bottom:16px;">
+          <strong>Kabin Amacı:</strong> Asla cildi soymamak, bariyeri kalınlaştırmak, hücre içine PDRN (Somon DNA) ve Hyaluronik Asit kilitlemek.
+        </p>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">1</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title">
+              <span>Nazik Süt/Köpük Temizlik</span>
+              <span class="time-pill gold">1 - 2 Dk</span>
+            </div>
+            <div class="desk-step-desc">
+              <strong>Genosys Snow O2</strong> ile köpürt. Kuru ciltte sert süngerle bastırarak silme; ılık nemli pamukla nazikçe al. Göz makyajı varsa <strong>Genosys Skin Defender DMR</strong> ile temizle.
+            </div>
+            <span class="item-badge">Ürün: <strong>Genosys Snow O2</strong></span>
+            <span class="item-badge">Ürün: <strong>Genosys Skin Defender DMR</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">2</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title">
+              <span>Buhar Uyarısı: Sadece 3-4 Dk (Uzarsa Kurur!)</span>
+              <span class="time-pill red">BUHAR: 3 - 4 DAKİKA</span>
+            </div>
+            <div class="desk-step-desc">
+              Kuru ciltte buhar 4 dakikayı geçerse transepidermal su kaybı (TEWL) artar, cilt gerilir ve yanar! Sert granüllü tanecikli peeling KESİNLİKLE YASAKTIR.
+            </div>
+            <span class="item-badge">Kural: <strong>Maksimum 4 Dk Buhar</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">3</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title">
+              <span>Laktik Asit (AHA) Düşük Vakum Hidrasyon</span>
+              <span class="time-pill blue">Vakum Seviyesi: 2 - 3</span>
+            </div>
+            <div class="desk-step-desc">
+              Mormed Chamber A (Laktik Asit) solüsyonunu aç. Vakum seviyesini 2 veya 3'e düşür. Cildi çekiştirmeden, sadece sıvı akışıyla ölü keratin pullarını yumuşatıp al.
+            </div>
+            <span class="item-badge">Cihaz: <strong>Mormed Chamber A (Laktik AHA)</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">4</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title">
+              <span>Botanik Tonik & Nem Banyosu</span>
+              <span class="time-pill gold">1 Dk</span>
+            </div>
+            <div class="desk-step-desc">
+              Mormed Oksijen Tabancası haznesine <strong>Genosys Snow Booster (SBT)</strong> tonik koy. Tüm yüze 15 cm mesafeden mikro sis halinde püskürt. Cilt anında pH 5.5 dengesine döner.
+            </div>
+            <span class="item-badge">Ürün: <strong>Genosys Snow Booster (SBT)</strong></span>
+            <span class="item-badge">Cihaz: <strong>Mormed Oksijen Tabancası</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">5</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title">
+              <span>PDRN Somon DNA & Ultrasonik Emilim</span>
+              <span class="time-pill green">Cihaz: 5 Dk</span>
+            </div>
+            <div class="desk-step-desc">
+              Tüm yüze damlalıkla <strong>Genosys Bio-Meso PDRN Expert Ampul (Somon DNA)</strong> damlat. <strong>Raha Med Ultrasonic (1 MHz) probu</strong> veya <strong>Raha Med Pozitif (+) İyontoforez</strong> probu ile dairesel hareketlerle 5 dakika yedir. PDRN cildin dermis katmanına kilitlenir.
+            </div>
+            <span class="item-badge">Ampul: <strong>Genosys Bio-Meso PDRN Somon DNA</strong></span>
+            <span class="item-badge">Cihaz: <strong>Raha Med Ultrasonic / İyontoforez (+)</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">6</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title">
+              <span>Yoğun Nem Jelly Maske & Kırmızı LED</span>
+              <span class="time-pill red">BEKLEME: 15 - 20 DAKİKA</span>
+            </div>
+            <div class="desk-step-desc">
+              <strong>Dr-Meinaier Hyaluronic Acid Jelly Mask</strong> tozunu suyla karıştırıp kalın tabaka uygula. Üzerine <strong>Mormed Kırmızı LED (630 nm - Kolajen uyarımı)</strong> ışığını 15 dakika aç. 20 dakika sonra maskeyi tek parça halinde soy.
+            </div>
+            <span class="item-badge">Maske: <strong>Dr-Meinaier Hyaluronic Jelly Mask</strong></span>
+            <span class="item-badge">Işık: <strong>Mormed Kırmızı LED (630 nm)</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">7</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title">
+              <span>Bariyer Kalkanı & Bitiş</span>
+              <span class="time-pill gold">Kilit</span>
+            </div>
+            <div class="desk-step-desc">
+              <strong>Genosys SRP Soothing Repair Postcream</strong> sürerek nemi içeri hapset. Müşteriye "Yüzünüzü 12 saat yıkamayın, PDRN sabaha kadar çalışsın" de.
+            </div>
+            <span class="item-badge">Bitiş: <strong>Genosys SRP Postcream</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           SHEET 3: KARMA CİLT MASASI
+           ============================================================ -->
+      <div id="sheet-combo" class="gulsah-sheet hidden-sheet">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px; border-bottom:1px solid rgba(161,140,209,0.25); padding-bottom:10px;">
+          <div>
+            <span class="time-pill gold" style="font-size:12px;">🟣 3. CİLT MASASI</span>
+            <h3 style="font-family:'Cinzel', serif; font-size:18px; color:#fff; margin:4px 0 0 0;">Karma Cilt (T-Bölgesi Yağlı & Siyah Noktalı, Yanaklar Kuru/Normal)</h3>
+          </div>
+          <div>
+            <span class="time-pill gold">BUHAR SÜRESİ: 5 - 6 DAKİKA</span>
+          </div>
+        </div>
+
+        <p style="color:var(--text-muted); font-size:13px; margin-bottom:16px;">
+          <strong>Kabin Amacı:</strong> Bölgesel akıl! Burun ve çenedeki siyah noktaları temizlerken kuru yanakları hırpalamamak.
+        </p>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">1</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title"><span>Snow O2 Köpük Temizleme</span> <span class="time-pill gold">1 - 2 Dk</span></div>
+            <div class="desk-step-desc">Tüm yüze <strong>Genosys Snow O2</strong> sür. Köpürdükten sonra ılık süngerle al.</div>
+            <span class="item-badge">Ürün: <strong>Genosys Snow O2</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">2</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title"><span>Bölgesel Enzim & Buhar</span> <span class="time-pill gold">BUHAR: 5 - 6 DAKİKA</span></div>
+            <div class="desk-step-desc">
+              <strong>Eclado Enzim Peeling</strong> sür. Buharı tam burun ve alına odakla, yanaklara çok az değsin. 5-6 dakika yeterlidir.
+            </div>
+            <span class="item-badge">Ürün: <strong>Eclado Enzyme Peeling</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">3</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title"><span>T-Bölgesi Scrubber & Vakum</span> <span class="time-pill green">Cihaz: 3 Dk</span></div>
+            <div class="desk-step-desc">
+              Sadece burun ve çenede <strong>Mormed Scrubber Spatula</strong> ve <strong>Chamber B (BHA) Vakum</strong> çalış. Yanaklara vakum basma!
+            </div>
+            <span class="item-badge">Cihaz: <strong>Mormed Scrubber (Sadece T-Bölgesi)</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">4</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title"><span>İkili Tonikleme</span> <span class="time-pill blue">1 Dk</span></div>
+            <div class="desk-step-desc">
+              Burun ve alına <strong>Eclado A.C. Oil Free Toner</strong> (yağı keser), yanaklara ise <strong>Genosys Snow Booster</strong> (nem verir) sür.
+            </div>
+            <span class="item-badge">T-Bölgesi: <strong>Eclado A.C. Toner</strong></span>
+            <span class="item-badge">Yanaklar: <strong>Genosys Snow Booster</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">5</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title"><span>PDRN Ampul & Ultrasonik Masaj</span> <span class="time-pill green">4 Dk</span></div>
+            <div class="desk-step-desc">
+              Tüm yüze <strong>Genosys Bio-Meso PDRN Ampul</strong> damlat, ultrasonik başlıkla 4 dakika masaj yaparak yedir.
+            </div>
+            <span class="item-badge">Ampul: <strong>Genosys Bio-Meso PDRN</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">6</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title"><span>Provence Lavanta Calm & Repair Jelly Maske</span> <span class="time-pill red">BEKLEME: 15 - 20 DAKİKA</span></div>
+            <div class="desk-step-desc">
+              <strong>Dr-Meinaier Provence Lavender Jelly Mask</strong> hazırla. Lavanta hem T bölgesindeki akneleri yatıştırır hem yanaklara nem sağlar. 15-20 dk sonra soy.
+            </div>
+            <span class="item-badge">Maske: <strong>Dr-Meinaier Lavender Jelly Mask</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">7</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title"><span>Bitiş</span> <span class="time-pill gold">Kilit</span></div>
+            <div class="desk-step-desc"><strong>Genosys SRP Postcream</strong> + <strong>Genosys BBC</strong>.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           SHEET 4: LEKELİ & MELAZMA CİLT MASASI
+           ============================================================ -->
+      <div id="sheet-pigment" class="gulsah-sheet hidden-sheet">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px; border-bottom:1px solid rgba(212,175,55,0.25); padding-bottom:10px;">
+          <div>
+            <span class="time-pill gold" style="font-size:12px;">🟡 4. CİLT MASASI</span>
+            <h3 style="font-family:'Cinzel', serif; font-size:18px; color:#fff; margin:4px 0 0 0;">Lekeli Cilt (Güneş Lekesi, Melazma & Sivilce Lekeleri / PIH)</h3>
+          </div>
+          <div>
+            <span class="time-pill gold">BUHAR SÜRESİ: EN FAZLA 4 - 5 DAKİKA!</span>
+          </div>
+        </div>
+
+        <p style="color:var(--text-muted); font-size:13px; margin-bottom:16px;">
+          <strong>⚠️ Altın Kural:</strong> Melazma sıcağı ve agresif soymayı sevmez! Çok sıcak buhar verilirse leke koyulaşır. Glutatyon, C vitamini ve İyontoforez kullanılır.
+        </p>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">1</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title"><span>Snow O2 Aydınlatıcı Temizlik</span> <span class="time-pill gold">1 - 2 Dk</span></div>
+            <div class="desk-step-desc"><strong>Genosys Snow O2</strong> ile oksijenlendirerek temizle.</div>
+            <span class="item-badge">Ürün: <strong>Genosys Snow O2</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">2</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title"><span>Ilıman Buhar Seansı</span> <span class="time-pill red">BUHAR: 4 - 5 DAKİKA</span></div>
+            <div class="desk-step-desc">Buhar cihazını biraz uzaktan tut. 4-5 dakikayı asla geçme.</div>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">3</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title"><span>Mormed Chamber C (Aydınlatıcı Solüsyon)</span> <span class="time-pill gold">Vakum: 4</span></div>
+            <div class="desk-step-desc">
+              Chamber C solüsyonunu aç. Lekeli bölgelerde dairesel geçiş yap. Yüzeydeki pigmentli ölü hücreleri temizler.
+            </div>
+            <span class="item-badge">Solüsyon: <strong>Mormed Chamber C (Aydınlatıcı C Vitamini)</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">4</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title"><span>Eclado Melaser + Pozitif (+) İyontoforez</span> <span class="time-pill green">Cihaz: 5 Dk</span></div>
+            <div class="desk-step-desc">
+              Lekeli alanlara bolca <strong>Eclado Melaser</strong> sür. <strong>Raha Med Pozitif (+) İyontoforez probu</strong> ile leke üzerinde dairesel masaj yap. Elektrik akımı leke açıcı aktifleri melanosit hücrelerine iter.
+            </div>
+            <span class="item-badge">Serum: <strong>Eclado Melaser</strong></span>
+            <span class="item-badge">Cihaz: <strong>Raha Med Pozitif (+) İyontoforez</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">5</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title"><span>Mormed Yeşil LED Işık (Leke Baskılama)</span> <span class="time-pill green">10 Dk</span></div>
+            <div class="desk-step-desc">
+              Mormed <strong>Yeşil LED (525 nm)</strong> başlığını aç. Yeşil ışık melanini parçalar ve yeni leke oluşumunu durdurur.
+            </div>
+            <span class="item-badge">Işık: <strong>Mormed Yeşil LED (525 nm)</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">6</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title"><span>Beyazlatıcı Maske Seansı</span> <span class="time-pill red">BEKLEME: 15 - 20 DAKİKA</span></div>
+            <div class="desk-step-desc">
+              <strong>Firstdating Cherry Whitening Mask</strong> veya Kojik Asit & Glutatyon içeren <strong>Dr-Meinaier Hyaluronic Acid Jelly Mask</strong> uygula. 20 dk sonra soy.
+            </div>
+            <span class="item-badge">Maske: <strong>Firstdating Cherry Whitening</strong> VEYA <strong>Dr-Meinaier Hyaluronic</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">7</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title"><span>SPF Koruma & Bitiş (ZORUNLU!)</span> <span class="time-pill red">Hayati</span></div>
+            <div class="desk-step-desc">
+              <strong>Genosys SRP Postcream</strong> sür. Ardından mutlaka <strong>Genosys BBC Blemish Balm</strong> uygula. Danışana "Leke seansı sonrası güneşe korumasız çıkarsanız leke 2 katına çıkar, her 3 saatte bir krem tazeleyin" uyarısı yap.
+            </div>
+            <span class="item-badge">Bitiş: <strong>Genosys SRP</strong> + <strong>Genosys BBC</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           SHEET 5: HASSAS & KIZARIK CİLT MASASI (ACİL PROTOKOL)
+           ============================================================ -->
+      <div id="sheet-sensitive" class="gulsah-sheet hidden-sheet">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px; border-bottom:1px solid rgba(255,71,87,0.4); padding-bottom:10px;">
+          <div>
+            <span class="time-pill red" style="font-size:12px;">🔴 5. ACİL KORUMA MASASI</span>
+            <h3 style="font-family:'Cinzel', serif; font-size:18px; color:#fff; margin:4px 0 0 0;">Hassas, Kızarık, Kılcal Damarlı veya Yanan Cilt (Rozasea)</h3>
+          </div>
+          <div>
+            <span class="time-pill red" style="font-size:12.5px; font-weight:800;">BUHAR: 0 DAKİKA (KESİNLİKLE YASAK!)</span>
+          </div>
+        </div>
+
+        <div style="background:rgba(255,71,87,0.12); border:1px solid rgba(255,71,87,0.3); border-radius:var(--radius-sm); padding:10px 14px; margin-bottom:16px;">
+          <strong style="color:#ff6b81;">⛔ BU CİLTTE ASLA YAPILMAYACAKLAR:</strong>
+          <span style="color:#f1f5f9; font-size:12.5px;"> Sıcak buhar YASAK • Vakum YASAK • Asit/Peeling YASAK • Sert fırçalama YASAK • Biyo-iğneleme (Spikül) YASAK!</span>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">1</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title"><span>Soğuk Köpükle Nazik Dokunuş</span> <span class="time-pill gold">1 Dk</span></div>
+            <div class="desk-step-desc">
+              Sadece <strong>Genosys Snow O2</strong> köpüğünü parmak uçlarınla bastırmadan dokundur. Asla ovma! Soğuk suya batırılmış yumuşak pamukla sil.
+            </div>
+            <span class="item-badge">Ürün: <strong>Genosys Snow O2</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">2</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title"><span>BUHAR YOK! Soğuk Oksijen Sisi</span> <span class="time-pill blue">2 Dk</span></div>
+            <div class="desk-step-desc">
+              Buhar makinesini kapalı tut! Mormed Oksijen tabancasıyla soğuk <strong>Genosys Snow Booster</strong> toniği sis gibi cilde üfle. Anında yangıyı keser.
+            </div>
+            <span class="item-badge">Cihaz: <strong>Mormed Oksijen Tabancası (Soğuk Sis)</strong></span>
+            <span class="item-badge">Ürün: <strong>Genosys Snow Booster</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">3</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title"><span>Mormed Cryo Soğuk Çekiç (2°C) Şoku</span> <span class="time-pill blue">Cihaz: 5 - 7 Dk</span></div>
+            <div class="desk-step-desc">
+              Mormed <strong>Cryo Soğuk Çekiç (2°C)</strong> başlığını aç. Kızarık yanaklarda ve kılcal damarların üzerinde hafif tampon hareketlerle gezdir. Genişlemiş damarlar anında büzülür, yangı ve kızarıklık 3 dakikada söner!
+            </div>
+            <span class="item-badge">Cihaz: <strong>Mormed Cryo Soğuk Çekiç (2°C)</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">4</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title"><span>Eclado Centella / Madecassoside İlaç Tabakası</span> <span class="time-pill red">BEKLEME: 15 DAKİKA</span></div>
+            <div class="desk-step-desc">
+              Cömertçe kalın bir tabaka <strong>Eclado A.C. Centella Mask</strong> sür. Centella Asiatica (Kaplan Otu), Kore kliniklerinde yanan ve açık yarası olan cildi dakikalar içinde sakinleştiren en güçlü aktiftir. 15 dk beklet.
+            </div>
+            <span class="item-badge">Maske: <strong>Eclado A.C. Centella Mask (Centella Asiatica)</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">5</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title"><span>Mormed Mavi LED (415 nm) Yatıştırma</span> <span class="time-pill blue">10 Dk</span></div>
+            <div class="desk-step-desc">
+              Mormed <strong>Mavi LED (415 nm)</strong> ışığını cilde 10 dakika tut. Enflamasyonu dindirir.
+            </div>
+            <span class="item-badge">Işık: <strong>Mormed Mavi LED (415 nm)</strong></span>
+          </div>
+        </div>
+
+        <div class="desk-step-row">
+          <div class="desk-step-num">6</div>
+          <div class="desk-step-body">
+            <div class="desk-step-title"><span>Tek Kurtarıcı: Genosys SRP Postcream</span> <span class="time-pill green">Bariyer Kalkanı</span></div>
+            <div class="desk-step-desc">
+              Maskeyi soğuk ıslak pamukla nazikçe al. Üzerine SADECE ve SADECE <strong>Genosys SRP Soothing Repair Postcream</strong> sür. Başka hiçbir şey sürme. Müşteriye "Yüzünüz çok hassaslaşmış, şu an sakinleştirdik. 48 saat sadece bu kremi sürün, sıcak duş almayın" de.
+            </div>
+            <span class="item-badge">Bitiş: <strong>Genosys SRP Postcream (Sh-Polypeptide & Cica)</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           ELİMİZDEKİ TÜM ÜRÜNLERİN HAP ENVANTERİ (20+ ÜRÜN KARTI)
+           ============================================================ -->
+      <div class="card" style="margin-top:28px;">
+        <div class="card-badge">Stüdyo Rafı & Envanter</div>
+        <div class="card-title">Masamızdaki Tüm Ürünler Tek Cümleyle Ne İşe Yarar? (Kaç Dk & Cilt Tipi)</div>
+        <p class="card-subtitle">Masandaki şişelerin üzerine baktığında tereddüt etme; hepsi aşağıda tek tek sınıflandırıldı:</p>
+
+        <div class="inventory-grid">
+          
+          <!-- 1. Snow O2 -->
+          <div class="inventory-item-card">
+            <div class="inventory-brand">GENOSYS (KORE)</div>
+            <div class="inventory-name">Snow O2 Cleanser (SOC)</div>
+            <div class="inventory-desc">Oksijen köpüklü derin temizleyici. Gözenek kirlerini kendiliğinden kabarcıklanarak yukarı iter, tahriş etmez.</div>
+            <div class="inventory-meta">
+              <span>⏱️ 1-2 Dakika</span>
+              <span style="color:#38ef7d;">Tüm Cilt Tipleri</span>
+            </div>
+          </div>
+
+          <!-- 2. Snow Booster -->
+          <div class="inventory-item-card">
+            <div class="inventory-brand">GENOSYS (KORE)</div>
+            <div class="inventory-name">Snow Booster Toner (SBT)</div>
+            <div class="inventory-desc">Botanik özlü yatıştırıcı tonik. Temizlik sonrası cildi pH 5.5 seviyesine getirir, neme hazırlar. Oksijen tabancasıyla sıkılır.</div>
+            <div class="inventory-meta">
+              <span>⏱️ Anında</span>
+              <span style="color:#38ef7d;">Tüm Cilt Tipleri</span>
+            </div>
+          </div>
+
+          <!-- 3. EZ CO2 Mask -->
+          <div class="inventory-item-card">
+            <div class="inventory-brand">GENOSYS (KORE)</div>
+            <div class="inventory-name">EZ CO2 Karboksi Maske (ECM)</div>
+            <div class="inventory-desc">Bohr etkisiyle dokuya oksijen patlaması yapar. Yüzü inceltir, sıkılaştırır ve parlatır. İlk 30 sn yanma/batma hissi normaldir!</div>
+            <div class="inventory-meta">
+              <span>⏱️ 15 - 20 Dakika</span>
+              <span style="color:var(--gold-primary);">Olgun, Sarkmış, Mat</span>
+            </div>
+          </div>
+
+          <!-- 4. Bio-Meso PDRN -->
+          <div class="inventory-item-card">
+            <div class="inventory-brand">GENOSYS (KORE)</div>
+            <div class="inventory-name">Bio-Meso PDRN Somon DNA</div>
+            <div class="inventory-desc">Saf Somon DNA hücresel yenileyici ampul. Kolajen üretimini tetikler, derin kırışıklıkları doldurur, elastikiyeti artırır.</div>
+            <div class="inventory-meta">
+              <span>⏱️ Cihazla 5 Dk</span>
+              <span style="color:#00d2ff;">Kuru, Olgun, Yıpranmış</span>
+            </div>
+          </div>
+
+          <!-- 5. Skin Reboot PDRN -->
+          <div class="inventory-item-card">
+            <div class="inventory-brand">GENOSYS (KORE)</div>
+            <div class="inventory-name">Skin Reboot PDRN Mask Pack (RPM)</div>
+            <div class="inventory-desc">Ultra ince tabaka PDRN maskesi. Zayıflamış bariyeri şarj eder, ikinci bir ten gibi yapışıp derin nem ve ışıltı verir.</div>
+            <div class="inventory-meta">
+              <span>⏱️ 15 - 20 Dakika</span>
+              <span style="color:#00d2ff;">Nemsiz, Yorgun Cilt</span>
+            </div>
+          </div>
+
+          <!-- 6. Bio-Ferment Age Defying -->
+          <div class="inventory-item-card">
+            <div class="inventory-brand">GENOSYS (KORE)</div>
+            <div class="inventory-name">Bio-Ferment Age Defying Mask (BPM)</div>
+            <div class="inventory-desc">Fermente aktifler ve 6 peptit içeren toz maske. Stresli ve yaşlanan cilde yoğun sıkılaşma ve lifting sağlar.</div>
+            <div class="inventory-meta">
+              <span>⏱️ 15 - 20 Dakika</span>
+              <span style="color:var(--gold-primary);">Olgun, Çizgili Cilt</span>
+            </div>
+          </div>
+
+          <!-- 7. SRP Postcream -->
+          <div class="inventory-item-card">
+            <div class="inventory-brand">GENOSYS (KORE)</div>
+            <div class="inventory-name">Soothing Repair Postcream (SRP)</div>
+            <div class="inventory-desc">Kabin kurtarıcısı! Centella (Cica) ve polipeptit içeren yoğun yatıştırıcı bariyer kremi. Kızaran, yanan cildi anında onarır.</div>
+            <div class="inventory-meta">
+              <span>⏱️ Bitiş Kremi</span>
+              <span style="color:#ff6b81;">Hassas, Yanan, İşlem Gören</span>
+            </div>
+          </div>
+
+          <!-- 8. BBC Cream -->
+          <div class="inventory-item-card">
+            <div class="inventory-brand">GENOSYS (KORE)</div>
+            <div class="inventory-name">Intensive Blemish Balm (BBC)</div>
+            <div class="inventory-desc">Medikal BB krem. İşlem sonrası kızarıklıkları doğal ten tonuyla kapatır, gözenekleri tıkamaz, cildi dış etkilerden korur.</div>
+            <div class="inventory-meta">
+              <span>⏱️ Bitiş / Gündüz</span>
+              <span style="color:#38ef7d;">Tüm Cilt Tipleri</span>
+            </div>
+          </div>
+
+          <!-- 9. Eclado Centella Mask -->
+          <div class="inventory-item-card">
+            <div class="inventory-brand">ECLADO (KORE)</div>
+            <div class="inventory-name">A.C. Centella Mask</div>
+            <div class="inventory-desc">Yoğun Centella Asiatica maskesi. Yağlı, akneli, tahriş olmuş veya kılcal damarları coşmuş cildi söndürür.</div>
+            <div class="inventory-meta">
+              <span>⏱️ 15 Dakika</span>
+              <span style="color:#ff6b81;">Yağlı, Akneli, Kızarık</span>
+            </div>
+          </div>
+
+          <!-- 10. Eclado A.C. Oil Free Toner -->
+          <div class="inventory-item-card">
+            <div class="inventory-brand">ECLADO (KORE)</div>
+            <div class="inventory-name">A.C. Oil Free Toner</div>
+            <div class="inventory-desc">Yağsız sebum dengeleyici tonik. Gözenekleri küçültür, parlamayı matlaştırır, akne oluşumunu engeller.</div>
+            <div class="inventory-meta">
+              <span>⏱️ Anında</span>
+              <span style="color:#38ef7d;">Yağlı, Karma Cilt</span>
+            </div>
+          </div>
+
+          <!-- 11. Eclado Melaser -->
+          <div class="inventory-item-card">
+            <div class="inventory-brand">ECLADO (KORE)</div>
+            <div class="inventory-name">Melaser Leke Açıcı Krem/Serum</div>
+            <div class="inventory-desc">Leke açıcı profesyonel aktif. Melanin sentezini baskılar, güneş ve sivilce lekelerinin rengini kırar. Pozitif İyontoforezle yedirilir.</div>
+            <div class="inventory-meta">
+              <span>⏱️ Cihazla 5 Dk</span>
+              <span style="color:var(--gold-primary);">Lekeli, Güneş Hasarlı</span>
+            </div>
+          </div>
+
+          <!-- 12. Eclado Shining Moisture -->
+          <div class="inventory-item-card">
+            <div class="inventory-brand">ECLADO (KORE)</div>
+            <div class="inventory-name">Shining Moisture Massage Cream</div>
+            <div class="inventory-desc">Vitamin A, B ve C içeren lüks masaj kremi. Kuru cilde ipeksi bir kayganlık verir, donuk cilde parlaklık katar.</div>
+            <div class="inventory-meta">
+              <span>⏱️ 7-10 Dk Masaj</span>
+              <span style="color:#00d2ff;">Kuru, Donuk, Yorgun</span>
+            </div>
+          </div>
+
+          <!-- 13. Dr-Meinaier Hyaluronic Jelly Mask -->
+          <div class="inventory-item-card">
+            <div class="inventory-brand">DR-MEINAIER</div>
+            <div class="inventory-name">Hyaluronic Acid Jelly Mask (650g)</div>
+            <div class="inventory-desc">Hyaluronik Asit, Niasinamid, Arbutin, Kojik Asit ve Glutatyon içerir. Nem bombasıdır; cildi aydınlatır, soyularak çıkar.</div>
+            <div class="inventory-meta">
+              <span>⏱️ 15 - 20 Dakika</span>
+              <span style="color:#00d2ff;">Kuru, Nemsiz, Lekeli</span>
+            </div>
+          </div>
+
+          <!-- 14. Dr-Meinaier Lavender Jelly Mask -->
+          <div class="inventory-item-card">
+            <div class="inventory-brand">DR-MEINAIER</div>
+            <div class="inventory-name">Provence Lavender Calm Jelly Mask</div>
+            <div class="inventory-desc">Gerçek lavanta özlü sakinleştirici hidrojel maske. Gözenekleri yatıştırır, yağ salgısını dengeler, kızarıklığı alır.</div>
+            <div class="inventory-meta">
+              <span>⏱️ 15 - 20 Dakika</span>
+              <span style="color:#a18cd1;">Karma, Hassas, Akneye Meyilli</span>
+            </div>
+          </div>
+
+          <!-- 15. Firstdating Kiwifruit -->
+          <div class="inventory-item-card">
+            <div class="inventory-brand">FIRSTDATING</div>
+            <div class="inventory-name">Kiwifruit Oil-Control Mask</div>
+            <div class="inventory-desc">Kivi meyve özlü yağ kontrol maskesi. Fazla sebumu çeker, gözenekleri sıkılaştırır, mat ve pürüzsüz doku sağlar.</div>
+            <div class="inventory-meta">
+              <span>⏱️ 15 Dakika</span>
+              <span style="color:#38ef7d;">Yağlı, Parlayan T-Bölgesi</span>
+            </div>
+          </div>
+
+          <!-- 16. Firstdating Cherry Whitening -->
+          <div class="inventory-item-card">
+            <div class="inventory-brand">FIRSTDATING</div>
+            <div class="inventory-name">Cherry Whitening Mask</div>
+            <div class="inventory-desc">Kiraz özlü beyazlatıcı hidrojel toz maske. Cilt tonunu açar, matlığı giderir, cilde pembe-beyaz canlı bir ışıltı verir.</div>
+            <div class="inventory-meta">
+              <span>⏱️ 15 Dakika</span>
+              <span style="color:var(--gold-primary);">Lekeli, Solgun Cilt</span>
+            </div>
+          </div>
+
+          <!-- 17. Bioaqua Aktif Karbon -->
+          <div class="inventory-item-card">
+            <div class="inventory-brand">BIOAQUA</div>
+            <div class="inventory-name">Activated Carbon (Aktif Karbon)</div>
+            <div class="inventory-desc">Bambu aktif karbon detoks maskesi. Gözeneklerin içindeki ağır metalleri, hava kirliliğini ve siyah noktaları mıknatıs gibi çeker.</div>
+            <div class="inventory-meta">
+              <span>⏱️ 15 - 20 Dakika</span>
+              <span style="color:#94a3b8;">Tıkalı Gözenek, Şehir Cildi</span>
+            </div>
+          </div>
+
+          <!-- 18. Dr Lift Alçı Maske -->
+          <div class="inventory-item-card">
+            <div class="inventory-brand">DR LIFT</div>
+            <div class="inventory-name">Powder Gypsum Mask (Termal Alçı Maske)</div>
+            <div class="inventory-desc">Isınarak sertleşen termal alçı maske. Altına sürülen ampulü sıcağın etkisiyle derin dermise iter, yüz ovalini toparlar (lifting).</div>
+            <div class="inventory-meta">
+              <span>⏱️ 20 Dakika</span>
+              <span style="color:var(--gold-primary);">Sarkmış, Çene Hattı Gevşek</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ============================================================
+         TAB 0.5: DERMATOLOJİK TEŞHİS & LEZYON ATLASI (KORE MASTER)
+         ============================================================ -->
+    <section id="tab-lesion-atlas" class="tab-content">
+      
+      <div class="card highlight">
+        <div class="card-badge">Kore Medikal Dermatoloji Standardı</div>
+        <div class="card-title">Dermatolojik Teşhis, Lezyon Atlası & Kabin Tuzakları</div>
+        <p class="card-subtitle">
+          Bir estetisyenin en büyük gücü, neyi sıkacağını değil <strong>neyi ASLA SIKMAYACAĞINI</strong> bilmesidir. Seul kliniklerinin teşhis protokolleriyle lezyonları anında ayırt et:
+        </p>
+      </div>
+
+      <!-- MASTER COMPARISON: MILIA vs CLOSED COMEDO vs SYRINGOMA vs SEBACEOUS HYPERPLASIA -->
+      <div class="card">
+        <div class="card-badge" style="background:#ff4757; color:#fff;">EN BÜYÜK SALON KATLİAMI</div>
+        <div class="card-title">Beyaz Kabartılar Birbirinden Nasıl Ayrılır? (Milia vs. Komedon vs. Siringom)</div>
+        <p class="card-subtitle">Danışanların göz çevresindeki minik beyaz kabartıları komedon sanıp tırnakla veya presle ezmek dokuyu yırtar. Doğru ayrım:</p>
+
+        <div class="lesion-table-wrapper">
+          <table class="lesion-table">
+            <thead>
+              <tr>
+                <th>Lezyon Adı</th>
+                <th>Nasıl Görünür?</th>
+                <th>Doku & Dokunma Hissi</th>
+                <th>Kabin Müdahalesi (Doğru Yol)</th>
+                <th>KESİN YASAK</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:700; color:#fff;">
+                  Milia (Keratin Kisti)<br>
+                  <small style="color:var(--gold-primary);">Epidermal Kist</small>
+                </td>
+                <td>1-2 mm, parlak inci beyazı veya açık sarı, pürüzsüz sert kubbe. Gözenek deliği <strong>yoktur</strong>.</td>
+                <td>Deri gerildiğinde minik bir boncuk/kum tanesi gibi parmak altında sertçe kayar.</td>
+                <td><span class="badge-allow">30G Lanset</span> ile tepe noktasına <strong>45° açıyla mikroskopik çentik</strong> atılır. Ardından iki parmakla hafif yan itişle inci fırlar.</td>
+                <td><span class="badge-prohibit">Çentiksiz Sıkmak</span> Doku yırtılır, kanar, kist çıkmaz ve yerinde mor leke kalır!</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700; color:#fff;">
+                  Kapalı Komedon (Whitehead)<br>
+                  <small style="color:#38ef7d;">Sebum Tıkacı</small>
+                </td>
+                <td>1-3 mm, donuk ten rengi veya hafif soluk beyaz. Mikroskopik gözenek ağzı <strong>vardır</strong>.</td>
+                <td>Deri gerildiğinde kubbeleşir, dokununca hafif yumuşak direnç verir.</td>
+                <td><span class="badge-allow">Enzim + Dezan</span> Enzim peeling ve buharla yumuşatılır, Scrubber spatula veya vakumla kıl gibi boşalır.</td>
+                <td><span class="badge-prohibit">Kuru Kuruna Sıkmak</span> Buharsız sıkılırsa folikül duvarı patlar, derin akneye dönüşür.</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700; color:#fff;">
+                  Seboreik Hiperplazi<br>
+                  <small style="color:#ffa502;">Büyümüş Yağ Bezi</small>
+                </td>
+                <td>2-4 mm, sarımsı, ortasında <strong>krater gibi çöküntü (umbilikasyon)</strong> olan kubbe. Alın ve burunda sıktır.</td>
+                <td>Komedon gibi sert değildir; bastırınca hafifçe yayılır, kenarında minik lobüller görünür.</td>
+                <td><span class="badge-allow">Salisilik Tampon</span> Sıkılmaz! İçi boşalacak sebum tıkacı değildir, büyümüş bez dokusudur. RF koter veya dermatolog gerekir.</td>
+                <td><span class="badge-prohibit">SIKMAK YASAKTIR</span> Tırnakla sıkmaya çalışmak dokuyu ezer ve kalıcı çukur (atrofik skar) bırakır.</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700; color:#fff;">
+                  Siringom (Syringoma)<br>
+                  <small style="color:#ff6b81;">Ter Bezi Tümörü</small>
+                </td>
+                <td>1-3 mm, ten rengi veya sarımsı-pembe, düz tepeli, alt göz kapağında simetrik kümelenmiş kabartılar.</td>
+                <td><strong>Dermise sıkıca demirlenmiştir!</strong> Deri gerilse bile hareket etmez, son derece sert ve inatçıdır.</td>
+                <td><span class="badge-allow">Dermatoloğa Sevk</span> Kabinde tedavi edilemez. CO2 Lazer pinhole veya mikro-koterizasyon gerekir.</td>
+                <td><span class="badge-prohibit">KABİNDE DOKUNULMAZ</span> İğne batırmak veya sıkmak göz kapağında kalıcı yara ve pigment bozukluğu yapar!</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- VASCULAR & ERYTHEMA: ROSACEA vs ACNE vs BROKEN CAPILLARIES -->
+      <div class="card">
+        <div class="card-badge" style="background:#00d2ff; color:#000;">VASKÜLER TEŞHİS</div>
+        <div class="card-title">Kızarıklık, Kılcal Damar & Rozasea Ayrımı</div>
+        <p class="card-subtitle">Yanaklardaki kızarıklığı "canlı kan akışı" veya "sivilce" sanıp buhar/vakum basmak kılcalları geri dönüşsüz patlatır:</p>
+
+        <div class="lesion-table-wrapper">
+          <table class="lesion-table">
+            <thead>
+              <tr>
+                <th>Durum</th>
+                <th>Belirtisi</th>
+                <th>Neden Olur?</th>
+                <th>Kabin Protokolü</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:700; color:#ff6b81;">Telanjiyektazi (Kılcal Damar Çatlaması)</td>
+                <td>Burun kenarı ve yanakta kırmızı/mor örümcek ağı gibi net görünen ince damar çizgileri.</td>
+                <td>Aşırı sıcak su, sert fırçalama, genetik damar duvarı zayıflığı.</td>
+                <td><strong>BUHAR KESİN YASAK!</strong> Vakum yasak. Mormed Cryo Soğuk Çekiç (2°C) + Eclado Centella Maske + Genosys SRP.</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700; color:#ffa502;">Papülopüstüler Rozasea (Gül Hastalığı)</td>
+                <td>Yanak ve burunda kelebek şeklinde yaygın kızarıklık + üzerinde aknemsi iltihapsız kırmızı kabartılar.</td>
+                <td>Kronik vasküler enflamasyon ve Demodex paraziti aşırı çoğalması.</td>
+                <td>Asit ve soyucu yasak. Mormed Mavi LED (415 nm) + Soğuk Oksijen Sisi (Snow Booster) + Genosys SRP.</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700; color:#38ef7d;">Cilt Bariyer İflası (Yanan Cilt)</td>
+                <td>Ciltte gözle lezyon yoktur ama dokunulan her kremde <em>"iğneler batıyor, alev alev yanıyor"</em> der.</td>
+                <td>Yanlış kozmetik, aşırı asit kullanımı veya sert peeling sonrası TEWL patlaması.</td>
+                <td>Yıkama suyunu ılık/soğuk tut. Hiçbir asit sürme. Eclado Centella Mask + Bol Genosys SRP sürerek seansı bitir.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- PIGMENTATION: MELASMA vs PIH vs SOLAR LENTIGO -->
+      <div class="card">
+        <div class="card-badge" style="background:var(--gold-primary); color:#000;">PİGMENTASYON ATLASI</div>
+        <div class="card-title">Melazma (Hamilelik/Hormon Lekesi) vs. PIH (Sıkma Lekesi) vs. Güneş Lekesi</div>
+        <p class="card-subtitle">Lekenin derinliğini anlamadan yapılan derin peeling lekeyi derinin altına iter:</p>
+
+        <div class="lesion-table-wrapper">
+          <table class="lesion-table">
+            <thead>
+              <tr>
+                <th>Leke Türü</th>
+                <th>Görünümü</th>
+                <th>Derinlik & Davranış</th>
+                <th>Kabin Yaklaşımı</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:700; color:var(--gold-light);">Melazma (Kloazma)</td>
+                <td>Alın, elmacık kemikleri ve bıyık bölgesinde simetrik, harita gibi dağınık kahverengi yamalar.</td>
+                <td>Dermal ve mikst derinliktedir. <strong>Isı gördükçe kararır!</strong> Radyo frekans ve sıcak buhar lekeyi azdırır.</td>
+                <td>Sıfır ısı! Eclado Melaser + Pozitif İyontoforez + Mormed Yeşil LED (525 nm) + Dr-Meinaier Kojik Asit Jelly Mask.</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700; color:#38ef7d;">PIH (Post-İnflamatuar Hiperpigmentasyon)</td>
+                <td>Sivilce sıkıldıktan veya yara iyileştikten sonra kalan kırmızı/kahverengi nokta izler.</td>
+                <td>Epidermaldir (yüzeyeldir). İltihap sonrası melanositlerin bıraktığı kalıntıdır.</td>
+                <td>Genosys Bio-Meso PDRN (hücre yenileme) + Laktik Asit (AHA) Chamber A vakumu + Kiraz Whitening Maske.</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700; color:#ffa502;">Solar Lentigo (Güneş Lekesi)</td>
+                <td>Sınırları net, yuvarlak veya oval, tekil koyu kahverengi madeni para gibi lekeler.</td>
+                <td>Epidermal keratinositlerde melanin yığılmasıdır. Yılların güneş birikimidir.</td>
+                <td>Düzenli C Vitamini Chamber C + Eclado Melaser + Yaz kış Genosys BBC SPF koruması.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 30G EXTRACTION LANCET RULES -->
+      <div class="card highlight">
+        <div class="card-badge">Steril Kabin Cerrahisi Standardı</div>
+        <div class="card-title">Milia ve İnatçı Komedonlarda 30G Lanset Ekstraksiyon Protokolü</div>
+        <div style="font-size:13.5px; color:var(--text-muted); line-height:1.6;">
+          <p><strong>1. Cilt Dezenfeksiyonu:</strong> Bölgeyi klorheksidin veya alkolsüz antiseptik solüsyonla sil.</p>
+          <p><strong>2. Doğru Lanset:</strong> Sarı uçlu 30G veya gri uçlu 27G tek kullanımlık steril medikal lanset iğnesi kullan.</p>
+          <p><strong>3. Açılan Açı (45° Kuralı):</strong> İğneyi asla cilde dik (90°) batırma! Milia kapsülünün tam tepesine <strong>45 derece yatay açıyla</strong> yalnızca 0.5 milimetrelik mikro-çentik at.</p>
+          <p><strong>4. Boşaltma:</strong> İğneyi kenara koy. İki parmağına steril gazlı bez sar. Kistin tam altına değil, 5 mm yanlarına iki taraftan hafif aşağı ve yukarı yönlü itme uygula. Sert keratin incisi fırlayarak dışarı çıkar.</p>
+          <p><strong>5. Kapatma:</strong> Bölgeye pamukla hafifçe bastır, hemen ardından <strong>Raha Med Hi-Frequency (Yüksek Frekans)</strong> ile 10 saniye dokunarak mikro deliği dezenfekte et ve kapat.</p>
+        </div>
+      </div>
+
+    </section>
+
     <section id="tab-catalog" class="tab-content active">
       <div class="card highlight">
         <div class="card-badge">Eksiksiz Kabin Ansiklopedisi</div>
@@ -1789,7 +2828,7 @@ Dubai Mumya Maske: Somon DNA sürüldükten sonra gazlı bez üstünden çeneden
             </div>
             <span class="step-duration">5 Dk</span>
           </div>
-          <div class="step-body">
+          <div class="desk-step-body">
             <div class="step-instructions">Kuru yüze sürülür. Kendi kendine mikro-oksijen köpüğü oluşturur. Islak parmak uçlarıyla ovulup durulanır. Gözenek diplerindeki okside yağı yüzeye çıkarır.</div>
           </div>
         </div>
@@ -1805,7 +2844,7 @@ Dubai Mumya Maske: Somon DNA sürüldükten sonra gazlı bez üstünden çeneden
             </div>
             <span class="step-duration">8 Dk</span>
           </div>
-          <div class="step-body">
+          <div class="desk-step-body">
             <div class="step-instructions">Papain ve bromelain bitkisel enzimleri buhar altında keratin bağlarını eritir. Mekanik çizik riski olmadan komedonları yumuşatır.</div>
           </div>
         </div>
@@ -1821,7 +2860,7 @@ Dubai Mumya Maske: Somon DNA sürüldükten sonra gazlı bez üstünden çeneden
             </div>
             <span class="step-duration">10 Dk</span>
           </div>
-          <div class="step-body">
+          <div class="desk-step-body">
             <div class="step-instructions">Negatif akım sebumu alkali reaksiyonla sıvılaştırır. 45° açıyla tutulan Scrubber spatulası siyah noktaları cildi kızartmadan ve morartmadan pürüzsüzce temizler.</div>
           </div>
         </div>
@@ -1837,7 +2876,7 @@ Dubai Mumya Maske: Somon DNA sürüldükten sonra gazlı bez üstünden çeneden
             </div>
             <span class="step-duration">5 Dk</span>
           </div>
-          <div class="step-body">
+          <div class="desk-step-body">
             <div class="step-instructions">Tüm yüze gazlı bez üstünden 3 dk gezdirilir; sıkılan aknelerin üzerine 2 mm'den kıvılcım çakılarak bakteri anında nötralize edilir.</div>
           </div>
         </div>
@@ -1853,7 +2892,7 @@ Dubai Mumya Maske: Somon DNA sürüldükten sonra gazlı bez üstünden çeneden
             </div>
             <span class="step-duration">18 Dk</span>
           </div>
-          <div class="step-body">
+          <div class="desk-step-body">
             <div class="step-instructions">Mavi ışık fotodinamik olarak porfirinleri yok eder. Centella doku yangısını söndürür.</div>
           </div>
         </div>
@@ -1869,7 +2908,7 @@ Dubai Mumya Maske: Somon DNA sürüldükten sonra gazlı bez üstünden çeneden
             </div>
             <span class="step-duration">5 Dk</span>
           </div>
-          <div class="step-body">
+          <div class="desk-step-body">
             <div class="step-instructions">Soğuk çekiç ile gözenekler kilitlenir. Genosys Intensive Hydro Soothing Cream ve Multi Sun SPF 40 ile seans tamamlanır.</div>
           </div>
         </div>
@@ -1892,7 +2931,7 @@ Dubai Mumya Maske: Somon DNA sürüldükten sonra gazlı bez üstünden çeneden
             </div>
             <span class="step-duration">5 Dk</span>
           </div>
-          <div class="step-body">
+          <div class="desk-step-body">
             <div class="step-instructions">Snow O2 ile nazikçe temizlenir. Oksijen tabancasıyla Snow Booster tonik 0.2 bar basınçla cilde adeta bir sis perdesi halinde doyurulur.</div>
           </div>
         </div>
@@ -1908,7 +2947,7 @@ Dubai Mumya Maske: Somon DNA sürüldükten sonra gazlı bez üstünden çeneden
             </div>
             <span class="step-duration">7 Dk</span>
           </div>
-          <div class="step-body">
+          <div class="desk-step-body">
             <div class="step-instructions">Laktik asit deriyi soymadan aradaki ölü pulları çözer ve cildin kendi su tutma yeteneğini uyarır.</div>
           </div>
         </div>
@@ -1924,7 +2963,7 @@ Dubai Mumya Maske: Somon DNA sürüldükten sonra gazlı bez üstünden çeneden
             </div>
             <span class="step-duration">8 Dk</span>
           </div>
-          <div class="step-body">
+          <div class="desk-step-body">
             <div class="step-instructions">Pozitif akım, pozitif yüklü hyaluronik molekülleri epidermisin alt katmanlarına iter. Cildi sakinleştirir, gözenekleri daraltır ve cildin doğal pH 5.5 mantosunu kilitler.</div>
           </div>
         </div>
@@ -1940,7 +2979,7 @@ Dubai Mumya Maske: Somon DNA sürüldükten sonra gazlı bez üstünden çeneden
             </div>
             <span class="step-duration">25 Dk</span>
           </div>
-          <div class="step-body">
+          <div class="desk-step-body">
             <div class="step-instructions">Ultrasound sürekli modda (1.2 W/cm²) uygulanır. Üzerine Dr-Meinaier Hyaluronic Acid Jelly Mask dökülüp Kırmızı PDT LED tüneline alınır.</div>
           </div>
         </div>
@@ -1956,7 +2995,7 @@ Dubai Mumya Maske: Somon DNA sürüldükten sonra gazlı bez üstünden çeneden
             </div>
             <span class="step-duration">5 Dk</span>
           </div>
-          <div class="step-body">
+          <div class="desk-step-body">
             <div class="step-instructions">Cryo başlıkla serum kilitlenir. Intensive Hydro Soothing Cream ve SPF 40 sürülür.</div>
           </div>
         </div>
@@ -1979,7 +3018,7 @@ Dubai Mumya Maske: Somon DNA sürüldükten sonra gazlı bez üstünden çeneden
             </div>
             <span class="step-duration">14 Dk</span>
           </div>
-          <div class="step-body">
+          <div class="desk-step-body">
             <div class="step-instructions">High Life Hydro Gel sürülür. Başlık asla durdurulmadan çene ovalinden şakaklara doğru dairesel yukarı hareketlerle çekilir. Kolajen lifleri ısıyla anında toparlanır.</div>
           </div>
         </div>
@@ -1995,7 +3034,7 @@ Dubai Mumya Maske: Somon DNA sürüldükten sonra gazlı bez üstünden çeneden
             </div>
             <span class="step-duration">12 Dk</span>
           </div>
-          <div class="step-body">
+          <div class="desk-step-body">
             <div class="step-instructions">Somon DNA'sı hücresel fibroblastları uyarır, yeni mikro-damar oluşumunu destekler. RF sonrası açılan mikro-kanallardan Ultrasound ile dermise kilitlenir.</div>
           </div>
         </div>
@@ -2011,7 +3050,7 @@ Dubai Mumya Maske: Somon DNA sürüldükten sonra gazlı bez üstünden çeneden
             </div>
             <span class="step-duration">20 Dk</span>
           </div>
-          <div class="step-body">
+          <div class="desk-step-body">
             <div class="step-instructions">Maske yüze tam oturtulur. Kırmızı PDT Işık Tüneli altında 20 dakika bekletilir. Kırmızı dalga boyu mitokondriyal ATP üretimini 3 katına çıkarır.</div>
           </div>
         </div>
@@ -2027,7 +3066,7 @@ Dubai Mumya Maske: Somon DNA sürüldükten sonra gazlı bez üstünden çeneden
             </div>
             <span class="step-duration">5 Dk</span>
           </div>
-          <div class="step-body">
+          <div class="desk-step-body">
             <div class="step-instructions">RF ısısını dengelemek için soğuk başlıkla 3 dk gezilir. Soothing Repair PostCream (SRP) ve cildi porselen gibi gösteren Genosys BBC Cream uygulanır.</div>
           </div>
         </div>
@@ -2286,6 +3325,23 @@ Dubai Mumya Maske: Somon DNA sürüldükten sonra gazlı bez üstünden çeneden
       selectZone('forehead');
       showPrescription('oily');
     });
+  
+    // Gülşah Kabin Masası Sheet Switcher
+    function showGulsahSheet(sheetId, btn) {
+      document.querySelectorAll('.gulsah-sheet').forEach(el => {
+        el.classList.remove('active-sheet');
+        el.classList.add('hidden-sheet');
+      });
+      document.querySelectorAll('.skin-pill-btn').forEach(el => el.classList.remove('active'));
+
+      const target = document.getElementById(sheetId);
+      if (target) {
+        target.classList.remove('hidden-sheet');
+        target.classList.add('active-sheet');
+      }
+      if (btn) btn.classList.add('active');
+    }
+
   </script>
 </body>
 </html>
