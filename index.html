@@ -358,24 +358,32 @@
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(197, 160, 89, 0.35);
     }
-    /* Ultra-Şeffaf Lüks Sıvı Cam (Ultra-Sheer Crystal Glass & Gold Rim) */
+    /* %100 Tamamen Şeffaf Menü & Jilet Gibi Okunabilir Pırlanta Yazılar */
     .luxury-nav-glass {
-      background: rgba(32, 10, 40, 0.38);
-      backdrop-filter: blur(24px) saturate(160%);
-      -webkit-backdrop-filter: blur(24px) saturate(160%);
-      border: 1px solid rgba(212, 175, 55, 0.35);
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.45), 
-                  inset 0 1px 1px 0 rgba(255, 255, 255, 0.22),
-                  0 0 18px -2px rgba(212, 175, 55, 0.15);
+      background: transparent !important;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
     }
     .luxury-drawer-glass {
-      background: rgba(26, 7, 33, 0.45);
-      backdrop-filter: blur(28px) saturate(170%);
-      -webkit-backdrop-filter: blur(28px) saturate(170%);
-      border: 1px solid rgba(212, 175, 55, 0.38);
-      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.65), 
-                  0 0 30px -5px rgba(212, 175, 55, 0.18), 
+      background: rgba(12, 3, 16, 0.88);
+      backdrop-filter: blur(32px);
+      -webkit-backdrop-filter: blur(32px);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 
+                  0 0 30px -5px rgba(212, 175, 55, 0.25), 
                   inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
+    }
+    .nav-crisp-link {
+      color: #FFFFFF !important;
+      font-weight: 600 !important;
+      text-shadow: 0 1px 2px #000000, 0 2px 8px rgba(0, 0, 0, 0.95), 0 0 12px rgba(0, 0, 0, 0.9) !important;
+      transition: all 0.2s ease;
+    }
+    .nav-crisp-link:hover {
+      color: #FDE047 !important;
+      text-shadow: 0 0 12px rgba(253, 224, 71, 0.9), 0 2px 8px #000000 !important;
     }
     /* Mobil Menü Açılış Spring Animasyonu */
     #mobile-menu {
@@ -515,11 +523,11 @@
       <nav class="relative luxury-nav-glass rounded-full px-4 sm:px-7 py-2 lg:py-3 flex items-center justify-between shadow-2xl">
         <!-- Masaüstü Lüks Marka Tipografisi (Sade & Ferah) -->
         <a href="#" class="hidden lg:flex flex-col text-left group py-0.5">
-          <span class="font-serif text-[18px] tracking-[0.22em] text-white font-medium leading-none group-hover:text-brand-lightGold transition-colors flex items-center gap-1.5">
+          <span class="font-serif text-[18px] tracking-[0.22em] text-white font-bold leading-none group-hover:text-amber-300 transition-colors flex items-center gap-1.5 drop-shadow-[0_2px_8px_rgba(0,0,0,1)]">
             <span>LİNAİL</span>
             <span class="gold-gradient-text font-normal">BEAUTY</span>
           </span>
-          <span class="text-[8.5px] tracking-[0.38em] text-amber-200/90 uppercase font-light mt-1 flex items-center gap-1.5">
+          <span class="text-[9px] tracking-[0.38em] text-amber-200 uppercase font-semibold mt-1 flex items-center gap-1.5 drop-shadow-[0_1px_4px_rgba(0,0,0,1)]">
             <span class="w-1.5 h-1.5 rounded-full bg-brand-gold shadow-[0_0_8px_#D4AF37] animate-pulse"></span>
             ATAŞEHİR
           </span>
@@ -527,25 +535,25 @@
 
         <!-- Mobil Marka Yazısı (Sadece Mobilde - Işıltılı & Ferah) -->
         <a href="#" class="flex lg:hidden flex-col group py-0.5 shrink-0 z-10 text-left">
-          <span class="font-serif text-[15px] sm:text-base tracking-[0.16em] text-white font-medium group-hover:text-brand-lightGold transition-colors leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)] flex items-center gap-1">
+          <span class="font-serif text-[15px] sm:text-base tracking-[0.16em] text-white font-bold group-hover:text-amber-300 transition-colors leading-tight drop-shadow-[0_2px_8px_rgba(0,0,0,1)] flex items-center gap-1">
             <span>LİNAİL</span>
             <span class="gold-gradient-text font-normal tracking-[0.18em]">BEAUTY</span>
           </span>
-          <span class="text-[7.5px] sm:text-[8px] tracking-[0.34em] text-amber-200/95 uppercase font-medium flex items-center gap-1.5 drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)] mt-0.5">
+          <span class="text-[8px] sm:text-[8.5px] tracking-[0.34em] text-amber-200 uppercase font-bold flex items-center gap-1.5 drop-shadow-[0_1px_4px_rgba(0,0,0,1)] mt-0.5">
             <span class="w-1.5 h-1.5 rounded-full bg-brand-gold shadow-[0_0_8px_#D4AF37] animate-pulse"></span>
             ATAŞEHİR
           </span>
         </a>
 
-        <!-- Menü Linkleri (Genişletilmiş Aralıklar & Zarif Boşluk) -->
-        <div class="hidden lg:flex items-center gap-7 xl:gap-9 text-[11.5px] tracking-[0.22em] uppercase text-stone-200 font-light">
-          <a href="#vip" class="text-stone-200 hover:text-brand-lightGold transition-colors flex items-center gap-1.5 py-1">
+        <!-- Menü Linkleri (Genişletilmiş Aralıklar & Net Parlak Yazılar) -->
+        <div class="hidden lg:flex items-center gap-7 xl:gap-9 text-[12px] tracking-[0.2em] uppercase font-semibold">
+          <a href="#vip" class="nav-crisp-link flex items-center gap-1.5 py-1">
             <span>💎 VIP Konsept</span>
           </a>
 
           <!-- Lüks Açılır Hizmetlerimiz Dropdown Menüsü -->
           <div class="relative services-dropdown-container">
-            <button id="services-dropdown-btn" type="button" class="hover:text-brand-lightGold transition-colors flex items-center gap-1 uppercase tracking-[0.22em] py-1 focus:outline-none cursor-pointer">
+            <button id="services-dropdown-btn" type="button" class="nav-crisp-link flex items-center gap-1 uppercase tracking-[0.2em] py-1 focus:outline-none cursor-pointer">
               <span>Hizmetlerimiz</span>
               <i data-lucide="chevron-down" id="services-dropdown-icon" class="w-3.5 h-3.5 text-brand-gold transition-transform duration-300"></i>
             </button>
@@ -553,63 +561,63 @@
             <!-- Açılır Menü Paneli (Ultra Lüks Sıvı Cam) -->
             <div id="services-dropdown-menu" class="services-dropdown-menu absolute left-1/2 -translate-x-1/2 top-full pt-3 w-84 z-50">
               <div class="luxury-drawer-glass rounded-2xl p-3.5 shadow-2xl border border-brand-gold/45 space-y-1.5">
-                <a href="/atasehir-protez-tirnak/" class="flex items-center gap-3 p-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.14] border border-brand-gold/20 hover:border-brand-gold/60 transition-all duration-200 group/item">
-                  <span class="w-8 h-8 rounded-lg bg-brand-gold/20 flex items-center justify-center text-brand-lightGold text-xs border border-brand-gold/30 shadow-sm shrink-0">💅</span>
+                <a href="/atasehir-protez-tirnak/" class="flex items-center gap-3 p-2.5 rounded-xl bg-black/60 hover:bg-white/10 border border-brand-gold/30 hover:border-brand-gold/70 transition-all duration-200 group/item">
+                  <span class="w-8 h-8 rounded-lg bg-brand-gold/30 flex items-center justify-center text-amber-200 text-xs border border-brand-gold/50 shadow-sm shrink-0">💅</span>
                   <div class="text-left truncate">
-                    <p class="text-[11.5px] font-medium tracking-wider text-white group-hover/item:text-brand-lightGold transition-colors">Protez Jel Tırnak</p>
-                    <p class="text-[9px] text-stone-300 normal-case tracking-normal">Rus kuru manikür & mimari</p>
+                    <p class="text-[12px] font-bold tracking-wider text-white group-hover/item:text-amber-300 transition-colors drop-shadow-[0_1px_3px_rgba(0,0,0,1)]">Protez Jel Tırnak</p>
+                    <p class="text-[10px] text-amber-200 normal-case tracking-normal drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">Rus kuru manikür & mimari</p>
                   </div>
                 </a>
 
-                <a href="/atasehir-ipek-kirpik/" class="flex items-center gap-3 p-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.14] border border-brand-gold/20 hover:border-brand-gold/60 transition-all duration-200 group/item">
-                  <span class="w-8 h-8 rounded-lg bg-brand-gold/20 flex items-center justify-center text-brand-lightGold text-xs border border-brand-gold/30 shadow-sm shrink-0">✨</span>
+                <a href="/atasehir-ipek-kirpik/" class="flex items-center gap-3 p-2.5 rounded-xl bg-black/60 hover:bg-white/10 border border-brand-gold/30 hover:border-brand-gold/70 transition-all duration-200 group/item">
+                  <span class="w-8 h-8 rounded-lg bg-brand-gold/30 flex items-center justify-center text-amber-200 text-xs border border-brand-gold/50 shadow-sm shrink-0">✨</span>
                   <div class="text-left truncate">
-                    <p class="text-[11.5px] font-medium tracking-wider text-white group-hover/item:text-brand-lightGold transition-colors">İpek Kirpik & Lifting</p>
-                    <p class="text-[9px] text-stone-300 normal-case tracking-normal">Ağırlıksız ipek volüm</p>
+                    <p class="text-[12px] font-bold tracking-wider text-white group-hover/item:text-amber-300 transition-colors drop-shadow-[0_1px_3px_rgba(0,0,0,1)]">İpek Kirpik & Lifting</p>
+                    <p class="text-[10px] text-amber-200 normal-case tracking-normal drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">Ağırlıksız ipek volüm</p>
                   </div>
                 </a>
 
-                <a href="/atasehir-cilt-bakimi/" class="flex items-center gap-3 p-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.14] border border-brand-gold/20 hover:border-brand-gold/60 transition-all duration-200 group/item">
-                  <span class="w-8 h-8 rounded-lg bg-brand-gold/20 flex items-center justify-center text-brand-lightGold text-xs border border-brand-gold/30 shadow-sm shrink-0">🌸</span>
+                <a href="/atasehir-cilt-bakimi/" class="flex items-center gap-3 p-2.5 rounded-xl bg-black/60 hover:bg-white/10 border border-brand-gold/30 hover:border-brand-gold/70 transition-all duration-200 group/item">
+                  <span class="w-8 h-8 rounded-lg bg-brand-gold/30 flex items-center justify-center text-amber-200 text-xs border border-brand-gold/50 shadow-sm shrink-0">🌸</span>
                   <div class="text-left truncate">
-                    <p class="text-[11.5px] font-medium tracking-wider text-white group-hover/item:text-brand-lightGold transition-colors">Profesyonel Cilt Bakımı</p>
-                    <p class="text-[9px] text-stone-300 normal-case tracking-normal">Genosys 7'si 1 arada & O2</p>
+                    <p class="text-[12px] font-bold tracking-wider text-white group-hover/item:text-amber-300 transition-colors drop-shadow-[0_1px_3px_rgba(0,0,0,1)]">Profesyonel Cilt Bakımı</p>
+                    <p class="text-[10px] text-amber-200 normal-case tracking-normal drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">Genosys 7'si 1 arada & O2</p>
                   </div>
                 </a>
 
-                <a href="/atasehir-kas-laminasyon/" class="flex items-center gap-3 p-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.14] border border-brand-gold/20 hover:border-brand-gold/60 transition-all duration-200 group/item">
-                  <span class="w-8 h-8 rounded-lg bg-brand-gold/20 flex items-center justify-center text-brand-lightGold text-xs border border-brand-gold/30 shadow-sm shrink-0">💎</span>
+                <a href="/atasehir-kas-laminasyon/" class="flex items-center gap-3 p-2.5 rounded-xl bg-black/60 hover:bg-white/10 border border-brand-gold/30 hover:border-brand-gold/70 transition-all duration-200 group/item">
+                  <span class="w-8 h-8 rounded-lg bg-brand-gold/30 flex items-center justify-center text-amber-200 text-xs border border-brand-gold/50 shadow-sm shrink-0">💎</span>
                   <div class="text-left truncate">
-                    <p class="text-[11.5px] font-medium tracking-wider text-white group-hover/item:text-brand-lightGold transition-colors">Kaş Laminasyon</p>
-                    <p class="text-[9px] text-stone-300 normal-case tracking-normal">Keratin dolgu & simetri</p>
+                    <p class="text-[12px] font-bold tracking-wider text-white group-hover/item:text-amber-300 transition-colors drop-shadow-[0_1px_3px_rgba(0,0,0,1)]">Kaş Laminasyon</p>
+                    <p class="text-[10px] text-amber-200 normal-case tracking-normal drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">Keratin dolgu & simetri</p>
                   </div>
                 </a>
 
-                <a href="/atasehir-nail-art/" class="flex items-center gap-3 p-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.14] border border-brand-gold/20 hover:border-brand-gold/60 transition-all duration-200 group/item">
-                  <span class="w-8 h-8 rounded-lg bg-brand-gold/20 flex items-center justify-center text-brand-lightGold text-xs border border-brand-gold/30 shadow-sm shrink-0">🎨</span>
+                <a href="/atasehir-nail-art/" class="flex items-center gap-3 p-2.5 rounded-xl bg-black/60 hover:bg-white/10 border border-brand-gold/30 hover:border-brand-gold/70 transition-all duration-200 group/item">
+                  <span class="w-8 h-8 rounded-lg bg-brand-gold/30 flex items-center justify-center text-amber-200 text-xs border border-brand-gold/50 shadow-sm shrink-0">🎨</span>
                   <div class="text-left truncate">
-                    <p class="text-[11.5px] font-medium tracking-wider text-white group-hover/item:text-brand-lightGold transition-colors">Nail Art & Krom Tozu</p>
-                    <p class="text-[9px] text-stone-300 normal-case tracking-normal">Özel el çizimi tasarımlar</p>
+                    <p class="text-[12px] font-bold tracking-wider text-white group-hover/item:text-amber-300 transition-colors drop-shadow-[0_1px_3px_rgba(0,0,0,1)]">Nail Art & Krom Tozu</p>
+                    <p class="text-[10px] text-amber-200 normal-case tracking-normal drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">Özel el çizimi tasarımlar</p>
                   </div>
                 </a>
 
-                <a href="/rus-manikur-atasehir/" class="flex items-center gap-3 p-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.14] border border-brand-gold/20 hover:border-brand-gold/60 transition-all duration-200 group/item">
-                  <span class="w-8 h-8 rounded-lg bg-brand-gold/20 flex items-center justify-center text-brand-lightGold text-xs border border-brand-gold/30 shadow-sm shrink-0">🩺</span>
+                <a href="/rus-manikur-atasehir/" class="flex items-center gap-3 p-2.5 rounded-xl bg-black/60 hover:bg-white/10 border border-brand-gold/30 hover:border-brand-gold/70 transition-all duration-200 group/item">
+                  <span class="w-8 h-8 rounded-lg bg-brand-gold/30 flex items-center justify-center text-amber-200 text-xs border border-brand-gold/50 shadow-sm shrink-0">🩺</span>
                   <div class="text-left truncate">
-                    <p class="text-[11.5px] font-medium tracking-wider text-white group-hover/item:text-brand-lightGold transition-colors">Rus Kuru Manikür & Spa</p>
-                    <p class="text-[9px] text-stone-300 normal-case tracking-normal">Otoklav sterilite & topuk</p>
+                    <p class="text-[12px] font-bold tracking-wider text-white group-hover/item:text-amber-300 transition-colors drop-shadow-[0_1px_3px_rgba(0,0,0,1)]">Rus Kuru Manikür & Spa</p>
+                    <p class="text-[10px] text-amber-200 normal-case tracking-normal drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">Otoklav sterilite & topuk</p>
                   </div>
                 </a>
               </div>
             </div>
           </div>
 
-          <a href="#atmosfer" class="hover:text-brand-lightGold transition-colors py-1">Atmosfer</a>
-          <a href="#yorumlar" class="hover:text-brand-lightGold transition-colors py-1">Yorumlar</a>
-          <a href="#galeri" class="hover:text-brand-lightGold transition-colors py-1">Lookbook</a>
-          <a href="#felsefe" class="hover:text-brand-lightGold transition-colors py-1">Felsefemiz</a>
-          <a href="#sss" class="hover:text-brand-lightGold transition-colors py-1">SSS</a>
-          <a href="#iletisim" class="hover:text-brand-lightGold transition-colors py-1">İletişim</a>
+          <a href="#atmosfer" class="nav-crisp-link py-1">Atmosfer</a>
+          <a href="#yorumlar" class="nav-crisp-link py-1">Yorumlar</a>
+          <a href="#galeri" class="nav-crisp-link py-1">Lookbook</a>
+          <a href="#felsefe" class="nav-crisp-link py-1">Felsefemiz</a>
+          <a href="#sss" class="nav-crisp-link py-1">SSS</a>
+          <a href="#iletisim" class="nav-crisp-link py-1">İletişim</a>
         </div>
 
         <!-- Masaüstü Sağ Butonlar (VIP Jewel Butonlar) -->
@@ -672,74 +680,74 @@
         <!-- Hizmetlerimiz: Lüks Buton Izgarası -->
         <div>
           <div class="flex items-center justify-between mb-2">
-            <span class="text-[9.5px] tracking-[0.28em] uppercase text-brand-lightGold font-semibold">VIP Hizmetlerimiz</span>
-            <span class="text-[8px] text-stone-400 tracking-wider">Randevu Açık</span>
+            <span class="text-[10px] tracking-[0.28em] uppercase text-amber-300 font-bold drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">VIP Hizmetlerimiz</span>
+            <span class="text-[8.5px] text-amber-100/90 tracking-wider font-medium">Randevu Açık</span>
           </div>
           <div class="grid grid-cols-2 gap-2 text-left">
-            <a href="/atasehir-protez-tirnak/" class="flex items-center gap-2.5 p-2.5 rounded-2xl bg-white/[0.07] hover:bg-white/[0.14] border border-brand-gold/25 hover:border-brand-gold/60 transition-all duration-200 text-stone-200 hover:text-white group active:scale-95">
-              <span class="w-7 h-7 rounded-xl bg-brand-gold/20 flex items-center justify-center text-xs border border-brand-gold/30 shrink-0 shadow-sm">💅</span>
+            <a href="/atasehir-protez-tirnak/" class="flex items-center gap-2.5 p-2.5 rounded-2xl bg-black/60 hover:bg-black/80 border border-brand-gold/35 hover:border-brand-gold/70 transition-all duration-200 group active:scale-95 shadow-md">
+              <span class="w-7 h-7 rounded-xl bg-brand-gold/30 flex items-center justify-center text-xs border border-brand-gold/50 shrink-0 shadow-sm">💅</span>
               <div class="truncate">
-                <span class="block text-[11px] font-medium text-white group-hover:text-brand-lightGold transition-colors truncate">Protez Tırnak</span>
-                <span class="block text-[8.5px] text-stone-400 font-light truncate">Rus Kuru Mimari</span>
+                <span class="block text-[11.5px] font-bold text-white group-hover:text-amber-300 transition-colors truncate drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">Protez Tırnak</span>
+                <span class="block text-[9px] text-amber-200 font-medium truncate drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">Rus Kuru Mimari</span>
               </div>
             </a>
-            <a href="/atasehir-ipek-kirpik/" class="flex items-center gap-2.5 p-2.5 rounded-2xl bg-white/[0.07] hover:bg-white/[0.14] border border-brand-gold/25 hover:border-brand-gold/60 transition-all duration-200 text-stone-200 hover:text-white group active:scale-95">
-              <span class="w-7 h-7 rounded-xl bg-brand-gold/20 flex items-center justify-center text-xs border border-brand-gold/30 shrink-0 shadow-sm">✨</span>
+            <a href="/atasehir-ipek-kirpik/" class="flex items-center gap-2.5 p-2.5 rounded-2xl bg-black/60 hover:bg-black/80 border border-brand-gold/35 hover:border-brand-gold/70 transition-all duration-200 group active:scale-95 shadow-md">
+              <span class="w-7 h-7 rounded-xl bg-brand-gold/30 flex items-center justify-center text-xs border border-brand-gold/50 shrink-0 shadow-sm">✨</span>
               <div class="truncate">
-                <span class="block text-[11px] font-medium text-white group-hover:text-brand-lightGold transition-colors truncate">İpek Kirpik</span>
-                <span class="block text-[8.5px] text-stone-400 font-light truncate">Ağırlıksız Volüm</span>
+                <span class="block text-[11.5px] font-bold text-white group-hover:text-amber-300 transition-colors truncate drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">İpek Kirpik</span>
+                <span class="block text-[9px] text-amber-200 font-medium truncate drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">Ağırlıksız Volüm</span>
               </div>
             </a>
-            <a href="/atasehir-cilt-bakimi/" class="flex items-center gap-2.5 p-2.5 rounded-2xl bg-white/[0.07] hover:bg-white/[0.14] border border-brand-gold/25 hover:border-brand-gold/60 transition-all duration-200 text-stone-200 hover:text-white group active:scale-95">
-              <span class="w-7 h-7 rounded-xl bg-brand-gold/20 flex items-center justify-center text-xs border border-brand-gold/30 shrink-0 shadow-sm">🌸</span>
+            <a href="/atasehir-cilt-bakimi/" class="flex items-center gap-2.5 p-2.5 rounded-2xl bg-black/60 hover:bg-black/80 border border-brand-gold/35 hover:border-brand-gold/70 transition-all duration-200 group active:scale-95 shadow-md">
+              <span class="w-7 h-7 rounded-xl bg-brand-gold/30 flex items-center justify-center text-xs border border-brand-gold/50 shrink-0 shadow-sm">🌸</span>
               <div class="truncate">
-                <span class="block text-[11px] font-medium text-white group-hover:text-brand-lightGold transition-colors truncate">Cilt Bakımı</span>
-                <span class="block text-[8.5px] text-stone-400 font-light truncate">Genosys 7'si 1 Arada</span>
+                <span class="block text-[11.5px] font-bold text-white group-hover:text-amber-300 transition-colors truncate drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">Cilt Bakımı</span>
+                <span class="block text-[9px] text-amber-200 font-medium truncate drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">Genosys 7'si 1 Arada</span>
               </div>
             </a>
-            <a href="/atasehir-kas-laminasyon/" class="flex items-center gap-2.5 p-2.5 rounded-2xl bg-white/[0.07] hover:bg-white/[0.14] border border-brand-gold/25 hover:border-brand-gold/60 transition-all duration-200 text-stone-200 hover:text-white group active:scale-95">
-              <span class="w-7 h-7 rounded-xl bg-brand-gold/20 flex items-center justify-center text-xs border border-brand-gold/30 shrink-0 shadow-sm">💎</span>
+            <a href="/atasehir-kas-laminasyon/" class="flex items-center gap-2.5 p-2.5 rounded-2xl bg-black/60 hover:bg-black/80 border border-brand-gold/35 hover:border-brand-gold/70 transition-all duration-200 group active:scale-95 shadow-md">
+              <span class="w-7 h-7 rounded-xl bg-brand-gold/30 flex items-center justify-center text-xs border border-brand-gold/50 shrink-0 shadow-sm">💎</span>
               <div class="truncate">
-                <span class="block text-[11px] font-medium text-white group-hover:text-brand-lightGold transition-colors truncate">Kaş Tasarım</span>
-                <span class="block text-[8.5px] text-stone-400 font-light truncate">Keratin Laminasyon</span>
+                <span class="block text-[11.5px] font-bold text-white group-hover:text-amber-300 transition-colors truncate drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">Kaş Tasarım</span>
+                <span class="block text-[9px] text-amber-200 font-medium truncate drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">Keratin Laminasyon</span>
               </div>
             </a>
-            <a href="/atasehir-nail-art/" class="flex items-center gap-2.5 p-2.5 rounded-2xl bg-white/[0.07] hover:bg-white/[0.14] border border-brand-gold/25 hover:border-brand-gold/60 transition-all duration-200 text-stone-200 hover:text-white group active:scale-95">
-              <span class="w-7 h-7 rounded-xl bg-brand-gold/20 flex items-center justify-center text-xs border border-brand-gold/30 shrink-0 shadow-sm">🎨</span>
+            <a href="/atasehir-nail-art/" class="flex items-center gap-2.5 p-2.5 rounded-2xl bg-black/60 hover:bg-black/80 border border-brand-gold/35 hover:border-brand-gold/70 transition-all duration-200 group active:scale-95 shadow-md">
+              <span class="w-7 h-7 rounded-xl bg-brand-gold/30 flex items-center justify-center text-xs border border-brand-gold/50 shrink-0 shadow-sm">🎨</span>
               <div class="truncate">
-                <span class="block text-[11px] font-medium text-white group-hover:text-brand-lightGold transition-colors truncate">Nail Art & Krom</span>
-                <span class="block text-[8.5px] text-stone-400 font-light truncate">Özel El Çizimi</span>
+                <span class="block text-[11.5px] font-bold text-white group-hover:text-amber-300 transition-colors truncate drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">Nail Art & Krom</span>
+                <span class="block text-[9px] text-amber-200 font-medium truncate drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">Özel El Çizimi</span>
               </div>
             </a>
-            <a href="/rus-manikur-atasehir/" class="flex items-center gap-2.5 p-2.5 rounded-2xl bg-white/[0.07] hover:bg-white/[0.14] border border-brand-gold/25 hover:border-brand-gold/60 transition-all duration-200 text-stone-200 hover:text-white group active:scale-95">
-              <span class="w-7 h-7 rounded-xl bg-brand-gold/20 flex items-center justify-center text-xs border border-brand-gold/30 shrink-0 shadow-sm">🩺</span>
+            <a href="/rus-manikur-atasehir/" class="flex items-center gap-2.5 p-2.5 rounded-2xl bg-black/60 hover:bg-black/80 border border-brand-gold/35 hover:border-brand-gold/70 transition-all duration-200 group active:scale-95 shadow-md">
+              <span class="w-7 h-7 rounded-xl bg-brand-gold/30 flex items-center justify-center text-xs border border-brand-gold/50 shrink-0 shadow-sm">🩺</span>
               <div class="truncate">
-                <span class="block text-[11px] font-medium text-white group-hover:text-brand-lightGold transition-colors truncate">Rus Manikürü</span>
-                <span class="block text-[8.5px] text-stone-400 font-light truncate">Medikal & Spa Bakım</span>
+                <span class="block text-[11.5px] font-bold text-white group-hover:text-amber-300 transition-colors truncate drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">Rus Manikürü</span>
+                <span class="block text-[9px] text-amber-200 font-medium truncate drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">Medikal & Spa Bakım</span>
               </div>
             </a>
           </div>
         </div>
 
         <!-- Stüdyo & Keşfet Linkleri (Sayfa İçi Hızlı Atlama) -->
-        <div class="pt-2 border-t border-brand-gold/20 space-y-1 text-left">
-          <span class="block text-[9.5px] tracking-[0.28em] uppercase text-brand-lightGold font-semibold mb-1">Stüdyo & Lokasyon</span>
-          <div class="flex flex-col space-y-0.5">
-            <a href="#atmosfer" class="flex items-center justify-between py-2 px-3 rounded-xl text-xs tracking-wider text-stone-200 hover:text-white hover:bg-white/10 transition-colors">
+        <div class="pt-2 border-t border-brand-gold/25 space-y-1 text-left">
+          <span class="block text-[10px] tracking-[0.28em] uppercase text-amber-300 font-bold mb-1.5 drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">Stüdyo & Lokasyon</span>
+          <div class="flex flex-col space-y-1">
+            <a href="#atmosfer" class="flex items-center justify-between py-2 px-3 rounded-xl text-xs tracking-wider text-white font-semibold bg-black/40 hover:bg-black/70 border border-brand-gold/25 hover:border-brand-gold/60 transition-colors drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">
               <span class="flex items-center gap-2"><span>🏛️</span> Stüdyo Atmosferi & VIP Oda</span>
-              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-brand-gold/60"></i>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-amber-300"></i>
             </a>
-            <a href="#yorumlar" class="flex items-center justify-between py-2 px-3 rounded-xl text-xs tracking-wider text-amber-200 hover:text-white hover:bg-white/10 transition-colors font-medium">
-              <span class="flex items-center gap-2"><span>⭐</span> Google Değerlendirmeleri <span class="text-[10px] px-1.5 py-0.2 rounded-md bg-amber-400/20 text-amber-300 font-normal border border-amber-400/30">5.0</span></span>
-              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-brand-gold/60"></i>
+            <a href="#yorumlar" class="flex items-center justify-between py-2 px-3 rounded-xl text-xs tracking-wider text-amber-200 hover:text-white font-semibold bg-black/40 hover:bg-black/70 border border-brand-gold/25 hover:border-brand-gold/60 transition-colors drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">
+              <span class="flex items-center gap-2"><span>⭐</span> Google Değerlendirmeleri <span class="text-[10px] px-1.5 py-0.2 rounded-md bg-amber-400/25 text-amber-300 font-bold border border-amber-400/40">5.0</span></span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-amber-300"></i>
             </a>
-            <a href="#galeri" class="flex items-center justify-between py-2 px-3 rounded-xl text-xs tracking-wider text-stone-200 hover:text-white hover:bg-white/10 transition-colors">
+            <a href="#galeri" class="flex items-center justify-between py-2 px-3 rounded-xl text-xs tracking-wider text-white font-semibold bg-black/40 hover:bg-black/70 border border-brand-gold/25 hover:border-brand-gold/60 transition-colors drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">
               <span class="flex items-center gap-2"><span>📸</span> Lookbook & Vitrin</span>
-              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-brand-gold/60"></i>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-amber-300"></i>
             </a>
-            <a href="#iletisim" class="flex items-center justify-between py-2 px-3 rounded-xl text-xs tracking-wider text-stone-200 hover:text-white hover:bg-white/10 transition-colors">
+            <a href="#iletisim" class="flex items-center justify-between py-2 px-3 rounded-xl text-xs tracking-wider text-white font-semibold bg-black/40 hover:bg-black/70 border border-brand-gold/25 hover:border-brand-gold/60 transition-colors drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">
               <span class="flex items-center gap-2"><span>📍</span> Uphill Towers Yol Tarifi</span>
-              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-brand-gold/60"></i>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-amber-300"></i>
             </a>
           </div>
         </div>
