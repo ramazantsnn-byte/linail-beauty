@@ -1377,16 +1377,18 @@
     justify-content: center;
     height: 100%;
     color: var(--text-dim);
-    font-size: 10px;
+    font-size: 9.5px;
     font-weight: 700;
     text-decoration: none;
     cursor: pointer;
     background: none;
     border: none;
     gap: 2px;
+    padding: 0 2px;
+    white-space: nowrap;
   }
   .m-nav-item span.icon {
-    font-size: 18px;
+    font-size: 16px;
   }
   .m-nav-item.active {
     color: var(--gold-light) !important;
@@ -1474,24 +1476,31 @@
 <button class="m-skin-tab" onclick="mobileSelectSkin('sheet-sensitive', this)">
 <span>🔴</span> 5. Hassas / Rozasea
     </button>
+<button class="m-skin-tab" onclick="mobileNavTab('tab-laminasyon-lifting', null); document.querySelectorAll('.m-skin-tab').forEach(b => b.classList.remove('active')); this.classList.add('active');" style="border:1.5px solid #a18cd1; background:linear-gradient(135deg, rgba(161,140,209,0.3) 0%, rgba(251,194,235,0.25) 100%); color:#fbc2eb; font-weight:800;">
+<span>🌿</span> 6. Kaş & Kirpik Masterclass
+    </button>
 </nav>
 <!-- MOBILE FIXED BOTTOM NAV (MOBILE ONLY) -->
 <nav class="mobile-bottom-nav">
 <button class="m-nav-item active" onclick="mobileNavTab('tab-gulsah-desk', this)">
 <span class="icon">⚡</span>
-<span>5 Cilt Masası</span>
+<span>5 Cilt</span>
 </button>
 <button class="m-nav-item" onclick="mobileNavTab('tab-cam-cilt', this)" style="color:#38ef7d;">
 <span class="icon">💎</span>
-<span>Cam Cilt (3 Seans)</span>
+<span>Cam Cilt</span>
+</button>
+<button class="m-nav-item" onclick="mobileNavTab('tab-laminasyon-lifting', this)" style="color:#fbc2eb;">
+<span class="icon">🌿</span>
+<span>Kaş-Kirpik</span>
 </button>
 <button class="m-nav-item" onclick="mobileNavTab('tab-catalog', this)">
 <span class="icon">📦</span>
-<span>Ürün &amp; Cihaz (V3)</span>
+<span>Cihaz/Ürün</span>
 </button>
 <button class="m-nav-item" onclick="mobileNavTab('tab-lesion-atlas', this)">
 <span class="icon">🔬</span>
-<span>Lezyon Atlası</span>
+<span>Atlas</span>
 </button>
 <button class="m-nav-item" onclick="mobileNavTab('tab-products', this)" style="color:#38ef7d;">
 <span class="icon">🧴</span>
