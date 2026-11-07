@@ -63,6 +63,12 @@ Bu klasör, 20 Kasım günü reklamları yayına alırken **sıfır kafa karış
     - Her gün için: Kanca, 4 Slaytlık İnteraktif Story Planı, Yanina Rai kamera açısı, WhatsApp VIP / DM linki ve 15 dakikalık çekim SOP'si
     - Canlı web arayüzü: `gulsah-reels/index.html`
 
+12. **`11_IPEK_KIRPIK_RANDEVU_KAPATMA_VE_REKLAM_TASLAKLARI.md`**
+    - İpek kirpik için reklamı **aynı gün randevuya döken tam dönüşüm kurgusu**
+    - 3 Hazır Reklam Taslağı: 9:16 Reels Video, 4:5 Carousel Rehber ve Kahverengi Naturel İpek Kirpik Statik Post
+    - DM ve WhatsApp'a gelen danışanı 3 adımda randevuya bağlayan Gülşah Taşan satış kapatma scripti
+    - Meta Ads Manager mikro-lokal geofence parametreleri (+4 km Uphill Towers çemberi)
+
 ---
 
 > **Not:** Tüm dosyalar doğrudan `/Users/applesupport/Desktop/linail beauty/reklam_calisma_defteri_20_kasim/` klasöründe hazır bulunmaktadır.
