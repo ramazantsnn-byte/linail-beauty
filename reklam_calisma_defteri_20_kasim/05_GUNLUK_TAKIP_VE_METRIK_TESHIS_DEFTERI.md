@@ -14,7 +14,7 @@ flowchart TD
     B -->|"HAYIR (Düşük/Normal)"| C{"2. Link CTR (Tıklama Oranı) < %1.5 mi?"}
     C -->|"EVET"| C1["🚨 SORUN: İlk 3 saniyedeki Kanca (Hook) zayıf. İnsanlar videoda durmuyor. Çözüm: Kapak görselini ve ilk 3 saniyelik başlığı değiştir."]
     C -->|"HAYIR (> %2.0 Sağlıklı)"| D{"3. Tıklama Yüksek ama Mesaj/Randevu Yok mu?"}
-    D -->|"EVET"| D1["🚨 SORUN: Reklamda değil! Profil güveninde, DM otomasyonunda veya fiyat şeffaflığında sorun var. ManyChat akışını ve bio'yu kontrol et."]
+    D -->|"EVET"| D1["🚨 SORUN: Reklamda değil! Profil güveninde, DM otomasyonunda veya fiyat şeffaflığında sorun var. WhatsApp iletişim hattını ve bio'yu kontrol et."]
     D -->|"HAYIR"| E{"4. Mesaj Geliyor ama Randevu Kapanmıyor mu?"}
     E -->|"EVET"| E1["🚨 SORUN: Satış karşılama hızı! Mesaja ilk 15 dakikada dönülmüyor veya fiyat doğrudan söylenip konuşma kapatılıyor. VIP senaryosunu uygula."]
     E -->|"HAYIR"| F["🏆 KAMPANYA MÜKEMMEL ÇALIŞIYOR (Bütçeyi %20 Artır)"]
@@ -38,7 +38,7 @@ flowchart TD
 
 ## 3. WHATSAPP & DM SATIŞ KAPATMA KURALLARI (GÜLŞAH İÇİN)
 
-Müşteri ManyChat veya doğrudan reklam üzerinden WhatsApp'a yazdığında:
+Müşteri DM veya doğrudan reklam üzerinden WhatsApp'a yazdığında:
 
 1. **İlk 15 Dakika Kuralı:** Gelen mesaja ilk 15 dakika içinde dönülmelidir. 1 saat sonra dönülen müşterinin satın alma isteği %60 düşer.
 2. **Asla Kuru Fiyat Yazıp Bırakmayın:**

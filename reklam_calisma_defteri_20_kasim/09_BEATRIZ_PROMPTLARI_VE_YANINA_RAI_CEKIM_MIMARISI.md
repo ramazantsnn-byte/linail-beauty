@@ -1,9 +1,9 @@
 # 🚀 BEATRIZ MARKETING PROMPTLARI & YANINA RAI ÇEKİM MİMARİSİ
-## Linail Beauty & Gülşah Taşan İçin AI Kanca Motoru, ManyChat Hunileri ve Profesyonel Telefon Çekim Standartları
+## Linail Beauty & Gülşah Taşan İçin AI Kanca Motoru, Doğrudan DM & WhatsApp VIP Hunileri ve Profesyonel Telefon Çekim Standartları
 
 > **Tarih:** 7 Kasım 2026  
 > **İncelenen Hesaplar:**  
-> 1. `https://www.instagram.com/beatrizbmkt/reels/` (50 Reels • Yapay Zeka Pazarlama Promtları, ManyChat Huni Mimarisi, Viral vs Satış Video Dengesi)  
+> 1. `https://www.instagram.com/beatrizbmkt/reels/` (50 Reels • Yapay Zeka Pazarlama Promtları, Doğrudan DM & VIP Satış Mimarisi, Viral vs Satış Video Dengesi)  
 > 2. `https://www.instagram.com/yanina_rai/reels/` (95 Reels • Güzellik Uzmanları İçin Profesyonel Telefon Açıları, Tripod Yerleşimi, Blik Işık Mimarisi)  
 > **Hedef:** Beatriz'in viral dönüşüm hunilerini ve Yanina Rai'nin telefonla stüdyo çekim geometrisini Linail Beauty stüdyosuna tam entegre etmek.
 
@@ -33,10 +33,10 @@ flowchart LR
 
 ---
 
-### Kural 2: ManyChat Tek Kelime Yorum Hunisi (Comment-to-DM)
+### Kural 2: Doğrudan DM & WhatsApp VIP Tek Kelime Yorum Hunisi (Comment-to-DM)
 Beatriz'in tüm reels'lerinde ilk satır aynıdır: `Comenta "IA" para desbloquear...`
 * **Algoritma Hilesi:** Yoruma tek bir kelime yazdırmak izleyicinin yorum yapma sürtünmesini (friction) sıfıra indirir. Yorum sayısı patladığı an Instagram videoyu Keşfet'e fırlatır.
-* **ManyChat Otomasyonu:** Yorumu yazan kişiye 3 saniye içinde DM'den özel katalog veya randevu takvimi düşer.
+* **Doğrudan DM & WhatsApp VIP Otomasyonu:** Yorumu yazan kişiye 3 saniye içinde DM'den özel katalog veya randevu takvimi düşer.
 * **Linail Tetikleyicileri:**
   - Cilt için: **"CAM CİLT"**
   - Tırnak için: **"TIRNAK"**

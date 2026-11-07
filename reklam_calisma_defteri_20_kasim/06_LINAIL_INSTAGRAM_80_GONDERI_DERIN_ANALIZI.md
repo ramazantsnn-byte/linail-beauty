@@ -47,7 +47,7 @@ Profildeki tüm paylaşımlar incelendiğinde Linail'in organik ses tonunun şu 
      •
      ```
 5. **İki Aşamalı Eylem Çağrısı (CTA):**
-   - Önce: *"Ücretsiz analiz ve detaylar için yoruma [KELİME] yazın"* (ManyChat DM hunisi).
+   - Önce: *"Ücretsiz analiz ve detaylar için yoruma [KELİME] yazın"* (Doğrudan DM & WhatsApp VIP hattı).
    - Sonra: Sabit imza bloku:
      ```text
      📍 Ataşehir • Uphill Towers B Blok D:14

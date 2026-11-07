@@ -16,7 +16,7 @@
 | *"Güzelliğinizi taçlandırın"*, *"Kendinizi şımartın"* gibi genel AI sloganları. | Doğrudan mesleki problem ve teknik gözlem: *"90% of artists under-process because they fear burning the brows."* | Masada danışanın kaşına/kirpiğine bakan usta sesi. |
 | Kuru işlem tanıtımı ("Lifting yaptık"). | Anatomik detay: Shield (ped) seçimi, silikon pedin göz kapağına sıfır yapışması, Glue Balm ile kılı kurutmadan tarama. | Müşteriye neden piyasadaki diğer yerlerden farklı olduğunu kanıtlama. |
 | Statik, sıkıcı metinler. | Hipnotik taktil makro çekimler, cımbız sesi, taranan kaşın esnekliği, cildin pürüzsüzlüğü. | 60 FPS yüksek kaliteli, temiz ışıklı telefon çekimleri. |
-| Karşı konulamaz kanca eksikliği. | Kışkırtıcı & merak uyandıran sorular: *"Laminasyon sonrası kaş kesmek neden yasaklanmalı?"* | Etkileşim ve ManyChat DM patlaması yaratan kancalar. |
+| Karşı konulamaz kanca eksikliği. | Kışkırtıcı & merak uyandıran sorular: *"Laminasyon sonrası kaş kesmek neden yasaklanmalı?"* | Etkileşim ve Doğrudan DM & WhatsApp VIP DM patlaması yaratan kancalar. |
 
 ---
 
@@ -123,7 +123,7 @@ Gülşah Hanım'ın onayına sunulacak, sıfır yapay zeka klişesi içeren, do�
   - *Görsel:* Rimelsiz, simsiya boyanmış, taranmış göz.
   - *Metin:* "Her sabah 20 dakika rimelle savaşmaya son. 6–8 hafta boyunca uyandığınız anda hazır bakışlar."
 * **Story 4 (CTA):**
-  - *ManyChat Çıkartması:* "Yoruma veya bu hikayeye **LİFTİNG** yazın, bu haftaki boş saatleri DM'den iletelim 🌸"
+  - *İletişim Çıkartması: "DM'den veya WhatsApp'tan (0531 869 67 64) yazın, bu haftaki boş saatleri iletelim 🌸"
 
 ---
 

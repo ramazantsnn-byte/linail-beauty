@@ -189,6 +189,6 @@ Aşağıdaki tabloda taranan tüm paylaşımların orijinal bağlantıları, kat
 ## 6. 20 KASIM KAMPANYASINDA YAPILAN TAM UYARLAMA
 
 Bu analizin ardından reklam çalışma defterindeki 3 kreatif set şu şekilde revize edilmiştir:
-1. **Kore Cam Cilt (01):** Kuru tıbbi açıklamalar yerine Linail'in `✨ Cam Cilt Protokolümüzle Tanıştınız mı? ✨` girişi ve ManyChat `CAM CİLT` DM hunisi entegre edildi.
+1. **Kore Cam Cilt (01):** Kuru tıbbi açıklamalar yerine Linail'in `✨ Cam Cilt Protokolümüzle Tanıştınız mı? ✨` girişi ve Doğrudan DM & WhatsApp VIP `CAM CİLT` DM hunisi entegre edildi.
 2. **Rus Kombi Manikür & Jel (02):** "Et kesilmez" gibi hatalı ifadeler temizlendi; elmas alev uç ve Staleks makasla tek şerit pürüzsüz kesim gerçeği, "tırnak etiniz 3 günde parçalanıyorsa" usta kancası ve sıcak Linaura mum masajı yerleştirildi.
 3. **Kaş Laminasyon & Kirpik (03):** "Cat eye mı Wispy mi" ve "Sabah alarmı erteleyenler" kancaları eklenerek "Vip Odada Aynı Anda Çift İşlem" konforu ön plana çıkarıldı.

@@ -3,7 +3,7 @@
 
 > **Kampanya Türü:** Instagram Reels (9:16) & Carousel (4:5 Rehber Formatı)  
 > **Hedef Kitle:** Ataşehir, Batı Ataşehir, Uphill Court, Varyap Meridian, Finanskent (20–48 Yaş)  
-> **ManyChat Tetikleyicisi:** Yoruma `KİRPİK` veya `LIFTING` yazanlara doğrudan model kataloğu ve randevu takvimi.  
+> **Randevu & İletişim: Doğrudan Instagram DM veya WhatsApp VIP Hattı (0531 869 67 64)
 > **Linail Organik Kancası:** "Cat eye mı, Wispy mi?", "Alarmı 5 kez erteleyenler" ve "Vip Odada Aynı Anda 2 İşlem Konforu".
 
 ---
@@ -54,7 +54,7 @@ Enkapsüle Sisteamin bazlı resmi IC FACTORY Rus formülüyle kaş telleriniz se
 
 ---
 
-## 3. MANYCHAT OTOMASYON YANITI (DM KUTUSUNA ANINDA GİDECEK METİN)
+## 3. GÜLŞAH HANIM / STÜDYO DM YANIT METNİ (KOPYALA-YAPIŞTIR)
 
 ```text
 Selam! Linail Beauty’den sevgiler ✨💜

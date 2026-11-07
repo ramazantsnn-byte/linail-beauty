@@ -3,7 +3,7 @@
 
 > **Kampanya Türü:** Instagram Carousel (4:5 Dikey) + Instagram Reels (9:16)  
 > **Hedef Kitle:** Ataşehir Finans Merkezi ve Çevre Sitelerdeki Bakımlı Kadınlar (24–50 Yaş)  
-> **ManyChat Tetikleyicisi:** Yoruma `CAMCİLT` yazanlara doğrudan seans dökümü ve VIP randevu linki.  
+> **Randevu & İletişim: Doğrudan Instagram DM veya WhatsApp VIP Hattı (0531 869 67 64)
 > **Görsel Varlık Yolu:** `/Users/applesupport/Desktop/linail beauty/assets/cilt_bakimi_luxury.jpg`, `/assets/carboxy_bohr_mask.jpg`, `/assets/cilt_bakimi_reel_opt.mp4`
 
 ---
@@ -95,7 +95,7 @@ Cildinize en uygun analizi yapıp bu özel ritüeli birlikte planlayalım!
 
 ---
 
-## 3. MANYCHAT OTOMASYON YANITI (DM KUTUSUNA ANINDA GİDECEK METİN)
+## 3. GÜLŞAH HANIM / STÜDYO DM YANIT METNİ (KOPYALA-YAPIŞTIR)
 
 ```text
 Selam! Linail Beauty’den sevgiler ✨💜

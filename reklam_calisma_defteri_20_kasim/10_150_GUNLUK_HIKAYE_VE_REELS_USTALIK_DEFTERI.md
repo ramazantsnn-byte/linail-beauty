@@ -7,7 +7,7 @@
 > 1. `@milkgel_official` (True 60 FPS, Blik yansıma çizgisi, taktil ASMR, hız kurgusu)  
 > 2. `@blick.lashes` (Lash lifting shield geometrisi L vs C, Lami glue balm, reverse zone)  
 > 3. `@thefacespace.co` (Under-processing esneklik testi, cımbız siyah noktası, kaş kesim/trimming hatası, mullet kuralı)  
-> 4. `@beatrizbmkt` (2 Video Kuralı: Viral keşif vs Satış kapatma, ManyChat tek kelime hunileri)  
+> 4. `@beatrizbmkt` (2 Video Kuralı: Viral keşif vs Satış kapatma, Doğrudan DM ve WhatsApp VIP yönlendirmesi)  
 > 5. `@yanina_rai` (Masa mengeneli pantograf kol, ters telefon montajı, 3x telefoto makro, -0.3 EV pozlama)  
 > **Görsel Web Arayüzü:** Tüm bu 150 gün interaktif olarak `gulsah-reels/index.html` sayfasında da canlı olarak filtrelenebilir ve incelenebilir durumdadır.
 
@@ -21,7 +21,7 @@
    - **Slide 1 (Kanca Anket):** İzleyicinin acısına dokunan merak sorusu & anket/çıkartma.
    - **Slide 2 (Masadan Makro Kanıt):** 60 FPS telefon çekimiyle zanaat ve kimyasal hassasiyet.
    - **Slide 3 (Eğitici Çözüm):** Neden diğer yerlerde bozulduğu ve Linail'in koruyucu formülü.
-   - **Slide 4 (Net CTA):** ManyChat kelimesi veya WhatsApp VIP (`0531 869 67 64`) link çıkartması.
+   - **Slide 4 (Net CTA):** WhatsApp VIP / DM linki veya WhatsApp VIP (`0531 869 67 64`) link çıkartması.
 
 ---
 
@@ -30,7 +30,7 @@
 > **Açıklama:** Milyon izlenen viral kural: Konuşmadan, sadece freze, otoklav ve fırça sesleriyle izleyiciyi ekrana kilitleyen hipnotik mikro-videolar.  
 > **Stratejik Rol:** En Yüksek Tamamlama Oranı (%140 Retention)  
 
-| Gün | Başlık / Konu | Kanca (Hook / İlk Cümle) | Kamera & Açı (Yanina Rai) | 4 Slaytlık Hikaye (Story) Planı | ManyChat & CTA |
+| Gün | Başlık / Konu | Kanca (Hook / İlk Cümle) | Kamera & Açı (Yanina Rai) | 4 Slaytlık Hikaye (Story) Planı | WhatsApp VIP & DM Randevu |
 |---|---|---|---|---|---|
 | **Gün 1** | Cerrahi Otoklav Yırtılış Sesi | Sesini Açın 🎧 | 3x Telefoto Makro, Ters Monte Telefon, -0.3 EV, 60 FPS, Tepe Hilal Lamba (5000K) | Slide 1 (Kanca Anket): Sesini Açın 🎧 • İzleyiciyi durduran soru & Etkileşim çıkartması<br/>Slide 2 (Masadan Makro Kanıt): Gülşah Hanım'ın ellerinden 60 FPS zanaat / elmas freze / glue balm videosu.<br/>Slide 3 (Eğitici Çözüm): Neden diğer yerlerde bozulduğu ve Linail'in koruyucu kimyası.<br/>Slide 4 (CTA): Yoruma veya DM'ye anahtar kelime yazın / WhatsApp VIP 0531 869 67 64 | Yoruma 'TIRNAK' yazın 💅 |
 | **Gün 2** | Kütikülün Frezeyle İpeksi Kayışı | O İpeksi Geçiş... | 3x Makro Odak, AE/AF Kilitli, 45° Usta Açısı, Tepe Blik Çizgisi, 60 FPS | Slide 1 (Kanca Anket): O İpeksi Geçiş... • İzleyiciyi durduran soru & Etkileşim çıkartması<br/>Slide 2 (Masadan Makro Kanıt): Gülşah Hanım'ın ellerinden 60 FPS zanaat / elmas freze / glue balm videosu.<br/>Slide 3 (Eğitici Çözüm): Neden diğer yerlerde bozulduğu ve Linail'in koruyucu kimyası.<br/>Slide 4 (CTA): Yoruma veya DM'ye anahtar kelime yazın / WhatsApp VIP 0531 869 67 64 | WhatsApp VIP: 0531 869 67 64 |
@@ -70,7 +70,7 @@
 > **Açıklama:** İnsan beyninin karşı koyamadığı zıtlık: Kırılmış, tırnak etleri sertleşmiş tırnakların 15 saniyede kraliyet ellerine dönüşüm serisi.  
 > **Stratejik Rol:** En Yüksek Paylaşım ve Kaydetme  
 
-| Gün | Başlık / Konu | Kanca (Hook / İlk Cümle) | Kamera & Açı (Yanina Rai) | 4 Slaytlık Hikaye (Story) Planı | ManyChat & CTA |
+| Gün | Başlık / Konu | Kanca (Hook / İlk Cümle) | Kamera & Açı (Yanina Rai) | 4 Slaytlık Hikaye (Story) Planı | WhatsApp VIP & DM Randevu |
 |---|---|---|---|---|---|
 | **Gün 1** | Tırnak Yeme Alışkanlığını 1 Saatte Bitirdik | Ellerini Saklamaktan Yorulanlar... | 3x Telefoto Makro, Ters Monte Telefon, -0.3 EV, 60 FPS, Tepe Hilal Lamba (5000K) | Slide 1 (Kanca Anket): Ellerini Saklamaktan Yorulanlar... • İzleyiciyi durduran soru & Etkileşim çıkartması<br/>Slide 2 (Masadan Makro Kanıt): Gülşah Hanım'ın ellerinden 60 FPS zanaat / elmas freze / glue balm videosu.<br/>Slide 3 (Eğitici Çözüm): Neden diğer yerlerde bozulduğu ve Linail'in koruyucu kimyası.<br/>Slide 4 (CTA): Yoruma veya DM'ye anahtar kelime yazın / WhatsApp VIP 0531 869 67 64 | WhatsApp VIP: 0531 869 67 64 |
 | **Gün 2** | Ortadan İkiye Kırılan Tırnağı İpekle Kurtarma | Sakın Kesmeyin! Kurtarabiliriz 🩹 | 3x Makro Odak, AE/AF Kilitli, 45° Usta Açısı, Tepe Blik Çizgisi, 60 FPS | Slide 1 (Kanca Anket): Sakın Kesmeyin! Kurtarabiliriz 🩹 • İzleyiciyi durduran soru & Etkileşim çıkartması<br/>Slide 2 (Masadan Makro Kanıt): Gülşah Hanım'ın ellerinden 60 FPS zanaat / elmas freze / glue balm videosu.<br/>Slide 3 (Eğitici Çözüm): Neden diğer yerlerde bozulduğu ve Linail'in koruyucu kimyası.<br/>Slide 4 (CTA): Yoruma veya DM'ye anahtar kelime yazın / WhatsApp VIP 0531 869 67 64 | WhatsApp VIP: 0531 869 67 64 |
@@ -110,7 +110,7 @@
 > **Açıklama:** Sıradan tırnakçı değil, Ataşehir'in 1 numaralı uzmanı algısı: 'Tırnak nefes almaz', 'Jel neden yanar' gibi tabuları çürüten otorite serisi.  
 > **Stratejik Rol:** En Yüksek Güven ve Prestij  
 
-| Gün | Başlık / Konu | Kanca (Hook / İlk Cümle) | Kamera & Açı (Yanina Rai) | 4 Slaytlık Hikaye (Story) Planı | ManyChat & CTA |
+| Gün | Başlık / Konu | Kanca (Hook / İlk Cümle) | Kamera & Açı (Yanina Rai) | 4 Slaytlık Hikaye (Story) Planı | WhatsApp VIP & DM Randevu |
 |---|---|---|---|---|---|
 | **Gün 1** | Tırnak Nefes Alır mı? Keratin Gerçeği | 'Tırnağım hava alsın diye ojeyi sildim' diyenler: | 3x Telefoto Makro, Ters Monte Telefon, -0.3 EV, 60 FPS, Tepe Hilal Lamba (5000K) | Slide 1 (Kanca Anket): 'Tırnağım hava alsın diye ojeyi sildim' diyenler: • İzleyiciyi durduran soru & Etkileşim çıkartması<br/>Slide 2 (Masadan Makro Kanıt): Gülşah Hanım'ın ellerinden 60 FPS zanaat / elmas freze / glue balm videosu.<br/>Slide 3 (Eğitici Çözüm): Neden diğer yerlerde bozulduğu ve Linail'in koruyucu kimyası.<br/>Slide 4 (CTA): Yoruma veya DM'ye anahtar kelime yazın / WhatsApp VIP 0531 869 67 64 | WhatsApp VIP: 0531 869 67 64 |
 | **Gün 2** | Jel Neden Lambada Yanar? (Ekzotermik Reaksiyon) | Lambada elinizi aniden yakan o hissin asıl sebebi: | 3x Makro Odak, AE/AF Kilitli, 45° Usta Açısı, Tepe Blik Çizgisi, 60 FPS | Slide 1 (Kanca Anket): Lambada elinizi aniden yakan o hissin asıl sebebi: • İzleyiciyi durduran soru & Etkileşim çıkartması<br/>Slide 2 (Masadan Makro Kanıt): Gülşah Hanım'ın ellerinden 60 FPS zanaat / elmas freze / glue balm videosu.<br/>Slide 3 (Eğitici Çözüm): Neden diğer yerlerde bozulduğu ve Linail'in koruyucu kimyası.<br/>Slide 4 (CTA): Yoruma veya DM'ye anahtar kelime yazın / WhatsApp VIP 0531 869 67 64 | WhatsApp VIP: 0531 869 67 64 |
@@ -150,7 +150,7 @@
 > **Açıklama:** Samimi arkadan seslendirmeli vaka anlatımları: Gelin krizleri, son dakika uçuşu olan misafirler ve masada geçen gerçek tecrübeler.  
 > **Stratejik Rol:** En Yüksek Yorum ve DM Dönüşümü  
 
-| Gün | Başlık / Konu | Kanca (Hook / İlk Cümle) | Kamera & Açı (Yanina Rai) | 4 Slaytlık Hikaye (Story) Planı | ManyChat & CTA |
+| Gün | Başlık / Konu | Kanca (Hook / İlk Cümle) | Kamera & Açı (Yanina Rai) | 4 Slaytlık Hikaye (Story) Planı | WhatsApp VIP & DM Randevu |
 |---|---|---|---|---|---|
 | **Gün 1** | Uçuşuna 2 Saat Kala Gelen Misafirimizin Acil Seansı | Uçağının kalkmasına 2 saat kala kapıdan girdi... | 3x Telefoto Makro, Ters Monte Telefon, -0.3 EV, 60 FPS, Tepe Hilal Lamba (5000K) | Slide 1 (Kanca Anket): Uçağının kalkmasına 2 saat kala kapıdan girdi... • İzleyiciyi durduran soru & Etkileşim çıkartması<br/>Slide 2 (Masadan Makro Kanıt): Gülşah Hanım'ın ellerinden 60 FPS zanaat / elmas freze / glue balm videosu.<br/>Slide 3 (Eğitici Çözüm): Neden diğer yerlerde bozulduğu ve Linail'in koruyucu kimyası.<br/>Slide 4 (CTA): Yoruma veya DM'ye anahtar kelime yazın / WhatsApp VIP 0531 869 67 64 | WhatsApp VIP: 0531 869 67 64 |
 | **Gün 2** | Gelinimiz Nikaha 3 Saat Kala Tırnağını Kırmıştı... | Düğüne 3 saat kala bu tırnakla kapıdan girdi: | 3x Makro Odak, AE/AF Kilitli, 45° Usta Açısı, Tepe Blik Çizgisi, 60 FPS | Slide 1 (Kanca Anket): Düğüne 3 saat kala bu tırnakla kapıdan girdi: • İzleyiciyi durduran soru & Etkileşim çıkartması<br/>Slide 2 (Masadan Makro Kanıt): Gülşah Hanım'ın ellerinden 60 FPS zanaat / elmas freze / glue balm videosu.<br/>Slide 3 (Eğitici Çözüm): Neden diğer yerlerde bozulduğu ve Linail'in koruyucu kimyası.<br/>Slide 4 (CTA): Yoruma veya DM'ye anahtar kelime yazın / WhatsApp VIP 0531 869 67 64 | WhatsApp VIP: 0531 869 67 64 |
@@ -190,7 +190,7 @@
 > **Açıklama:** Şehrin yoğunluğundan sıyrılan Ataşehir kadınına hitap eden huzur: İtalyan espressosu, vale konforu ve kişiye özel VIP oda ayrıcalığı.  
 > **Stratejik Rol:** En Yüksek Satın Alma Güçlü Müşteri  
 
-| Gün | Başlık / Konu | Kanca (Hook / İlk Cümle) | Kamera & Açı (Yanina Rai) | 4 Slaytlık Hikaye (Story) Planı | ManyChat & CTA |
+| Gün | Başlık / Konu | Kanca (Hook / İlk Cümle) | Kamera & Açı (Yanina Rai) | 4 Slaytlık Hikaye (Story) Planı | WhatsApp VIP & DM Randevu |
 |---|---|---|---|---|---|
 | **Gün 1** | Ataşehir Uphill Towers'ta Sakin Bir Güzellik Molası | Ataşehir'in En Sakin Köşesinde 1 Saat 🕊️ | 3x Telefoto Makro, Ters Monte Telefon, -0.3 EV, 60 FPS, Tepe Hilal Lamba (5000K) | Slide 1 (Kanca Anket): Ataşehir'in En Sakin Köşesinde 1 Saat 🕊️ • İzleyiciyi durduran soru & Etkileşim çıkartması<br/>Slide 2 (Masadan Makro Kanıt): Gülşah Hanım'ın ellerinden 60 FPS zanaat / elmas freze / glue balm videosu.<br/>Slide 3 (Eğitici Çözüm): Neden diğer yerlerde bozulduğu ve Linail'in koruyucu kimyası.<br/>Slide 4 (CTA): Yoruma veya DM'ye anahtar kelime yazın / WhatsApp VIP 0531 869 67 64 | WhatsApp VIP: 0531 869 67 64 |
 | **Gün 2** | VIP Odada Aynı Anda 3 İşlem: Zamanınızı Geri Alın | Tek Seferde Manikür, Pedikür ve Kirpik ✨ | 3x Makro Odak, AE/AF Kilitli, 45° Usta Açısı, Tepe Blik Çizgisi, 60 FPS | Slide 1 (Kanca Anket): Tek Seferde Manikür, Pedikür ve Kirpik ✨ • İzleyiciyi durduran soru & Etkileşim çıkartması<br/>Slide 2 (Masadan Makro Kanıt): Gülşah Hanım'ın ellerinden 60 FPS zanaat / elmas freze / glue balm videosu.<br/>Slide 3 (Eğitici Çözüm): Neden diğer yerlerde bozulduğu ve Linail'in koruyucu kimyası.<br/>Slide 4 (CTA): Yoruma veya DM'ye anahtar kelime yazın / WhatsApp VIP 0531 869 67 64 | WhatsApp VIP: 0531 869 67 64 |
@@ -232,7 +232,9 @@
    - iPhone'u tutucuya **baş aşağı (ters monte)** takın.
    - Tepe Hilal Lambasını (5000K) tırnak/kaş hizasının 25 cm üstüne getirin.
 2. **Kamera Ayarı (1 Dakika):**
-   - Kamera $ightarrow$ Video $ightarrow$ `4K 60 FPS`.
+   - Kamera $
+ightarrow$ Video $
+ightarrow$ `4K 60 FPS`.
    - `3x Telefoto Lens`i seçin.
    - Masadaki tırnağa/kaşa dokunup **AE/AF Kilitleyin**.
    - Güneş simgesini parmağınızla hafifçe aşağı çekerek **-0.3 EV pozlama** yapın (tırnaktaki ışık parlamasını önleyin).

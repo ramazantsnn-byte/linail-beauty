@@ -57,7 +57,7 @@ Reklam seti ve anahtar kelime seviyesinde şu aramalar derhal negatiflenir:
 ```mermaid
 flowchart LR
     A["Meta / IG Reklamı (4:5 veya 9:16)"] --> B{"Eylem Çağrısı"}
-    B -->|"Yoruma 'FİYAT' / 'CAMCİLT' Yaz"| C["ManyChat Otomatik VIP DM"]
+    B -->|"Yoruma 'FİYAT' / 'CAMCİLT' Yaz"| C["Doğrudan Instagram DM & WhatsApp VIP Danışma"]
     B -->|"Profile Git"| D["Öne Çıkanlar & Otoklav Hijyen Kanıtı"]
     B -->|"Buton: WhatsApp'ta Mesaj Gönder"| E["0531 869 67 64 VIP Danışma"]
     C --> E

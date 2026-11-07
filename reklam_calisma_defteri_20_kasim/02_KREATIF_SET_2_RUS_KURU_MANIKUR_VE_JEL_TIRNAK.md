@@ -3,7 +3,7 @@
 
 > **Kampanya Türü:** Instagram Reels (9:16) & Carousel (4:5)  
 > **Hedef Kitle:** Ataşehir, Batı Ataşehir, Finans Merkezi ve Çevre Siteler (22–48 Yaş)  
-> **ManyChat Tetikleyicisi:** Yoruma `TIRNAK` veya `FİYAT` yazanlara doğrudan katalog ve randevu linki.  
+> **Randevu & İletişim: Doğrudan Instagram DM veya WhatsApp VIP Hattı (0531 869 67 64)
 > **Kabin & Salon Gerçeği:** Elmas alev frezeyle kütikül cebi kaldırılır, Staleks kavisli makasla etler tek bir pürüzsüz şerit halinde kesilir. Tırnak etinin hemen altına sıfır hava boşluğuyla mimari jel oturtulur. 4–5 hafta boyunca dipten basamak yapmaz, kırılmaz ve hava almaz.
 
 ---
@@ -56,7 +56,7 @@ Günde yalnızca 5 kişiye özel VIP randevu açıyoruz; tırnaklarınız asla a
 
 ---
 
-## 3. MANYCHAT OTOMASYON YANITI (DM KUTUSUNA ANINDA GİDECEK METİN)
+## 3. GÜLŞAH HANIM / STÜDYO DM YANIT METNİ (KOPYALA-YAPIŞTIR)
 
 ```text
 Selam! Linail Beauty’den sevgiler ✨💜
