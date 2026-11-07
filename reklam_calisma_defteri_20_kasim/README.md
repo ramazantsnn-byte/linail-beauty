@@ -48,6 +48,11 @@ Bu klasör, 20 Kasım günü reklamları yayına alırken **sıfır kafa karış
    - 60 FPS video standardı, tepe hilal lamba ışık mimarisi, kusursuz ışık yansıma çizgisi (Blik kuralı)
    - Speed ramping, taktil ASMR ses dizaynı ve Linail için çekilecek ilk 3 viral senaryo
 
+9. **`08_BLICK_LASHES_VE_THEFACESPACE_DERIN_ANALIZ_VE_GULSAH_HIKAYE_REVIZYONU.md`**
+   - @blick.lashes (52 reels) ve @thefacespace.co (55 reels) derinlemesine kaş & kirpik işlem analizi
+   - Gülşah Hanım'ın reddettiği 150 hikayenin eksiklik analizi (Under-processing, cımbız siyah noktası, kaş kesim tartışması, shield seçimi)
+   - Linail için yeniden yapılandırılan 4 ana organik hikaye & reels serisi (Sıfır AI slop, 100% usta zanaatı)
+
 ---
 
 > **Not:** Tüm dosyalar doğrudan `/Users/applesupport/Desktop/linail beauty/reklam_calisma_defteri_20_kasim/` klasöründe hazır bulunmaktadır.
