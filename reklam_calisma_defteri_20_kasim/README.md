@@ -57,6 +57,12 @@ Bu klasör, 20 Kasım günü reklamları yayına alırken **sıfır kafa karış
     - @beatrizbmkt (50 reels) prompt mimarisi, ManyChat yorum hunileri ve "2 Video 2 Hedef" kuralı
     - @yanina_rai (95 reels) telefonla profesyonel çekim geometrisi, ters telefon montajı, 3x telefoto makro, -0.3 EV pozlama ve Blik ışık kurulumu
 
+11. **`10_150_GUNLUK_HIKAYE_VE_REELS_USTALIK_DEFTERI.md`**
+    - Gülşah Hanım'ın reddettiği eski içeriklerin yerine geçen **tam 150 günlük gün gün hikaye ve reels senaryoları**
+    - 5 Tematik Program (ASMR, Dönüşüm, Otorite, Stüdyo Hikayeleri, Sessiz Lüks)
+    - Her gün için: Kanca, 4 Slaytlık İnteraktif Story Planı, Yanina Rai kamera açısı, ManyChat kelimesi ve 15 dakikalık çekim SOP'si
+    - Canlı web arayüzü: `gulsah-reels/index.html`
+
 ---
 
 > **Not:** Tüm dosyalar doğrudan `/Users/applesupport/Desktop/linail beauty/reklam_calisma_defteri_20_kasim/` klasöründe hazır bulunmaktadır.
