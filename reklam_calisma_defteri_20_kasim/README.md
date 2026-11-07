@@ -43,6 +43,11 @@ Bu klasör, 20 Kasım günü reklamları yayına alırken **sıfır kafa karış
    - En çok etkileşim alan 12 kanca (hook), en sık kullanılan hashtag'ler ve Linail imza emojileri
    - Yapay zeka klişelerinden arındırılmış, denenmiş organik boutique içerik formülü
 
+8. **`07_MILKGEL_REELS_USTALIK_ANALIZI_VE_LINAIL_UYARLAMA_REFI.md`**
+   - @milkgel_official profilindeki **95 videonun ve 333k/195k beğeni alan reels formatlarının analizi**
+   - 60 FPS video standardı, tepe hilal lamba ışık mimarisi, kusursuz ışık yansıma çizgisi (Blik kuralı)
+   - Speed ramping, taktil ASMR ses dizaynı ve Linail için çekilecek ilk 3 viral senaryo
+
 ---
 
 > **Not:** Tüm dosyalar doğrudan `/Users/applesupport/Desktop/linail beauty/reklam_calisma_defteri_20_kasim/` klasöründe hazır bulunmaktadır.
