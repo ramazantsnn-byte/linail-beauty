@@ -53,6 +53,10 @@ Bu klasör, 20 Kasım günü reklamları yayına alırken **sıfır kafa karış
    - Gülşah Hanım'ın reddettiği 150 hikayenin eksiklik analizi (Under-processing, cımbız siyah noktası, kaş kesim tartışması, shield seçimi)
    - Linail için yeniden yapılandırılan 4 ana organik hikaye & reels serisi (Sıfır AI slop, 100% usta zanaatı)
 
+10. **`09_BEATRIZ_PROMPTLARI_VE_YANINA_RAI_CEKIM_MIMARISI.md`**
+    - @beatrizbmkt (50 reels) prompt mimarisi, ManyChat yorum hunileri ve "2 Video 2 Hedef" kuralı
+    - @yanina_rai (95 reels) telefonla profesyonel çekim geometrisi, ters telefon montajı, 3x telefoto makro, -0.3 EV pozlama ve Blik ışık kurulumu
+
 ---
 
 > **Not:** Tüm dosyalar doğrudan `/Users/applesupport/Desktop/linail beauty/reklam_calisma_defteri_20_kasim/` klasöründe hazır bulunmaktadır.
