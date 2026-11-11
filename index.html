@@ -865,30 +865,7 @@
 </head>
 <body class="bg-brand-cream text-stone-800 font-sans antialiased selection:bg-brand-gold selection:text-white overflow-x-hidden w-full">
 
-  <!-- ============================================================ -->
-  <!-- FAZ 1.1: LİNAİL BEAUTY LÜKS LOGO AÇILIŞ İNTROSU (Tek Seferlik) -->
-  <!-- ============================================================ -->
-  <div id="brand-intro-overlay" class="fixed inset-0 z-[9999] flex items-center justify-center pointer-events-auto" style="background-color: #9E8EA9; transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1);">
-    <div class="relative w-full max-w-[832px] p-4 flex items-center justify-center">
-      <video id="brandIntroVideo" 
-             src="assets/linail-logo-animation.mp4"
-             class="w-full h-auto max-h-[85vh] object-contain shadow-2xl rounded-2xl"
-             muted 
-             playsinline 
-             webkit-playsinline 
-             preload="auto"
-             disablepictureinpicture>
-        <source src="assets/linail-logo-animation.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-  <script>
-    // FOUC önleyici: Daha önce izlendiyse veya prefers-reduced-motion varsa anında gizle
-    if (sessionStorage.getItem('linail_intro_viewed') === 'true' || (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
-      var _introEl = document.getElementById('brand-intro-overlay');
-      if (_introEl) _introEl.style.display = 'none';
-    }
-  </script>
+
 
   
 
@@ -2834,70 +2811,7 @@
       });
     });
 
-    // ============================================================
-    // FAZ 1.1: Logo Açılış Animasyonu Orkestrasyonu (1.5x Hız, Tek Seferlik)
-    // ============================================================
-    (function initBrandIntro() {
-      const overlay = document.getElementById('brand-intro-overlay');
-      const video = document.getElementById('brandIntroVideo');
-      if (!overlay || !video) return;
 
-      const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (sessionStorage.getItem('linail_intro_viewed') === 'true' || prefersReduced) {
-        overlay.remove();
-        return;
-      }
-
-      let isDismissed = false;
-      function dismissIntro() {
-        if (isDismissed) return;
-        isDismissed = true;
-        sessionStorage.setItem('linail_intro_viewed', 'true');
-        overlay.style.opacity = '0';
-        overlay.style.pointerEvents = 'none';
-        setTimeout(function() {
-          if (overlay.parentNode) {
-            overlay.remove();
-          }
-        }, 700);
-      }
-
-      // 1.5x hız ayarı
-      try {
-        video.playbackRate = 1.5;
-      } catch (e) {}
-
-      // Video doğal olarak bittiğinde (ended) 700 ms fade-out başlat
-      video.addEventListener('ended', function() {
-        dismissIntro();
-      });
-
-      // Video yüklenemezse veya hata verirse ana sayfayı bekletmeden aç
-      video.addEventListener('error', function() {
-        dismissIntro();
-      });
-      const sourceEl = video.querySelector('source');
-      if (sourceEl) {
-        sourceEl.addEventListener('error', function() {
-          dismissIntro();
-        });
-      }
-
-      // Otomatik oynatma tetikleyici
-      const playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise.then(function() {
-          video.playbackRate = 1.5;
-        }).catch(function() {
-          dismissIntro();
-        });
-      }
-
-      // Failsafe Emniyet Kilidi (10s / 1.5x = ~6.7s; maksimum 8.5 sn sonra kaldır)
-      setTimeout(function() {
-        dismissIntro();
-      }, 8500);
-    })();
   </script>
 
 </body>
