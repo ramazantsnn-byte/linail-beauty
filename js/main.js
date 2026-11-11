@@ -200,8 +200,21 @@ const ritualBook = document.querySelector('#ritual-book');
 const ritualStatus = document.querySelector('#ritual-status');
 function updateRitual() {
   const selected = [...selectedRituals];
-  ritualStatus.textContent = selected.length ? `${selected.length}/3 bakım seçtiniz. Kombinasyon stüdyo teyidiyle planlanır.` : 'Sizin ritüeliniz, sizin seçiminiz.';
-  ritualBook.href = whatsappUrl(selected.length ? `Merhaba, VIP odanızda ${selected.join(' + ')} bakımlarını birlikte planlamak istiyorum. Bu kombinasyonun uygunluğunu, fiyatını ve randevu müsaitliğini öğrenebilir miyim?` : 'Merhaba, VIP odanızda aynı anda 3 işlem konsepti için kombinasyonlar, fiyat ve uygun randevu saatleri hakkında bilgi almak istiyorum.');
+  if (selected.length === 0) {
+    ritualStatus.textContent = 'Sizin ritüeliniz, sizin seçiminiz.';
+    ritualBook.href = whatsappUrl('Merhaba, Linail Beauty Ataşehir stüdyonuzda randevu müsaitliği ve kişiye özel bakım kombinasyonları hakkında bilgi alabilir miyim?');
+  } else if (selected.length === 1) {
+    ritualStatus.textContent = `1/3 bakım seçildi (${selected[0]}). Dilerseniz 2 işlem daha ekleyebilirsiniz.`;
+    ritualBook.href = whatsappUrl(`Merhaba, Linail Beauty Ataşehir stüdyonuzda ${selected[0]} işlemi için güncel fiyat ve uygun randevu saatlerini öğrenebilir miyim?`);
+  } else if (selected.length === 2) {
+    const listStr = `${selected[0]} ve ${selected[1]}`;
+    ritualStatus.textContent = `2/3 bakım seçildi (${listStr}). Dilerseniz 1 işlem daha ekleyebilirsiniz.`;
+    ritualBook.href = whatsappUrl(`Merhaba, Linail Beauty Ataşehir stüdyonuzda ${listStr} işlemlerini birlikte planlamak istiyorum. Bu kombinasyon için randevu müsaitliği ve fiyat bilgisi alabilir miyim?`);
+  } else {
+    const listStr = `${selected[0]}, ${selected[1]} ve ${selected[2]}`;
+    ritualStatus.textContent = `3/3 bakım seçildi (${listStr}). VIP kombinasyonunuz hazır.`;
+    ritualBook.href = whatsappUrl(`Merhaba, Linail Beauty VIP odanızda aynı anda ${listStr} bakımlarını planlamak istiyorum. Randevu müsaitliği ve kombinasyon detayları hakkında bilgi alabilir miyim?`);
+  }
 }
 for (const button of ritualButtons) {
   button.addEventListener('click', () => {
