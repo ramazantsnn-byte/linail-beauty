@@ -26,7 +26,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="/css/styles.css?v=20261111_v3">
+  <link rel="stylesheet" href="/css/styles.css?v=20261111_v5_live">
+  <style>
+    /* Critical Navbar Dropdown styles to guarantee zero layout shift even if stylesheet is cached */
+    .minimal-dropdown {
+      position: absolute !important;
+      top: calc(100% - 6px) !important;
+      left: 50% !important;
+      transform: translateX(-50%) translateY(8px) !important;
+      width: 280px !important;
+      background: #FFFDFC !important;
+      border: 1px solid #e2d7e5 !important;
+      border-radius: 6px !important;
+      padding: 6px !important;
+      box-shadow: 0 16px 36px rgba(52, 44, 56, 0.12) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 3px !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      transition: opacity .2s ease, transform .2s ease, visibility .2s !important;
+      z-index: 100 !important;
+    }
+    .nav-dropdown-item:hover .minimal-dropdown,
+    .nav-dropdown-item:focus-within .minimal-dropdown {
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+      transform: translateX(-50%) translateY(0) !important;
+    }
+  </style>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18351341167"></script>
@@ -163,7 +193,7 @@
 }
   </script>
 
-  <script src="/js/main.js?v=20261111_lila" defer></script>
+  <script src="/js/main.js?v=20261111_v5_live" defer></script>
 </head>
 <body>
   
