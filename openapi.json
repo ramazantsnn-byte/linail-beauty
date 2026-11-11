@@ -24,7 +24,7 @@
                 "example": {
                   "studio": "Linail Beauty Studio",
                   "location": "Ataşehir Barbaros Mah. Uphill Towers B Blok Daire 14, Istanbul",
-                  "parking": "Stüdyomuza özel tahsisli otopark alanı",
+                  "parking": "Uphill Towers çevresinde kolay otopark ve ulaşım imkanı",
                   "whatsapp": "+905318696764",
                   "daily_capacity": "5 VIP clients per day",
                   "services": [
@@ -33,7 +33,7 @@
                     { "name": "Jel Güçlendirme & Manikür & Kalıcı Oje", "price_try": 2400, "duration_min": 90 },
                     { "name": "El Kalıcı Oje & Manikür", "price_try": 1800, "duration_min": 60 },
                     { "name": "Ayak Kalıcı Oje & Pedikür", "price_try": 2400, "duration_min": 75 },
-                    { "name": "Rus Kuru Manikür - Steril Pedikür", "price_try": 2400, "duration_min": 90 },
+                    { "name": "Rus Manikürü - Steril Pedikür", "price_try": 2400, "duration_min": 90 },
                     { "name": "VIP 3'ü 1 Arada Eşzamanlı Seans (Tırnak + Kirpik + Pedikür)", "price_try": 6000, "duration_min": 150 }
                   ]
                 }
