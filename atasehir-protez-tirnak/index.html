@@ -157,18 +157,18 @@
         extend: {
           colors: {
             brand: {
-              purple: '#380B44',
-              deepPurple: '#1F0327',
-              darkViolet: '#16021C',
-              lightPurple: '#531365',
+              purple: '#563653',
+              deepPurple: '#563653',
+              darkViolet: '#342C38',
+              lightPurple: '#754C73',
               gold: '#C5A059',
               lightGold: '#E6CA85',
               darkGold: '#9F7C38',
-              cream: '#F7F2F8',
-              softPink: '#F4EEF7',
-              sand: '#EFE9E2',
-              lilac: '#F7F2F8',
-              softLilac: '#F0E6F3',
+              cream: '#F8F5FA',
+              softPink: '#F0E8F4',
+              sand: '#F0E8F4',
+              lilac: '#F8F5FA',
+              softLilac: '#F0E8F4',
               lavenderMist: '#ECE1EF'
             }
           },
@@ -342,198 +342,124 @@
       -webkit-text-fill-color: transparent;
     }
 
-  </style>
-</head>
-<body class="bg-[#F7F2F8] text-stone-800 font-sans antialiased">
+  
+    .brand-official-logo { height: 68px; width: auto; max-width: 100%; object-fit: contain; display: block; transition: transform .25s ease; }
+    .brand-official-logo:hover { transform: scale(1.03); }
+    @media (max-width: 860px) {
+      .brand-official-logo { height: 54px; }
+    }
 
-  <!-- Üst Bilgi Barı (Lüks Koyu Asil Mürdüm) -->
-  <div class="hidden md:flex bg-[#16021C] text-stone-200 text-[11px] tracking-[0.2em] py-2 px-4 text-center uppercase border-b border-brand-gold/25 flex-wrap justify-center items-center gap-2.5 md:gap-4">
-    <span class="flex items-center gap-1.5 text-amber-400 font-semibold">
-      <span>⭐⭐⭐⭐⭐</span>
-      <span class="text-brand-lightGold font-semibold">5.0</span>
-      <span class="text-stone-400 font-light text-[10px]">(Google Haritalar Onaylı)</span>
-    </span>
-    <span class="hidden md:inline text-brand-gold/40">|</span>
-    <span class="font-normal text-stone-300">Ataşehir Uphill Towers B Blok D:14 • Finans Merkezi Karşısı</span>
-    <span class="hidden md:inline text-brand-gold/40">|</span>
-    <a href="tel:+905318696764" class="text-brand-lightGold font-semibold hover:text-white transition-colors flex items-center gap-1.5">
-      <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-gold animate-pulse"></i>
-      <span>0531 869 67 64</span>
-    </a>
+  </style>
+  <style>
+    :root {
+      --ivory: #F8F5FA;
+      --sand: #F0E8F4;
+      --paper: #FFFDFC;
+      --wine: #754C73;
+      --wine-dark: #563653;
+      --line: #D8C5D9;
+      --accent: #A9789E;
+      --ink: #342C38;
+      --muted: #7E7082;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', -apple-system, sans-serif;
+    }
+    body { background-color: #F8F5FA !important; color: #342C38 !important; }
+    .top-strip { display: flex; justify-content: space-between; align-items: center; padding: 8px max(24px, calc((100vw - 1240px) / 2 + 40px)); background: #F0E8F4; border-bottom: 1px solid #D8C5D9; font-size: 10px; color: #7E7082; }
+    .top-strip a { display: flex; align-items: center; gap: 7px; font-size: 8px; letter-spacing: .15em; color: #754C73; text-decoration: none; font-weight: 600; }
+    .top-strip .icon { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 1.35; }
+    .header { position: sticky; top: 0; z-index: 50; background: rgba(248, 245, 250, .97); border-bottom: 1px solid #D8C5D9; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .nav-wrap { height: 84px; max-width: 1240px; margin: auto; padding: 0 max(24px, calc((100vw - 1240px) / 2 + 40px)); display: flex; justify-content: space-between; align-items: center; gap: 40px; }
+    .wordmark { display: inline-flex; flex-direction: column; align-items: center; min-width: 110px; text-decoration: none; }
+    .logo-main { font-family: var(--serif); font-size: 42px; letter-spacing: -.06em; font-weight: 500; color: #754C73; line-height: .95; }
+    .logo-i { font-style: italic; }
+    .logo-dot { margin-left: 2px; }
+    .logo-caption { font-size: 6.5px; letter-spacing: .33em; color: #754C73; font-weight: 600; margin-top: 5px; }
+    .desktop-nav { display: flex; gap: 28px; margin-left: auto; align-items: center; }
+    .desktop-nav a { font-size: 11px; color: #342C38; position: relative; padding-block: 10px; text-decoration: none; font-weight: 500; transition: color .2s; }
+    .desktop-nav a::after { content: ''; position: absolute; width: 0; height: 1px; bottom: 4px; left: 0; background: #754C73; transition: width .25s; }
+    .desktop-nav a:hover::after { width: 100%; }
+    .desktop-nav a:hover { color: #754C73; }
+    .nav-book { min-height: 40px; padding: 10px 18px; font-size: 10px; gap: 14px; background: #754C73; color: #FFFDFC; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; font-weight: 500; transition: background .2s; border: none; letter-spacing: .12em; text-transform: uppercase; border-radius: 0; }
+    .nav-book:hover { background: #563653; color: #FFFDFC; }
+    .nav-book .icon { width: 14px; height: 14px; stroke: currentColor; fill: none; }
+    .menu-toggle { display: none; width: 32px; height: 36px; padding: 8px 2px; background: none; border: 0; cursor: pointer; }
+    .menu-toggle span { display: block; background: #754C73; height: 1px; margin: 6px 0; transition: transform .25s; }
+    .menu-toggle[aria-expanded='true'] span:first-child { transform: translateY(3.5px) rotate(45deg); }
+    .menu-toggle[aria-expanded='true'] span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+    .mobile-menu { background: #F8F5FA; padding: 15px 24px 25px; border-top: 1px solid #D8C5D9; }
+    .mobile-menu a { display: block; padding: 12px 0; border-bottom: 1px solid #D8C5D9; color: #342C38; text-decoration: none; font-size: 12px; font-weight: 500; }
+    .mobile-menu a:hover { color: #754C73; }
+    @media (max-width: 860px) {
+      .top-strip span:first-child { display: none; }
+      .nav-wrap { height: 72px; padding-inline: 20px; gap: 16px; }
+      .desktop-nav { display: none; }
+      .menu-toggle { display: block; }
+      .nav-book { margin-left: auto; padding: 8px 14px; min-height: 36px; font-size: 9px; }
+      .wordmark { min-width: 86px; }
+      .logo-main { font-size: 36px; }
+      .logo-caption { font-size: 5.5px; }
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuBtn = document.querySelector('.menu-toggle');
+      const mobMenu = document.querySelector('#mobile-menu');
+      if (menuBtn && mobMenu) {
+        menuBtn.addEventListener('click', function() {
+          const exp = menuBtn.getAttribute('aria-expanded') === 'true';
+          menuBtn.setAttribute('aria-expanded', String(!exp));
+          mobMenu.hidden = exp;
+        });
+        mobMenu.querySelectorAll('a').forEach(function(l) {
+          l.addEventListener('click', function() {
+            mobMenu.hidden = true;
+            menuBtn.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    });
+  </script>
+
+</head>
+<body class="bg-[#F8F5FA] text-[#342C38] font-sans antialiased">
+
+  <!-- SVG DEFINITIONS -->
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden;">
+    <symbol id="i-diagonal" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6h12v12"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.35"/></symbol>
+  </svg>
+
+  <!-- TOP STRIP (Pudralı Lavanta #F0E8F4) -->
+  <div class="top-strip">
+    <span>Günün temposuna kısa bir güzellik molası.</span>
+    <a href="/#iletisim"><svg class="icon"><use href="#i-pin"/></svg> ATAŞEHİR · UPHILL TOWERS</a>
   </div>
 
-  <!-- Header (Asil Lüks Mürdüm Koyu Mod - Net & Belirgin Tipografi) -->
-  <!-- Header (Asil Lüks Mürdüm Koyu Mod - Net & Belirgin Tipografi) -->
-    <!-- Header / Navigasyon — Flat, minimal, 2026 lüks -->
-  <header id="navbar" class="linail-nav sticky top-0 z-50 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 h-[64px] sm:h-[68px] flex items-center justify-between">
-
-      <!-- Logo -->
-      <a href="/" class="shrink-0 flex flex-col leading-none group">
-        <span class="font-serif text-[18px] sm:text-[20px] tracking-[0.2em] text-white font-light uppercase group-hover:text-brand-lightGold transition-colors duration-300">
-          LİNAİL <span class="gold-gradient-text">BEAUTY</span>
-        </span>
-        <span class="text-[7.5px] sm:text-[8px] tracking-[0.4em] text-brand-lightGold/80 uppercase font-light mt-0.5">Ataşehir · Beauty Studio</span>
+  <!-- HEADER (Çok Açık Lila #F8F5FA - Simetrik Tipografi) -->
+  <header class="header" id="top">
+    <div class="nav-wrap">
+      <a class="wordmark" href="/" aria-label="LİNAİL BEAUTY ana sayfa">
+        <img src="/assets/linail_full_logo_tight.png" alt="LİNAİL BEAUTY - Gülşah Taşan" class="brand-official-logo" width="68" height="69">
       </a>
-
-      <!-- Desktop Nav Links -->
-      <nav class="hidden lg:flex items-center gap-9">
-        <a href="/#vip" class="nav-link">3 İşlem Konsepti</a>
-
-        <!-- Hizmetlerimiz Dropdown -->
-        <div class="relative services-dropdown-container">
-          <button id="services-dropdown-btn" type="button" class="nav-link flex items-center gap-1.5 focus:outline-none cursor-pointer bg-transparent border-0">
-            Hizmetlerimiz
-            <i data-lucide="chevron-down" id="services-dropdown-icon" class="w-3 h-3 transition-transform duration-300"></i>
-          </button>
-          <div id="services-dropdown-menu" class="services-dropdown-menu absolute left-1/2 -translate-x-1/2 top-full mt-2 w-72 z-50">
-            <div class="bg-[#0a020f]/95 backdrop-blur-xl border border-brand-gold/20 shadow-2xl p-2">
-              <a href="/atasehir-protez-tirnak/" class="flex items-center gap-3 px-4 py-3 hover:bg-white/5 transition-colors group/d">
-                <div class="w-1.5 h-1.5 rounded-full bg-brand-gold group-hover/d:scale-150 transition-transform shrink-0"></div>
-                <div>
-                  <div class="text-[11.5px] tracking-widest text-white/90 font-medium uppercase">Protez Jel Tırnak</div>
-                  <div class="text-[10px] text-brand-lightGold/60 font-light">Rus manikürü & mimari</div>
-                </div>
-              </a>
-              <a href="/atasehir-ipek-kirpik/" class="flex items-center gap-3 px-4 py-3 hover:bg-white/5 transition-colors group/d">
-                <div class="w-1.5 h-1.5 rounded-full bg-brand-gold group-hover/d:scale-150 transition-transform shrink-0"></div>
-                <div>
-                  <div class="text-[11.5px] tracking-widest text-white/90 font-medium uppercase">İpek Kirpik & Lifting</div>
-                  <div class="text-[10px] text-brand-lightGold/60 font-light">Ağırlıksız ipek volüm</div>
-                </div>
-              </a>
-              <a href="/atasehir-cilt-bakimi/" class="flex items-center gap-3 px-4 py-3 hover:bg-white/5 transition-colors group/d">
-                <div class="w-1.5 h-1.5 rounded-full bg-brand-gold group-hover/d:scale-150 transition-transform shrink-0"></div>
-                <div>
-                  <div class="text-[11.5px] tracking-widest text-white/90 font-medium uppercase">Profesyonel Cilt Bakımı</div>
-                  <div class="text-[10px] text-brand-lightGold/60 font-light">Genosys 7'si 1 arada</div>
-                </div>
-              </a>
-              <a href="/atasehir-kas-laminasyon/" class="flex items-center gap-3 px-4 py-3 hover:bg-white/5 transition-colors group/d">
-                <div class="w-1.5 h-1.5 rounded-full bg-brand-gold group-hover/d:scale-150 transition-transform shrink-0"></div>
-                <div>
-                  <div class="text-[11.5px] tracking-widest text-white/90 font-medium uppercase">Kaş Laminasyon</div>
-                  <div class="text-[10px] text-brand-lightGold/60 font-light">Keratin dolgu & simetri</div>
-                </div>
-              </a>
-              <a href="/atasehir-nail-art/" class="flex items-center gap-3 px-4 py-3 hover:bg-white/5 transition-colors group/d">
-                <div class="w-1.5 h-1.5 rounded-full bg-brand-gold group-hover/d:scale-150 transition-transform shrink-0"></div>
-                <div>
-                  <div class="text-[11.5px] tracking-widest text-white/90 font-medium uppercase">Nail Art & Krom</div>
-                  <div class="text-[10px] text-brand-lightGold/60 font-light">Özel el çizimi tasarımlar</div>
-                </div>
-              </a>
-              <a href="/rus-manikur-atasehir/" class="flex items-center gap-3 px-4 py-3 hover:bg-white/5 transition-colors group/d">
-                <div class="w-1.5 h-1.5 rounded-full bg-brand-gold group-hover/d:scale-150 transition-transform shrink-0"></div>
-                <div>
-                  <div class="text-[11.5px] tracking-widest text-white/90 font-medium uppercase">Rus Manikürü</div>
-                  <div class="text-[10px] text-brand-lightGold/60 font-light">Medikal & spa bakım</div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <a href="/#yorumlar" class="nav-link">Yorumlar</a>
-        <a href="/#galeri" class="nav-link">Lookbook</a>
-        <a href="/#iletisim" class="nav-link">İletişim</a>
+      <nav class="desktop-nav" aria-label="Ana menü">
+        <a href="/#hizmetler">Hizmetlerimiz</a>
+        <a href="/#vip">VIP Deneyim</a>
+        <a href="/#studyo">Stüdyomuz</a>
+        <a href="/#sorular">Sık Sorulanlar</a>
+        <a href="/#iletisim">İletişim</a>
       </nav>
-
-      <!-- Desktop CTA -->
-      <div class="hidden lg:flex items-center gap-5">
-        <a href="https://www.instagram.com/linail.beautystudio/" target="_blank" class="nav-link opacity-70 hover:opacity-100">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-        </a>
-        <a href="https://wa.me/905318696764?text=Merhaba,%20Google'da%20inceledim.%20Ataşehir%20Uphill%20Towers%20stüdyonuzda%20protez%20tırnak%20için%20randevu%20ve%20müsaitlik%20durumu%20hakkında%20bilgi%20alabilir%20miyim?"
-           target="_blank"
-           class="px-6 py-2.5 bg-brand-gold text-brand-deepPurple text-[10.5px] tracking-[0.2em] uppercase font-semibold hover:bg-brand-lightGold transition-colors duration-200">
-          Randevu Al
-        </a>
-      </div>
-
-      <!-- Mobile Right -->
-      <div class="flex lg:hidden items-center gap-3">
-        <a id="mobile-randevu-btn"
-           href="https://wa.me/905318696764?text=Merhaba,%20Google'da%20inceledim.%20Ataşehir%20Uphill%20Towers%20stüdyonuzda%20protez%20tırnak%20için%20randevu%20ve%20müsaitlik%20durumu%20hakkında%20bilgi%20alabilir%20miyim?"
-           target="_blank"
-           class="px-4 py-2 bg-brand-gold text-brand-deepPurple text-[9.5px] tracking-[0.18em] uppercase font-semibold">
-          Randevu
-        </a>
-        <button id="mobile-menu-btn" type="button" aria-label="Menüyü Aç/Kapat" class="w-9 h-9 flex flex-col items-center justify-center gap-1.5 focus:outline-none cursor-pointer relative z-50">
-          <span class="line-1 w-5 h-px bg-brand-lightGold block transition-all duration-300"></span>
-          <span class="line-2 w-5 h-px bg-brand-lightGold block transition-all duration-300"></span>
-          <span class="line-3 w-3.5 h-px bg-brand-lightGold block self-start ml-2 transition-all duration-300"></span>
-        </button>
-      </div>
+      <a class="button button-primary nav-book" href="https://wa.me/905318696764" target="_blank" rel="noopener noreferrer">Randevu Al <svg class="icon"><use href="#i-diagonal"/></svg></a>
+      <button class="menu-toggle" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
     </div>
-
-    <!-- Mobile Drawer -->
-    <div id="mobile-menu-backdrop" class="backdrop-closed lg:hidden"></div>
-    <div id="mobile-menu" class="menu-closed lg:hidden">
-      <div class="mobile-drawer px-5 pt-5 pb-8 space-y-5">
-
-        <!-- Başlık -->
-        <div class="flex items-center justify-between pb-3.5 border-b border-brand-gold/15">
-          <span class="text-[10px] tracking-[0.28em] uppercase text-brand-lightGold font-medium">HİZMETLERİMİZ</span>
-          <span class="text-[9px] tracking-wider text-white/50 font-light uppercase">Uphill Towers · Ataşehir</span>
-        </div>
-
-        <!-- Hizmetler Grid -->
-        <div class="grid grid-cols-2 gap-2.5">
-          <a href="/atasehir-protez-tirnak/" class="flex flex-col p-3.5 border border-brand-gold/15 hover:border-brand-gold/40 transition-colors">
-            <span class="text-[11px] tracking-widest text-white uppercase font-medium">Protez Tırnak</span>
-            <span class="text-[9px] text-brand-lightGold/60 font-light mt-0.5">Rus Manikür Mimarisi</span>
-          </a>
-          <a href="/atasehir-ipek-kirpik/" class="flex flex-col p-3.5 border border-brand-gold/15 hover:border-brand-gold/40 transition-colors">
-            <span class="text-[11px] tracking-widest text-white uppercase font-medium">İpek Kirpik</span>
-            <span class="text-[9px] text-brand-lightGold/60 font-light mt-0.5">Ağırlıksız Volüm</span>
-          </a>
-          <a href="/atasehir-cilt-bakimi/" class="flex flex-col p-3.5 border border-brand-gold/15 hover:border-brand-gold/40 transition-colors">
-            <span class="text-[11px] tracking-widest text-white uppercase font-medium">Cilt Bakımı</span>
-            <span class="text-[9px] text-brand-lightGold/60 font-light mt-0.5">Genosys 7-in-1</span>
-          </a>
-          <a href="/atasehir-kas-laminasyon/" class="flex flex-col p-3.5 border border-brand-gold/15 hover:border-brand-gold/40 transition-colors">
-            <span class="text-[11px] tracking-widest text-white uppercase font-medium">Kaş Tasarım</span>
-            <span class="text-[9px] text-brand-lightGold/60 font-light mt-0.5">Keratin Laminasyon</span>
-          </a>
-          <a href="/atasehir-nail-art/" class="flex flex-col p-3.5 border border-brand-gold/15 hover:border-brand-gold/40 transition-colors">
-            <span class="text-[11px] tracking-widest text-white uppercase font-medium">Nail Art</span>
-            <span class="text-[9px] text-brand-lightGold/60 font-light mt-0.5">Özel El Çizimi</span>
-          </a>
-          <a href="/rus-manikur-atasehir/" class="flex flex-col p-3.5 border border-brand-gold/15 hover:border-brand-gold/40 transition-colors">
-            <span class="text-[11px] tracking-widest text-white uppercase font-medium">Rus Manikürü</span>
-            <span class="text-[9px] text-brand-lightGold/60 font-light mt-0.5">Medikal & Spa</span>
-          </a>
-        </div>
-
-        <!-- Nav Links -->
-        <div class="flex flex-col gap-1 py-4 border-t border-brand-gold/15">
-          <a href="/#vip" class="py-2.5 text-[11px] tracking-widest text-white/80 hover:text-brand-lightGold uppercase transition-colors">3 İşlem Konsepti</a>
-          <a href="/#yorumlar" class="py-2.5 text-[11px] tracking-widest text-white/80 hover:text-brand-lightGold uppercase transition-colors">⭐ Google Yorumlar — 5.0</a>
-          <a href="/#galeri" class="py-2.5 text-[11px] tracking-widest text-white/80 hover:text-brand-lightGold uppercase transition-colors">Lookbook & Galeri</a>
-          <a href="/#atmosfer" class="py-2.5 text-[11px] tracking-widest text-white/80 hover:text-brand-lightGold uppercase transition-colors">Stüdyo Atmosferi</a>
-          <a href="/#iletisim" class="py-2.5 text-[11px] tracking-widest text-white/80 hover:text-brand-lightGold uppercase transition-colors">📍 Uphill Towers</a>
-        </div>
-
-        <!-- CTA -->
-        <div class="flex gap-3">
-          <a href="https://wa.me/905318696764?text=Merhaba,%20Google'da%20inceledim.%20Ataşehir%20Uphill%20Towers%20stüdyonuzda%20protez%20tırnak%20için%20randevu%20ve%20müsaitlik%20durumu%20hakkında%20bilgi%20alabilir%20miyim?"
-             target="_blank"
-             class="flex-1 py-4 bg-brand-gold text-brand-deepPurple text-center text-[11px] tracking-[0.22em] uppercase font-semibold">
-            WhatsApp Randevu
-          </a>
-          <a href="tel:05318696764"
-             class="w-14 flex items-center justify-center border border-brand-gold/40 text-brand-lightGold hover:bg-brand-gold/10 transition-colors">
-            <i data-lucide="phone" class="w-4 h-4"></i>
-          </a>
-          <a href="https://www.instagram.com/linail.beautystudio/" target="_blank"
-             class="w-14 flex items-center justify-center border border-brand-gold/40 text-pink-300 hover:bg-brand-gold/10 transition-colors">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-          </a>
-        </div>
-
-      </div>
-    </div>
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobil menü" hidden>
+      <a href="/#hizmetler">Hizmetlerimiz</a>
+      <a href="/#vip">VIP Deneyim</a>
+      <a href="/#studyo">Stüdyomuz</a>
+      <a href="/#yorumlar">Misafir Deneyimleri</a>
+      <a href="/#sorular">Sık Sorulanlar</a>
+      <a href="/#iletisim">İletişim</a>
+    </nav>
   </header>
 
   <!-- Hero Section -->
