@@ -45,6 +45,35 @@ for (const filter of filters) {
   });
 }
 
+// Mega Menu Dropdown Tabs
+const megaTabs = [...document.querySelectorAll('[data-mega-filter]')];
+const megaCards = [...document.querySelectorAll('.mega-card')];
+for (const tab of megaTabs) {
+  tab.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    for (const btn of megaTabs) {
+      btn.classList.toggle('active', btn === tab);
+    }
+    const targetCat = tab.dataset.megaFilter;
+    for (const card of megaCards) {
+      card.hidden = targetCat !== 'all' && card.dataset.megaCategory !== targetCat;
+    }
+  });
+}
+
+// Mobile services accordion toggle
+const mobileServicesToggle = document.querySelector('.mobile-services-toggle');
+const mobileServicesSub = document.querySelector('.mobile-services-sub');
+if (mobileServicesToggle && mobileServicesSub) {
+  mobileServicesToggle.addEventListener('click', () => {
+    const isHidden = mobileServicesSub.style.display === 'none';
+    mobileServicesSub.style.display = isHidden ? 'flex' : 'none';
+    const badge = mobileServicesToggle.querySelector('.mobile-toggle-badge');
+    if (badge) badge.textContent = isHidden ? '06 İşlem ▾' : '06 İşlem ▴';
+  });
+}
+
 const services = {
   nails: {
     title: 'Protez Jel Tırnak & Güçlendirme',

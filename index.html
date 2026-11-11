@@ -196,7 +196,44 @@
         <img src="/assets/linail_full_logo_tight.png" alt="LİNAİL BEAUTY - Gülşah Taşan" class="brand-official-logo" width="68" height="69">
       </a>
       <nav class="desktop-nav" aria-label="Ana menü">
-        <a href="#hizmetler">Hizmetlerimiz</a>
+        <div class="nav-dropdown-item" id="services-nav-item">
+          <a class="nav-dropdown-trigger" href="#hizmetler" aria-haspopup="true" aria-expanded="false">
+            Hizmetlerimiz
+            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="12" height="12"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          </a>
+          <div class="minimal-dropdown" id="services-dropdown">
+            <a class="minimal-dropdown-item" data-service="nails" href="#hizmetler">
+              <span class="dropdown-num">01</span>
+              <span class="dropdown-title">Protez Jel Tırnak &amp; Güçlendirme</span>
+              <svg class="dropdown-item-arrow" viewBox="0 0 24 24" width="12" height="12"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            </a>
+            <a class="minimal-dropdown-item" data-service="lashes" href="#hizmetler">
+              <span class="dropdown-num">02</span>
+              <span class="dropdown-title">İpek Kirpik &amp; Lifting</span>
+              <svg class="dropdown-item-arrow" viewBox="0 0 24 24" width="12" height="12"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            </a>
+            <a class="minimal-dropdown-item" data-service="skin" href="#hizmetler">
+              <span class="dropdown-num">03</span>
+              <span class="dropdown-title">Profesyonel Cilt Bakımı</span>
+              <svg class="dropdown-item-arrow" viewBox="0 0 24 24" width="12" height="12"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            </a>
+            <a class="minimal-dropdown-item" data-service="manicure" href="#hizmetler">
+              <span class="dropdown-num">04</span>
+              <span class="dropdown-title">Rus Manikürü &amp; Spa Pedikür</span>
+              <svg class="dropdown-item-arrow" viewBox="0 0 24 24" width="12" height="12"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            </a>
+            <a class="minimal-dropdown-item" data-service="brows" href="#hizmetler">
+              <span class="dropdown-num">05</span>
+              <span class="dropdown-title">Kaş Tasarımı &amp; Laminasyon</span>
+              <svg class="dropdown-item-arrow" viewBox="0 0 24 24" width="12" height="12"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            </a>
+            <a class="minimal-dropdown-item" data-service="art" href="#hizmetler">
+              <span class="dropdown-num">06</span>
+              <span class="dropdown-title">Nail Art &amp; Özel Tasarım</span>
+              <svg class="dropdown-item-arrow" viewBox="0 0 24 24" width="12" height="12"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            </a>
+          </div>
+        </div>
         <a href="#vip">VIP Deneyim</a>
         <a href="#studyo">Stüdyomuz</a>
         <a href="#sorular">Sık Sorulanlar</a>
@@ -206,7 +243,17 @@
       <button class="menu-toggle" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
     </div>
     <nav id="mobile-menu" class="mobile-menu" aria-label="Mobil menü" hidden>
-      <a href="#hizmetler">Hizmetlerimiz</a>
+      <div class="mobile-services-group">
+        <button class="mobile-services-toggle" type="button">Hizmetlerimiz <span class="mobile-toggle-badge">06 İşlem ▾</span></button>
+        <div class="mobile-services-sub">
+          <a class="mobile-sub-link" href="#hizmetler" data-service="nails"><span>01</span> Protez Jel Tırnak &amp; Güçlendirme</a>
+          <a class="mobile-sub-link" href="#hizmetler" data-service="lashes"><span>02</span> İpek Kirpik &amp; Lifting</a>
+          <a class="mobile-sub-link" href="#hizmetler" data-service="skin"><span>03</span> Profesyonel Cilt Bakımı</a>
+          <a class="mobile-sub-link" href="#hizmetler" data-service="manicure"><span>04</span> Rus Manikürü &amp; Spa Pedikür</a>
+          <a class="mobile-sub-link" href="#hizmetler" data-service="brows"><span>05</span> Kaş Tasarımı &amp; Laminasyon</a>
+          <a class="mobile-sub-link" href="#hizmetler" data-service="art"><span>06</span> Nail Art &amp; Özel Tasarım</a>
+        </div>
+      </div>
       <a href="#vip">VIP Deneyim</a>
       <a href="#studyo">Stüdyomuz</a>
       <a href="#yorumlar">Misafir Deneyimleri</a>
@@ -277,14 +324,23 @@
 
     <a class="discover" href="#hizmetler" aria-label="Hizmetlerimizi keşfet"><span>KEŞFET</span><span>↓</span><i class="discover-line"></i></a>
 
-    <!-- TRUST STRIP (NEDEN LINAIL?) -->
+    <!-- TRUST STRIP (NEDEN LINAIL? - INFINITE MARQUEE) -->
     <div class="why-strip" aria-label="Neden Linail">
-      <span class="why-item"><svg class="icon"><use href="#i-spark"/></svg> Randevunuz ekip teyidiyle kesinleşir</span>
-      <span class="why-item"><svg class="icon"><use href="#i-spark"/></svg> Güncel fiyatı seçtiğiniz hizmete göre WhatsApp’tan netleştiriyoruz</span>
-      <span class="why-item"><svg class="icon"><use href="#i-spark"/></svg> Beğendiğiniz modeli randevu öncesinde gönderebilirsiniz</span>
-      <span class="why-item"><svg class="icon"><use href="#i-spark"/></svg> Hassasiyet ve alerji bilgilerinizi bizimle paylaşabilirsiniz</span>
-      <span class="why-item"><svg class="icon"><use href="#i-spark"/></svg> Gerçek uygulamaları lookbook ve Instagram’da inceleyin</span>
-      <span class="why-item"><svg class="icon"><use href="#i-spark"/></svg> Aynı anda 3 işlem ekip teyidiyle planlanır</span>
+      <div class="why-strip-track">
+        <span class="why-item"><svg class="icon"><use href="#i-spark"/></svg> Randevunuz ekip teyidiyle kesinleşir</span>
+        <span class="why-item"><svg class="icon"><use href="#i-spark"/></svg> Güncel fiyatı seçtiğiniz hizmete göre WhatsApp’tan netleştiriyoruz</span>
+        <span class="why-item"><svg class="icon"><use href="#i-spark"/></svg> Beğendiğiniz modeli randevu öncesinde gönderebilirsiniz</span>
+        <span class="why-item"><svg class="icon"><use href="#i-spark"/></svg> Hassasiyet ve alerji bilgilerinizi bizimle paylaşabilirsiniz</span>
+        <span class="why-item"><svg class="icon"><use href="#i-spark"/></svg> Gerçek uygulamaları lookbook ve Instagram’da inceleyin</span>
+        <span class="why-item"><svg class="icon"><use href="#i-spark"/></svg> Aynı anda 3 işlem ekip teyidiyle planlanır</span>
+        <!-- Döngü için kusursuz eşleşen kopya -->
+        <span class="why-item" aria-hidden="true"><svg class="icon"><use href="#i-spark"/></svg> Randevunuz ekip teyidiyle kesinleşir</span>
+        <span class="why-item" aria-hidden="true"><svg class="icon"><use href="#i-spark"/></svg> Güncel fiyatı seçtiğiniz hizmete göre WhatsApp’tan netleştiriyoruz</span>
+        <span class="why-item" aria-hidden="true"><svg class="icon"><use href="#i-spark"/></svg> Beğendiğiniz modeli randevu öncesinde gönderebilirsiniz</span>
+        <span class="why-item" aria-hidden="true"><svg class="icon"><use href="#i-spark"/></svg> Hassasiyet ve alerji bilgilerinizi bizimle paylaşabilirsiniz</span>
+        <span class="why-item" aria-hidden="true"><svg class="icon"><use href="#i-spark"/></svg> Gerçek uygulamaları lookbook ve Instagram’da inceleyin</span>
+        <span class="why-item" aria-hidden="true"><svg class="icon"><use href="#i-spark"/></svg> Aynı anda 3 işlem ekip teyidiyle planlanır</span>
+      </div>
     </div>
 
     <!-- TRUST SECTION (GÜVEN VE SÜREÇ) -->
@@ -354,7 +410,10 @@
         <!-- Kart 1: Protez Tırnak -->
         <article class="service-card" data-category="nail" data-service="nails">
           <button class="service-visual" data-service="nails" aria-label="Protez jel tırnak ve güçlendirme detaylarını incele" type="button">
-            <img src="/assets/editorial/hero-editorial.webp" alt="Protez Jel Tırnak uygulaması" width="640" height="800" loading="lazy">
+            <picture>
+              <source srcset="/assets/editorial/hero-editorial.webp?v=nail_tortoise" type="image/webp">
+              <img src="/assets/editorial/hero-editorial.jpg?v=nail_tortoise" alt="Protez Jel Tırnak uygulaması" width="640" height="800" loading="lazy">
+            </picture>
             <span class="card-tag">İMZA BAKIM</span>
             <span class="card-open"><svg class="icon"><use href="#i-diagonal"/></svg></span>
           </button>
@@ -369,7 +428,10 @@
         <!-- Kart 2: İpek Kirpik -->
         <article class="service-card" data-category="lash" data-service="lashes">
           <button class="service-visual" data-service="lashes" aria-label="İpek kirpik ve lifting detaylarını incele" type="button">
-            <img src="/assets/editorial/lash-editorial.webp" alt="İpek Kirpik &amp; Lifting uygulaması" width="640" height="800" loading="lazy">
+            <picture>
+              <source srcset="/assets/editorial/lash-editorial.webp?v=lash_v2" type="image/webp">
+              <img src="/assets/editorial/lash-editorial.jpg?v=lash_v2" alt="İpek Kirpik &amp; Lifting uygulaması" width="640" height="800" loading="lazy">
+            </picture>
             <span class="card-tag">DOĞAL BAKIŞLAR</span>
             <span class="card-open"><svg class="icon"><use href="#i-diagonal"/></svg></span>
           </button>
@@ -384,7 +446,10 @@
         <!-- Kart 3: Cilt Bakımı -->
         <article class="service-card" data-category="skin" data-service="skin">
           <button class="service-visual" data-service="skin" aria-label="Profesyonel cilt bakımı detaylarını incele" type="button">
-            <img src="/assets/editorial/skin-editorial.webp" alt="Profesyonel Cilt Bakımı uygulaması" width="640" height="800" loading="lazy">
+            <picture>
+              <source srcset="/assets/editorial/skin-editorial.webp?v=skin_v2" type="image/webp">
+              <img src="/assets/editorial/skin-editorial.jpg?v=skin_v2" alt="Profesyonel Cilt Bakımı uygulaması" width="640" height="800" loading="lazy">
+            </picture>
             <span class="card-tag">KİŞİSEL BAKIM RİTÜELİ</span>
             <span class="card-open"><svg class="icon"><use href="#i-diagonal"/></svg></span>
           </button>
@@ -397,9 +462,16 @@
         </article>
 
         <!-- Kart 4: Rus Manikürü & Spa Pedikür -->
-        <article class="service-card compact" data-category="nail" data-service="manicure">
-          <svg class="icon service-symbol"><use href="#i-leaf"/></svg>
-          <div>
+        <article class="service-card" data-category="nail" data-service="manicure">
+          <button class="service-visual" data-service="manicure" aria-label="Rus manikürü ve spa pedikür detaylarını incele" type="button">
+            <picture>
+              <source srcset="/assets/editorial/pedicure-editorial.webp?v=pedicure_v1" type="image/webp">
+              <img src="/assets/editorial/pedicure-editorial.jpg?v=pedicure_v1" alt="Rus Manikürü &amp; Spa Pedikür uygulaması" width="640" height="800" loading="lazy">
+            </picture>
+            <span class="card-tag">SPA DENEYİMİ</span>
+            <span class="card-open"><svg class="icon"><use href="#i-diagonal"/></svg></span>
+          </button>
+          <div class="service-body">
             <span class="service-number">04 / EL &amp; AYAK BAKIMI</span>
             <h3>Rus Manikürü<br>&amp; Spa Pedikür</h3>
             <p>Kombi manikür tekniği, steril kuru pedikür ve özenle hazırlanan el-ayak bakımı.</p>
@@ -408,9 +480,16 @@
         </article>
 
         <!-- Kart 5: Kaş Tasarımı & Laminasyon -->
-        <article class="service-card compact" data-category="lash" data-service="brows">
-          <svg class="icon service-symbol"><use href="#i-eye"/></svg>
-          <div>
+        <article class="service-card" data-category="lash" data-service="brows">
+          <button class="service-visual" data-service="brows" aria-label="Kaş tasarımı ve laminasyon detaylarını incele" type="button">
+            <picture>
+              <source srcset="/assets/editorial/brow-editorial.webp?v=brow_v1" type="image/webp">
+              <img src="/assets/editorial/brow-editorial.jpg?v=brow_v1" alt="Kaş Tasarımı &amp; Laminasyon uygulaması" width="640" height="800" loading="lazy">
+            </picture>
+            <span class="card-tag">YÜZ MİMARİSİ</span>
+            <span class="card-open"><svg class="icon"><use href="#i-diagonal"/></svg></span>
+          </button>
+          <div class="service-body">
             <span class="service-number">05 / YÜZÜNÜZE ÖZEL</span>
             <h3>Kaş Tasarımı<br>&amp; Laminasyon</h3>
             <p>Yüz hatlarınızla uyumlu şekillendirme ve kaşlarınıza düzenli bir görünüm.</p>
@@ -419,9 +498,16 @@
         </article>
 
         <!-- Kart 6: Nail Art & Özel Tasarım -->
-        <article class="service-card compact" data-category="nail" data-service="art">
-          <svg class="icon service-symbol"><use href="#i-spark"/></svg>
-          <div>
+        <article class="service-card" data-category="nail" data-service="art">
+          <button class="service-visual" data-service="art" aria-label="Nail art ve özel tasarım detaylarını incele" type="button">
+            <picture>
+              <source srcset="/assets/editorial/art-editorial.webp?v=art_v1" type="image/webp">
+              <img src="/assets/editorial/art-editorial.jpg?v=art_v1" alt="Nail Art &amp; Özel Tasarım uygulaması" width="640" height="800" loading="lazy">
+            </picture>
+            <span class="card-tag">KİŞİYE ÖZEL ÇİZİM</span>
+            <span class="card-open"><svg class="icon"><use href="#i-diagonal"/></svg></span>
+          </button>
+          <div class="service-body">
             <span class="service-number">06 / TARZINIZI YANSITIN</span>
             <h3>Nail Art<br>&amp; Özel Tasarım</h3>
             <p>French, cat eye, krom ve el çizimi desenlerle tamamen size ait bir detay.</p>
@@ -490,7 +576,10 @@
     <section class="section studio-section" id="studyo" aria-labelledby="studio-title">
       <div class="studio-visual">
         <div class="studio-photo-wrap" id="studio-photo-wrap">
-          <img class="studio-photo" src="/assets/vip_oda_poster.jpg" alt="LİNAİL Beauty’nin stüdyosu ve eşzamanlı bakım uygulaması" width="700" height="900" loading="lazy">
+          <video class="studio-photo" autoplay muted loop playsinline preload="auto" poster="/assets/studio_video_poster.jpg" aria-label="LİNAİL Beauty stüdyo deneyimi">
+            <source src="/assets/studio_video.mp4" type="video/mp4">
+            <img class="studio-photo" src="/assets/studio_video_poster.jpg" alt="LİNAİL Beauty stüdyo ve bakım deneyimi" width="700" height="900" loading="lazy">
+          </video>
         </div>
         <span class="studio-image-caption">
           <span>ATAŞEHİR, İSTANBUL</span>
