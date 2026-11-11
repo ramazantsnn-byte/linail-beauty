@@ -55,9 +55,9 @@ em { font-weight: 400; color: var(--wine); }
 .top-strip a { display: flex; align-items: center; gap: 7px; font-size: 8px; letter-spacing: .15em; color: var(--wine); }
 .top-strip .icon { width: 12px; height: 12px; }
 .header { position: sticky; top: 0; z-index: 50; background: rgba(248, 245, 250, .97); border-bottom: 1px solid var(--line); }
-.nav-wrap { height: 92px; max-width: 1240px; margin: auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; gap: 40px; }
-.wordmark { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-width: 70px; text-decoration: none; }
-.brand-official-logo { height: 68px; width: auto; max-width: 100%; object-fit: contain; display: block; transition: transform .25s ease; }
+.nav-wrap { min-height: 104px; height: auto; max-width: 1240px; margin: auto; padding: 12px 40px; display: flex; justify-content: space-between; align-items: center; gap: 40px; }
+.wordmark { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-width: 80px; text-decoration: none; }
+.brand-official-logo { height: 88px !important; width: auto; max-width: 100%; object-fit: contain; display: block; transition: transform .25s ease; }
 .brand-official-logo:hover { transform: scale(1.03); }
 .logo-main { font-family: var(--serif); font-size: 49px; letter-spacing: -.06em; font-weight: 500; color: var(--wine); line-height: .95; }
 .logo-i { font-style: italic; }
@@ -98,30 +98,33 @@ em { font-weight: 400; color: var(--wine); }
 .values-band { display: flex; justify-content: space-between; gap: 20px; max-width: 1240px; padding: 31px 40px; margin: auto; border-bottom: 1px solid var(--line); }
 .values-band div { display: flex; align-items: center; gap: 13px; font-size: 10px; color: #75695d; }
 .values-band .icon { width: 22px; height: 22px; color: #9b8270; }
-.services { padding-top: 83px; }
-.service-toolbar { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); margin-bottom: 31px; }
-.service-filters { display: flex; gap: 27px; }
-.filter { font-size: 10px; padding: 15px 0 16px; color: #8c8074; border-bottom: 1px solid transparent; margin-bottom: -1px; transition: color .2s; }
-.filter.active { color: var(--wine); border-bottom-color: var(--wine); }
-.filter span { font-size: 7px; margin-left: 6px; }
-.service-index { font-size: 7px; letter-spacing: .15em; color: #9a8c7e; }
-.service-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-.service-card { min-width: 0; }
+.services { padding-top: 83px; background: #F0E8F4; }
+.service-toolbar { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); padding-bottom: 24px; margin-bottom: 35px; }
+.service-filters { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.filter { font-size: 11px; padding: 9px 18px; border-radius: 999px; border: 1px solid var(--line); background: var(--paper); color: var(--wine); cursor: pointer; transition: all .2s ease; display: inline-flex; align-items: center; gap: 6px; font-weight: 500; }
+.filter.active { background: var(--wine); color: var(--paper); border-color: var(--wine); box-shadow: 0 4px 12px rgba(86, 54, 83, 0.2); }
+.filter span { font-size: 8px; opacity: 0.8; }
+.service-index { font-size: 8px; letter-spacing: .15em; color: var(--muted); font-weight: 600; }
+.service-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.service-card { min-width: 0; background: var(--paper); border: 1px solid rgba(216, 197, 217, 0.5); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; cursor: pointer; transition: transform .25s ease, box-shadow .25s ease; }
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(52, 44, 56, 0.08); }
 .service-visual { display: block; width: 100%; height: 317px; position: relative; overflow: hidden; padding: 0; background: var(--sand); text-align: left; }
-.service-visual img { width: 100%; height: 100%; transition: transform .65s ease; object-position: 50% 55%; }
+.service-visual img { width: 100%; height: 100%; object-fit: cover; transition: transform .65s ease; object-position: 50% 55%; }
 .service-visual:hover img { transform: scale(1.04); }
 .service-card:first-child .service-visual img { object-position: 50% 64%; }
-.card-tag { position: absolute; top: 15px; left: 15px; padding: 6px 11px; background: rgba(255,253,246,.93); color: #78634f; font-size: 7px; letter-spacing: .12em; }
-.card-open { position: absolute; right: 14px; bottom: 14px; width: 33px; height: 33px; background: var(--ivory); display: flex; justify-content: center; align-items: center; border-radius: 50%; color: var(--wine); }
+.card-tag { position: absolute; top: 15px; left: 15px; padding: 6px 11px; background: rgba(255,253,246,.93); color: var(--wine); font-size: 7.5px; letter-spacing: .12em; font-weight: 600; border-radius: 2px; }
+.card-open { position: absolute; right: 14px; bottom: 14px; width: 33px; height: 33px; background: var(--ivory); display: flex; justify-content: center; align-items: center; border-radius: 50%; color: var(--wine); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
 .card-open .icon { width: 16px; height: 16px; }
-.service-body { padding: 22px 0 5px; }
-.service-number { font-size: 7px; letter-spacing: .16em; color: #9b8575; display: block; margin-bottom: 10px; }
-.service-body h3 { font-size: 31px; }
-.service-card p { font-size: 11px; line-height: 1.9; color: var(--muted); margin: 13px 0 17px; max-width: 295px; }
-.service-body .text-link, .compact .text-link { font-size: 10px; color: #6b5241; border: none; }
-.compact { display: flex; gap: 20px; padding: 30px 0 16px; margin-top: 9px; border-top: 1px solid var(--line); }
-.compact h3 { font-size: 27px; }
-.service-symbol { color: #9d7f65; width: 31px; height: 31px; margin-top: 4px; }
+.service-body { padding: 24px 22px 24px; flex: 1; display: flex; flex-direction: column; }
+.service-number { font-size: 7.5px; letter-spacing: .16em; color: var(--wine); display: block; margin-bottom: 8px; font-weight: 600; text-transform: uppercase; }
+.service-body h3 { font-size: 27px; color: var(--ink); margin-bottom: 8px; font-family: var(--serif); line-height: 1.15; }
+.service-card p { font-size: 11px; line-height: 1.8; color: var(--muted); margin: 0 0 16px; flex: 1; }
+.service-body .text-link, .compact .text-link { font-size: 10.5px; color: var(--wine); border: none; display: inline-flex; align-items: center; gap: 8px; font-weight: 500; margin-top: auto; }
+.compact { display: flex; flex-direction: column; gap: 14px; padding: 24px 22px; background: var(--paper); border: 1px solid rgba(216, 197, 217, 0.5); border-radius: 4px; cursor: pointer; transition: transform .25s ease, box-shadow .25s ease; }
+.compact:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(52, 44, 56, 0.08); }
+.compact h3 { font-size: 24px; color: var(--ink); font-family: var(--serif); }
+.compact p { font-size: 11px; line-height: 1.8; color: var(--muted); margin: 0; }
+.service-symbol { color: var(--wine); width: 28px; height: 28px; margin-bottom: 2px; }
 .price-note { display: flex; align-items: center; gap: 16px; margin-top: 35px; padding: 23px 25px; background: var(--sand); border: 1px solid var(--line); }
 .price-note > .icon { color: #8b7360; }
 .price-note p { font-size: 10px; color: #847366; }
@@ -409,11 +412,11 @@ blockquote { font-family: var(--serif); font-size: 27px; line-height: 1.4; margi
   .top-strip { justify-content: center; padding-block: 7px; }
   .top-strip > span { display: none; }
   .top-strip a { font-size: 7px; }
-  .nav-wrap { padding-inline: 21px; gap: 17px; height: 75px; }
+  .nav-wrap { padding-inline: 21px; gap: 17px; min-height: 86px; height: auto; }
   .nav-book { padding: 10px 13px; min-height: 37px; gap: 11px; font-size: 9px; }
   .nav-book .icon { width: 13px; height: 13px; }
   .wordmark { min-width: 60px; }
-  .brand-official-logo { height: 54px; }
+  .brand-official-logo { height: 70px !important; }
   .logo-main { font-size: 40px; }
   .logo-caption { font-size: 5.5px; }
   .hero { display: flex; flex-direction: column; max-height: none; }
@@ -631,8 +634,21 @@ blockquote { font-family: var(--serif); font-size: 27px; line-height: 1.4; margi
 .vip-copy > p { color: #E4D5E8 !important; }
 .vip-benefits span { color: #FAF5FA !important; }
 .vip-benefits .icon { color: var(--accent) !important; }
-.vip-copy .button { background: var(--wine) !important; color: var(--paper) !important; border: 1px solid var(--accent); box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25); }
-.vip-copy .button:hover { background: #684166 !important; }
+.vip-copy .button, .vip-ritual-btn { 
+  background: #FFFDFC !important; 
+  color: #563653 !important; 
+  border: none !important; 
+  font-weight: 600 !important; 
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18) !important; 
+}
+.vip-copy .button:hover, .vip-ritual-btn:hover { 
+  background: #F8F5FA !important; 
+  transform: translateY(-2px); 
+}
+.vip-copy .button .icon, .vip-ritual-btn .icon { 
+  color: #563653 !important; 
+  stroke: #563653 !important; 
+}
 .vip-subnote { color: #D8C5D9 !important; }
 .vip-large-number { color: #6A4367 !important; }
 .vip-orbit { border: 1px solid rgba(216, 197, 217, 0.22) !important; }
@@ -651,22 +667,35 @@ blockquote { font-family: var(--serif); font-size: 27px; line-height: 1.4; margi
 #ritual-status { color: #D8C5D9 !important; }
 .light-link { color: var(--accent) !important; border-bottom-color: var(--accent) !important; }
 
-/* Güven Bölümü: #563653 (Koyu Mürdüm) zemin, #FFFDFC (Sıcak Beyaz) kartlar */
-.trust-section { background: #563653 !important; color: #FAF5FA !important; border-bottom: 1px solid #D8C5D9; overflow: hidden; }
-.trust-intro h2 { color: #FAF5FA !important; }
-.trust-intro h2 em, .booking-steps h3 em { color: var(--accent) !important; }
-.trust-intro > p { color: #E4D5E8 !important; }
-.trust-card { background: var(--paper) !important; border: 1px solid var(--line) !important; box-shadow: 0 10px 30px rgba(52, 44, 56, 0.22) !important; }
-.trust-card h3 { color: var(--ink) !important; }
-.trust-card p { color: var(--muted) !important; }
-.trust-number { color: var(--accent) !important; }
-.trust-card .icon { color: var(--wine) !important; }
-.booking-steps { border-top: 1px solid rgba(216, 197, 217, 0.22) !important; }
-.booking-steps-heading h3 { color: #FAF5FA !important; }
-.steps-list li { background: var(--paper) !important; border: 1px solid var(--line) !important; box-shadow: 0 8px 24px rgba(52, 44, 56, 0.18) !important; }
-.steps-list li span { color: var(--accent) !important; }
-.steps-list li strong { color: var(--ink) !important; }
-.steps-list li p { color: var(--muted) !important; }
+/* Güven Bölümü: #E7D9EC (Pudramsı Lila) zemin, #FFFDFC (Sıcak Beyaz) kartlar */
+.trust-section { background: #E7D9EC !important; color: #563653 !important; border-bottom: 1px solid #D8C5D9; overflow: hidden; }
+.trust-intro h2 { color: #563653 !important; }
+.trust-intro h2 em { color: #563653 !important; font-style: italic !important; }
+.trust-intro > p { color: #756A77 !important; }
+.trust-intro .light-link { color: #563653 !important; border-bottom-color: #563653 !important; }
+.trust-intro .light-link:hover { color: #332B35 !important; }
+.trust-card { 
+  background: #FFFDFC !important; 
+  border: 1px solid rgba(216, 197, 217, 0.6) !important; 
+  box-shadow: 0 8px 24px rgba(86, 54, 83, 0.06) !important; 
+  border-radius: 4px !important; 
+}
+.trust-card h3 { color: #563653 !important; }
+.trust-card p { color: #756A77 !important; }
+.trust-number { color: #754C73 !important; font-weight: 600 !important; }
+.trust-card .icon { color: #754C73 !important; }
+.booking-steps { border-top: 1px solid rgba(216, 197, 217, 0.7) !important; }
+.booking-steps-heading h3 { color: #563653 !important; }
+.booking-steps-heading h3 em { color: #563653 !important; font-style: italic !important; }
+.steps-list li { 
+  background: transparent !important; 
+  border: none !important; 
+  box-shadow: none !important; 
+  padding: 0 !important; 
+}
+.steps-list li span { color: #754C73 !important; font-weight: 600 !important; }
+.steps-list li strong { color: #563653 !important; font-size: 11px !important; }
+.steps-list li p { color: #756A77 !important; }
 
 /* ==========================================================================
    USER APPROVED HERO TEMPLATE (TASLAK)

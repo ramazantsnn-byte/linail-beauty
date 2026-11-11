@@ -116,32 +116,42 @@ const services = {
 
 const dialog = document.querySelector('#service-dialog');
 let lastServiceTrigger;
-for (const button of document.querySelectorAll('[data-service]')) {
-  button.addEventListener('click', () => {
-    const service = services[button.dataset.service];
-    if (!service) return;
-    lastServiceTrigger = button;
-    document.querySelector('#dialog-title').textContent = service.title;
-    document.querySelector('#dialog-intro').textContent = service.intro;
-    document.querySelector('#dialog-time').textContent = service.time;
-    document.querySelector('#dialog-book').href = whatsappUrl(`Merhaba, ${service.title} bakımınız için güncel fiyat ve uygun randevu saatleri hakkında bilgi almak istiyorum.`);
-    const detailLink = document.querySelector('#dialog-detail-link');
-    if (detailLink) {
-      detailLink.href = service.url || '#';
-    }
-    const container = document.querySelector('#dialog-detail');
-    container.replaceChildren();
-    for (const [title, text] of service.details) {
-      const heading = document.createElement('h4');
-      const paragraph = document.createElement('p');
-      heading.textContent = title;
-      paragraph.textContent = text;
-      container.append(heading, paragraph);
-    }
-    dialog.showModal();
-    document.body.classList.add('dialog-open');
-  });
+
+function openServiceModal(serviceKey, triggerEl) {
+  const service = services[serviceKey];
+  if (!service || !dialog) return;
+  lastServiceTrigger = triggerEl;
+  document.querySelector('#dialog-title').textContent = service.title;
+  document.querySelector('#dialog-intro').textContent = service.intro;
+  document.querySelector('#dialog-time').textContent = service.time;
+  document.querySelector('#dialog-book').href = whatsappUrl(`Merhaba, ${service.title} bakımınız için güncel fiyat ve uygun randevu saatleri hakkında bilgi almak istiyorum.`);
+  const detailLink = document.querySelector('#dialog-detail-link');
+  if (detailLink) {
+    detailLink.href = service.url || '#';
+  }
+  const container = document.querySelector('#dialog-detail');
+  container.replaceChildren();
+  for (const [title, text] of service.details) {
+    const heading = document.createElement('h4');
+    const paragraph = document.createElement('p');
+    heading.textContent = title;
+    paragraph.textContent = text;
+    container.append(heading, paragraph);
+  }
+  dialog.showModal();
+  document.body.classList.add('dialog-open');
 }
+
+// Global click delegator for any service card, image, title or "Bakımı incele" button
+document.addEventListener('click', (event) => {
+  const target = event.target.closest('[data-service]');
+  if (!target) return;
+  const serviceKey = target.dataset.service;
+  if (serviceKey && services[serviceKey]) {
+    event.preventDefault();
+    openServiceModal(serviceKey, target);
+  }
+});
 dialog.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
 dialog.addEventListener('click', (event) => {
   if (event.target !== dialog) return;

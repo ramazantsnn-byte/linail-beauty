@@ -335,105 +335,98 @@
     <section class="section services" id="hizmetler" aria-labelledby="services-title">
       <div class="section-heading">
         <div>
-          <span class="eyebrow">LİNAİL BAKIM MENÜSÜ</span>
+          <span class="eyebrow">BAKIM MENÜMÜZ</span>
           <h2 id="services-title">Küçük dokunuşlar.<br><em>Büyük bir iyi his.</em></h2>
         </div>
         <p class="heading-note">Her detayda özen, her uygulamada sizin tarzınız.<br>Size iyi gelecek bakımı birlikte bulalım.</p>
       </div>
-      <div class="filter-bar" role="toolbar" aria-label="Bakım kategorileri">
-        <button class="filter-chip active" data-filter="all" aria-pressed="true">Tüm Bakımlar <span>06</span></button>
-        <button class="filter-chip" data-filter="hands" aria-pressed="false">Tırnak & El-Ayak</button>
-        <button class="filter-chip" data-filter="face" aria-pressed="false">Kirpik & Kaş</button>
-        <button class="filter-chip" data-filter="skin" aria-pressed="false">Cilt Bakımı</button>
+
+      <div class="service-toolbar">
+        <div class="service-filters" role="group" aria-label="Hizmet kategorisi">
+          <button class="filter active" data-filter="all" aria-pressed="true">Tüm Bakımlar <span>06</span></button>
+          <button class="filter" data-filter="nail" aria-pressed="false">Tırnak &amp; El-Ayak</button>
+          <button class="filter" data-filter="lash" aria-pressed="false">Kirpik &amp; Kaş</button>
+          <button class="filter" data-filter="skin" aria-pressed="false">Cilt Bakımı</button>
+        </div>
+        <span class="service-index">SİZİN İÇİN, ÖZENLE.</span>
       </div>
-      <div class="services-grid">
+
+      <div class="service-list">
         <!-- Kart 1: Protez Tırnak -->
-        <article class="service-card" data-category="hands">
-          <div class="card-visual">
-            <img src="/assets/editorial/hero-editorial.webp" alt="Protez Jel Tırnak uygulaması" width="640" height="440" loading="lazy">
-            <span class="card-pill">İMZA BAKIM</span>
-            <button class="card-action" data-service="nails" aria-label="Protez Jel Tırnak detaylarını gör"><svg class="icon"><use href="#i-diagonal"/></svg></button>
-          </div>
-          <div class="card-body">
-            <span class="service-index">01 / TIRNAK SANATI</span>
-            <h3>Protez Jel Tırnak & Güçlendirme</h3>
-            <p>Doğal tırnak yapınıza uygun form, zarif bir görünüm ve kalıcı zarafet.</p>
-            <button class="text-link" data-service="nails">Bakımı incele <svg class="icon"><use href="#i-arrow"/></svg></button>
+        <article class="service-card" data-category="nail" data-service="nails">
+          <button class="service-visual" data-service="nails" aria-label="Protez jel tırnak ve güçlendirme detaylarını incele" type="button">
+            <img src="/assets/editorial/hero-editorial.webp" alt="Protez Jel Tırnak uygulaması" width="640" height="800" loading="lazy">
+            <span class="card-tag">İMZA BAKIM</span>
+            <span class="card-open"><svg class="icon"><use href="#i-diagonal"/></svg></span>
+          </button>
+          <div class="service-body">
+            <span class="service-number">01 / TIRNAK SANATI</span>
+            <h3>Protez Jel Tırnak<br>&amp; Güçlendirme</h3>
+            <p>Doğal tırnak yapınıza uygun form, zarif bir görünüm ve kişiye özel jel uygulaması.</p>
+            <button class="text-link" data-service="nails" type="button">Bakımı incele <svg class="icon"><use href="#i-arrow"/></svg></button>
           </div>
         </article>
 
         <!-- Kart 2: İpek Kirpik -->
-        <article class="service-card" data-category="face">
-          <div class="card-visual">
-            <img src="/assets/editorial/lash-editorial.webp" alt="İpek Kirpik & Lifting uygulaması" width="640" height="440" loading="lazy">
-            <span class="card-pill">DOĞAL BAKIŞLAR</span>
-            <button class="card-action" data-service="lashes" aria-label="İpek Kirpik & Lifting detaylarını gör"><svg class="icon"><use href="#i-diagonal"/></svg></button>
-          </div>
-          <div class="card-body">
-            <span class="service-index">02 / BAKIŞINIZA ÖZEL</span>
-            <h3>İpek Kirpik & Lifting</h3>
-            <p>Göz şeklinize göre tasarlanan ipek kirpik veya doğal kıvrım veren lifting.</p>
-            <button class="text-link" data-service="lashes">Bakımı incele <svg class="icon"><use href="#i-arrow"/></svg></button>
+        <article class="service-card" data-category="lash" data-service="lashes">
+          <button class="service-visual" data-service="lashes" aria-label="İpek kirpik ve lifting detaylarını incele" type="button">
+            <img src="/assets/editorial/lash-editorial.webp" alt="İpek Kirpik &amp; Lifting uygulaması" width="640" height="800" loading="lazy">
+            <span class="card-tag">DOĞAL BAKIŞLAR</span>
+            <span class="card-open"><svg class="icon"><use href="#i-diagonal"/></svg></span>
+          </button>
+          <div class="service-body">
+            <span class="service-number">02 / BAKIŞINIZA ÖZEL</span>
+            <h3>İpek Kirpik<br>&amp; Lifting</h3>
+            <p>Göz şeklinize göre tasarlanan ipek kirpik veya doğal kirpiklerinize lifting dokunuşu.</p>
+            <button class="text-link" data-service="lashes" type="button">Bakımı incele <svg class="icon"><use href="#i-arrow"/></svg></button>
           </div>
         </article>
 
         <!-- Kart 3: Cilt Bakımı -->
-        <article class="service-card" data-category="skin">
-          <div class="card-visual">
-            <img src="/assets/editorial/skin-editorial.webp" alt="Profesyonel Cilt Bakımı uygulaması" width="640" height="440" loading="lazy">
-            <span class="card-pill">KİŞİSEL BAKIM RİTÜELİ</span>
-            <button class="card-action" data-service="skin" aria-label="Profesyonel Cilt Bakımı detaylarını gör"><svg class="icon"><use href="#i-diagonal"/></svg></button>
-          </div>
-          <div class="card-body">
-            <span class="service-index">03 / CİLDİNİZ İÇİN</span>
-            <h3>Profesyonel Cilt Bakımı</h3>
-            <p>Cildinizin ihtiyaçlarına göre arındırma, nem ve bakım odaklı seanslar.</p>
-            <button class="text-link" data-service="skin">Bakımı incele <svg class="icon"><use href="#i-arrow"/></svg></button>
+        <article class="service-card" data-category="skin" data-service="skin">
+          <button class="service-visual" data-service="skin" aria-label="Profesyonel cilt bakımı detaylarını incele" type="button">
+            <img src="/assets/editorial/skin-editorial.webp" alt="Profesyonel Cilt Bakımı uygulaması" width="640" height="800" loading="lazy">
+            <span class="card-tag">KİŞİSEL BAKIM RİTÜELİ</span>
+            <span class="card-open"><svg class="icon"><use href="#i-diagonal"/></svg></span>
+          </button>
+          <div class="service-body">
+            <span class="service-number">03 / CİLDİNİZ İÇİN</span>
+            <h3>Profesyonel<br>Cilt Bakımı</h3>
+            <p>Cildinizin ihtiyaçlarına göre arındırma, nem ve bakım odaklı kişisel bir protokol.</p>
+            <button class="text-link" data-service="skin" type="button">Bakımı incele <svg class="icon"><use href="#i-arrow"/></svg></button>
           </div>
         </article>
 
         <!-- Kart 4: Rus Manikürü & Spa Pedikür -->
-        <article class="service-card" data-category="hands">
-          <div class="card-visual">
-            <img src="/assets/instagram/real_peaceful_nude.jpg" alt="Rus Manikürü & Spa Pedikür uygulaması" width="640" height="440" loading="lazy">
-            <span class="card-pill">HİJYENİK BAKIM</span>
-            <button class="card-action" data-service="manicure" aria-label="Rus Manikürü & Spa Pedikür detaylarını gör"><svg class="icon"><use href="#i-diagonal"/></svg></button>
-          </div>
-          <div class="card-body">
-            <span class="service-index">04 / EL VE AYAK</span>
-            <h3>Rus Manikürü & Spa Pedikür</h3>
-            <p>Kombi manikür tekniği, steril kuru pedikür ve derinlemesine nemlendirme.</p>
-            <button class="text-link" data-service="manicure">Bakımı incele <svg class="icon"><use href="#i-arrow"/></svg></button>
+        <article class="service-card compact" data-category="nail" data-service="manicure">
+          <svg class="icon service-symbol"><use href="#i-leaf"/></svg>
+          <div>
+            <span class="service-number">04 / EL &amp; AYAK BAKIMI</span>
+            <h3>Rus Manikürü<br>&amp; Spa Pedikür</h3>
+            <p>Kombi manikür tekniği, steril kuru pedikür ve özenle hazırlanan el-ayak bakımı.</p>
+            <button class="text-link" data-service="manicure" type="button">Bakımı incele <svg class="icon"><use href="#i-arrow"/></svg></button>
           </div>
         </article>
 
         <!-- Kart 5: Kaş Tasarımı & Laminasyon -->
-        <article class="service-card" data-category="face">
-          <div class="card-visual">
-            <img src="/assets/instagram/real_floral_nailart.jpg" alt="Kaş Tasarımı & Laminasyon uygulaması" width="640" height="440" loading="lazy">
-            <span class="card-pill">YÜZ HATLARINA ÖZEL</span>
-            <button class="card-action" data-service="brows" aria-label="Kaş Tasarımı & Laminasyon detaylarını gör"><svg class="icon"><use href="#i-diagonal"/></svg></button>
-          </div>
-          <div class="card-body">
-            <span class="service-index">05 / DOĞAL ÇİZGİLER</span>
-            <h3>Kaş Tasarımı & Laminasyon</h3>
-            <p>Yüzünüze yakışan kaş formunun belirlenmesi ve dolgunlaştıran keratin laminasyon.</p>
-            <button class="text-link" data-service="brows">Bakımı incele <svg class="icon"><use href="#i-arrow"/></svg></button>
+        <article class="service-card compact" data-category="lash" data-service="brows">
+          <svg class="icon service-symbol"><use href="#i-eye"/></svg>
+          <div>
+            <span class="service-number">05 / YÜZÜNÜZE ÖZEL</span>
+            <h3>Kaş Tasarımı<br>&amp; Laminasyon</h3>
+            <p>Yüz hatlarınızla uyumlu şekillendirme ve kaşlarınıza düzenli bir görünüm.</p>
+            <button class="text-link" data-service="brows" type="button">Bakımı incele <svg class="icon"><use href="#i-arrow"/></svg></button>
           </div>
         </article>
 
         <!-- Kart 6: Nail Art & Özel Tasarım -->
-        <article class="service-card" data-category="hands">
-          <div class="card-visual">
-            <img src="/assets/instagram/real_cat_eye_jel.jpg" alt="Nail Art & Özel Tasarım uygulaması" width="640" height="440" loading="lazy">
-            <span class="card-pill">ZARİF DETAYLAR</span>
-            <button class="card-action" data-service="art" aria-label="Nail Art & Özel Tasarım detaylarını gör"><svg class="icon"><use href="#i-diagonal"/></svg></button>
-          </div>
-          <div class="card-body">
-            <span class="service-index">06 / DETAYLARDA SANAT</span>
-            <h3>Nail Art & Özel Tasarım</h3>
-            <p>French, krom tozu, cat eye ve el çizimi özel desenlerle tırnaklarınıza stil katın.</p>
-            <button class="text-link" data-service="art">Bakımı incele <svg class="icon"><use href="#i-arrow"/></svg></button>
+        <article class="service-card compact" data-category="nail" data-service="art">
+          <svg class="icon service-symbol"><use href="#i-spark"/></svg>
+          <div>
+            <span class="service-number">06 / TARZINIZI YANSITIN</span>
+            <h3>Nail Art<br>&amp; Özel Tasarım</h3>
+            <p>French, cat eye, krom ve el çizimi desenlerle tamamen size ait bir detay.</p>
+            <button class="text-link" data-service="art" type="button">Bakımı incele <svg class="icon"><use href="#i-arrow"/></svg></button>
           </div>
         </article>
       </div>
@@ -441,6 +434,7 @@
       <div class="price-note">
         <svg class="icon"><use href="#i-whatsapp"/></svg>
         <p>Bakımınızı seçtiniz mi? <strong>Güncel fiyat ve uygun saatleri WhatsApp’tan öğrenin.</strong></p>
+        <button class="quick-booking-button" data-quick-booking type="button">Randevu adımına geç <svg class="icon"><use href="#i-arrow"/></svg></button>
         <a class="text-link" data-booking data-message="Merhaba, bakım menünüzün güncel fiyatları ve uygun randevu saatleri hakkında bilgi almak istiyorum." href="https://wa.me/905318696764" target="_blank" rel="noopener noreferrer">Bize yazın <svg class="icon"><use href="#i-diagonal"/></svg></a>
       </div>
     </section>
@@ -457,7 +451,7 @@
             <span><svg class="icon"><use href="#i-check"/></svg>Eşzamanlı çalışan bakım uzmanları</span>
             <span><svg class="icon"><use href="#i-check"/></svg>Tek randevuda kişisel bakım konforu</span>
           </div>
-          <a class="button button-cream" href="#rituel">VIP Deneyiminizi Oluşturun <svg class="icon"><use href="#i-arrow"/></svg></a>
+          <a class="button button-cream vip-ritual-btn" href="#rituel">VIP Ritüelinizi Oluşturun <svg class="icon"><use href="#i-arrow"/></svg></a>
           <span class="vip-subnote">Bir kahve molası. Birden fazla özenli dokunuş.</span>
         </div>
         <div class="vip-art">
