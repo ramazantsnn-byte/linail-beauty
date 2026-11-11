@@ -55,9 +55,9 @@ em { font-weight: 400; color: var(--wine); }
 .top-strip a { display: flex; align-items: center; gap: 7px; font-size: 8px; letter-spacing: .15em; color: var(--wine); }
 .top-strip .icon { width: 12px; height: 12px; }
 .header { position: sticky; top: 0; z-index: 50; background: rgba(248, 245, 250, .97); border-bottom: 1px solid var(--line); }
-.nav-wrap { min-height: 144px; height: auto; max-width: 1240px; margin: auto; padding: 10px 40px; display: flex; justify-content: space-between; align-items: center; gap: 40px; position: relative; }
-.wordmark { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-width: 120px; text-decoration: none; transform: translateY(-0.7px); }
-.brand-official-logo { height: 142px !important; width: auto; max-width: none; object-fit: contain; display: block; transition: transform .25s ease; }
+.nav-wrap { min-height: 94px; height: auto; max-width: 1240px; margin: auto; padding: 6px 40px; display: flex; justify-content: space-between; align-items: center; gap: 40px; position: relative; }
+.wordmark { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-width: 90px; text-decoration: none; transform: translateY(-0.7px); }
+.brand-official-logo { height: 88px !important; width: auto; max-width: none; object-fit: contain; display: block; transition: transform .25s ease; }
 .brand-official-logo:hover { transform: scale(1.03); }
 .logo-main { font-family: var(--serif); font-size: 49px; letter-spacing: -.06em; font-weight: 500; color: var(--wine); line-height: .95; }
 .logo-i { font-style: italic; }
