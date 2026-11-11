@@ -392,17 +392,14 @@ blockquote { font-family: var(--serif); font-size: 27px; line-height: 1.4; margi
 .lookbook h2 { font-size: 46px; }
 .lookbook .section-heading { margin-bottom: 31px; }
 .lookbook .section-heading > .text-link { font-size: 10px; margin-bottom: 5px; }
-.lookbook-gallery { display: flex; gap: 15px; }
-.lookbook-item { flex: 1; min-width: 0; display: block; position: relative; overflow: hidden; background: var(--sand); }
-.lookbook-item img { width: 100%; height: 260px; transition: transform .5s; object-position: center; }
+.lookbook-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.lookbook-item { position: relative; overflow: hidden; border-radius: 4px; background: var(--sand); display: block; min-width: 0; }
+.lookbook-item img { width: 100%; height: 260px; object-fit: cover; object-position: center; transition: transform .5s ease; display: block; }
 .lookbook-item:hover img { transform: scale(1.04); }
-.lookbook-item .icon { position: absolute; right: 12px; bottom: 12px; background: var(--ivory); padding: 8px; width: 31px; height: 31px; color: var(--wine); border-radius: 50%; }
-.lookbook-callout { padding: 50px 20px; text-align: center; flex: 1; background: var(--sand); display: flex; align-items: center; flex-direction: column; gap: 19px; }
-.lookbook-callout > .icon { color: var(--wine); }
-.lookbook-callout > span { font-family: var(--serif); font-size: 29px; line-height: 1.2; }
-.lookbook-callout > strong { display: flex; gap: 10px; font-size: 10px; font-weight: 500; }
-.lookbook-callout strong .icon { width: 15px; height: 15px; }
-.lookbook-note { font-size: 9px; color: #998372; text-align: center; margin-top: 19px; }
+.lookbook-item .card-open { position: absolute; right: 12px; bottom: 12px; width: 32px; height: 32px; background: rgba(255, 255, 255, 0.95); display: flex; justify-content: center; align-items: center; border-radius: 50%; color: var(--wine); box-shadow: 0 2px 10px rgba(0,0,0,0.15); transition: transform .2s ease, background .2s ease; }
+.lookbook-item .card-open .icon { width: 15px; height: 15px; }
+.lookbook-item:hover .card-open { transform: scale(1.08); background: #FFFFFF; }
+.lookbook-note { font-size: 11px; color: var(--muted); text-align: center; margin-top: 25px; letter-spacing: .02em; font-weight: 400; }
 .faq-section { display: flex; gap: 90px; padding-top: 45px; padding-bottom: 90px; }
 .faq-heading { width: 34%; flex-shrink: 0; }
 .faq-heading h2 { font-size: 51px; margin: 18px 0 22px; }
@@ -681,10 +678,10 @@ blockquote { font-family: var(--serif); font-size: 27px; line-height: 1.4; margi
   .lookbook h2 { font-size: 42px; }
   .lookbook .section-heading { gap: 22px; }
   .lookbook .section-heading > .text-link { font-size: 9px; }
-  .lookbook-gallery { flex-wrap: wrap; gap: 12px; }
-  .lookbook-item { flex: 0 0 calc(50% - 6px); }
-  .lookbook-item img { height: 215px; }
-  .lookbook-note { font-size: 9px; text-align: left; }
+  .lookbook-gallery { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .lookbook-item { min-width: 0; }
+  .lookbook-item img { height: 185px; }
+  .lookbook-note { font-size: 10px; text-align: center; margin-top: 20px; }
   .faq-section { flex-direction: column; gap: 31px; padding-top: 15px; }
   .faq-heading { width: 100%; }
   .faq-heading h2 { font-size: 47px; }
