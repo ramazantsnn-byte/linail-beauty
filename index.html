@@ -81,6 +81,44 @@
     gtag('config', 'G-GSH1K69E49');
   </script>
 
+  <!-- Google Ads & GA4 Automatic Conversion Click Listener -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // WhatsApp Clicks
+      document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', {
+              'event_category': 'Contact',
+              'event_label': 'WhatsApp VIP Click',
+              'value': 1.0
+            });
+            gtag('event', 'conversion', {
+              'send_to': 'AW-18351341167'
+            });
+          }
+        });
+      });
+
+      // Phone Call Clicks
+      document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          if (typeof gtag === 'function') {
+            gtag('event', 'contact', {
+              'event_category': 'Contact',
+              'event_label': 'Phone Call Click',
+              'value': 1.0
+            });
+            gtag('event', 'conversion', {
+              'send_to': 'AW-18351341167'
+            });
+          }
+        });
+      });
+    });
+  </script>
+
+
   <!-- LocalBusiness Schema -->
   <script type="application/ld+json">
   {
