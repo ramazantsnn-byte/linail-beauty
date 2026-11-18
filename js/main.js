@@ -253,14 +253,14 @@ for (const item of document.querySelectorAll('.faq-list details')) {
 }
 document.querySelector('#year').textContent = new Date().getFullYear();
 
-// Google Ads Conversion Reporting
+// Google Ads Conversion Reporting (AW-18351341167/LxLwCMe9hLUdEO_8zK5E)
 window.reportConversion = function(action, label) {
   if (typeof gtag === 'function') {
     gtag('event', 'conversion', {
-      'send_to': 'AW-18351341167',
-      'event_category': 'Engagement',
+      'send_to': 'AW-18351341167/LxLwCMe9hLUdEO_8zK5E',
+      'event_category': 'Contact',
       'event_label': label || action,
-      'value': 2500,
+      'value': 300.0,
       'currency': 'TRY'
     });
   }
