@@ -1,3 +1,7 @@
+https://www.linailbeauty.com/* https://linailbeauty.com/:splat 301!
+http://www.linailbeauty.com/* https://linailbeauty.com/:splat 301!
+http://linailbeauty.com/* https://linailbeauty.com/:splat 301!
+
 /hizmetler /#hizmetlerimiz 302
 /menu /#hizmetlerimiz 302
 /fiyatlar /#iletisim 302
@@ -14,6 +18,13 @@
 /medikal-manikur-atasehir/ /rus-manikur-atasehir/ 301
 /medikal-manikur-atasehir/* /rus-manikur-atasehir/:splat 301
 /medikal-manikur /rus-manikur-atasehir/ 301
+/medikal-manikur/ /rus-manikur-atasehir/ 301
 /rus-manikur /rus-manikur-atasehir/ 301
+/rus-manikur/ /rus-manikur-atasehir/ 301
 /kuru-manikur /rus-manikur-atasehir/ 301
+/kuru-manikur/ /rus-manikur-atasehir/ 301
+/ipek-kirpik /atasehir-ipek-kirpik/ 301
+/ipek-kirpik/ /atasehir-ipek-kirpik/ 301
+/cilt-bakimi /atasehir-cilt-bakimi/ 301
+/cilt-bakimi/ /atasehir-cilt-bakimi/ 301
 
