@@ -501,12 +501,20 @@
       "latitude": 40.9930,
       "longitude": 29.1170
     },
-    "openingHoursSpecification": [{
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "10:00",
-      "closes": "19:30"
-    }],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "10:00",
+        "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Sunday"],
+        "opens": "12:00",
+        "closes": "18:00"
+      }
+    ],
     "sameAs": [
       "https://www.instagram.com/linail.beautystudio",
       "https://www.youtube.com/@LinailBeauty"
