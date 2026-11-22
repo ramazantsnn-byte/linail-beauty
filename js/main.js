@@ -95,7 +95,7 @@ const services = {
       ['Soft volüm', 'Ultra ince liflerle, tercihinize uygun daha dolgun bir tasarım hazırlanır.'],
       ['Kirpik lifting', 'Kendi doğal kirpiklerinize kıvrım ve keratin bakım uygulaması. Hassasiyetiniz varsa işlem öncesinde ekibimize bildirin.']
     ],
-    time: 'Klasik: 90–120 dk · Soft volüm: 120–150 dk · Lifting: 60–75 dk'
+    time: 'İpek kirpik: yaklaşık 1,5 saat · Lifting: 60–75 dk'
   },
   skin: {
     title: 'Profesyonel Cilt Bakımı',
@@ -106,7 +106,7 @@ const services = {
       ['Arındırma ve nem', 'Vakumlu gözenek arındırma, nem uygulaması ve seçilen protokole uygun bakım adımları.'],
       ['Size uygun bakım', 'Hassasiyetlerinizi, kullandığınız ürünleri ve özel durumlarınızı önceden ekibimizle paylaşın. Hizmet bir tıbbi teşhis veya tedavi yerine geçmez.']
     ],
-    time: 'Kaynak hizmet bilgisine göre ortalama 60–75 dk.'
+    time: 'Yaklaşık 60 dakika.'
   },
   manicure: {
     title: 'Rus Manikürü & Spa Pedikür',
@@ -117,7 +117,7 @@ const services = {
       ['Steril kuru pedikür', 'Seçilen protokole göre ayak ve tırnak çevresi bakımı ile nemlendirme.'],
       ['Spa dokunuşu', 'Aromaterapi, peeling ve masajla bakımınızı tamamlayabilirsiniz. Kalıcı oje ve nail art seçeneklerini ayrıca sorabilirsiniz.']
     ],
-    time: 'Manikür: 45–60 dk · Pedikür: 60–75 dk · Spa bakım: yaklaşık 90 dk'
+    time: 'Manikür: yaklaşık 30 dk · Pedikür: yaklaşık 45 dk · Manikür + Pedikür: yaklaşık 1,5 saat'
   },
   brows: {
     title: 'Kaş Tasarımı & Laminasyon',
@@ -128,7 +128,7 @@ const services = {
       ['Laminasyon', 'Kaş kıllarını yönlendiren ve keratin bakımıyla tamamlanan uygulama.'],
       ['Kombine bakım', 'Şekillendirme ve laminasyon birlikte planlanabilir. İşlem sonrası bakım bilgisi ekibimiz tarafından paylaşılır.']
     ],
-    time: 'Şekillendirme: 20–30 dk · Laminasyon: 45–60 dk · Kombine: 60–75 dk'
+    time: 'Şekillendirme: 20–30 dk · Laminasyon: 45–60 dk (3–5 hafta kalıcı)'
   },
   art: {
     title: 'Nail Art & Özel Tasarım',
