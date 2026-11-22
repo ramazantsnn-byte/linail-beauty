@@ -1,0 +1,30 @@
+# Cloudflare Pages Assets Ignore Rules (.assetsignore)
+# Prevents sensitive, internal, backup, and development files from being uploaded or publicly served.
+
+# Development scripts
+*.py
+*.pyc
+__pycache__/
+
+# Backup and temporary files
+*.bak
+*.bak*
+*.pre_backup*
+*.backup*
+*.tmp
+*.temp
+*~
+*.swp
+.DS_Store
+
+# Internal documentation and notes (llms.txt and llms-full.txt are .txt and safely preserved)
+*.md
+
+# Raw design sources and uncompressed large files
+*.esp
+*.psd
+*.ai
+
+# Environment and tooling artifacts
+.wrangler/
+.env*
