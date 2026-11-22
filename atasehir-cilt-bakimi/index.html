@@ -478,48 +478,187 @@
 
   </style>
 
-  <!-- Schema.org Rich Snippet -->
+    <!-- Service Schema -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": ["BeautySalon", "HealthAndBeautyBusiness"],
-    "name": "Linail Beauty Studio - Ataşehir Profesyonel Cilt Bakımı & Hydrafacial",
-    "image": "https://linailbeauty.com/assets/cilt_bakimi_luxury.jpg",
-    "telephone": "+905318696764",
-    "url": "https://linailbeauty.com/atasehir-cilt-bakimi/",
-    "priceRange": "₺₺",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Barbaros Mah. Ihlamur Bulvarı, Uphill Towers B Blok Daire 14",
-      "addressLocality": "Ataşehir",
-      "addressRegion": "İstanbul",
-      "postalCode": "34750",
-      "addressCountry": "TR"
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Cilt Bakımı & Hydrafacial",
+  "provider": {
+    "@id": "https://linailbeauty.com/#organization"
+  },
+  "areaServed": "Ataşehir, İstanbul"
+}
+  </script>
+
+  <!-- Schema.org: BeautySalon -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "BeautySalon",
+    "HealthAndBeautyBusiness"
+  ],
+  "@id": "https://linailbeauty.com/#organization",
+  "name": "Linail Beauty - Ataşehir Protez Tırnak & İpek Kirpik Studio",
+  "image": "https://linailbeauty.com/assets/cilt_bakimi_luxury.jpg",
+  "telephone": "+905318696764",
+  "url": "https://linailbeauty.com/atasehir-cilt-bakimi/",
+  "priceRange": "₺₺",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Barbaros Mah. Ihlamur Bulvarı, Ak Zambak Sok. Uphill Towers B Blok Daire 14",
+    "addressLocality": "Ataşehir",
+    "addressRegion": "İstanbul",
+    "postalCode": "34750",
+    "addressCountry": "TR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 40.993,
+    "longitude": 29.117
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "10:00",
+      "closes": "19:00"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 40.9930,
-      "longitude": 29.1170
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Sunday"
+      ],
+      "opens": "12:00",
+      "closes": "18:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/linail.beautystudio",
+    "https://www.youtube.com/@LinailBeauty",
+    "https://www.google.com/maps/place//data=!4m2!3m1!1s0x14cac99d90bcc46f:0x6920c6d04cd4432f?sa=X&hl=tr"
+  ]
+}
+  </script>
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana Sayfa",
+      "item": "https://linailbeauty.com/"
     },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        "opens": "10:00",
-        "closes": "19:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Sunday"],
-        "opens": "12:00",
-        "closes": "18:00"
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Cilt Bakımı & Hydrafacial",
+      "item": "https://linailbeauty.com/atasehir-cilt-bakimi/"
+    }
+  ]
+}
+  </script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Profesyonel cilt bakımı ne sıklıkla tekrarlanmalıdır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cildin doğal hücresel yenilenme döngüsü ortalama 28 gündür. Tıkalı gözeneklerin tekrar dolmasını engellemek ve kolajen üretimini canlı tutmak için ayda 1 kez yapılması idealdir. Ciddi leke ve akne protokollerinde ise 2-3 haftada bir seans önerilebilir."
       }
-    ],
-    "sameAs": [
-      "https://www.instagram.com/linail.beautystudio",
-      "https://www.youtube.com/@LinailBeauty"
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "Hydrafacial kalıcılığı ne kadar sürer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "İlk seansın hemen ardından gözlemlenen o pürüzsüzlük, arınma ve cam gibi ışıltı ortalama 2 ila 4 hafta boyunca cildinizde kalır. Evde doğru nemlendirici ve güneş kremiyle desteklendiğinde bu etki çok daha uzun süre korunur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Seans sonrası kızarıklık veya kabuklanma olur mu, hemen davete gidebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Çoğu ciltte, hassas ciltlerde bile kızarıklık oluşmaz; dokuyu yıpratmadan çalışılır. Vortex vakum teknolojisi klasik sıkma işlemlerindeki gibi tahriş ve kabuklanmaya yol açmaz; işlem sonrasında cilt genellikle sakinleşmiş, ferah ve canlı bir görünümle doğrudan günlük yaşama devam etmeye hazır olur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hamile veya emziren kadınlar yaptırabilir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, ancak protokol kişiselleştirilir. Hamilelik ve emzirme döneminde kimyasal peeling ajanları ve radyofrekans enerjisi devre dışı bırakılır; tamamen doğal hyaluronik asit nem infüzyonu, oksijen terapi ve nazik vakum temizliği uygulanır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Aktif ve iltihaplı sivilcelere uygulama yapılır mı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aktif iltihaplı lezyonların üzerine doğrudan sert vakum uygulanmaz (bakterinin yayılmaması için). O bölgeler mavi antibakteriyel LED ışık ve yatıştırıcı çinko/centella solüsyonlarıyla sakinleştirilir; komşu siyah noktalı alanlar ise vakumla arındırılır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Güneş ve melazma lekelerinde kaç seansta açılma fark edilir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Karboksi CO₂ Bohr terapisi ve C vitamini infüzyonunun ilk seansından itibaren genel cilt tonunda belirgin bir aydınlanma görülür. Derin yerleşimli lekelerin açılması için genellikle 10-14 gün arayla 3 seanslık protokol tavsiye edilir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gözenekler temizlendikten sonra tekrar genişler mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gözeneklerin geniş görünmesinin asıl sebebi içlerinin sebum ve kirle dolu olmasıdır. Seans sırasında içi temizlenen gözenekler, kriyoterapi (soğuk başlık) ve radyofrekans lif uyarımı sayesinde daha temiz ve sıkı görünür."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Seanstan ne kadar süre sonra makyaj yapabilirim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "İnfüze edilen yoğun peptit ve hyaluronik asit kokteyllerinin hücre içine emiliminin tamamlanması için ilk 4-6 saat cildin çıplak nefes alması önerilir. Ancak acil durumlarda hafif mineral içerikli makyaj ürünleri rahatlıkla uygulanabilir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Yaz aylarında cilt bakımı yaptırmak doğru mudur?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Haklı olarak yaz aylarında derin soyma, asitli peeling ve agresif lazer işlemlerinden kesinlikle kaçınılmalıdır; çünkü bu işlemler güneşe karşı lekelenme riskini artırır. Linail Beauty'de yaz aylarında cildi soyan değil, güneşin kuruttuğu dokuyu neme doyuran yatıştırıcı oksijen terapileri, nazik gözenek arındırma ve yoğun bariyer koruyucu bakımlar tercih edilir. Derin kimyasal ve leke protokollerini ise sonbahar ve kış aylarına planlıyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Uphill Towers'ta randevu süreci nasıl işler?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Stüdyomuz butik hizmet prensibiyle çalışır; aynı saat diliminde tek misafir kabul edilir. WhatsApp hattımızdan (`0531 869 67 64`) bize ulaştığınızda size en uygun gün ve saat belirlenir. Binamızda misafirlerimize özel ücretsiz kapalı otopark ve vale hizmeti sunulmaktadır."
+      }
+    }
+  ]
+}
   </script>
   <style>
     :root {
